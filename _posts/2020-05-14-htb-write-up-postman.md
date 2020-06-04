@@ -4,6 +4,9 @@ title: "HTB Postman write-up"
 author_profile: true
 categories: htb
 classes: wide
+tags:
+  - htb
+  - linux
 ---
 
 ![Postman on HTB](/assets/images/postman.png)

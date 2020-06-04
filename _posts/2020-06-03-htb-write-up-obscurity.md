@@ -2,11 +2,15 @@
 layout: single
 title: "HTB Obscurity write-up"
 author_profile: true
-categories: htb
+categories: 
+  - htb
+  - write-ups
 classes: wide
 tags:
   - htb
   - linux
+  - python
+  - crypto
 ---
 
 ![Obscurity on HTB](/mmsec.io/assets/images/obscurity.png)

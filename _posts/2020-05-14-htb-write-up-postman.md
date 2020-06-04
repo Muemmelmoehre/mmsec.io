@@ -2,7 +2,9 @@
 layout: single
 title: "HTB Postman write-up"
 author_profile: true
-categories: htb
+categories: 
+  - htb
+  - write-ups
 classes: wide
 tags:
   - htb

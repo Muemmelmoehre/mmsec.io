@@ -4,7 +4,7 @@ layout: single
 author_profile: true
 classes: wide
 tags:
-  - security
+  - cheatsheet
   - windows
   - linux
 ---

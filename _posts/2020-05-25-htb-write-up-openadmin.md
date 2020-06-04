@@ -1,0 +1,12 @@
+---
+layout: single
+title: "HTB OpenAdmin write-up"
+author_profile: true
+categories: htb
+classes: wide
+---
+
+
+![OpenAdmin on HTB](/assets/openadmin.png)
+
+*OpenAdmin* was an easy Linux box on [HackTheBox](https://www.hackthebox.eu/){:target="_blank"}. Check out my write-up [here](https://github.com/Muemmelmoehre/write-ups/blob/master/openadmin.pdf){:target="blank"}.

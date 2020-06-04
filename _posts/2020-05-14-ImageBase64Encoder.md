@@ -6,4 +6,4 @@ categories: muemmeltools
 classes: wide
 ---
 
-A tiny bash script that encodes images in base64 and outputs them in html. Check it out on my [github page](https://github.com/Muemmelmoehre/ImageBase64Encoder){:target="_blank"}.
+A tiny bash script that encodes images in base64 and outputs them in html. Check it out on my [GitHub page](https://github.com/Muemmelmoehre/ImageBase64Encoder){:target="_blank"}.

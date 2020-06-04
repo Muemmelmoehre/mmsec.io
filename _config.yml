@@ -76,7 +76,7 @@ author:
       icon: "fas fa-fw fa-link"
       url: "https://www.hackthebox.eu/teams/profile/2608"
     - label: "HTB muemmelmoehre"
-      icon: "fab fa-fw fa-link"
+      icon: "fas fa-fw fa-link"
       url: "https://www.hackthebox.eu/profile/18359"
 
 footer:
@@ -88,10 +88,10 @@ footer:
       icon: "fab fa-fw fa-github"
       url: "https://github.com/muemmelmoehre"
     - label: "HTB Rootless"
-      icon: "fab fa-fw fa-link"
+      icon: "fas fa-fw fa-link"
       url: "https://www.hackthebox.eu/teams/profile/2608"
     - label: "HTB muemmelmoehre"
-      icon: "fab fa-fw fa-link"
+      icon: "fas fa-fw fa-link"
       url: "https://www.hackthebox.eu/profile/18359"
       
 

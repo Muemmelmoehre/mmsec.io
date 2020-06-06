@@ -31,6 +31,17 @@ Welcome to [@muemmelmoehre](https://github.com/muemmelmoehre)'s online grimoire 
 
 
 ```
+DOS2UNIX / UNIX2DOS
+------------------
+# convert text files from DOS to Unix (CR/LF -> LF)
+dos2unix filename
+dos2unix filename -n new_file
+
+# convert text files from Unix to DOS (LF -> CR/LF)
+unix2dos filename
+unix2dos filename -n new_file
+
+
 EVIL-WINRM
 ----------
 # connect to IP_here as user

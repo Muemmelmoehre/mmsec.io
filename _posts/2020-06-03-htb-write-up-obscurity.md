@@ -13,6 +13,6 @@ tags:
   - crypto
 ---
 
-![Obscurity on HTB](/mmsec.io/assets/images/obscurity.png)
+![Obscurity on HTB](/assets/images/obscurity.png)
 
 *Obscurity* was a medium Linux box on [HackTheBox](https://www.hackthebox.eu/){:target="_blank"}. Check out my write-up [here](https://github.com/Muemmelmoehre/write-ups/blob/master/obscurity.pdf){:target="blank"}.

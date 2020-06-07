@@ -11,6 +11,6 @@ tags:
   - linux
 ---
 
-![OpenAdmin on HTB](/assets/images/openadmin.png)
+![OpenAdmin on HTB](/assets/images/openadmin_info.png)
 
 *OpenAdmin* was an easy Linux box on [HackTheBox](https://www.hackthebox.eu/){:target="_blank"}. Check out my write-up [here](https://github.com/Muemmelmoehre/write-ups/blob/master/openadmin.pdf){:target="blank"}.

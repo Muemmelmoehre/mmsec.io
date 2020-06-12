@@ -281,4 +281,10 @@ WINDOWS CLI
 dir -ah
 dir /ah
 attrib
+
+
+XXD
+---
+# plaintext hexdump
+xxd -p filename_here
 ```

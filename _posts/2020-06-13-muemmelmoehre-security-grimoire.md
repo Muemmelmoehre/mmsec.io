@@ -196,6 +196,18 @@ rpcclient -U username%password IP_here
 nmap --script rpc-grind IP_here
 
 
+SCP
+---
+# copy remote file to local machine
+scp user@IP_here:/path/to/remote/file /path/to/local/file
+
+# copy local file to remote machine
+scp /path/to/local/file user@IP_here:/path/to/remote/file
+
+# authenticate with ssh key + copy remote file to local machine
+scp -i private_key_here user@IP_here:/path/to/remote/file /path/to/local/file
+
+
 SFTP
 ----
 # connect as user

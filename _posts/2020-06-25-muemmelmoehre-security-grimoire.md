@@ -86,6 +86,12 @@ IMPACKET
 /path/to/impacket/examples/GetUserSPNs.py -dc-ip IP_here domain/user
 
 
+JOHN
+----
+# crack password hash - dictionary attack
+john -w=/path/to/wordlist /path/to/hash
+
+
 LDAP
 ----
 # nmap script

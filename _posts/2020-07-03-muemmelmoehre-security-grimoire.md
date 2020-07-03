@@ -197,7 +197,7 @@ reg query HKCU /f password /t REG_SZ /s
 
 
 RPC
----------
+---
 # connect anonymously
 rpcclient -U "" IP_here
 
@@ -206,6 +206,15 @@ rpcclient -U username%password IP_here
 
 # nmap script
 nmap --script rpc-grind IP_here
+
+
+RPCBIND
+-------
+# enumerate rpcbind
+rpcinfo IP_here
+
+# show export list for NFS server
+showmount -e IP_here
 
 
 SCP

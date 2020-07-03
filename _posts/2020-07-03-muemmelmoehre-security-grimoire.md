@@ -31,6 +31,12 @@ Welcome to [@muemmelmoehre](https://github.com/muemmelmoehre)'s online grimoire 
 
 
 ```
+CEWL
+----
+# create a wordlist from URL
+cewl -w /path/to/outfile.txt -v URL_here
+
+
 DOS2UNIX / UNIX2DOS
 ------------------
 # convert text files from DOS to Unix (CR/LF -> LF)

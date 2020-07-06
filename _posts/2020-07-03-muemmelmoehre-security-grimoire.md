@@ -285,6 +285,9 @@ SQLMAP
 # launch sqlmap from a GET / POST request file
 python /path/to/sqlmap -r req.txt -p param_to_attack1,param2,param3
 
+# list available tampers
+python /path/to/sqlmap --list-tampers
+
 
 SSH
 ---

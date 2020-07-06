@@ -61,6 +61,12 @@ ffuf -w /path/to/wordlist.txt -u http://IP_here/FUZZ.html
 ffuf -w /path/to/wordlist.txt -u http://IP_here/FUZZ.php 
 ffuf -w /path/to/wordlist.txt -u http://IP_here/FUZZ.txt
 
+# filter out responses with a certain number of words
+ffuf -w /path/to/wordlist.txt -u http://IP_here/FUZZ -fw number_here
+
+# filter out responses with a certain size
+ffuf -w /path/to/wordlist.txt -u http://IP_here/FUZZ -fs size_here
+
 
 FTP
 ---
@@ -272,7 +278,6 @@ put /path/to/local/file [/path/remote]
 
 # download file
 get /path/to/remote/file
-
 
 
 SQLMAP

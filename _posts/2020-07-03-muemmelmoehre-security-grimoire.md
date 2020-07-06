@@ -67,6 +67,9 @@ ffuf -w /path/to/wordlist.txt -u http://IP_here/FUZZ -fw number_here
 # filter out responses with a certain size
 ffuf -w /path/to/wordlist.txt -u http://IP_here/FUZZ -fs size_here
 
+# filter out responses with a certain status code
+ffuf -w /path/to/wordlist.txt -u http://IP_here/FUZZ -fc code_here
+
 
 FTP
 ---
@@ -284,6 +287,9 @@ SQLMAP
 ------
 # launch sqlmap from a GET / POST request file
 python /path/to/sqlmap -r req.txt -p param_to_attack1,param2,param3
+
+# set dbms
+python /path/to/sqlmap -r req.txt -p param_to_attack1,param2,param3 --dbms=DBMS_here
 
 # list available tampers
 python /path/to/sqlmap --list-tampers

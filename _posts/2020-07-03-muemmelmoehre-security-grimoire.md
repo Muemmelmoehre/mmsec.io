@@ -37,6 +37,12 @@ CEWL
 cewl -w /path/to/outfile.txt -v URL_here
 
 
+DIG
+---
+# print public IP
+dig +short myip.opendns.com @resolver1.opendns.com
+
+
 DOS2UNIX / UNIX2DOS
 ------------------
 # convert text files from DOS to Unix (CR/LF -> LF)

@@ -195,6 +195,15 @@ PIP
 python3 -m pip install package
 
 
+POWERSHELL
+----------
+# grep
+Select-String -Path C:\path\here\*.log -Pattern "string_here"
+
+# grep recursively
+Get-ChildItem C:\path\to\directory -Filter *.log -Recurse | Select-String "string_here"
+
+
 PYTHON
 ------
 # user python path from env

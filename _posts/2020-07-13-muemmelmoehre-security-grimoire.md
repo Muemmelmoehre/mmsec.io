@@ -31,6 +31,13 @@ Welcome to [@muemmelmoehre](https://github.com/muemmelmoehre)'s online grimoire 
 
 
 ```
+BASH
+----
+# add ! at the end of each line in wordlist
+for i in $(cat wordlist.txt); do echo $i; echo ${i}\!;done > tmp
+mv tmp wordlist.txt
+
+
 CEWL
 ----
 # create a wordlist from URL

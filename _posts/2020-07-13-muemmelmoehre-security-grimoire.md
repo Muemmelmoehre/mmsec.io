@@ -44,6 +44,15 @@ CEWL
 cewl -w /path/to/outfile.txt -v URL_here
 
 
+CRACKMAPEXEC
+------------
+# check for password policy on Windows domain
+crackmapexec smb IP_here --pass-pol -u '' -p ''
+
+# brute force smb login
+crackmapexec smb IP_here -u userlist.txt -p passwordlist.txt
+
+
 DIG
 ---
 # print public IP
@@ -100,6 +109,12 @@ GOBUSTER
 --------
 # enumerate web folders
 gobuster dir -u http://IP_here -w /path/to/wordlist.txt -o root-dir
+
+
+HASHCAT
+-------
+# permute words in wordlist
+hashcat --force --stdout wordlist.txt -r /usr/share/hashcat/rules/best64.rule
 
 
 IMPACKET

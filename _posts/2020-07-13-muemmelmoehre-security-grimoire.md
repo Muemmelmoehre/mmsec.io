@@ -47,10 +47,10 @@ cewl -w /path/to/outfile.txt -v URL_here
 CRACKMAPEXEC
 ------------
 # check for password policy on Windows domain
-crackmapexec directory_here IP_here --pass-pol -u '' -p ''
+crackmapexec protocole_here IP_here --pass-pol -u '' -p ''
 
 # brute force login
-crackmapexec directory_here IP_here -u userlist.txt -p passwordlist.txt
+crackmapexec protocole_here IP_here -u userlist.txt -p passwordlist.txt
 
 
 DIG

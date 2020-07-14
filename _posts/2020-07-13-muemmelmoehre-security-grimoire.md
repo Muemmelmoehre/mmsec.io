@@ -37,6 +37,9 @@ BASH
 for i in $(cat wordlist.txt); do echo $i; echo ${i}\!;done > tmp
 mv tmp wordlist.txt
 
+# for loop from x to z, incrementing in steps of y
+for i in $(seq x y z); do command_here; done;
+
 
 CEWL
 ----
@@ -221,6 +224,12 @@ net user user_here password_here /add /domain
 
 # add user to group 
 net group "group_name_here" /add user_here
+
+
+PERL
+----
+# generate string of 20 A + concatenate with ABCD
+$(perl -e 'print "\x41" x 20 . "ABCD"')
 
 
 PIP

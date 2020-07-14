@@ -73,6 +73,18 @@ unix2dos filename
 unix2dos filename -n new_file
 
 
+ENV
+---
+# show all environment variables
+env
+
+# set environment variable 
+export VARIABLE_HERE=value_here
+
+# show value
+echo $VARIABLE_HERE
+
+
 EVIL-WINRM
 ----------
 # connect to IP_here as user
@@ -94,6 +106,12 @@ ffuf -w /path/to/wordlist.txt -u http://IP_here/FUZZ -fs size_here
 
 # filter out responses with a certain status code
 ffuf -w /path/to/wordlist.txt -u http://IP_here/FUZZ -fc code_here
+
+
+FIND
+----
+# list every file with SUID bit set
+find / -user root -perm -4000 -exec ls -ldb {} \;
 
 
 FTP

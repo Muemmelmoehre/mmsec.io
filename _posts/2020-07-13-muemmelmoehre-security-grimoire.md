@@ -293,6 +293,9 @@ scp /path/to/local/file user@IP_here:/path/to/remote/file
 # authenticate with ssh key + copy remote file to local machine
 scp -i private_key_here user@IP_here:/path/to/remote/file /path/to/local/file
 
+# authenticate with ssh key + copy local file to remote machine
+scp -i private_key_here /path/to/local/file user@IP_here:/path/to/remote/file 
+
 
 SFTP
 ----

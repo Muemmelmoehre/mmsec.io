@@ -37,6 +37,9 @@ BASH
 for i in $(cat wordlist.txt); do echo $i; echo ${i}\!;done > tmp
 mv tmp wordlist.txt
 
+# for loop from x to z, incrementing in steps of y
+for i in $(seq x y z); do command_here; done;
+
 
 CEWL
 ----
@@ -70,6 +73,18 @@ unix2dos filename
 unix2dos filename -n new_file
 
 
+ENV
+---
+# show all environment variables
+env
+
+# set environment variable 
+export VARIABLE_HERE=value_here
+
+# show value
+echo $VARIABLE_HERE
+
+
 EVIL-WINRM
 ----------
 # connect to IP_here as user
@@ -91,6 +106,12 @@ ffuf -w /path/to/wordlist.txt -u http://IP_here/FUZZ -fs size_here
 
 # filter out responses with a certain status code
 ffuf -w /path/to/wordlist.txt -u http://IP_here/FUZZ -fc code_here
+
+
+FIND
+----
+# list every file with SUID bit set
+find / -user root -perm -4000 -exec ls -ldb {} \;
 
 
 FTP
@@ -221,6 +242,12 @@ net user user_here password_here /add /domain
 
 # add user to group 
 net group "group_name_here" /add user_here
+
+
+PERL
+----
+# generate string of 20 A + concatenate with ABCD
+$(perl -e 'print "\x41" x 20 . "ABCD"')
 
 
 PIP

@@ -131,6 +131,9 @@ GOBUSTER
 # enumerate web folders
 gobuster dir -u http://IP_here -w /path/to/wordlist.txt -o root-dir
 
+# skip SSL certificate verfication
+gobuster dir -u http://IP_here -w /path/to/wordlist.txt -k
+
 
 HASHCAT
 -------

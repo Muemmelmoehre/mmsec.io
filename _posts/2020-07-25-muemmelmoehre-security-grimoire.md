@@ -107,6 +107,9 @@ ffuf -w /path/to/wordlist.txt -u http://IP_here/FUZZ -fs size_here
 # filter out responses with a certain status code
 ffuf -w /path/to/wordlist.txt -u http://IP_here/FUZZ -fc code_here
 
+# read raw HTTP request from file
+ffuf -w /path/to/wordlist.txt -u http://IP_here/FUZZ -request file_here
+
 
 FIND
 ----

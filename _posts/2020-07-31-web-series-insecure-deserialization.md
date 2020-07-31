@@ -21,7 +21,7 @@ tags:
 Whenever an attacker can control the input that is getting deserialized, we have insecure deserialization!
 
 ### WHY
-Usually, no checks or controls happen during deserialization. Therefore, any data that the attacker introduces into the byte stream will be deserialized - meaning that the attacker can inject whatever data or code he/she pleases.
+Usually, no checks or controls happen during deserialization. Therefore, any data that the attacker introduces into the byte stream will be deserialized - meaning that the attacker can inject whatever data or code they please.
 
 ### HOW
 * __Modify the byte stream directly.__ Usually, we first need to url-decode and base64-decode the byte stream to make the underlying structure visible. After modifying the structure, we need to re-encode it to get back a valid byte stream (format must be valid, corrupted data doesn't get deserialized).   
@@ -47,8 +47,8 @@ The `phar://` stream interface for PHP Archive files (`.phar`) implicitly perfor
 
 
 ### Resources
-[1] [](https://portswigger.net/web-security/deserialization){:target="_blank"}, last  visited : 2020-07-28.  
-[2] [](https://portswigger.net/web-security/deserialization/exploiting){:target="_blank"}, last visited : 2020-07-28.
+[1] [https://portswigger.net/web-security/deserialization](https://portswigger.net/web-security/deserialization){:target="_blank"}, last  visited : 2020-07-28.  
+[2] [https://portswigger.net/web-security/deserialization/exploiting](https://portswigger.net/web-security/deserialization/exploiting){:target="_blank"}, last visited : 2020-07-28.
 
 -------
 

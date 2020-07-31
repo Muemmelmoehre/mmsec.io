@@ -57,7 +57,6 @@ The `phar://` stream interface for PHP Archive files (`.phar`) implicitly perfor
 
 # Labs from PortSwigger's Web Security Academy
 ## [Modifying serialized objects](https://portswigger.net/web-security/deserialization/exploiting/lab-deserialization-modifying-serialized-objects){:target="_blank"}
-
 1. Open burp and log in as `wiener`. Intercept the request.
 2. Send the session cookie to Decoder. Url decode, then b64 decode.
 3. Change the admin value to `b:1`.

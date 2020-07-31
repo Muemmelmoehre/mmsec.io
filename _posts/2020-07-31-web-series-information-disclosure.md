@@ -3,12 +3,13 @@ layout: single
 title: "Web series : Information Disclosure"
 author_profile: true
 categories:
-  - portswigger web academy
   - web
-classes: wide
+classes:
 tags:
   - web
+  - information disclosure
 ---
+
 
 # Information Disclosure
 

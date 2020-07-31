@@ -27,7 +27,7 @@ Whenever an attacker can control the input that is getting deserialized, we have
 Usually, no checks or controls happen during deserialization. Therefore, any data that we introduce into the byte stream will be deserialized - meaning that we can inject whatever data or code we please.
 
 ### HOW
-* __Modify the byte stream directly.__ Usually, we first need to url-decode and base64-decode the byte stream to make the underlying structure visible. After modifying the structure, we need to re-encode it to get back a valid byte stream (format must be valid, corrupted data doesn't get deserialized).   
+* __Modify the byte stream directly.__ Usually, we first need to url decode and base64 decode the byte stream to make the underlying structure visible. After modifying the structure, we need to re-encode it to get back a valid byte stream (format must be valid, corrupted data doesn't get deserialized).   
 * __Create a valid data structure, modify it to our liking and serialize it ourselves.__ Scripting this procedure in the target's programming language will most likely come in handy.
 
 

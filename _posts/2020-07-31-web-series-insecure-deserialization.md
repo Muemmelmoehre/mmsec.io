@@ -7,7 +7,10 @@ categories:
 classes: wide
 tags:
   - web
-  - portswigger
+  - portswigger web academy
+  - insecure deserialization
+  - php
+  - java
 ---
 
 # Insecure Deserialization
@@ -52,7 +55,7 @@ The `phar://` stream interface for PHP Archive files (`.phar`) implicitly perfor
 
 -------
 
-# Labs
+# Labs from PortSwigger's Web Security Academy
 ## [Modifying serialized objects](https://portswigger.net/web-security/deserialization/exploiting/lab-deserialization-modifying-serialized-objects){:target="_blank"}
 
 1. Open burp and log in as `wiener`. Intercept the request.

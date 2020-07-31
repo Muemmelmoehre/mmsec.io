@@ -28,7 +28,7 @@ Usually, no checks or controls happen during deserialization. Therefore, any dat
 
 ### HOW
 * __Modify the byte stream directly.__ Usually, we first need to url-decode and base64-decode the byte stream to make the underlying structure visible. After modifying the structure, we need to re-encode it to get back a valid byte stream (format must be valid, corrupted data doesn't get deserialized).   
-* __Create a valid data structure, modify it to our liking and serialize it ourselves.__
+* __Create a valid data structure, modify it to our liking and serialize it ourselves.__ Scripting this procedure in the target's programming language will most likely come in handy.
 
 
 ### Look out for :
@@ -53,7 +53,8 @@ The `phar://` stream interface for PHP Archive files (`.phar`) implicitly perfor
 [1] [https://portswigger.net/web-security/deserialization](https://portswigger.net/web-security/deserialization){:target="_blank"}, last  visited : 2020-07-28.  
 [2] [https://portswigger.net/web-security/deserialization/exploiting](https://portswigger.net/web-security/deserialization/exploiting){:target="_blank"}, last visited : 2020-07-28.
 
--------
+----------
+----------
 
 # Labs from PortSwigger's Web Security Academy
 ## [Modifying serialized objects](https://portswigger.net/web-security/deserialization/exploiting/lab-deserialization-modifying-serialized-objects){:target="_blank"}

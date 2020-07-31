@@ -3,11 +3,11 @@ layout: single
 title: "Web series : Insecure Deserialization"
 author_profile: true
 categories:
-  - portswigger web academy
   - web
 classes: wide
 tags:
   - web
+  - portswigger
 ---
 
 # Insecure Deserialization

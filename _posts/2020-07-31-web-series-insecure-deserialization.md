@@ -4,7 +4,7 @@ title: "Web series : Insecure Deserialization"
 author_profile: true
 categories:
   - web
-classes: wide
+classes: 
 tags:
   - web
   - portswigger web academy

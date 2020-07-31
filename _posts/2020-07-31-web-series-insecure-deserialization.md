@@ -47,14 +47,13 @@ The `phar://` stream interface for PHP Archive files (`.phar`) implicitly perfor
 
 
 ### Resources
-[1] (https://portswigger.net/web-security/deserialization){:target="_blank"}, last  visited : 2020-07-28.  
-[2] (https://portswigger.net/web-security/deserialization/exploiting){:target="_blank"}, last visited : 2020-07-28.
+[1] [](https://portswigger.net/web-security/deserialization){:target="_blank"}, last  visited : 2020-07-28.  
+[2] [](https://portswigger.net/web-security/deserialization/exploiting){:target="_blank"}, last visited : 2020-07-28.
 
 -------
 
 # Labs
-## Modifying serialized objects
-(https://portswigger.net/web-security/deserialization/exploiting/lab-deserialization-modifying-serialized-objects){:target="_blank"}
+## [Modifying serialized objects](https://portswigger.net/web-security/deserialization/exploiting/lab-deserialization-modifying-serialized-objects){:target="_blank"}
 
 1. Open burp and log in as `wiener`. Intercept the request.
 2. Send the session cookie to Decoder. Url decode, then b64 decode.

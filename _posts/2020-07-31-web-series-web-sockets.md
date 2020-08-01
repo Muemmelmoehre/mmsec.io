@@ -49,7 +49,7 @@ Server-side :
 
 ### Resources
 [1] [https://portswigger.net/web-security/websockets](https://portswigger.net/web-security/websockets){:target="_blank"}, last visited : 2020-07-31.  
-[2] [https://portswigger.net/web-security/websockets/what-are-websockets](https://portswigger.net/web-security/websockets/what-are-websockets){:target="_blank"}, last visited : 2020-07-31.
+[2] [https://portswigger.net/web-security/websockets/what-are-websockets](https://portswigger.net/web-security/websockets/what-are-websockets){:target="_blank"}, last visited : 2020-07-31.  
 [3] [https://portswigger.net/web-security/websockets/cross-site-websocket-hijacking](https://portswigger.net/web-security/websockets/cross-site-websocket-hijacking){:target="_blank"}, last visited : 2020-07-31.
 
 -------

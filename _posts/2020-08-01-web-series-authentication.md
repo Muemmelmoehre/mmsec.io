@@ -16,19 +16,19 @@ tags:
 ***N.b.:*** *This post is part of my series on web security, heavily inspired by [PortSwigger's Web Security Academy](https://portswigger.net/web-security){:target="_blank"}. They have amazing content and I don't want to simply replicate their work - my goal here is to provide a quick reference, mostly for myself, for those moments when I need to brush up on common web attacks really quick. Enjoy!*
 
 ### WHAT
-__Authentication__ : validating that a user is indeed who they claim to be; verification done via :  
+__Authentication__ : validating that a user is indeed who they claim to be; verified by :  
 * knowledge factor : something they know
-* possession factore : something they have
+* possession factor : something they have
 * inherence factor : something they are or do
 
 Authentication doesn't manage the user's privileges, it only establishes their verified identity!
 
 ### WHY
-An attacker that has managed to bypass or break an application's authentication has full control over a user account and its data, the whole application and potentially the application server, depending on the compromised account. The compromised application may serve us as pivoting point into the internal network and becomes therefore our stepping stone for subsequent attacks.
+An attacker that has managed to bypass or break an application's authentication can have full control over a user account and its data, the whole application and potentially the application server, depending on the compromised account. The compromised application may serve us as pivoting point into the internal network and becomes therefore our stepping stone for subsequent attacks.
 
 ### HOW
 * __Broken authentication :__ don't play their game, find a way around the validations and bypass their authentication mechanisms
-* __Brute-force :__ try all possible combinations
+* __Brute-force :__ try all possible combinations and look for differing answers
 
 
 ### Look out for :
@@ -53,7 +53,7 @@ An attacker that has managed to bypass or break an application's authentication 
 ## [User name enumeration via different responses](https://portswigger.net/web-security/authentication/password-based/lab-username-enumeration-via-different-responses){:target="_blank"}
 1. Open burp and navigate to the login page.
 2. Send some dummy login information and intercept the request.
-3. Send the `POST` to Intruder, mark the user name and password in `§ and set the attack mode to Sniper.
+3. Send the `POST` to Intruder, mark the user name and password in `§` and set the attack mode to Sniper.
 4. Paste the given list of user names as payload. Start the attack.
 5. Notice that one user name gives a different response length (and response). That's our valid user name!
 6. Set that user name and repeat the same procedure for the password.

@@ -38,7 +38,7 @@ Depending on what they can access, an attacker can abuse broken access controls 
 * change parameters
 * spider for "hidden" URLs
 * information disclosure in server response
-* IDOR
+* [IDOR](https://mmsec.io/web/web-series-idor/){:target="_blank"}
 
 
 ### Look out for :

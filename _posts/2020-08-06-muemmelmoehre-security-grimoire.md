@@ -31,8 +31,8 @@ Welcome to [@muemmelmoehre](https://github.com/muemmelmoehre)'s online grimoire 
 
 
 ```
-BASH
-----
+BASH / SH
+---------
 # add ! at the end of each line in wordlist
 for i in $(cat wordlist.txt); do echo $i; echo ${i}\!;done > tmp
 mv tmp wordlist.txt
@@ -46,7 +46,7 @@ echo -n string_here | base64
 # base64 decode string
 echo -n b64_string_here | base64 -d
 
-# sort textfile in alphabetical order + remove duplicates
+# sort text file in alphabetical order + remove duplicates
 sort -u file_name_here
 
 # list every file with SUID bit set
@@ -55,11 +55,22 @@ find / -user root -perm -4000 -exec ls -ldb {} \;
 # list files recursively
 find . -type f
 
+# continously show last lines from text file
+tail -f /path/to/file
+
 
 CEWL
 ----
 # create a wordlist from URL
 cewl -w /path/to/outfile.txt -v URL_here
+
+
+CMD
+---
+# enumerate hidden files
+dir -ah
+dir /ah
+attrib
 
 
 CRACKMAPEXEC
@@ -484,14 +495,6 @@ VIM
 ---
 # jump to line
 :line_number_here
-
-
-WINDOWS CLI
------------
-# enumerate hidden files
-dir -ah
-dir /ah
-attrib
 
 
 XXD

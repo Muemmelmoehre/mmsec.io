@@ -359,6 +359,36 @@ NMAP
 nmap -sn IP_range
 nmap -sn -iL IP_list_file_here
 
+# OS fingerprinting
+nmap -Pn -O IP_here
+
+# aggressive OS scan
+nmap -Pn -O --osscan-guess IP_here
+
+# gentle OS scan (limit detection to promising hosts)
+nmap -Pn -O --osscan-limit IP_range
+
+# TCP connection scan
+nmap -sT target_here
+
+# TCP SYN scan
+nmap -sS target_here
+nmap target_here
+
+# TCP version scan
+nmap -sV target_here
+
+# possible target identifiers
+nmap -some_scan DNS_here
+nmap -some_scan IP_list_here
+nmap -some_scan IP_with_wildcard_here
+nmap -some_scan IP_range_list_here
+nmap -some_scan CIDR_list_here
+nmap -some_scan -iL IP_list_file_here
+
+# more info on scan
+nmap --reason
+
 
 PERL
 ----

@@ -338,6 +338,22 @@ flush privileges;
 drop user 'username'@'IP_here';
 
 
+NETCAT
+------
+# banner grabbing (2 empty lines required between headers + body!)
+nc target_IP 80 -v
+HEAD / HTTP/1.1
+
+
+
+#establish connection
+nc target_IP port_here
+nc -v target_IP port_here
+
+# start listener
+nc -lnvp port_here
+
+
 NET
 ---
 # add new user
@@ -388,6 +404,15 @@ nmap -some_scan -iL IP_list_file_here
 
 # more info on scan
 nmap --reason
+
+
+OPENSSL
+-------
+# banner grabbing (2 empty lines required between headers + body!)
+openssl s_client -connect target_ip:443
+HEAD / HTTP/1.1
+
+
 
 
 PERL

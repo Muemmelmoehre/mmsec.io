@@ -208,6 +208,12 @@ ffuf -w /path/to/wordlist.txt -u http://IP_here/FUZZ -fc code_here
 ffuf -w /path/to/wordlist.txt -request file_here
 
 
+FPING
+-----
+# ping sweep
+fping -a -g IP_range 2>/dev/null
+
+
 FTP
 ---
 # connect
@@ -345,6 +351,13 @@ net group "group_name_here" /add user_here
 
 # display user information
 net user user_here /domain
+
+
+NMAP
+----
+# ping sweep
+nmap -sn IP_range
+nmap -sn -iL IP_list_file_here
 
 
 PERL

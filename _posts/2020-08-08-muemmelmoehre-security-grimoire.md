@@ -34,11 +34,23 @@ Welcome to [@muemmelmoehre](https://github.com/muemmelmoehre)'s online grimoire 
 BASH / SH
 ---------
 # add ! at the end of each line in wordlist
-for i in $(cat wordlist.txt); do echo $i; echo ${i}\!;done > tmp
+for i in $(cat wordlist.txt); do echo $i; echo ${i}\!; done > tmp
 mv tmp wordlist.txt
 
 # for loop from x to z, incrementing in steps of y
-for i in $(seq x y z); do command_here; done;
+for i in $(seq x y z); do command_here; done
+
+# while loop
+while [ condition ]; do command_here; other_command_here; done
+
+# conditional statements
+if [ some_condition ]; then
+  command_here
+elif[ some_other_condition ]; then
+  other_command_here
+else
+  some_other_command_here
+fi
 
 # base64 encode string
 echo -n string_here | base64
@@ -58,6 +70,16 @@ find . -type f
 # continously show last lines from text file
 tail -f /path/to/file
 
+# evaluate some_other_command before some_command and include the result
+some_command `some_other_command with_args`
+some_command $(some_other_command with_args)
+
+# chain commands - only execute second if first successful
+first_command && second_command 
+
+# chain commands - pipe output of first into second
+first_command | second_command 
+
 
 CEWL
 ----
@@ -67,10 +89,50 @@ cewl -w /path/to/outfile.txt -v URL_here
 
 CMD
 ---
+# clear screen
+cls
+
 # enumerate hidden files
 dir -ah
 dir /ah
 attrib
+
+# show path variable
+path
+echo %PATH%
+
+# run local executable
+.\some_executable_here
+
+# show environment variable
+echo %variable_name_here%
+
+# show other variables
+set
+
+# set other variables
+set variable_name=value_here
+
+# chain commands - execute both
+first_command & second_command 
+
+# chain commands - only execute second if first successful
+first_command && second_command 
+
+# chain commands - pipe output of first into second
+first_command | second_command 
+
+# chain commands - if first fails, execute second
+first_command || second_command 
+
+# conditional statements
+if %some_variable%==some_value (command_here) else (some_other_command_here)
+
+# list files in directory
+for %i in (*.*) do @echo FILE: %i
+
+# display output without command prompt
+@command_here
 
 
 CRACKMAPEXEC

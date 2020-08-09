@@ -340,18 +340,24 @@ drop user 'username'@'IP_here';
 
 NETCAT
 ------
-# banner grabbing (2 empty lines required between headers + body!)
-nc target_IP 80 -v
-HEAD / HTTP/1.1
-
-
-
 #establish connection
 nc target_IP port_here
 nc -v target_IP port_here
 
 # start listener
 nc -lnvp port_here
+
+# banner grabbing (2 empty lines required between headers + body!)
+nc target_IP 80 -v
+HEAD / HTTP/1.0
+
+
+
+# enumerate allowed HTTP verbs
+nc target_site 80 -v
+OPTIONS / HTTP/1.0
+
+
 
 
 NET

@@ -52,24 +52,6 @@ else
   some_other_command_here
 fi
 
-# base64 encode string
-echo -n string_here | base64
-
-# base64 decode string
-echo -n b64_string_here | base64 -d
-
-# sort text file in alphabetical order + remove duplicates
-sort -u file_name_here
-
-# list every file with SUID bit set
-find / -user root -perm -4000 -exec ls -ldb {} \;
-
-# list files recursively
-find . -type f
-
-# continously show last lines from text file
-tail -f /path/to/file
-
 # evaluate some_other_command before some_command and include the result
 some_command `some_other_command with_args`
 some_command $(some_other_command with_args)
@@ -79,6 +61,42 @@ first_command && second_command
 
 # chain commands - pipe output of first into second
 first_command | second_command 
+
+
+BASH UTILITIES
+--------------
+# base64 encode string
+echo -n string_here | base64
+
+# base64 decode string
+echo -n b64_string_here | base64 -d
+
+# list every file with SUID bit set
+find / -user root -perm -4000 -exec ls -ldb {} \;
+
+# list files recursively
+find . -type f
+
+# sort text file in alphabetical order + remove duplicates
+sort -u file_name_here
+
+# continously show last lines from text file
+tail -f /path/to/file
+
+# number of words in text file
+wc -w file_name_here
+
+# number of lines in text file
+wc -l file_name_here
+
+# number of charcters in text file
+wc -m file_name_here
+
+# number of bytes in text file
+wc -c file_name_here
+
+# plaintext hexdump
+xxd -p filename_here
 
 
 CEWL
@@ -359,6 +377,12 @@ OPTIONS / HTTP/1.0
 
 
 
+# exploit DELETE
+nc target_site 80 -v
+DELETE /path/to/resource.txt HTTP/1.0
+
+
+
 
 NET
 ---
@@ -632,9 +656,4 @@ VIM
 # jump to line
 :line_number_here
 
-
-XXD
----
-# plaintext hexdump
-xxd -p filename_here
 ```

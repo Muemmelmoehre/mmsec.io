@@ -307,6 +307,9 @@ john -incremental -users:user_here /path/to/hash
 # unshadow
 unshadow passwd_file shadow_file > output_file
 
+# show cracked passwords
+john --show /path/to/hash
+
 
 LDAP
 ----

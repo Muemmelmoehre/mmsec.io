@@ -256,16 +256,17 @@ gobuster dir -u http://IP_here -w /path/to/wordlist.txt -k
 GOOGLE DORKS
 ------------
 # URL
-inurl:
+inurl:(extension_here|other_extension_here)
 
 # page title
-intitle:
+intitle: "keyword_here" "other_keyword_here"
 
 # hostname
-site:
+site:www.domain.com
+site:com
 
 # file type
-filetype:
+filetype:extension_here
 
 # logical operators
 AND

@@ -301,6 +301,9 @@ JOHN
 # crack password hash - dictionary attack
 john -w=/path/to/wordlist /path/to/hash
 
+# crack password hash - brute-force attack
+john -incremental -users:user_here /path/to/hash
+
 # unshadow
 unshadow passwd_file shadow_file > output_file
 

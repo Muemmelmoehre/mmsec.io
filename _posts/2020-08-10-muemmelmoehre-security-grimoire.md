@@ -301,6 +301,9 @@ JOHN
 # crack password hash - dictionary attack
 john -w=/path/to/wordlist /path/to/hash
 
+# unshadow
+unshadow passwd_file shadow_file > output_file
+
 
 LDAP
 ----

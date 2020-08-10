@@ -77,6 +77,9 @@ find / -user root -perm -4000 -exec ls -ldb {} \;
 # list files recursively
 find . -type f
 
+# enumerate shares
+nmblookup -A IP_here
+
 # sort text file in alphabetical order + remove duplicates
 sort -u file_name_here
 
@@ -151,6 +154,9 @@ for %i in (*.*) do @echo FILE: %i
 
 # display output without command prompt
 @command_here
+
+# enumerate shares
+nbtstat -A IP_here
 
 
 CRACKMAPEXEC
@@ -284,6 +290,12 @@ HASHCAT
 hashcat --force --stdout wordlist.txt -r /usr/share/hashcat/rules/best64.rule
 
 
+HYDRA
+-----
+# dictionary attack
+hydra -L users.txt -P passwords.txt <protocol://IP_here> <options>
+
+
 IMPACKET
 --------
 # get TGT for users with UF_DONT_REQUIRE_PREAUTH
@@ -300,6 +312,9 @@ JOHN
 ----
 # crack password hash - dictionary attack
 john -w=/path/to/wordlist /path/to/hash
+
+# crack password hash with mangling - dictionary attack
+john -w=/path/to/wordlist -rules /path/to/hash
 
 # crack password hash - brute-force attack
 john -incremental -users:user_here /path/to/hash
@@ -448,6 +463,12 @@ net group "group_name_here" /add user_here
 
 # display user information
 net user user_here /domain
+
+# enumerate shares
+net view IP_here
+
+# test for null session on share
+net use \\IP_here\IPC$ '' /u:''
 
 
 NMAP
@@ -652,6 +673,9 @@ put /path/to/local/file [/path/remote]
 
 # smbclient - download file
 get /path/to/remote/file
+
+# test for null session
+smbclient //IP_here/IPC$ -N
 
 # mount smb share
 sudo mount -t cifs -o 'user=user_here,password=password_here' //IP_here/share_here /path/to/mountpoint

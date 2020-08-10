@@ -253,6 +253,30 @@ gobuster dir -u http://IP_here -w /path/to/wordlist.txt -o root-dir
 gobuster dir -u http://IP_here -w /path/to/wordlist.txt -k
 
 
+GOOGLE DORKS
+------------
+# URL
+inurl:
+
+# page title
+intitle:
+
+# hostname
+site:
+
+# file type
+filetype:
+
+# logical operators
+AND
+OR
+&
+|
+
+# filter out keyword
+-keyword_here
+
+
 HASHCAT
 -------
 # permute words in wordlist

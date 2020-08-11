@@ -725,6 +725,9 @@ tcpdump -i interface_here src IP_here and dst IP_here
 # monitor specific dst IP and port
 tcpdump -i interface_here dst IP_here and port port_here
 
+# listen for ping
+tcpdump -i interface_here icmp
+
 
 VIM
 ---

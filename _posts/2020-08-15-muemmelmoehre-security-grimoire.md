@@ -77,6 +77,12 @@ find / -user root -perm -4000 -exec ls -ldb {} \;
 # list files recursively
 find . -type f
 
+# read all files in . + grep for search_term
+cat *|grep search_term
+
+# read all files in . + grep out search_term
+cat *|grep -v search_term
+
 # enumerate shares
 nmblookup -A IP_here
 

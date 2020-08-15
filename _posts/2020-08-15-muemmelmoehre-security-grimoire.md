@@ -727,6 +727,12 @@ python /path/to/sqlmap -r req.txt -p param_to_attack1,param2,param3 --dbms=DBMS_
 python /path/to/sqlmap --list-tampers
 
 
+SQSH
+----
+# connect to SQL database
+sqsh -S IP_here -U user_here -P password_here
+
+
 SSH
 ---
 # connect as user with password

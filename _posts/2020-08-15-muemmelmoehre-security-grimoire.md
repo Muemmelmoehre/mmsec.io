@@ -757,6 +757,13 @@ VIM
 :line_number_here
 
 
+WGET
+----
+# retrieve folders + files from ftp
+wget --mirror 'ftp://user_here:password_here@hostname.domain'
+wget --mirror 'ftp://user_here:password_here@IP_here'
+
+
 WINEXE
 ------
 # get shell on IP_here as user with password

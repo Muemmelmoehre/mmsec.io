@@ -732,6 +732,16 @@ SQSH
 # connect to SQL database
 sqsh -S IP_here -U user_here -P password_here
 
+# sqsh - execute command
+xp_cmdshell 'command_here'
+go
+
+# sqsh - turn on componant for xp_cmdshell (needs admin privs)
+EXEC SP_CONFIGURED 'show advanced options',1
+EXEC SP_CONFIGURE 'xp_cmdshell',1
+reconfigure
+go
+
 
 SSH
 ---

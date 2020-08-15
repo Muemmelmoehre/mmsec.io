@@ -80,6 +80,9 @@ find . -type f
 # read all files in . + grep for search_term
 cat *|grep search_term
 
+# read all files in . + grep for search_term (case-insensitive)
+cat *|grep -i search_term
+
 # read all files in . + grep out search_term
 cat *|grep -v search_term
 
@@ -257,6 +260,9 @@ get /path/to/remote/file
 
 # change to binary mode
 binary
+
+# rename file
+rename old_file_name new_file_name
 
 
 GOBUSTER
@@ -586,6 +592,9 @@ Get-Content file_name_here -Stream ads_name_here
 
 # connect to share
 New-PSDrive -Name "drive_name_here" -PSProvider "FileSystem" -Root "\\IP_here\share_name_here"
+
+# check process architecture
+[Environment]::Is64BitProcess
 
 
 PYTHON

@@ -73,6 +73,7 @@ echo -n b64_string_here | base64 -d
 
 # list every file with SUID bit set
 find / -user root -perm -4000 -exec ls -ldb {} \;
+find / -perm -4000 -type f 2>/dev/null
 
 # list files recursively
 find . -type f
@@ -362,6 +363,12 @@ ldapsearch -x -h IP_here -s sub -b 'dc=domain_here,dc=dc2_here'
 
 # get domain name
 ldapsearch -x -h IP_here -s base namingcontexts
+
+
+MONGO
+-----
+# connect to mongoDB database
+mongo -u user_here -p password_here IP_here:port_here
 
 
 MSFVENOM

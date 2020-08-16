@@ -304,7 +304,7 @@ HASHCAT
 # permute words in wordlist
 hashcat --force --stdout wordlist.txt -r /usr/share/hashcat/rules/best64.rule
 
-# crack hash
+# crack hash (with salt : append salt after hash in file : hash_here:salt_here)
 hashcat -m hash_format_code_here /path/to/hash /path/to/wordlist
 
 

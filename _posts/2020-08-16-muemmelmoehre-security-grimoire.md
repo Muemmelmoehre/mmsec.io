@@ -71,13 +71,6 @@ echo -n string_here | base64
 # base64 decode string
 echo -n b64_string_here | base64 -d
 
-# list every file with SUID bit set
-find / -user root -perm -4000 -exec ls -ldb {} \;
-find / -perm -4000 -type f 2>/dev/null
-
-# list files recursively
-find . -type f
-
 # read all files in . + grep for search_term
 cat *|grep search_term
 
@@ -87,6 +80,16 @@ cat *|grep -i search_term
 # read all files in . + grep out search_term
 cat *|grep -v search_term
 
+# list every file with SUID bit set
+find / -user root -perm -4000 -exec ls -ldb {} \;
+find / -perm -4000 -type f 2>/dev/null
+
+# list files recursively
+find . -type f
+
+# find file
+locate file_here
+
 # enumerate shares
 nmblookup -A IP_here
 
@@ -95,6 +98,9 @@ sort -u file_name_here
 
 # continously show last lines from text file
 tail -f /path/to/file
+
+# update locate's file name database
+updatedb
 
 # number of words in text file
 wc -w file_name_here
@@ -185,6 +191,12 @@ DIG
 ---
 # print public IP
 dig +short myip.opendns.com @resolver1.opendns.com
+
+
+DNSRECON
+--------
+# find hostname
+dnsrecon -d domain_here -r range_here
 
 
 DOS2UNIX / UNIX2DOS
@@ -300,6 +312,12 @@ OR
 -keyword_here
 
 
+GPP-DECRYPT
+-----------
+# decrypt password from group policy preferences
+gpp-decrypt ciphertext_here
+
+
 HASHCAT
 -------
 # permute words in wordlist
@@ -327,8 +345,14 @@ IMPACKET
 # dump secrets as user
 /path/to/impacket-secretsdump -dc-ip IP_here user:password@IP_here
 
-# gather service principal names
-/path/to/impacket/examples/GetUserSPNs.py -dc-ip IP_here domain/user
+# kerberoasting : gather NTLM hashes
+/path/to/impacket/examples/GetUserSPNs.py -request -dc-ip IP_here domain/user
+
+# gather domain usernames
+/path/to/impacket/GetADUsers.py -all -dc-ip IP_here domain/user
+
+# get shell as user
+/path/to/impacket/psexec.py domain/user@IP_here
 
 
 JOHN
@@ -548,6 +572,24 @@ nmap -some_scan -iL IP_list_file_here
 # more info on scan
 nmap --reason
 
+# show all available scripts
+locate -r '\.nse$'
+
+# show all available scripts with categories
+locate -r '\.nse$' | xargs grep categories
+
+# run some_script in debug mode
+nmap --script some_script -p port_here IP_here -d
+
+
+NSLOOKUP
+--------
+# find hostname of IP_here
+nslookup
+server DNS_IP_here
+127.0.0.1
+IP_here
+
 
 OPENSSL
 -------
@@ -708,8 +750,8 @@ SMB
 # enumerate shares with anonymous login
 smbclient -L smb -I IP_here
 
-# enumerate smb shares as user
-smbclient -L smb -I IP_here -U user
+# enumerate smb shares as user_here
+smbclient -L smb -I IP_here -U user_here
 
 # enumerate smb shares
 nmap --script=smb-enum-shares IP_here
@@ -718,7 +760,13 @@ nmap --script=smb-enum-shares IP_here
 smbmap -H IP_here
 
 # enumerate smb shares as user
-smbmap -u user -p password -d domain -H IP_here
+smbmap -u user -p password -d domain_here -H IP_here
+
+# recursively list share content + permissions for null session
+smbmap -R share_here -H IP_here
+
+# recursively list share content + permissions for user_here
+smbmap -R share_here -H IP_here -d domain_here -u user_here -p password_here
 
 # enumerate smb shares
 crackmapexec smb IP_here --shares
@@ -734,6 +782,11 @@ put /path/to/local/file [/path/remote]
 
 # smbclient - download file
 get /path/to/remote/file
+
+# smbclient - bulk download every file on share
+recurse ON
+prompt OFF
+mget *
 
 # test for null session
 smbclient //IP_here/IPC$ -N

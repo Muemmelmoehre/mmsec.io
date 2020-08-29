@@ -36,6 +36,9 @@ AMASS
 # subdomain enumeration
 /path/to/amass enum -d domain_here > outfile_here
 
+# subdomain enumeration with API keys in config_file
+/path/to/amass enum -d domain_here -config /path/to/config_file_here > outfile_here
+
 
 BASH / SH
 ---------

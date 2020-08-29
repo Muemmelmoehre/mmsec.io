@@ -31,6 +31,12 @@ Welcome to [@muemmelmoehre](https://github.com/muemmelmoehre)'s online grimoire 
 
 
 ```
+AMASS
+-----
+# subdomain enumeration
+/path/to/amass enum -d domain_here > outfile_here
+
+
 BASH / SH
 ---------
 # add ! at the end of each line in wordlist

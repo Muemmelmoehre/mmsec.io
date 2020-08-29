@@ -74,6 +74,9 @@ first_command | second_command
 
 BASH UTILITIES
 --------------
+# add binary (use without full path)
+sudo cp /path/to/binary /usr/bin/binary_name_here
+
 # base64 encode string
 echo -n string_here | base64
 

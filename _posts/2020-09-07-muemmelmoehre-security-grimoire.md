@@ -112,7 +112,13 @@ nmblookup -A IP_here
 sort -u file_name_here
 
 # continously show last lines from text file
-tail -f /path/to/file
+tail -f /path/to/
+
+# untar .tar.gz
+tar -xvzf tarball_here
+
+# untar .tar.gz to specific location
+tar -C /path/to/destination -xvzf tarball_here
 
 # update locate's file name database
 updatedb

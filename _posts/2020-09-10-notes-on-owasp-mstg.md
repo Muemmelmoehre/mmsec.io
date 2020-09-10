@@ -11,8 +11,6 @@ tags:
 	- excerpt
 ---
 
-![image_name_here](/path/to/image.jpg)
-
 # Notes on the OWASP Mobile Security Testing Guide
 [OWASP Mobile Security Testing Guide v1.2, May 2020](https://mobile-security.gitbook.io/mobile-security-testing-guide/){:target="_blank"}, last visited : 2020-09-08.
 

@@ -18,7 +18,7 @@ tags:
 ## General
 IPC = inter-process communication
 
-key areas :
+key areas :  
 	* local data storage  
 	* communication with trusted endpoints : network-based attacks  
 	* authentication / authorization : mostly handled server-side  

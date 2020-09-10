@@ -14,18 +14,19 @@ tags:
 ![image_name_here](/path/to/image.jpg)
 
 # Notes on the OWASP Mobile Security Testing Guide
-[OWASP Mobile Security Testing Guide v1.2, May 2020]{https://mobile-security.gitbook.io/mobile-security-testing-guide/}{:target="_blank"}, last visited : 2020-09-08.
+[OWASP Mobile Security Testing Guide v1.2, May 2020](https://mobile-security.gitbook.io/mobile-security-testing-guide/){:target="_blank"}, last visited : 2020-09-08.
+
 
 ## General
 IPC = inter-process communication
 
 key areas :
-	* local data storage
-	* communication with trusted endpoints : network-based attacks
-	* authentication / authorization : mostly handled server-side
-	* interaction with mobile platform
-	* code quality / exploit mitigation
-	* anti-tampering / anti-reversing
+	* local data storage  
+	* communication with trusted endpoints : network-based attacks  
+	* authentication / authorization : mostly handled server-side  
+	* interaction with mobile platform  
+	* code quality / exploit mitigation  
+	* anti-tampering / anti-reversing  
 
 *native* app :
 	* built for that specific platform
@@ -144,12 +145,12 @@ authentication frameworks : e.g. spring (java), struts (java), laravel (php), ru
 
 
 ### Resources
-[1] [OWASP Mobile Security Testing Guide v1.2, May 2020]{https://mobile-security.gitbook.io/mobile-security-testing-guide/}{:target="_blank"}, last visited : 2020-09-08.
-[2] [Flirtman, Maximiliano : Progressive Web Apps on iOS are here, March 2018.]{https://medium.com/@firt/progressive-web-apps-on-ios-are-here-d00430dee3a7}{:target="_blank"}, last visited : 2020-09-08.
-[3] [Wolhuter, Samantha : The Differences Between Web, Native, Progressive Web and Hybrid Apps, June 2020.]{https://www.wearebrain.com/blog/software-development/web-native-progressive-web-and-hybrid-apps/}{:target="_blank"}, last visited : 2020-09-08.
-[4] [OWASP Authentication Cheat Sheet]{https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Authentication_Cheat_Sheet.md#implement-proper-password-strength-controls}{:target="_blank"}, last visited : 2020-09-10.}
-[5] [Dropbox' zxcvbn]{https://github.com/dropbox/zxcvbn}{:target="_blank"}, last visited : 2020-09-10.}
-[6] [Troy Hunt's have i been pwned]{https://haveibeenpwned.com/}{:target="_blank"}, last visited : 2020-09-10.}
-[7] [OWASP Blocking Brute Force Attacks]{https://owasp.org/www-community/controls/Blocking_Brute_Force_Attacks}{:target="_blank"}, last visited : 2020-09-10.}
-[8] [Session Timeout Test]{https://portswigger.net/bappstore/c4bfd29882974712a1d69c6d8f05874e}{:target="_blank"}, last visited : 2020-09-10.}
+[1] [OWASP Mobile Security Testing Guide v1.2, May 2020](https://mobile-security.gitbook.io/mobile-security-testing-guide/){:target="_blank"}, last visited : 2020-09-08.
+[2] [Flirtman, Maximiliano : Progressive Web Apps on iOS are here, March 2018.](https://medium.com/@firt/progressive-web-apps-on-ios-are-here-d00430dee3a7){:target="_blank"}, last visited : 2020-09-08.
+[3] [Wolhuter, Samantha : The Differences Between Web, Native, Progressive Web and Hybrid Apps, June 2020.](https://www.wearebrain.com/blog/software-development/web-native-progressive-web-and-hybrid-apps/){:target="_blank"}, last visited : 2020-09-08.
+[4] [OWASP Authentication Cheat Sheet](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Authentication_Cheat_Sheet.md#implement-proper-password-strength-controls){:target="_blank"}, last visited : 2020-09-10.}
+[5] [Dropbox' zxcvbn](https://github.com/dropbox/zxcvbn){:target="_blank"}, last visited : 2020-09-10.}
+[6] [Troy Hunt's have i been pwned](https://haveibeenpwned.com/){:target="_blank"}, last visited : 2020-09-10.}
+[7] [OWASP Blocking Brute Force Attacks](https://owasp.org/www-community/controls/Blocking_Brute_Force_Attacks){:target="_blank"}, last visited : 2020-09-10.}
+[8] [Session Timeout Test](https://portswigger.net/bappstore/c4bfd29882974712a1d69c6d8f05874e){:target="_blank"}, last visited : 2020-09-10.}
 

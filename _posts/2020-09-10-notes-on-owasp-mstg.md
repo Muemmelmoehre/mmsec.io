@@ -1,8 +1,10 @@
 ---
 layout: single 
-title: Notes on the OWASP Mobile Application Security Testing Guide
+title: "Notes on the OWASP Mobile Application Security Testing Guide"
 author_profile: true
-categories: mobile
+categories: 
+	- mobile
+classes:
 tags:
 	- mobile
 	- testing
@@ -150,3 +152,4 @@ authentication frameworks : e.g. spring (java), struts (java), laravel (php), ru
 [6] [Troy Hunt's have i been pwned]{https://haveibeenpwned.com/}{:target="_blank"}, last visited : 2020-09-10.}
 [7] [OWASP Blocking Brute Force Attacks]{https://owasp.org/www-community/controls/Blocking_Brute_Force_Attacks}{:target="_blank"}, last visited : 2020-09-10.}
 [8] [Session Timeout Test]{https://portswigger.net/bappstore/c4bfd29882974712a1d69c6d8f05874e}{:target="_blank"}, last visited : 2020-09-10.}
+

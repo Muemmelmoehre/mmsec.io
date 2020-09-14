@@ -348,6 +348,16 @@ hashcat --force --stdout wordlist.txt -r /usr/share/hashcat/rules/best64.rule
 hashcat -m hash_format_code_here /path/to/hash /path/to/wordlist
 
 
+HDIUTIL
+-------
+# attach .dmg
+hdiutil attach /path/to/dmg
+cd /path/to/volume
+
+# detach .dmg
+hdiutil detach /path/to/volume
+
+
 HYDRA
 -----
 # dictionary attack

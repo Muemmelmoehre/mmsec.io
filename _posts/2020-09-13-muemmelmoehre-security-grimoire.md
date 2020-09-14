@@ -74,6 +74,9 @@ first_command | second_command
 
 BASH UTILITIES
 --------------
+# create alias
+alias alias_name_here="command_to_run_here"
+
 # add binary (use without full path)
 sudo cp /path/to/binary /usr/bin/binary_name_here
 

@@ -644,6 +644,9 @@ python3 -m pip install package
 
 POWERSHELL
 ----------
+# import module
+Import-Module module_name_here
+
 # grep
 Select-String -Path C:\path\here\*.extension_here -Pattern "string_here"
 

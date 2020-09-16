@@ -199,6 +199,12 @@ for %i in (*.*) do @echo FILE: %i
 # enumerate shares
 nbtstat -A IP_here
 
+# find domain name (on box)
+wmic computersystem get domain
+
+# find a domain controller (on box)
+nltest /dsgetdc:domain_name_here
+
 
 CRACKMAPEXEC
 ------------

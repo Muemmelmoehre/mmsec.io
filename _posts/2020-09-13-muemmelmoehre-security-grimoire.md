@@ -74,6 +74,10 @@ first_command | second_command
 
 BASH UTILITIES
 --------------
+# create alias in .bash_profile
+alias alias_name_here="command_to_run_here"
+source ~/.bash_profile
+
 # add binary (use without full path)
 sudo cp /path/to/binary /usr/bin/binary_name_here
 
@@ -346,6 +350,16 @@ hashcat --force --stdout wordlist.txt -r /usr/share/hashcat/rules/best64.rule
 
 # crack hash (with salt : append salt after hash in file : hash_here:salt_here)
 hashcat -m hash_format_code_here /path/to/hash /path/to/wordlist
+
+
+HDIUTIL
+-------
+# attach .dmg
+hdiutil attach /path/to/dmg
+cd /path/to/volume
+
+# detach .dmg
+hdiutil detach /path/to/volume
 
 
 HYDRA

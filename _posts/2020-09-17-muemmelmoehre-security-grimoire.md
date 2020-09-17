@@ -927,4 +927,10 @@ winexe -U domain_here/user_here%password_here cmd.exe
 # get shell on IP_here as user with lm:ntlm hash
 pth-winexe -U domain_here/user_here cmd.exe
 
+
+7Z
+--
+# extract password-protected archive (special characters in password need to be escaped with \)
+7z e archive_here.zip -ppassword_here 
+
 ```

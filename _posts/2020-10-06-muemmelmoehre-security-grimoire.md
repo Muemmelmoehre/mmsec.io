@@ -567,6 +567,9 @@ net user user_here password_here /add /domain
 # add user to group 
 net group "group_name_here" /add user_here
 
+# make user local admin
+net localgroup administrators /add user_here
+
 # display user information
 net user user_here /domain
 

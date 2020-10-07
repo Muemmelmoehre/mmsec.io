@@ -580,6 +580,15 @@ net view IP_here
 net use \\IP_here\IPC$ '' /u:''
 
 
+NIKTO
+-----
+# scan host / site
+nikto -h host_site_here
+
+# scan host / site with authentication
+nikto -h host_site_here -i user_here:password_here
+
+
 NMAP
 ----
 # ping sweep

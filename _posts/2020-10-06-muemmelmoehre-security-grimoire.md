@@ -218,6 +218,18 @@ crackmapexec protocol_here IP_here -u userlist.txt -p passwordlist.txt
 crackmapexec smb IP_here -u user -p password -M spider_plus
 
 
+CURL
+----
+# basic syntax
+curl "protocol_here://url_here"
+
+# send GET request
+curl -X GET "https://url_here" -H "header_here: value_here" -H "another_header_here: value_here" -H "header_without_value;"
+
+# send POST request
+curl -X POST "https://url_here" -H "header_here: value_here" -d "{\"some_data\":\"value_here\",\"some_more_data\":\"value_here\"}"
+
+
 DIG
 ---
 # print public IP

@@ -385,6 +385,9 @@ HOST
 # request name server for domain
 host -t ns url_here
 
+# zone transfer
+host -l url_here name_server_here
+
 
 HYDRA
 -----

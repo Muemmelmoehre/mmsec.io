@@ -380,6 +380,12 @@ cd /path/to/volume
 hdiutil detach /path/to/volume
 
 
+HOST
+----
+# request name server for domain
+host -t ns url_here
+
+
 HYDRA
 -----
 # dictionary attack

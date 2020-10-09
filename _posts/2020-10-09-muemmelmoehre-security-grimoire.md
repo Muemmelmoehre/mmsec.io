@@ -232,6 +232,9 @@ curl -X POST "https://url_here" -H "header_here: value_here" -d "{\"some_data\":
 # PUT file
 curl -T /path/to/local/file https://url_here/path/to/remote/file
 
+# PUT json data
+curl -X PUT -H "Content-Type: application/json" -d '{"key":"value","key":"value"}' https://url_here
+
 
 DIG
 ---

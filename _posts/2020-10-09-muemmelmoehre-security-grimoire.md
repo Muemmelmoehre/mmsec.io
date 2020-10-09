@@ -229,6 +229,9 @@ curl -X GET "https://url_here" -H "header_here: value_here" -H "another_header_h
 # send POST request
 curl -X POST "https://url_here" -H "header_here: value_here" -d "{\"some_data\":\"value_here\",\"some_more_data\":\"value_here\"}"
 
+# PUT file
+curl -T /path/to/local/file https://url_here/path/to/remote/file
+
 
 DIG
 ---

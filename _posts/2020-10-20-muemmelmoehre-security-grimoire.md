@@ -109,6 +109,12 @@ grep -r search_term_here /path/to/search/directory
 # find file
 locate file_here
 
+# calculate MD5 sum of string
+echo -n "my awesome string here" | md5sum
+
+# calculate MD5 sum of file
+md5sum file_name_here
+
 # enumerate shares
 nmblookup -A IP_here
 

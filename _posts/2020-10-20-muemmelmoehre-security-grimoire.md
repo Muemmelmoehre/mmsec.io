@@ -670,6 +670,9 @@ locate -r '\.nse$' | xargs grep categories
 # run some_script in debug mode
 nmap --script some_script -p port_here IP_here -d
 
+# check supported HTTP methods
+nmap -p 443 --script http-methods --script-args http-methods.url-path='/my/path/here' url_here
+
 
 NSLOOKUP
 --------

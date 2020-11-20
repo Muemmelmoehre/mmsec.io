@@ -121,6 +121,9 @@ nmblookup -A IP_here
 # sort text file in alphabetical order + remove duplicates
 sort -u file_name_here
 
+# run program as another user
+sudo -u other_user_here program_here
+
 # continously show last lines from text file
 tail -f /path/to/
 

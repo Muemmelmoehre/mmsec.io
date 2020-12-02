@@ -961,6 +961,7 @@ tcpdump -i interface_here dst IP_here and port port_here
 
 # listen for ping
 tcpdump -i interface_here icmp
+tcpdump -i interface_here icmp and icmp[icmptype]=icmp-echo
 
 
 VIM

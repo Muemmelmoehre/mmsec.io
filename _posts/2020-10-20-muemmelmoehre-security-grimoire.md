@@ -118,6 +118,9 @@ md5sum file_name_here
 # enumerate shares
 nmblookup -A IP_here
 
+# delete spaces from string
+echo "my string with spaces here" | sed -r 's/( )+//g'
+
 # sort text file in alphabetical order + remove duplicates
 sort -u file_name_here
 

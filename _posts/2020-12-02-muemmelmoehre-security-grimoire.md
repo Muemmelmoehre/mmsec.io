@@ -87,6 +87,13 @@ echo -n string_here | base64
 # base64 decode string
 echo -n b64_string_here | base64 -d
 
+# pack command for transport
+echo 'command && -stuff here' | base64
+
+# unpack command to file on target
+echo 'base64_here' > /tmp/my_script.sh
+echo '2nd_base64_here' >> /tmp/my_script.sh
+
 # read all files in . + grep for search_term
 cat *|grep search_term
 

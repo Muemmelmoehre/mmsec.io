@@ -78,8 +78,8 @@ BASH UTILITIES
 alias alias_name_here="command_to_run_here"
 source ~/.bash_profile
 
-# add binary (use without full path)
-sudo cp /path/to/binary /usr/bin/binary_name_here
+# link binary (use without full path)
+sudo ln -s /path/to/binary /usr/share/binary_name_here
 
 # base64 encode string
 echo -n string_here | base64

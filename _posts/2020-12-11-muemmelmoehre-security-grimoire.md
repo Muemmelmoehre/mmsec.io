@@ -489,12 +489,12 @@ MSFCONSOLE
 ----------
 # import new exploit (Kali)
 wget url_to_raw_ruby_exploit
-cp ruby_exploit /usr/share/metasploit-framwork/modules/exploits/path/to/fitting/category/exploit.rb
+cp ruby_exploit /usr/share/metasploit-framework/modules/exploits/path/to/fitting/category/exploit.rb
 # exit msfconsole + restart
 
 # import new exploit (install from git)
 wget url_to_raw_ruby_exploit
-cp ruby_exploit /opt/metasploit-framwork/embedded/framework/modules/exploits/path/to/fitting/category/exploit.rb
+cp ruby_exploit /opt/metasploit-framework/embedded/framework/modules/exploits/path/to/fitting/category/exploit.rb
 # exit msfconsole + restart
 
 

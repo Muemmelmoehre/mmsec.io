@@ -485,6 +485,19 @@ MONGO
 mongo -u user_here -p password_here IP_here:port_here
 
 
+MSFCONSOLE
+----------
+# import new exploit (Kali)
+wget url_to_raw_ruby_exploit
+cp ruby_exploit /usr/share/metasploit-framwork/modules/exploits/path/to/fitting/category/exploit.rb
+# exit msfconsole + restart
+
+# import new exploit (install from git)
+wget url_to_raw_ruby_exploit
+cp ruby_exploit /opt/metasploit-framwork/embedded/framework/modules/exploits/path/to/fitting/category/exploit.rb
+# exit msfconsole + restart
+
+
 MSFVENOM
 --------
 # list available payloads

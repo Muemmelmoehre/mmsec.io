@@ -81,6 +81,15 @@ source ~/.bash_profile
 # link binary (use without full path)
 sudo ln -s /path/to/binary /usr/bin/binary_name_here
 
+# read all files in . + grep for search_term
+cat *|grep search_term
+
+# read all files in . + grep for search_term (case-insensitive)
+cat *|grep -i search_term
+
+# read all files in . + grep out search_term
+cat *|grep -v search_term
+
 # base64 encode string
 echo -n string_here | base64
 
@@ -94,14 +103,8 @@ echo 'command && -stuff here' | base64
 echo 'base64_here' > /tmp/my_script.sh
 echo '2nd_base64_here' >> /tmp/my_script.sh
 
-# read all files in . + grep for search_term
-cat *|grep search_term
-
-# read all files in . + grep for search_term (case-insensitive)
-cat *|grep -i search_term
-
-# read all files in . + grep out search_term
-cat *|grep -v search_term
+# output previous return value
+echo $?
 
 # list every file with SUID bit set
 find / -user root -perm -4000 -exec ls -ldb {} \;

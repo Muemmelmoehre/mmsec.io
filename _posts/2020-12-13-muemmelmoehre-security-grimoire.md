@@ -174,6 +174,12 @@ CEWL
 cewl -w /path/to/outfile.txt -v URL_here
 
 
+CHECKSEC
+--------
+# check flags on binary
+checksec file_name_here
+
+
 CMD
 ---
 # clear screen

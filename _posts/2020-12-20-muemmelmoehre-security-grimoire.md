@@ -821,6 +821,21 @@ pdf @function_name_here
 # set breakpoint
 db instruction_address_here
 
+# run program until breakpoint
+dc
+
+# print variable content
+px @variable_address
+
+# execute next instruction
+ds
+
+# print content of registers
+dr
+
+# reload program
+ood
+
 
 REG QUERY
 ---------

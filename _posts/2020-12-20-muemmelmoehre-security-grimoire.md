@@ -805,6 +805,9 @@ RADARE2
 # open binary in debug mode
 r2 -d /path/to/binary
 
+# analyze binary (after opening in debug mode)
+aa
+
 
 REG QUERY
 ---------

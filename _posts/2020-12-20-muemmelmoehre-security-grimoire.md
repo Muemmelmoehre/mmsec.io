@@ -805,8 +805,20 @@ RADARE2
 # open binary in debug mode
 r2 -d /path/to/binary
 
-# analyze binary (after opening in debug mode)
+# analyze all symbols and entry points in binary (after opening in debug mode)
 aa
+
+# output help
+?
+?command_here
+
+# list all functions
+afl
+
+# print function disassembly code
+pdf @function_name_here
+
+# 
 
 
 REG QUERY

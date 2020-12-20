@@ -800,6 +800,12 @@ python -m SimpleHTTPServer 80
 python3 -m http.server 80
 
 
+RADARE2
+-------
+# open binary in debug mode
+r2 -d /path/to/binary
+
+
 REG QUERY
 ---------
 # enumerate registry information, search recursively for password in HKLM

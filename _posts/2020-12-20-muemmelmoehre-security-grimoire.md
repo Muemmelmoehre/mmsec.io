@@ -818,7 +818,8 @@ afl
 # print function disassembly code
 pdf @function_name_here
 
-# 
+# set breakpoint
+db instruction_address_here
 
 
 REG QUERY

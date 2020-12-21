@@ -799,6 +799,9 @@ PYTHON
 python -m SimpleHTTPServer 80
 python3 -m http.server 80
 
+# concatenate characters + bytes (BOF)
+print(b'char_here' * factor_here + b'\xbyte_here\xanother_byte_here)
+
 
 RADARE2
 -------

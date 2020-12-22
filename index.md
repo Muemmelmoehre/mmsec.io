@@ -4,10 +4,10 @@ layout: default
 author_profile: true
 classes: wide
 ---
-Welcome to [@muemmelmoehre](https://github.com/muemmelmoehre)'s online grimoire / cheat-sheet for useful commands. Enjoy!
+Welcome to [@muemmelmoehre](https://github.com/muemmelmoehre){:target="blank"}'s online grimoire / cheat-sheet for useful commands. Enjoy!
 
 
-*(Awesome ASCII art like the one below can be found [here](https://asciiart.website/index.php).)*
+*(Awesome ASCII art like the one below can be found [here](https://asciiart.website/index.php){:target="blank"}.)*
 
 
 

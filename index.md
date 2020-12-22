@@ -4,6 +4,9 @@ layout: default
 author_profile: true
 classes: wide
 ---
+
+# Security Grimoire
+
 Welcome to [@muemmelmoehre](https://github.com/muemmelmoehre){:target="blank"}'s online grimoire / cheat-sheet for useful commands. Enjoy!
 
 
@@ -70,10 +73,10 @@ first_command && second_command
 first_command | second_command 
 ```
 
-```
+## BASH UTILITIES
 
-BASH UTILITIES
---------------
+```bash
+
 # create alias in .bash_profile
 alias alias_name_here="command_to_run_here"
 source ~/.bash_profile
@@ -166,18 +169,21 @@ wc -c file_name_here
 
 # plaintext hexdump
 xxd -p filename_here
+```
 
 
-CEWL
-----
+## CEWL
+```
 # create a wordlist from URL
 cewl -w /path/to/outfile.txt -v URL_here
+```
 
 
-CHECKSEC
---------
+## CHECKSEC
+```
 # check flags on binary
 checksec file_name_here
+```
 
 
 CMD

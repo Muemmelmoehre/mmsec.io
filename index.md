@@ -96,6 +96,14 @@ adb -s emulator_serial_number_here command_here
 
 
 
+## APKTOOL
+```
+# decode apk
+apktool d /path/to/apk
+```
+
+
+
 ## BASH / SH
 ```bash
 
@@ -249,7 +257,7 @@ checksec file_name_here
 
 
 ## CMD
-```dos
+```
 # clear screen
 cls
 
@@ -374,6 +382,14 @@ unix2dos filename -n new_file
 ```
 # droopescan
 droopescan scan drupal -u IP_here
+```
+
+
+
+## DEX2JAR
+```
+# convert apk to jar
+d2j-dex2jar /path/to/apk -o outfile.jar
 ```
 
 

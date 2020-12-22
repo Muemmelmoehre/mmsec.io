@@ -814,6 +814,9 @@ io.recvline().strip()
 io.recvline().strip().split()
 io.recvline().strip().split()[-1]
 
+# interact with executable - get interactive prompt
+io.interactive()
+
 
 RADARE2
 -------

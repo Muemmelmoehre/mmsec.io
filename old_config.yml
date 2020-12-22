@@ -1,0 +1,124 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: "mmsec.io"
+#subtitle: "muemmelmoehre's grimoire for security stuff"
+email:
+description: >- # this means to ignore newlines until "baseurl:"
+  "muemmelmoehre's grimoire for security stuff"
+twitter_username: ""
+github_username: "muemmelmoehre"
+#minimal_mistakes_skin: "dark"
+#search: true
+
+# Build settings
+markdown: kramdown
+#remote_theme: jekyll-theme-mignight
+theme: jekyll-theme-midnight
+# Outputting
+#permalink: /:categories/:title/
+#paginate: 5 # amount of posts to show
+#paginate_path: /page:num/
+#timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+#include:
+  - _pages
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+
+# Plugins (previously gems:)
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
+
+author:
+  name   : "muemmelmoehre"
+  avatar : "/assets/images/muemmelmoehre_8bit.jpg"
+  bio    : "perpetually curious<br>HackTheBox Rootless"
+  location: "Canada"
+  email: "securitygrimoire@protonmail.com"
+  links:
+    #- label: "Website"
+    #  icon: "fas fa-fw fa-link"
+    #  url: "https://"
+    #- label: "Twitter"
+    #  icon: "fab fa-fw fa-twitter-square"
+    #  url: "https://twitter.com/"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/muemmelmoehre"
+    - label: "HTB Rootless"
+      icon: "fas fa-fw fa-link"
+      url: "https://www.hackthebox.eu/teams/profile/2608"
+    - label: "HTB muemmelmoehre"
+      icon: "fas fa-fw fa-link"
+      url: "https://www.hackthebox.eu/profile/18359"
+
+footer:
+  links:
+    #- label: "Twitter"
+    #  icon: "fab fa-fw fa-twitter-square"
+    #  url: "https://twitter.com/"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/muemmelmoehre"
+    - label: "HTB Rootless"
+      icon: "fas fa-fw fa-link"
+      url: "https://www.hackthebox.eu/teams/profile/2608"
+    - label: "HTB muemmelmoehre"
+      icon: "fas fa-fw fa-link"
+      url: "https://www.hackthebox.eu/profile/18359"
+      
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: false
+      related: true
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+#category_archive:
+#  type: liquid
+#  path: /categories/
+#tag_archive:
+#  type: liquid
+#  path: /tags/

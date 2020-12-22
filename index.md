@@ -1,12 +1,8 @@
 ---
 title: "Security grimoire"
-layout: single
+layout: default
 author_profile: true
 classes: wide
-tags:
-  - cheatsheet
-  - windows
-  - linux
 ---
 Welcome to [@muemmelmoehre](https://github.com/muemmelmoehre)'s online grimoire / cheat-sheet for useful commands. Enjoy!
 

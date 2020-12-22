@@ -17,15 +17,16 @@ title: "mmsec.io"
 subtitle: "muemmelmoehre's grimoire for security stuff"
 email:
 description: >- # this means to ignore newlines until "baseurl:"
-  "Write-ups, tools and other security-related posts"
+  ""
 twitter_username: ""
 github_username: "muemmelmoehre"
-minimal_mistakes_skin: "dark"
+#minimal_mistakes_skin: "dark"
 search: true
 
 # Build settings
 markdown: kramdown
-remote_theme: mmistakes/minimal-mistakes
+#remote_theme: mmistakes/minimal-mistakes
+theme: jekyll-theme-midnight
 # Outputting
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show

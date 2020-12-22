@@ -265,7 +265,7 @@ crackmapexec smb IP_here -u user -p password -M spider_plus
 
 
 ## CURL
-```
+```json
 # basic syntax
 curl "protocol_here://url_here"
 

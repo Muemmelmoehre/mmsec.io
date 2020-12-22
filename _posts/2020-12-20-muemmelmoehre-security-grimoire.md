@@ -802,6 +802,18 @@ python3 -m http.server 80
 # concatenate characters + bytes (BOF)
 print(b'char_here' * factor_here + b'\xbyte_here\xanother_byte_here)
 
+# interact with executable - run and attach proces
+io.process("/path/to/executable/here")
+
+# interact with executable - send data
+io.sendlineafter("last_char/string_received ","char/string_to_send")
+
+# interact with executable - receive data
+io.recvline()
+io.recvline().strip()
+io.recvline().strip().split()
+io.recvline().strip().split()[-1]
+
 
 RADARE2
 -------

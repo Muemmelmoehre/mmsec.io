@@ -25,11 +25,9 @@ Welcome to [@muemmelmoehre](https://github.com/muemmelmoehre){:target="blank"}'s
 ```
 
 
-# AMASS
+## AMASS
 
 ```
-AMASS
------
 # subdomain enumeration
 /path/to/amass enum -d domain_here > outfile_here
 
@@ -37,7 +35,7 @@ AMASS
 /path/to/amass enum -d domain_here -config /path/to/config_file_here > outfile_here
 ```
 
-# BASH / SH
+## BASH / SH
 ```bash
 
 BASH / SH

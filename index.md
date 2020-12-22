@@ -28,6 +28,63 @@ Welcome to [@muemmelmoehre](https://github.com/muemmelmoehre){:target="blank"}'s
 ```
 
 
+
+## ADB
+```
+# list devices
+adb devices
+adb devices -l
+
+# launch root shell on emulator
+adb shell
+
+# show installed packages
+adb shell pm list packages
+pm list packages
+
+# return path to app's files
+adb shell pm path package_name_here
+pm path package_name_here
+
+# start activity
+adb shell am start
+am start
+
+# start service
+adb shell am startservice
+am startservice
+
+# send broadcast
+adb shell am broadcast
+am broadcast
+
+# send keystroke to device
+input text_here / key_event_here
+
+# copy file from local machine to device
+adb pull /path/to/file/on/device /path/to/file/on/pc
+
+# copy file from device to local machine
+adb push /path/to/file/on/pc /path/to/file/on/device
+
+# install apk on device
+adb install /path/tp/apk
+
+# uninstall app
+adb uninstall app_name_here
+
+# exit persistent shell
+exit
+
+# print help
+adb help
+
+# explicitely choose device
+adb -s emulator_serial_number_here command_here
+```
+
+
+
 ## AMASS
 ```
 # subdomain enumeration

@@ -25,6 +25,7 @@ Welcome to [@muemmelmoehre](https://github.com/muemmelmoehre){:target="blank"}'s
 ```
 
 
+# AMASS
 
 ```
 AMASS
@@ -34,7 +35,10 @@ AMASS
 
 # subdomain enumeration with API keys in config_file
 /path/to/amass enum -d domain_here -config /path/to/config_file_here > outfile_here
+```
 
+# BASH / SH
+```bash
 
 BASH / SH
 ---------
@@ -66,7 +70,9 @@ first_command && second_command
 
 # chain commands - pipe output of first into second
 first_command | second_command 
+```
 
+```
 
 BASH UTILITIES
 --------------

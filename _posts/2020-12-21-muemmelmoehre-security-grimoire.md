@@ -803,7 +803,10 @@ python3 -m http.server 80
 print(b'char_here' * factor_here + b'\xbyte_here\xanother_byte_here)
 
 # interact with executable - run and attach proces
-io.process("/path/to/executable/here")
+process("/path/to/executable/here")
+
+# interact with executable - attach to remote server
+remote("server_IP_here", port_here)
 
 # interact with executable - send data
 io.sendlineafter("last_char/string_received ","char/string_to_send")
@@ -816,6 +819,13 @@ io.recvline().strip().split()[-1]
 
 # interact with executable - get interactive prompt
 io.interactive()
+
+# create cyclic string
+from pwn import *
+cyclic(length_here)
+
+# find substring in cyclic string
+cyclic_find("substring_here")
 
 
 RADARE2

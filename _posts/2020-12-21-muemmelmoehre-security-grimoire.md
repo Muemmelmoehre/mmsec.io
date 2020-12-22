@@ -827,6 +827,11 @@ cyclic(length_here)
 # find substring in cyclic string
 cyclic_find("substring_here")
 
+# read file line per line
+with open("file_name_here","mode_here") as file:
+  for line in file:
+    do_something
+
 
 RADARE2
 -------

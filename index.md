@@ -100,6 +100,9 @@ adb -s emulator_serial_number_here command_here
 ```
 # decode apk
 apktool d /path/to/apk
+
+# build app from smali
+apktool b /path/to/appfolder
 ```
 
 
@@ -330,7 +333,7 @@ crackmapexec smb IP_here -u user -p password -M spider_plus
 
 
 ## CURL
-```json
+```
 # basic syntax
 curl "protocol_here://url_here"
 
@@ -345,6 +348,14 @@ curl -T /path/to/local/file https://url_here/path/to/remote/file
 
 # PUT json data
 curl -X PUT -H "Content-Type: application/json" -d '{"key":"value","key":"value"}' https://url_here
+```
+
+
+
+## DEX2JAR
+```
+# convert apk to jar
+d2j-dex2jar /path/to/apk -o outfile.jar
 ```
 
 
@@ -382,14 +393,6 @@ unix2dos filename -n new_file
 ```
 # droopescan
 droopescan scan drupal -u IP_here
-```
-
-
-
-## DEX2JAR
-```
-# convert apk to jar
-d2j-dex2jar /path/to/apk -o outfile.jar
 ```
 
 
@@ -577,6 +580,20 @@ hydra l user_name_here -p /path/to/wordlist url_here http-form-post "/path/to/lo
 
 # get shell as user
 /path/to/impacket/psexec.py domain/user@IP_here
+```
+
+
+
+## JARSIGNER
+```
+# sign apk :
+# 1. generate private key
+keytool -genkey -v -keystore keystore_here -alias alias_here -keyalg RSA -keysize 2048 -validity 7400
+# 2. sign
+jarsigner -sigalg SHA1withRSA -digestalg SHA1 -keystore keystore_here /path/to/apk alias_here
+
+# verify signature
+jarsigner -verify -verbose -certs /path/to/apk
 ```
 
 

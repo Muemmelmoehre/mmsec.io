@@ -189,6 +189,9 @@ find / -perm -4000 -type f 2>/dev/null
 # list files recursively
 find . -type f
 
+# print path to file
+find . -name file_name_here
+
 # grep recursively for search_term_here
 grep -r search_term_here /path/to/search/directory
 

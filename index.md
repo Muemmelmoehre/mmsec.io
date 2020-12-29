@@ -379,6 +379,17 @@ dnsrecon -d domain_here -r range_here
 
 
 
+## DOCKER
+```
+# show available containers
+docker ps
+
+# run shell in container
+docker exec -it container_ID_here /bin/bash
+```
+
+
+
 ## DOS2UNIX / UNIX2DOS
 ```
 # convert text files from DOS to Unix (CR/LF -> LF)

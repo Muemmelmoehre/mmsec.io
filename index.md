@@ -108,6 +108,10 @@ content query --uri content://uri_here --projection column_name_here
 # insert new entry in database; type : e.g. s = string, i = int
 adb shell content insert --uri content://uri_here --bind column_name_here:type_here:value_here --bind another_column_name_here:type_here:value_here
 content insert --uri content://uri_here --bind column_name_here:type_here:value_here --bind another_column_name_here:type_here:value_here
+
+# update database entry
+adb shell content update --uri content://uri_here --bind column_name_here:type_here:value_here --where "some_column_name='some_value_here'"
+content update --uri content://uri_here --bind column_name_here:type_here:value_here --where "some_column_name='some_value_here'"
 ```
 
 

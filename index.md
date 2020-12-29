@@ -47,8 +47,8 @@ adb shell pm path package_name_here
 pm path package_name_here
 
 # start activity
-adb shell am start -a action_name_here -n app_name_here/activity_name_here
-am start -a action_name_here -n app_name_here/activity_name_here
+adb shell am start -a action_name_here -n package_name_here/activity_name_here
+am start -a action_name_here -n package_name_here/activity_name_here
 
 # start service
 adb shell am startservice

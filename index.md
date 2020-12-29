@@ -55,8 +55,8 @@ adb shell am start -a action_name_here -n package_name_here/activity_name_here -
 am start -a action_name_here -n package_name_here/activity_name_here -d URI_to_data_here
 
 # start service
-adb shell am startservice
-am startservice
+adb shell am startservice -n package_name_here/service_name_here -e "extra_key_here" "extra_value_here"
+am startservice -n package_name_here/service_name_here -e "extra_key_here" "extra_value_here"
 
 # send broadcast
 adb shell am broadcast

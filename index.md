@@ -59,8 +59,8 @@ adb shell am startservice -n package_name_here/service_name_here -e "extra_key_h
 am startservice -n package_name_here/service_name_here -e "extra_key_here" "extra_value_here"
 
 # send broadcast
-adb shell am broadcast
-am broadcast
+adb shell am broadcast -a action_name_here -e "extra_key_here" "extra_value_here"
+am broadcast -a action_name_here -e "extra_key_here" "extra_value_here"
 
 # send keystroke to device
 input text_here / key_event_here

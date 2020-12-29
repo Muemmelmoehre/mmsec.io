@@ -92,6 +92,22 @@ logcat
 
 # print log help
 logcat --help
+
+# query database content
+adb shell content query --uri content://uri_here
+content query --uri content://uri_here
+
+# query database for specific entry
+adb shell content query --uri content://uri_here --where "some_column_name='some_value_here'"
+content query --uri content://uri_here --where "some_column_name='some_value_here'"
+
+# query database for all values in column_name_here
+adb shell content query --uri content://uri_here --projection column_name_here
+content query --uri content://uri_here --projection column_name_here
+
+# insert new entry in database; type : e.g. s = string, i = int
+adb shell content insert --uri content://uri_here --bind column_name_here:type_here:value_here --bind another_column_name_here:type_here:value_here
+content insert --uri content://uri_here --bind column_name_here:type_here:value_here --bind another_column_name_here:type_here:value_here
 ```
 
 

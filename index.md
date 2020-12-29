@@ -87,7 +87,7 @@ adb help
 adb -s emulator_serial_number_here command_here
 
 # print device log
-adb logcat
+adb shell logcat
 logcat
 
 # print log help

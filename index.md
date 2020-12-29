@@ -196,6 +196,9 @@ find / -perm -4000 -type f 2>/dev/null
 # list files recursively
 find . -type f
 
+# print path to file
+find . -name file_name_here
+
 # grep recursively for search_term_here
 grep -r search_term_here /path/to/search/directory
 
@@ -383,6 +386,17 @@ dnsrecon -d domain_here -r range_here
 
 
 
+## DOCKER
+```
+# show available containers
+docker ps
+
+# run shell in container
+docker exec -it container_ID_here /bin/bash
+```
+
+
+
 ## DOS2UNIX / UNIX2DOS
 ```
 # convert text files from DOS to Unix (CR/LF -> LF)
@@ -486,6 +500,18 @@ gobuster dir -u http://IP_here -w /path/to/wordlist.txt -o root-dir
 
 # skip SSL certificate verfication
 gobuster dir -u http://IP_here -w /path/to/wordlist.txt -k
+```
+
+
+
+## GO / GOLANG
+```golang
+# print line
+import ("fmt")
+fmt.Println("Print this line.")
+const some_string = "some string here"
+var some_other_string = "some other string"
+fmt.Println("Printing ", some_string, "and ", some_other_string, ".")
 ```
 
 
@@ -1280,6 +1306,9 @@ tcpdump -i interface_here icmp and icmp[icmptype]=icmp-echo
 ```
 # jump to line
 :line_number_here
+
+# type =/=
+!=
 ```
 
 

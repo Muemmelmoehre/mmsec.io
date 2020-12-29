@@ -486,6 +486,18 @@ gobuster dir -u http://IP_here -w /path/to/wordlist.txt -k
 
 
 
+## GO / GOLANG
+```golang
+# print line
+import ("fmt")
+fmt.Println("Print this line.")
+const some_string = "some string here"
+var some_other_string = "some other string"
+fmt.Println("Printing ", some_string, "and ", some_other_string, ".")
+```
+
+
+
 ## GOOGLE DORKS
 ```
 # URL
@@ -1276,6 +1288,9 @@ tcpdump -i interface_here icmp and icmp[icmptype]=icmp-echo
 ```
 # jump to line
 :line_number_here
+
+# type =/=
+!=
 ```
 
 

@@ -35,8 +35,12 @@ Welcome to [@muemmelmoehre](https://github.com/muemmelmoehre){:target="blank"}'s
 adb devices
 adb devices -l
 
-# launch root shell on emulator
+# launch shell on emulator
 adb shell
+
+# launch shell in specific app context
+adb shell
+run-as package_name_here
 
 # show installed packages
 adb shell pm list packages

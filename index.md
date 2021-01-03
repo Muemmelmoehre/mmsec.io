@@ -129,6 +129,9 @@ content update --uri content://uri_here --bind column_name_here:type_here:value_
 /path/to/amass enum -d domain_here -config /path/to/config_file_here > outfile_here
 ```
 
+# discover targets via ASN
+/path/to/amass intel -asn ASN_here
+
 
 
 ## APKTOOL
@@ -252,7 +255,7 @@ sort -u file_name_here
 sudo -u other_user_here program_here
 
 # continously show last lines from text file
-tail -f /path/to/
+tail -f /path/to/file
 
 # untar .tar.gz
 tar -xvzf tarball_here
@@ -386,6 +389,14 @@ curl -T /path/to/local/file https://url_here/path/to/remote/file
 
 # PUT json data
 curl -X PUT -H "Content-Type: application/json" -d '{"key":"value","key":"value"}' https://url_here
+```
+
+
+
+## DAVTEST
+```
+# check permissions on exposed WebDAV endpoint
+davtest -url http://endpoint_URL_here
 ```
 
 

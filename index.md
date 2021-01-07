@@ -1361,6 +1361,12 @@ ssh -L port_to_forward_to:IP_here:port_to_forward_from
 ```
 # download repository
 svn co svn://url_here
+
+# show commit history
+svn log
+
+# revert to specific revision
+svn up -r revision_number_here
 ```
 
 

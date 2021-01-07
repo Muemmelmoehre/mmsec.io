@@ -1192,6 +1192,23 @@ scp -i private_key_here /path/to/local/file user@IP_here:/path/to/remote/file
 
 
 
+## SEARCHSPLOIT
+```
+# display full path + URL to exploit
+searchsploit -p short_path_here
+
+# exclude term from search
+searchsploit --exclude="term_here"
+
+# view exploit
+searchsploit -x short_path_here
+
+# copy exploit to current working directory
+searchsploit -m short_path_here
+```
+
+
+
 ## SFTP
 ```
 # connect as user

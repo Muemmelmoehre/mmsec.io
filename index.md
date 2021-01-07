@@ -1293,6 +1293,25 @@ sudo mount -t cifs -o 'user=user_here,password=password_here' //IP_here/share_he
 ```
 # display database content
 sqlite3 database_here .dump
+.dump
+
+# list tables
+.tables
+
+# show column names
+.headers on
+
+# save output in file
+.output file_name_here
+
+# quit sqlite3 shell
+.quit
+
+# display help
+.help
+
+# print column names
+.schema table_name_here
 ```
 
 
@@ -1351,6 +1370,20 @@ ssh -i private_key user@IP
 
 # port forwarding
 ssh -L port_to_forward_to:IP_here:port_to_forward_from
+```
+
+
+
+## SVN
+```
+# download repository
+svn co svn://url_here
+
+# show commit history
+svn log
+
+# revert to specific revision
+svn up -r revision_number_here
 ```
 
 

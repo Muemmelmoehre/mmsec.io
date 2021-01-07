@@ -1276,6 +1276,25 @@ sudo mount -t cifs -o 'user=user_here,password=password_here' //IP_here/share_he
 ```
 # display database content
 sqlite3 database_here .dump
+.dump
+
+# list tables
+.tables
+
+# show column names
+.headers on
+
+# save output in file
+.output file_name_here
+
+# quit sqlite3 shell
+.quit
+
+# display help
+.help
+
+# print column names
+.schema table_name_here
 ```
 
 

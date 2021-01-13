@@ -147,9 +147,6 @@ apktool b /path/to/appfolder
 
 ## BASH / SH
 ```bash
-
-BASH / SH
----------
 # add ! at the end of each line in wordlist
 for i in $(cat wordlist.txt); do echo $i; echo ${i}\!; done > tmp
 mv tmp wordlist.txt
@@ -184,7 +181,6 @@ first_command | second_command
 
 ## BASH UTILITIES
 ```bash
-
 # create alias in .bash_profile
 alias alias_name_here="command_to_run_here"
 source ~/.bash_profile

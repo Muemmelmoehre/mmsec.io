@@ -127,10 +127,10 @@ content update --uri content://uri_here --bind column_name_here:type_here:value_
 
 # subdomain enumeration with API keys in config_file
 /path/to/amass enum -d domain_here -config /path/to/config_file_here > outfile_here
-```
 
 # discover targets via ASN
 /path/to/amass intel -asn ASN_here
+```
 
 
 

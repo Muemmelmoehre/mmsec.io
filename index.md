@@ -992,10 +992,26 @@ php -a
 
 
 
-## PIP
+## PIP & PIP3
 ```python
 # install pip package
+# PY2
+python -m pip install package
+pip install package
+#PY3
 python3 -m pip install package
+pip3 install package
+```
+
+
+
+## PIPREQS
+```
+# create requirements.txt
+pipreqs
+
+# force create requirements.txt
+pipreqs --force
 ```
 
 
@@ -1417,6 +1433,28 @@ tcpdump -i interface_here icmp and icmp[icmptype]=icmp-echo
 
 # type =/=
 !=
+```
+
+
+## VIRTUALENV
+```
+# initialize virtual environment
+virtualenv venv
+
+# activate virtual environment
+# Linux
+source venv/bin/activate
+# Win
+. venv/Scripts/activate
+
+# deactivate virtual environment
+deactivate
+
+# delete virtual environment
+# Linux
+rm -rf venv
+# Win
+del venv
 ```
 
 

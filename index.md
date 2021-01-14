@@ -202,9 +202,11 @@ base64 -w 0 file_here
 
 # base64 encode string
 echo -n string_here | base64
+cat file_name_here | base64
 
 # base64 decode string
 echo -n b64_string_here | base64 -d
+echo -n b64_string_here | base64 -d >> file_name_here
 
 # pack command for transport
 echo 'command && -stuff here' | base64

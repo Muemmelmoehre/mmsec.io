@@ -973,6 +973,14 @@ HEAD / HTTP/1.1
 
 
 
+## PANDOC
+```
+# convert markdown to pdf
+pandoc -s -o out_file_here.pdf mardown_file_here.md
+```
+
+
+
 ## PERL
 ```perl
 # generate string of 20 A + concatenate with ABCD

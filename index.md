@@ -601,8 +601,10 @@ hashcat -m hash_format_code_here /path/to/hash /path/to/wordlist
 
 ## HASKELL
 ```
-# run haskell script
-stack script file_name_here.hs --resolver lts-14.18
+# setup project environment
+stack new project_name_here simple
+cd project_name_here
+stack setup
 
 # haskell shebang
 #!/usr/bin/env stack
@@ -612,6 +614,22 @@ ghci
 
 # quit REPL
 :quit
+
+# load code from Main.hs in REPL
+:load Main
+
+# reload in REPL after changes
+:r
+:reload
+
+# run main in REPL
+main
+
+# build executable
+stack build
+
+# run executable
+stack exec project_name_here
 ```
 
 

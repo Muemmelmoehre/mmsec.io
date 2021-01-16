@@ -606,6 +606,9 @@ stack script file_name_here.hs --resolver lts-14.18
 
 # haskell shebang
 #!/usr/bin/env stack
+
+# start REPL
+ghci
 ```
 
 

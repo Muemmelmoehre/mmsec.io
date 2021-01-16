@@ -610,7 +610,10 @@ stack setup
 #!/usr/bin/env stack
 
 # start REPL
-ghci
+stack ghci
+
+# start REPL with specific package
+stack ghci --package package_name_here
 
 # quit REPL
 :quit

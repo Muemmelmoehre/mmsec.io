@@ -609,6 +609,9 @@ stack script file_name_here.hs --resolver lts-14.18
 
 # start REPL
 ghci
+
+# quit REPL
+:quit
 ```
 
 

@@ -599,6 +599,17 @@ hashcat -m hash_format_code_here /path/to/hash /path/to/wordlist
 
 
 
+## HASKELL
+```
+# run haskell script
+stack script file_name_here.hs --resolver lts-14.18
+
+# haskell shebang
+#!/usr/bin/env stack
+```
+
+
+
 ## HDIUTIL
 ```
 # attach .dmg

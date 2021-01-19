@@ -502,6 +502,32 @@ ffuf -w /path/to/wordlist.txt -u http://URL_here/FUZZ -b "cookie_here=value_here
 
 
 
+## FLAMESHOT
+```
+# start flameshot
+flameshot gui
+
+# start flameshot with save path
+flameshot gui -p /path/to/save
+
+# capture with delay
+flameshot gui -d ms_here
+
+# capture full screen
+flameshot full
+
+# capture full screen + copy to clipboard
+flameshot full -c
+
+# change color
+<right click>
+
+# change line thickness
+<scroll>
+```
+
+
+
 ## FPING
 ```
 # ping sweep

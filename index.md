@@ -282,6 +282,14 @@ xxd -p filename_here
 
 
 
+## CERTUTIL
+```
+# download file
+certutil -urlcache -split -f url_to_web_file /path/to/out/file
+```
+
+
+
 ## CEWL
 ```
 # create a wordlist from URL

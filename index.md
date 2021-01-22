@@ -1044,6 +1044,14 @@ IP_here
 
 
 
+## NTPDATE
+```
+# synchronize time of local machine with remote server
+ntpdate remote_server_IP_here
+```
+
+
+
 ## OPENSSL
 ```
 # banner grabbing (2 empty lines required between headers + body!)

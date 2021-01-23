@@ -1150,6 +1150,9 @@ New-PSDrive -Name "drive_name_here" -PSProvider "FileSystem" -Root "\\IP_here\sh
 
 # check OS architecture
 [Environment]::Is64BitOperatingSystem
+
+# list all processes
+Get-Process
 ```
 
 

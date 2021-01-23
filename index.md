@@ -1154,6 +1154,10 @@ New-PSDrive -Name "drive_name_here" -PSProvider "FileSystem" -Root "\\IP_here\sh
 
 # list all processes
 Get-Process
+
+# run PowerUp.ps1
+. .\PowerUp.ps1
+Invoke-AllChecks
 ```
 
 

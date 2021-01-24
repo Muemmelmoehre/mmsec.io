@@ -574,6 +574,17 @@ rename old_file_name new_file_name
 
 
 
+## GIT
+```
+# list branches
+git branch
+
+# create new branch
+git checkout branch_name_here
+```
+
+
+
 ## GOBUSTER
 ```
 # enumerate web folders

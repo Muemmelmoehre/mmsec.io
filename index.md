@@ -580,7 +580,7 @@ rename old_file_name new_file_name
 git branch
 
 # create new branch
-git checkout branch_name_here
+git checkout -b branch_name_here
 ```
 
 

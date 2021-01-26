@@ -1585,6 +1585,17 @@ wget --mirror 'ftp://user_here:password_here@IP_here'
 
 
 
+## WHATWEB
+```
+# run scan
+whatweb url_here
+
+# run aggressive scan
+whatweb -a=3 url_here
+```
+
+
+
 ## WINEXE
 ```
 # get shell on IP_here as user with password

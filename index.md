@@ -1596,6 +1596,14 @@ pth-winexe -U domain_here/user_here cmd.exe
 
 
 
+## XFREERDP
+```
+# establish connection
+xfreerdp /u:user_here /p:password_here /cert:ignore /v:IP_here
+```
+
+
+
 ## 7Z
 ```
 # extract password-protected archive (special characters in password need to be escaped with \)

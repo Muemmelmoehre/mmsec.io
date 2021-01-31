@@ -861,6 +861,17 @@ ldapsearch -x -h IP_here -s base namingcontexts
 
 
 
+## LSE
+```
+# do not prompt for password
+/path/to/lse.sh -i
+
+# increase level of detail
+/path/to/lse.sh -l 1
+```
+
+
+
 ## MONGO
 ```sql
 # connect to mongoDB database

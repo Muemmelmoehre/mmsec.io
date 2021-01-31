@@ -197,6 +197,9 @@ cat *|grep -i search_term
 # read all files in . + grep out search_term
 cat *|grep -v search_term
 
+# show real, effective, saved, file system UID / GID
+cat /proc/$$/status | grep "[UG]id"
+
 # disable line wrapping
 base64 -w 0 file_here
 

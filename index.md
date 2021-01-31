@@ -366,10 +366,10 @@ nltest /dsgetdc:domain_name_here
 tasklist
 
 # kill process
-taskkill /im process_name_here
+taskkill /im:process_name_here
 
 # force kill process
-taskkill /im process_name_here /f
+taskkill /im:process_name_here /f
 ```
 
 

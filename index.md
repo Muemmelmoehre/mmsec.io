@@ -365,6 +365,50 @@ nltest /dsgetdc:domain_name_here
 
 
 
+## COMPGEN
+```
+# show help
+help compgen
+
+# list all aliases
+compgen -a
+
+# list all shell built-ins
+compgen -b
+
+# list all commands
+compgen -c
+
+# list current directory name
+compgen -d
+
+# list names of exported shell variables
+compgen -e
+
+# list files in current directory
+compgen -f
+
+# list groups
+compgen -g
+
+# list jobs
+compgen -j
+
+# list reserved words
+compgen -k
+
+# list services
+compgen -s
+
+# list user aliases
+compgen -u
+
+# list shell variables
+compgen -v
+```
+
+
+
 ## CRACKMAPEXEC
 ```
 # check for password policy on Windows domain

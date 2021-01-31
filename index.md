@@ -711,7 +711,7 @@ hashcat -m hash_format_code_here /path/to/hash /path/to/wordlist
 
 
 ## HASKELL
-```
+```haskell
 # setup project environment
 stack new project_name_here simple
 cd project_name_here
@@ -745,7 +745,6 @@ stack build
 # run executable
 stack exec project_name_here
 ```
-
 
 
 ## HDIUTIL

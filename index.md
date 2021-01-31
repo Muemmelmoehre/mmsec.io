@@ -361,6 +361,15 @@ wmic computersystem get domain
 
 # find a domain controller (on box)
 nltest /dsgetdc:domain_name_here
+
+# list processes
+tasklist
+
+# kill process
+taskkill /im process_name_here
+
+# force kill process
+taskkill /im process_name_here /f
 ```
 
 

@@ -861,6 +861,20 @@ ldapsearch -x -h IP_here -s base namingcontexts
 
 
 
+## LINENUM
+```
+# activate thorough tests
+/path/to/linenum.sh -t
+
+# search keyword
+/path/to/linenum.sh -k keyword_here
+
+# copy interesting files to export folder
+/path/to/linenum.sh -e export_folder_here
+```
+
+
+
 ## LSE
 ```
 # do not prompt for password

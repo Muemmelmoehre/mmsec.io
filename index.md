@@ -258,6 +258,9 @@ echo -n "my awesome string here" | md5sum
 # calculate MD5 sum of file
 md5sum file_name_here
 
+# generate Linux user password
+mkpasswd -m sha-512 new_password_here
+
 # enumerate shares
 nmblookup -A IP_here
 

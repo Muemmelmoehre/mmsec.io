@@ -264,6 +264,9 @@ tar -xvzf tarball_here
 # untar .tar.gz to specific location
 tar -C /path/to/destination -xvzf tarball_here
 
+# display kernel version
+uname -a
+
 # update locate's file name database
 updatedb
 

@@ -234,6 +234,9 @@ find . -name file_name_here
 # grep recursively for search_term_here
 grep -r search_term_here /path/to/search/directory
 
+# grep for lines starting with search term
+grep '^search_term_here'
+
 # find file
 locate file_here
 

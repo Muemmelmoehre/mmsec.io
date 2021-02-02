@@ -237,6 +237,9 @@ grep -r search_term_here /path/to/search/directory
 # grep for lines starting with search term
 grep '^search_term_here'
 
+# check whether login as root is permitted
+grep PermitRootLogin /etc/ssh/sshd_config
+
 # find file
 locate file_here
 

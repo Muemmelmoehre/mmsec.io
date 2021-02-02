@@ -658,6 +658,11 @@ git branch
 
 # create new branch
 git checkout -b branch_name_here
+
+# stash local changes, pull repo, pop local changes back 
+git stash
+git pull
+git stash pop
 ```
 
 

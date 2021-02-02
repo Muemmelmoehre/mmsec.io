@@ -179,8 +179,11 @@ first_command | second_command
 
 
 
-## BASH UTILITIES
+## BASH UTILITIES & CO.
 ```bash
+# read out first line of file via error message
+sudo apache2 -f /path/to/file/here
+
 # create alias in .bash_profile
 alias alias_name_here="command_to_run_here"
 source ~/.bash_profile

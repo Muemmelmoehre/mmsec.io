@@ -270,8 +270,17 @@ echo "my string with spaces here" | sed -r 's/( )+//g'
 # sort text file in alphabetical order + remove duplicates
 sort -u file_name_here
 
+# run shell (user's shell in /etc/passwd) as login shell
+sudo -i
+sudo --login
+
+# run shell (SHELL env variable or user's shell in /etc/passwd)
+sudo -s
+sudo --shell
+
 # run program as another user
 sudo -u other_user_here program_here
+sudo --user other_user_here program_here
 
 # continously show last lines from text file
 tail -f /path/to/file

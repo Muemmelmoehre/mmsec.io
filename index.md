@@ -225,6 +225,15 @@ echo $?
 find / -user root -perm -4000 -exec ls -ldb {} \;
 find / -perm -4000 -type f 2>/dev/null
 
+# find all readable files in /folder_here
+find /folder_here -maxdepth 1 -readable -type f
+
+# find all writable files in /folder_here
+find /folder_here -maxdepth 1 -writable -type f
+
+# find all writable directories
+find / -executable -writable -type d 2> /dev/null
+
 # list files recursively
 find . -type f
 

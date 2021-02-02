@@ -274,6 +274,10 @@ sort -u file_name_here
 sudo -i
 sudo --login
 
+# list sudo-allowed programs
+sudo -l
+sudo --list
+
 # run shell (SHELL env variable or user's shell in /etc/passwd)
 sudo -s
 sudo --shell

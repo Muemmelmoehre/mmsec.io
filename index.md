@@ -1291,6 +1291,9 @@ Get-Process
 # run PowerUp.ps1
 . .\PowerUp.ps1
 Invoke-AllChecks
+
+# view file permissions
+dir | Get-ACL
 ```
 
 

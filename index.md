@@ -252,6 +252,9 @@ grep '^search_term_here'
 # check whether login as root is permitted
 grep PermitRootLogin /etc/ssh/sshd_config
 
+# show program's shared object dependencies
+ldd /full/path/to/program/here
+
 # find file
 locate file_here
 

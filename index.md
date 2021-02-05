@@ -1600,6 +1600,9 @@ python /path/to/sqlmap -r req.txt -p param_to_attack --os-shell
 
 # designate injection point in request file : *
 {"template":"{\"name\":\"123*\"}"}
+
+# increase timeout (default: 30)
+python /path/to/sqlmap -r req.txt -p param_to_attack --timeout=300
 ```
 
 

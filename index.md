@@ -1188,6 +1188,14 @@ ntpdate remote_server_IP_here
 
 
 
+## OBJDUMP
+```
+# disassemble binary
+objdump -d /path/to/binary/here
+```
+
+
+
 ## OPENSSL
 ```
 # banner grabbing (2 empty lines required between headers + body!)

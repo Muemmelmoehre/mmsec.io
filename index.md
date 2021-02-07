@@ -218,6 +218,18 @@ first_command | second_command
 
 # show variable's value
 echo $VARIABLE_HERE
+
+# send from
+<
+
+# write to
+>
+
+# append to
+>>
+
+# send STDERR (2) to log file
+some_command_here 2> error.log
 ```
 
 
@@ -265,6 +277,9 @@ echo '2nd_base64_here' >> /tmp/my_script.sh
 # output previous return value
 echo $?
 
+# show PID of current shell
+echo $$
+
 # list every file with SUID bit set
 find / -user root -perm -4000 -exec ls -ldb {} \;
 find / -perm -4000 -type f 2>/dev/null
@@ -295,6 +310,15 @@ grep '^search_term_here'
 
 # check whether login as root is permitted
 grep PermitRootLogin /etc/ssh/sshd_config
+
+# show bash history
+history
+
+# use command from history
+!line_no_here
+
+# repeat last command
+!!
 
 # show program's shared object dependencies
 ldd /full/path/to/program/here
@@ -392,9 +416,6 @@ wc -c file_name_here
 
 # find file in $PATH directories
 which file_name_here
-
-# plaintext hexdump
-xxd -p filename_here
 ```
 
 
@@ -1870,6 +1891,14 @@ pth-winexe -U domain_here/user_here cmd.exe
 ```
 # establish connection
 xfreerdp /u:user_here /p:password_here /cert:ignore /v:IP_here
+```
+
+
+
+## XXD
+```
+# plaintext hexdump
+xxd -p filename_here
 ```
 
 

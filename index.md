@@ -1677,6 +1677,21 @@ ssh -i private_key user@IP
 
 # port forwarding
 ssh -L port_to_forward_to:IP_here:port_to_forward_from
+
+# start service
+sudo systemcctl start ssh
+
+# stop service
+sudo systemctl stop ssh
+
+# start service at boot time
+sudo systemctl enable ssh
+
+# disable service start at boot time
+sudo systemctl disable ssh
+
+# check for running service
+sudo ss -plant | grep ssh
 ```
 
 

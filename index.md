@@ -200,6 +200,10 @@ cat *|grep -v search_term
 # show real, effective, saved, file system UID / GID
 cat /proc/$$/status | grep "[UG]id"
 
+# change default shell (effective after login)
+chsh -s /path/to/shell
+chsh -s /path/to/shell username_here
+
 # disable line wrapping
 base64 -w 0 file_here
 
@@ -255,8 +259,11 @@ ldd /full/path/to/program/here
 # link binary (use without full path)
 sudo ln -s /path/to/binary /usr/bin/binary_name_here
 
-# find file
+# search file in locate.db
 locate file_here
+
+# update locate.db
+sudo updatedb
 
 # display files on single line
 ls -a1
@@ -339,6 +346,9 @@ wc -m file_name_here
 
 # number of bytes in text file
 wc -c file_name_here
+
+# find file in $PATH directories
+which file_name_here
 
 # plaintext hexdump
 xxd -p filename_here

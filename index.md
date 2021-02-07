@@ -181,15 +181,12 @@ first_command | second_command
 
 ## BASH UTILITIES & CO.
 ```bash
-# read out first line of file via error message
-sudo apache2 -f /path/to/file/here
-
 # create alias in .bash_profile
 alias alias_name_here="command_to_run_here"
 source ~/.bash_profile
 
-# link binary (use without full path)
-sudo ln -s /path/to/binary /usr/bin/binary_name_here
+# read out first line of file via error message
+sudo apache2 -f /path/to/file/here
 
 # read all files in . + grep for search_term
 cat *|grep search_term
@@ -255,18 +252,34 @@ grep PermitRootLogin /etc/ssh/sshd_config
 # show program's shared object dependencies
 ldd /full/path/to/program/here
 
+# link binary (use without full path)
+sudo ln -s /path/to/binary /usr/bin/binary_name_here
+
 # find file
 locate file_here
+
+# display files on single line
+ls -a1
 
 # man keyword search
 man -k keyword_here
 man -k 'regex_here'
+apropos keyword_here
+
+# read specific section of man page
+man section_no_here man_page_here
 
 # calculate MD5 sum of string
 echo -n "my awesome string here" | md5sum
 
 # calculate MD5 sum of file
 md5sum file_name_here
+
+# create directory + all required parent directories
+mkdir -p parent_here/folder_name_here
+
+# create directories + all required parent directories
+mkdir -p parent_here/{folder1,folder2,folder3}
 
 # generate Linux user password
 mkpasswd -m sha-512 new_password_here

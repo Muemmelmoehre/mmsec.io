@@ -398,6 +398,9 @@ tar -C /path/to/destination -xvzf tarball_here
 # display kernel version
 uname -a
 
+# show number of occurrences
+uniq -c
+
 # update locate's file name database
 updatedb
 
@@ -594,7 +597,7 @@ curl -X PUT -H "Content-Type: application/json" -d '{"key":"value","key":"value"
 # extract 2nd field, fields delimited by ","
 echo "some enumeration of stuff, more stuff, even more stuff" | cut -f 2 -d ","
 
-# specify field, delimiter
+# specify field, delimiter (only single char!)
 cut -f no_here -d "delimiter_here" /path/to/file
 ```
 
@@ -867,6 +870,9 @@ grep '^search_term_here'
 
 # ignore case
 grep -i search_term_here
+
+# select non-matching lines
+grep -v search_term_here
 
 # check whether login as root is permitted
 grep PermitRootLogin /etc/ssh/sshd_config

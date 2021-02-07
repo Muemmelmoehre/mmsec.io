@@ -185,6 +185,17 @@ apt remove --purge package_here
 
 
 
+## AWK
+```
+# specify field separator + output text
+awk -F "separator_here" '{print $no_element_here}'
+
+# extract 1st + 3rd element, fields delimited by "::"
+echo "some::stuff::here" | awk -F "::" '{print $1, $3}'
+```
+
+
+
 ## BASH / SH
 ```bash
 # add ! at the end of each line in wordlist
@@ -302,15 +313,6 @@ find . -type f
 # print path to file
 find . -name file_name_here
 
-# grep recursively for search_term_here
-grep -r search_term_here /path/to/search/directory
-
-# grep for lines starting with search term
-grep '^search_term_here'
-
-# check whether login as root is permitted
-grep PermitRootLogin /etc/ssh/sshd_config
-
 # show bash history
 history
 
@@ -364,9 +366,6 @@ nmblookup -A IP_here
 # terminal logging
 script /path/to/log
 exit
-
-# delete spaces from string
-echo "my string with spaces here" | sed -r 's/( )+//g'
 
 # sort text file in alphabetical order + remove duplicates
 sort -u file_name_here
@@ -586,6 +585,17 @@ curl -T /path/to/local/file https://url_here/path/to/remote/file
 
 # PUT json data
 curl -X PUT -H "Content-Type: application/json" -d '{"key":"value","key":"value"}' https://url_here
+```
+
+
+
+## CUT
+```
+# extract 2nd field, fields delimited by ","
+echo "some enumeration of stuff, more stuff, even more stuff" | cut -f 2 -d ","
+
+# specify field, delimiter
+cut -f no_here -d "delimiter_here" /path/to/file
 ```
 
 
@@ -843,6 +853,23 @@ OR
 ```
 # decrypt password from group policy preferences
 gpp-decrypt ciphertext_here
+```
+
+
+
+## GREP
+```
+# grep recursively for search_term_here
+grep -r search_term_here /path/to/search/directory
+
+# grep for lines starting with search term
+grep '^search_term_here'
+
+# ignore case
+grep -i search_term_here
+
+# check whether login as root is permitted
+grep PermitRootLogin /etc/ssh/sshd_config
 ```
 
 
@@ -1575,6 +1602,17 @@ searchsploit -x short_path_here
 
 # copy exploit to current working directory
 searchsploit -m short_path_here
+```
+
+
+
+## SED
+```
+# delete spaces from string
+echo "my string with spaces here" | sed -r 's/( )+//g'
+
+# replace word_here in output stream
+echo "something with a specific word_here" | sed 's/word_here/new_word_here/'
 ```
 
 

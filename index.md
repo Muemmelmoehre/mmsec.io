@@ -215,6 +215,9 @@ first_command && second_command
 
 # chain commands - pipe output of first into second
 first_command | second_command 
+
+# show variable's value
+echo $VARIABLE_HERE
 ```
 
 
@@ -646,7 +649,7 @@ env
 # set environment variable 
 export VARIABLE_HERE=value_here
 
-# show value
+# show environment variable's value
 echo $VARIABLE_HERE
 ```
 

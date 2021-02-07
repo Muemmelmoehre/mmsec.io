@@ -134,6 +134,29 @@ content update --uri content://uri_here --bind column_name_here:type_here:value_
 
 
 
+## APACHE2
+```
+# start service
+sudo systemcctl start apache2
+
+# stop service
+sudo systemctl stop apache2
+
+# start service at boot time
+sudo systemctl enable apache2
+
+# disable service start at boot time
+sudo systemctl disable apache2
+
+# check for running service
+sudo ss -plant | grep apache2
+
+# read out first line of file via error message
+sudo apache2 -f /path/to/file/here
+```
+
+
+
 ## APKTOOL
 ```
 # decode apk
@@ -184,9 +207,6 @@ first_command | second_command
 # create alias in .bash_profile
 alias alias_name_here="command_to_run_here"
 source ~/.bash_profile
-
-# read out first line of file via error message
-sudo apache2 -f /path/to/file/here
 
 # read all files in . + grep for search_term
 cat *|grep search_term

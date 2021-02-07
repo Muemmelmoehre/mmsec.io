@@ -291,6 +291,10 @@ comm file1_here file2_here
 # compare and only show lines unique to 2nd file
 comm -13 file1_here file2_here
 
+# compare files : --unique to 1st file, +-unique to 2nd file
+diff -c file1_here file2_here
+diff -u file1_here file2_here
+
 # output previous return value
 echo $?
 

@@ -1730,6 +1730,29 @@ svn up -r revision_number_here
 
 
 
+## SYSTEMCTL
+```
+# start service
+sudo systemcctl start service_name_here
+
+# stop service
+sudo systemctl stop service_name_here
+
+# start service at boot time
+sudo systemctl enable service_name_here
+
+# disable service start at boot time
+sudo systemctl disable service_name_here
+
+# check for running network service
+sudo ss -plant | grep service_name_here
+
+# list available services
+sudo systemctl list-unit-files
+```
+
+
+
 ## TCPDUMP
 ```
 # list all interfaces

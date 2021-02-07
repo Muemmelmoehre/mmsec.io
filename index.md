@@ -251,22 +251,6 @@ some_command_here 2> error.log
 alias alias_name_here="command_to_run_here"
 source ~/.bash_profile
 
-# read all files in . + grep for search_term
-cat *|grep search_term
-
-# read all files in . + grep for search_term (case-insensitive)
-cat *|grep -i search_term
-
-# read all files in . + grep out search_term
-cat *|grep -v search_term
-
-# show real, effective, saved, file system UID / GID
-cat /proc/$$/status | grep "[UG]id"
-
-# change default shell (effective after login)
-chsh -s /path/to/shell
-chsh -s /path/to/shell username_here
-
 # disable line wrapping
 base64 -w 0 file_here
 
@@ -284,6 +268,28 @@ echo 'command && -stuff here' | base64
 # unpack command to file on target
 echo 'base64_here' > /tmp/my_script.sh
 echo '2nd_base64_here' >> /tmp/my_script.sh
+
+# read all files in . + grep for search_term
+cat *|grep search_term
+
+# read all files in . + grep for search_term (case-insensitive)
+cat *|grep -i search_term
+
+# read all files in . + grep out search_term
+cat *|grep -v search_term
+
+# show real, effective, saved, file system UID / GID
+cat /proc/$$/status | grep "[UG]id"
+
+# change default shell (effective after login)
+chsh -s /path/to/shell
+chsh -s /path/to/shell username_here
+
+# compare files : 1-unique to 1st file, 2-unique to 2nd file 3-both
+comm file1_here file2_here
+
+# compare and only show lines unique to 2nd file
+comm -13 file1_here file2_here
 
 # output previous return value
 echo $?

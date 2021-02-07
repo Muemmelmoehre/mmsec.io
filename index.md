@@ -270,6 +270,10 @@ mkpasswd -m sha-512 new_password_here
 # enumerate shares
 nmblookup -A IP_here
 
+# terminal logging
+script /path/to/log
+exit
+
 # delete spaces from string
 echo "my string with spaces here" | sed -r 's/( )+//g'
 

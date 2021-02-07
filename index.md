@@ -258,6 +258,10 @@ ldd /full/path/to/program/here
 # find file
 locate file_here
 
+# man keyword search
+man -k keyword_here
+man -k 'regex_here'
+
 # calculate MD5 sum of string
 echo -n "my awesome string here" | md5sum
 

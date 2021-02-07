@@ -229,6 +229,9 @@ echo $?
 find / -user root -perm -4000 -exec ls -ldb {} \;
 find / -perm -4000 -type f 2>/dev/null
 
+# find files not owned by root
+find \! -uid 0
+
 # find all readable files in /folder_here
 find /folder_here -maxdepth 1 -readable -type f
 

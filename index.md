@@ -168,6 +168,23 @@ apktool b /path/to/appfolder
 
 
 
+## APT
+```
+# search for package in cached database
+apt-cache search package_here
+
+# search for package
+apt search package_here
+
+# show package description
+apt show package_here
+
+# purge package
+apt remove --purge package_here
+```
+
+
+
 ## BASH / SH
 ```bash
 # add ! at the end of each line in wordlist
@@ -601,6 +618,14 @@ dos2unix filename -n new_file
 # convert text files from Unix to DOS (LF -> CR/LF)
 unix2dos filename
 unix2dos filename -n new_file
+```
+
+
+
+## DPKG
+```
+# install local package
+dpkg -i /path/to/.deb
 ```
 
 

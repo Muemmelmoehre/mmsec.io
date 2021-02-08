@@ -1241,9 +1241,16 @@ drop user 'username'@'IP_here';
 #establish connection
 nc target_IP port_here
 nc -v target_IP port_here
+nc -nv target_IP port_here
 
 # start listener
 nc -lnvp port_here
+
+# transfer file (text + binary)
+# listener
+nc -lnvp port_here > /path/to/oufile
+# sender
+nc -nv listener_IP_here port_here < /path/to/file
 
 # banner grabbing (2 empty lines required between headers + body!)
 nc target_IP 80 -v

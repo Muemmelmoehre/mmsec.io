@@ -251,6 +251,10 @@ some_command_here 2> error.log
 alias alias_name_here="command_to_run_here"
 source ~/.bash_profile
 
+# background process / job
+bg
+some_command_here &
+
 # disable line wrapping
 base64 -w 0 file_here
 

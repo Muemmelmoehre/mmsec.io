@@ -305,6 +305,19 @@ echo $?
 # show PID of current shell
 echo $$
 
+# foreground process / job
+fg
+fg %job_no_here
+fg %command_name_here
+fg %PID_here
+
+# foreground previous job
+fg %-
+
+# foreground current job
+fg %+
+fg %%
+
 # list every file with SUID bit set
 find / -user root -perm -4000 -exec ls -ldb {} \;
 find / -perm -4000 -type f 2>/dev/null
@@ -330,11 +343,17 @@ find . -name file_name_here
 # show bash history
 history
 
+# list running jobs
+jobs
+
 # use command from history
 !line_no_here
 
 # repeat last command
 !!
+
+# kill process
+kill PID_here
 
 # show program's shared object dependencies
 ldd /full/path/to/program/here
@@ -377,6 +396,13 @@ mkpasswd -m sha-512 new_password_here
 # enumerate shares
 nmblookup -A IP_here
 
+# list running processes
+ps
+ps -ef
+
+# list specific process
+ps -fC process_name_here
+
 # terminal logging
 script /path/to/log
 exit
@@ -403,6 +429,9 @@ sudo --user other_user_here program_here
 # continously show last lines from text file
 tail -f /path/to/file
 
+# output last X lines from file
+tail -nX /path/to/file
+
 # untar .tar.gz
 tar -xvzf tarball_here
 
@@ -417,6 +446,12 @@ uniq -c
 
 # update locate's file name database
 updatedb
+
+# list logged-in users
+w
+
+# run command every X seconds (default : 2)
+watch -n X command_here
 
 # number of words in text file
 wc -w file_name_here
@@ -602,6 +637,9 @@ curl -T /path/to/local/file https://url_here/path/to/remote/file
 
 # PUT json data
 curl -X PUT -H "Content-Type: application/json" -d '{"key":"value","key":"value"}' https://url_here
+
+# retrieve file from IMAP/S, POP3/S, SCP, SFTP, SMB/S, SMTP/S, TELNET, TFTP
+curl -O /path/to/outfile url_here
 ```
 
 
@@ -1937,9 +1975,13 @@ del venv
 
 ## WGET
 ```
-# retrieve folders + files from ftp
+# retrieve folders + files from FTP
 wget --mirror 'ftp://user_here:password_here@hostname.domain'
 wget --mirror 'ftp://user_here:password_here@IP_here'
+
+
+# download file from FTP / HTTP / HTTPS
+wget -O /path/to/outfile url_here
 ```
 
 

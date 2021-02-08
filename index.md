@@ -1237,7 +1237,7 @@ drop user 'username'@'IP_here';
 
 
 ## NETCAT
-```php
+```bash
 #establish connection
 nc target_IP port_here
 nc -v target_IP port_here

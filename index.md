@@ -196,6 +196,14 @@ echo "some::stuff::here" | awk -F "::" '{print $1, $3}'
 
 
 
+## AXEL
+```
+# download file from FTP / HTTP(S) with X simultaneous connections
+axel -a -n X -o /path/to/outfile url_here
+```
+
+
+
 ## BASH / SH
 ```bash
 # add ! at the end of each line in wordlist

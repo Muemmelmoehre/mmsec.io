@@ -259,6 +259,12 @@ some_command_here 2> error.log
 alias alias_name_here="command_to_run_here"
 source ~/.bash_profile
 
+# list defined aliases
+alias
+
+# delete alias
+unalias alias_here
+
 # background process / job
 Ctrl+Z + bg
 some_command_here &

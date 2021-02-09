@@ -2052,6 +2052,21 @@ tcpdump -i interface_here dst IP_here and port port_here
 # listen for ping
 tcpdump -i interface_here icmp
 tcpdump -i interface_here icmp and icmp[icmptype]=icmp-echo
+
+# read .pcap
+sudo tcpdump -r file_name_here.pcap
+
+# read .pcap + filter for src_IP
+sudo tcpdump -n src src_IP_here -r file_name_here.pcap
+
+# read .pcap + filter for dst_IP
+sudo tcpdump -n dst dst_IP_here -r file_name_here.pcap
+
+# read .pcap + filter for port
+sudo tcpdump port port_here -r file_name_here.pcap
+
+# dump capture data (hex + ASCII)
+sudo tcpdump -nX -r file_name_here.pcap
 ```
 
 

@@ -2054,19 +2054,23 @@ tcpdump -i interface_here icmp
 tcpdump -i interface_here icmp and icmp[icmptype]=icmp-echo
 
 # read .pcap
-sudo tcpdump -r file_name_here.pcap
+sudo tcpdump -r filename_here.pcap
 
 # read .pcap + filter for src_IP
-sudo tcpdump -n src src_IP_here -r file_name_here.pcap
+sudo tcpdump -n src src_IP_here -r filename_here.pcap
 
 # read .pcap + filter for dst_IP
-sudo tcpdump -n dst dst_IP_here -r file_name_here.pcap
+sudo tcpdump -n dst dst_IP_here -r filename_here.pcap
 
 # read .pcap + filter for port
-sudo tcpdump port port_here -r file_name_here.pcap
+sudo tcpdump port port_here -r filename_here.pcap
 
 # dump capture data (hex + ASCII)
-sudo tcpdump -nX -r file_name_here.pcap
+sudo tcpdump -nX -r filename_here.pcap
+
+# filter for packets with ACK + PSH flag
+sudo tcpdump -A -n 'tcp[13] = 24' -r filename_here.pcap
+sudo tcpdump -A -n 'tcp[tcpflags] & tcp-push != 0 & tcp-act != 0'
 ```
 
 

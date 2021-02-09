@@ -251,7 +251,7 @@ echo $VARIABLE_HERE
 some_command_here 2> error.log
 
 # run bash with debug output
-\#!/bin/bash -x
+#!/bin/bash -x
 
 # capture user input + display
 read variable_name_here

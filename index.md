@@ -264,13 +264,13 @@ read -p 'prompt_here: ' variable_name_here
 read -sp 'prompt_here: ' variable_name_here
 
 # not
-!expression_here
+!
 
-# test for empty string
-# empty
--z string_here
-# length > 0
--n string_here
+# and
+&&
+
+# or
+||
 
 # equal
 =
@@ -309,6 +309,12 @@ read -sp 'prompt_here: ' variable_name_here
 
 # file exists with execute permission
 -x file_name_here
+
+# test for empty string
+# empty
+-z string_here
+# length > 0
+-n string_here
 ```
 
 

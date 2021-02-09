@@ -225,6 +225,21 @@ else
   some_other_command_here
 fi
 
+# function (no need to specify args!)
+function function_name_here {
+  some_command_here
+}
+
+function_name_here() {
+  some_command_here
+}
+
+# function call
+function_name_here
+
+# function call with args
+function_name_here some_arg_here
+
 # evaluate some_other_command before some_command and include the result
 some_command `some_other_command with_args`
 some_command $(some_other_command with_args)
@@ -237,6 +252,12 @@ first_command | second_command
 
 # show variable's value
 echo $VARIABLE_HERE
+
+# increment value
+((value++))
+
+# decrement value
+((value--))
 
 # send from
 <
@@ -315,6 +336,9 @@ read -sp 'prompt_here: ' variable_name_here
 -z string_here
 # length > 0
 -n string_here
+
+# exit status (0 = succes, else failure)
+return some_value_here
 ```
 
 

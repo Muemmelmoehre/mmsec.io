@@ -1200,6 +1200,26 @@ copy \\IP_attacker\share_name_here\file_name_here
 
 
 
+## IPTABLES
+```bash
+# set all counters to zero
+sudo iptables -Z
+
+# insert new rule for allowed incoming traffic on top
+sudo iptables -I INPUT 1 -s source_here -j ACCEPT
+
+# insert new rule for allowed outgoing traffic on top
+sudo iptables -I OUTPUT 1 -d destination_here -j ACCEPT
+
+# list all rules
+sudo iptables -L
+
+# delete all rules
+sudo iptables -F
+```
+
+
+
 ## JARSIGNER
 ```bash
 # sign apk :
@@ -1383,10 +1403,16 @@ drop user 'username'@'IP_here';
 
 ## NETCAT
 ```bash
-#establish connection
+# establish connection
 nc target_IP port_here
 nc -v target_IP port_here
 nc -nv target_IP port_here
+
+# scan tcp port
+nc -nvv -z -w time_out_in_seconds_here target_IP port_here
+
+# scan udp port
+nc -nvv -u -z -w time_out_in_seconds_here target_IP port_here
 
 # start listener
 nc -lnvp port_here

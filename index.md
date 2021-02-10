@@ -812,10 +812,24 @@ dirb -u user_name_here:password_here url_here
 
 
 
+## DNSENUM
+```bash
+# grab info (subdomains, zone transfer, reverse lookup etc.)
+dnsenum domain_here
+```
+
+
+
 ## DNSRECON
 ```bash
 # find hostname
 dnsrecon -d domain_here -r range_here
+
+# attempt zone transfer
+dnsrecon -d domain_here -t axfr
+
+# brute force subdomains
+dnsrecord -d domain_here -D /path/to/wordlist -t brt
 ```
 
 

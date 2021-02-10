@@ -783,6 +783,29 @@ dig +short myip.opendns.com @resolver1.opendns.com
 
 
 
+## DIRB
+```bash
+# dirbust domain
+dirb url_here
+
+# set cookie
+dirb -c cookie_here url_here
+
+# set header
+dirb -H header_here url_here
+
+# don't show specific response code
+dirb -N response_code_here url_here
+
+# no recursion
+dirb -r url_here
+
+# interactive recursion
+dirb -R url_here
+```
+
+
+
 ## DNSRECON
 ```bash
 # find hostname

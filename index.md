@@ -213,6 +213,9 @@ mv tmp wordlist.txt
 # for loop from x to z, incrementing in steps of y
 for i in $(seq x y z); do command_here; done
 
+# do something for each line in file
+for line in $(cat file_here); do command_here arg_here_with_$line; done
+
 # while loop
 while [ condition ]; do command_here; other_command_here; done
 
@@ -1127,8 +1130,17 @@ hdiutil detach /path/to/volume
 
 ## HOST
 ```bash
+# find IP
+host url_here
+
+# request mail server for domain
+host -t mx url_here
+
 # request name server for domain
 host -t ns url_here
+
+# request text record for domain
+host -t txt url_here
 
 # zone transfer
 host -l url_here name_server_here

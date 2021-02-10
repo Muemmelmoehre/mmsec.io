@@ -802,6 +802,9 @@ dirb -r url_here
 
 # interactive recursion
 dirb -R url_here
+
+# authenticated scan
+dirb -u user_name_here:password_here url_here
 ```
 
 

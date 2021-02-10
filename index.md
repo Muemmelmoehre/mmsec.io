@@ -1453,6 +1453,9 @@ nmap target_here
 # TCP version scan
 nmap -sV target_here
 
+# run default scripts
+nmap -sC target_here
+
 # possible target identifiers
 nmap -some_scan DNS_here
 nmap -some_scan IP_list_here

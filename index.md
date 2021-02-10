@@ -1134,16 +1134,16 @@ hdiutil detach /path/to/volume
 host url_here
 
 # request mail server for domain
-host -t mx url_here
+host -t mx domain_here
 
 # request name server for domain
-host -t ns url_here
+host -t ns domain_here
 
 # request text record for domain
-host -t txt url_here
+host -t txt domain_here
 
 # zone transfer
-host -l url_here name_server_here
+host -l domain_here name_server_here
 ```
 
 
@@ -2136,7 +2136,7 @@ ssh -i private_key user@IP
 ssh -L port_to_forward_to:IP_here:port_to_forward_from
 
 # start service
-sudo systemcctl start ssh
+sudo systemctl start ssh
 
 # stop service
 sudo systemctl stop ssh

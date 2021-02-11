@@ -1404,6 +1404,14 @@ drop user 'username'@'IP_here';
 
 
 
+## NBTSCAN
+```bash
+# scan network for NBT
+nbtscan -r target_range_here
+```
+
+
+
 ## NETCAT
 ```bash
 # establish connection
@@ -1531,11 +1539,14 @@ nmap -sT target_here
 nmap -sS target_here
 nmap target_here
 
-# TCP version scan
+# TCP version scan (banner grabbing)
 nmap -sV target_here
 
 # run default scripts
 nmap -sC target_here
+
+# enumerate services + OS
+nmap -A target_here
 
 # UDP scan
 nmap -sU target_here
@@ -1568,6 +1579,9 @@ locate -r '\.nse$' | xargs grep categories
 
 # run some_script in debug mode
 nmap --script some_script -p port_here IP_here -d
+
+# show script help
+nmap --script-help script_name_here
 
 # check supported HTTP methods
 nmap -p 443 --script http-methods --script-args http-methods.url-path='/my/path/here' url_here

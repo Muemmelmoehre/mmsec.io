@@ -1543,8 +1543,11 @@ nmap -sU target_here
 # UDP + TCP SYN scan
 nmap -sU -sS target_here
 
-# sweep network
+# ping sweep network
 nmap -sn target_range_here
+
+# sweep network
+nmap -p port_here target_range_here
 
 # possible target identifiers
 nmap -some_scan DNS_here
@@ -1555,7 +1558,7 @@ nmap -some_scan CIDR_list_here
 nmap -some_scan -iL IP_list_file_here
 
 # more info on scan
-nmap --reason
+nmap --reason -p port_here target_here
 
 # show all available scripts
 locate -r '\.nse$'

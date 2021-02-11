@@ -1216,6 +1216,9 @@ sudo iptables -L
 
 # delete all rules
 sudo iptables -F
+
+# view traffic (by rule)
+sudo iptables -nv -L
 ```
 
 

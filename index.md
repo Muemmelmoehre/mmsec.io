@@ -1738,7 +1738,7 @@ powershell -E content_of_outfile.ps1
 Set-ExecutionPolicy Unrestricted
 Get-ExecutionPolicy
 
-# bypass execution policy
+# bypass execution policy (allow unsigned scripts)
 powershell -ExecutionPolicy Bypass -File script_here.ps1
 
 # import module

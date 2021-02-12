@@ -1586,6 +1586,9 @@ nmap --script-help script_name_here
 # check all available scripts for protocol
 ls -1 /usr/share/nmap/scripts/protocol_here*
 
+# run all protocol scripts
+nmap -p port_here --script protocol_here* target_IP
+
 # check supported HTTP methods
 nmap -p 443 --script http-methods --script-args http-methods.url-path='/my/path/here' url_here
 ```

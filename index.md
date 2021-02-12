@@ -348,6 +348,9 @@ return some_value_here
 
 ## BASH UTILITIES & CO.
 ```bash
+# add new user
+sudo adduser user_name_here
+
 # create alias in .bash_profile
 alias alias_name_here="command_to_run_here"
 source ~/.bash_profile
@@ -1622,6 +1625,14 @@ objdump -d /path/to/binary/here
 
 
 
+## ONESIXTYONE
+```bash
+# brute force SNMP
+onesixtyone -c community_strings_list_here -i IP_list_here
+```
+
+
+
 ## OPENSSL
 ```bash
 # banner grabbing (2 empty lines required between headers + body!)
@@ -1960,6 +1971,10 @@ rpcinfo IP_here
 
 # show export list for NFS server
 showmount -e IP_here
+
+# mount NFS share
+mkdir mounted_share
+sudo mount -o nolock IP_here:/share_name_here ~/mounted_share/
 ```
 
 
@@ -2005,6 +2020,9 @@ echo "my string with spaces here" | sed -r 's/( )+//g'
 
 # replace word_here in output stream
 echo "something with a specific word_here" | sed 's/word_here/new_word_here/'
+
+# change UID
+sudo sed -i -e 's/old_UID/new_UID/g' /etc/password
 ```
 
 
@@ -2085,6 +2103,28 @@ sudo mount -t cifs -o 'user=user_here,password=password_here' //IP_here/share_he
 
 # create share for file transfer
 /path/to/impacket-smbserver share_name_here `password_here`
+```
+
+
+
+## SMTP
+```bash
+# connect to SMTP
+nc -nv IP_here 25
+
+# verify email
+VRFY user_name_here
+```
+
+
+
+## SNMPWALK
+```bash
+# enumerate MIB
+snmpwalk -c community_string_here -v snmp_version_here -t time_out_in_seconds_here IP_here
+
+# enumerate specific MIB value
+snmpwalk -c community_string_here -v snmp_version_here -t time_out_in_seconds_here IP_here MIB_here
 ```
 
 

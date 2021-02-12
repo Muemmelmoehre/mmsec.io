@@ -581,6 +581,14 @@ which file_name_here
 
 
 
+## BUSYBOX
+```bash
+# HTTP server
+busybox httpd -f -p port_here
+```
+
+
+
 ## CERTUTIL
 ```powershell
 # download file
@@ -1676,6 +1684,12 @@ php -a
 
 # define http request variables : parameter can be used in subsequent GET + POST requests
 <?php system($_REQUEST['parameter_name_here']); ?>
+
+# HTTP server
+php -S 0.0.0.0:port_here
+
+# data wrapper
+data:text/plain,data_content_here
 ```
 
 
@@ -1984,6 +1998,14 @@ showmount -e IP_here
 # mount NFS share
 mkdir mounted_share
 sudo mount -o nolock IP_here:/share_name_here ~/mounted_share/
+```
+
+
+
+## RUBY
+```ruby
+# HTTP server
+ruby -run -e httpd -p port_here
 ```
 
 

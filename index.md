@@ -2120,7 +2120,7 @@ VRFY user_name_here
 
 ## SNMPWALK
 ```bash
-# enumerate MIB
+# enumerate MIB tree
 snmpwalk -c community_string_here -v snmp_version_here -t time_out_in_seconds_here IP_here
 
 # enumerate specific MIB value

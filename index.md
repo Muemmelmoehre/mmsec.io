@@ -811,6 +811,9 @@ dirb -R url_here
 
 # authenticated scan
 dirb -u user_name_here:password_here url_here
+
+# delay between request
+dirb url_here -z delay_in_milliseconds_here url_here
 ```
 
 

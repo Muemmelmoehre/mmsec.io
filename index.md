@@ -2453,13 +2453,16 @@ go
 ## SSH
 ```bash
 # connect as user with password
-ssh user@IP
+ssh user@IP_here
 
 # connect as user with private key
-ssh -i private_key user@IP
+ssh -i private_key user@IP_here
 
 # port forwarding
-ssh -L port_to_forward_to:IP_here:port_to_forward_from
+ssh -N -L local_port_to_forward_from:IP_here:port_to_forward_to
+
+# port forwarding / tunnel through proxy
+ssh -N -L 0.0.0.0:local_port_to_forward_from:target_IP_here:target_port_to_forward_to user@proxy_IP_here
 
 # start service
 sudo systemctl start ssh

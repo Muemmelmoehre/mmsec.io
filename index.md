@@ -597,7 +597,10 @@ certutil -urlcache -split -f url_to_web_file /path/to/out/file
 ## CEWL
 ```bash
 # create a wordlist from URL
-cewl -w /path/to/outfile.txt -v URL_here
+cewl -w /path/to/outfile.txt -v url_here
+
+# create wordlist with minimum word length
+cewl -w /path/to/outfile.txt -m min_length_here url_here
 ```
 
 

@@ -1162,6 +1162,14 @@ hashcat -m hash_format_code_here /path/to/hash /path/to/wordlist
 
 
 
+## HASHID
+```bash
+# identify hash type
+hashid hash_here
+```
+
+
+
 ## HASKELL
 ```haskell
 # setup project environment

@@ -1801,9 +1801,13 @@ powershell -E content_of_outfile.ps1
 
 ## POWERSHELL
 ```powershell
-# execution policy
-Set-ExecutionPolicy Unrestricted
+# get execution policy
 Get-ExecutionPolicy
+Get-ExecutionPolicy -Scope CurrentUser
+
+# set execution policy
+Set-ExecutionPolicy Unrestricted
+Set-ExecutionPolicy Unrestricted -Scope CurrentUser
 
 # bypass execution policy (allow unsigned scripts)
 powershell -ExecutionPolicy Bypass -File script_here.ps1

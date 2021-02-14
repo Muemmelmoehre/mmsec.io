@@ -745,6 +745,14 @@ crackmapexec smb IP_here -u user -p password -M spider_plus
 
 
 
+## CROWBAR
+```bash
+# brute force RDP login (ideally 1 thread for RDP)
+crowbar -b rdp -s target_I_or_subnet -u user_name_here -C /path/to/wordlist -n number_of_threads_here
+```
+
+
+
 ## CRUNCH
 ```bash
 # pattern

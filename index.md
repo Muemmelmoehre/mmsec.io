@@ -1341,6 +1341,9 @@ keepass2john db_here.kdbx
 sudo nano /etc/john/john.conf
 # add rule description here
 new_rule_here
+
+# run multi-process john
+john --fork=number_of_processes_here -w=/path/to/wordlist /path/to/hash
 ```
 
 
@@ -2112,6 +2115,22 @@ reg query HKLM /f password /t REG_SZ /s
 
 # enumerate registry information, search recursively for password in HKCU
 reg query HKCU /f password /t REG_SZ /s
+```
+
+
+
+## RINETD
+```bash
+# configure port forwarding rule for target  on proxy
+sudo nano /etc/rinetd.conf 
+# bindadress    bindport  connectaddress  connectport
+0.0.0.0 listening_port_on_proxy dest_IP dest_port
+# restart service
+sudo service rinetd restart
+# verify listener
+ss -plant | grep listening_port_on_proxy
+# connect to destination from target
+nc -nvv proxy_IP_here listener_port_here
 ```
 
 

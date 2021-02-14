@@ -742,6 +742,14 @@ crackmapexec smb IP_here -u user -p password -M spider_plus
 
 
 
+## CSCRIPT
+```powershell
+# run .vbs script
+cscript /path/to/vbs_script args_here
+```
+
+
+
 ## CURL
 ```bash
 # basic syntax
@@ -1006,6 +1014,9 @@ binary
 
 # rename file
 rename old_file_name new_file_name
+
+# non-interactive ftp session, read commands from file (1 line = 1 command)
+ftp -v -n -s:file_here.txt
 ```
 
 
@@ -1934,6 +1945,9 @@ cyclic_find("substring_here")
 with open("file_name_here","mode_here",encoding="encoding_here") as file:
   for line in file:
     do_something
+
+# upgrade shell
+python -c 'import pty;pty.spawn("/bin/bash")'
 ```
 
 

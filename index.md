@@ -745,6 +745,28 @@ crackmapexec smb IP_here -u user -p password -M spider_plus
 
 
 
+## CRUNCH
+```bash
+# pattern
+# a-z
+@
+# A-Z
+,
+# 0-9
+%
+# special chars (incl. space)
+^
+
+# generate wordlist
+crunch min_length_here max_length_here -t pattern_here -o /path/to/outfile
+
+# generate wordlist with limited character set (predefined charsets in /usr/share/crunch/charset.lst)
+crunch min_length_here max_length_here allowed_chars_here -t pattern_here -o /path/to/outfile
+crunch min_length_here max_length_here -f /usr/share/crunch/charset.lst charset_name_here -o /path/to/outfile
+```
+
+
+
 ## CSCRIPT
 ```powershell
 # run .vbs script

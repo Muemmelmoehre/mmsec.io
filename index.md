@@ -1282,10 +1282,13 @@ jarsigner -verify -verbose -certs /path/to/apk
 john -w=/path/to/wordlist /path/to/hash
 
 # crack password hash with mangling - dictionary attack
-john -w=/path/to/wordlist -rules /path/to/hash
+john -w=/path/to/wordlist --rules /path/to/hash
 
 # crack password hash - brute-force attack
 john -incremental -users:user_here /path/to/hash
+
+# create mangled wordlist
+john -w=/path/to/wordlist --rules --stdout > /path/to/mangled/outfile.txt
 
 # unshadow
 unshadow passwd_file shadow_file > output_file
@@ -1295,6 +1298,11 @@ john --show /path/to/hash
 
 # convert kdbx to john
 keepass2john db_here.kdbx
+
+# edit rules
+sudo nano /etc/john/john.conf
+# add rule description here
+new_rule_here
 ```
 
 

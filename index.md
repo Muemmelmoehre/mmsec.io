@@ -1369,6 +1369,18 @@ ldapsearch -x -h IP_here -s base namingcontexts
 
 
 
+## MEDUSA
+```bash
+# brute force login
+medusa -h target_IP -u user_name_here -p password-here -M module_here -m module_param_here
+medusa -h target_IP -U /path/to/user_name_list -P /path/to/wordlist -M module_here -m module_param_hereà
+
+# list modules
+medusa -d
+```
+
+
+
 ## MONGO
 ```sql
 # connect to mongoDB database

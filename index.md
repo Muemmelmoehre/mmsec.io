@@ -2174,6 +2174,7 @@ rpcinfo IP_here
 
 # show export list for NFS server
 showmount -e IP_here
+nmap -sV --script=nfs-showmount IP_here
 
 # mount NFS share
 mkdir mounted_share

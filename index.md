@@ -2667,6 +2667,14 @@ pth-winexe -U domain_here/user_here cmd.exe
 
 
 
+## WPSCAN
+```bash
+# scan wordpress
+wpscan --url url_here --enumerate ap,at,cb,dbe
+```
+
+
+
 ## XFREERDP
 ```bash
 # establish connection

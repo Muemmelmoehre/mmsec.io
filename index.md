@@ -2578,7 +2578,7 @@ sudo tcpdump -A -n 'tcp[tcpflags] & tcp-push != 0 & tcp-act != 0'
 ## THE HARVESTER
 ```bash
 # harvest data about domain from data_source
-theharvester -d domain_here -b data_source_here
+theHarvester -d domain_here -b data_source_here
 ```
 
 

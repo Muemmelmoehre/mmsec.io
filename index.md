@@ -1145,6 +1145,15 @@ grep -r search_term_here /path/to/search/directory
 # grep for lines starting with search term
 grep '^search_term_here'
 
+# display x lines after search_term
+grep -A x search_term_here
+
+# display x lines before search_term
+grep -B x search_term_here
+
+# display x lines before and after search_term
+grep -C x search_term_here
+
 # ignore case
 grep -i search_term_here
 

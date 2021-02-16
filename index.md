@@ -1747,10 +1747,10 @@ nmap --script some_script -p port_here IP_here -d
 nmap --script-help script_name_here
 
 # check all available scripts for protocol
-ls -1 /usr/share/nmap/scripts/protocol_here*
+ls -1 /usr/share/nmap/scripts/protocol_here-*
 
 # run all protocol scripts
-nmap -p port_here --script protocol_here* target_IP
+nmap -p port_here --script protocol_here-* target_IP
 
 # run all category (vuln, exploit) scripts
 nmap --script category_here target_IP

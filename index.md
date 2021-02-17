@@ -1746,6 +1746,9 @@ nmap --script some_script -p port_here IP_here -d
 # show script help
 nmap --script-help script_name_here
 
+# update script DB
+sudo nmap --script-updatdb
+
 # check all available scripts for protocol
 ls -1 /usr/share/nmap/scripts/protocol_here-*
 

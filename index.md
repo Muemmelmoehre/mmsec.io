@@ -2203,6 +2203,14 @@ ruby -run -e httpd -p port_here
 
 
 
+## RUSERS
+```bash
+# show logged in users
+rusers -l IP_here
+```
+
+
+
 ## SCP
 ```bash
 # copy remote file to local machine

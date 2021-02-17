@@ -666,9 +666,6 @@ for %i in (*.*) do @echo FILE: %i
 # display output without command prompt
 @command_here
 
-# enumerate shares
-nbtstat -A IP_here
-
 # find domain name (on box)
 wmic computersystem get domain
 
@@ -1567,10 +1564,13 @@ drop user 'username'@'IP_here';
 
 
 
-## NBTSCAN
+## NBT
 ```bash
 # scan network for NBT
 nbtscan -r target_range_here
+
+# enumerate shares
+nbtstat -A IP_here
 ```
 
 

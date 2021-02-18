@@ -1750,7 +1750,7 @@ nmap --script some_script -p port_here IP_here -d
 nmap --script-help script_name_here
 
 # update script DB
-sudo nmap --script-updatdb
+sudo nmap --script-updatedb
 
 # check all available scripts for protocol
 ls -1 /usr/share/nmap/scripts/protocol_here-*
@@ -1763,6 +1763,9 @@ nmap --script category_here target_IP
 
 # check supported HTTP methods
 nmap -p 443 --script http-methods --script-args http-methods.url-path='/my/path/here' url_here
+
+# quick vulnerability scan
+nmap --script vuln IP_here
 ```
 
 

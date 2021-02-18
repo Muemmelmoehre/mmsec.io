@@ -1571,6 +1571,9 @@ drop user 'username'@'IP_here';
 ```bash
 # scan network for NBT
 nbtscan -r target_range_here
+
+# enumerate host
+nbtscan -hv IP_here
 ```
 
 
@@ -2640,6 +2643,9 @@ Ctrl+w
 ```bash
 # initialize virtual environment
 virtualenv venv
+
+# initialize virtual environment with specific python version as target ionterpreter
+virtualenv --python=pythonversion_here venv
 
 # activate virtual environment
 # Linux

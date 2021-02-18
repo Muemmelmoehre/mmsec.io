@@ -2629,6 +2629,14 @@ theHarvester -d domain_here -b data_source_here
 
 
 
+## UPX
+```bash
+# compress + pack executable
+upx -9 binary-here
+```
+
+
+
 ## VBA
 ```vba
 # shell spawning macro snippet

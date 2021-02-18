@@ -1048,6 +1048,17 @@ fping -a -g IP_range 2>/dev/null
 
 
 
+## FSUTIL
+```powershell
+# list drives
+fsutil fsinfo drives
+
+# create new file
+fsutil file createnew file_name_here file_size_here
+```
+
+
+
 ## FTP
 ```bash
 # connect

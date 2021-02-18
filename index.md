@@ -963,6 +963,14 @@ evil-winrm -i IP_here -u user -p password
 
 
 
+## EXE2HEX
+```bash
+# convert .exe to .cmd
+exe2hex -x binary_here.exe -p binary_here.cmd
+```
+
+
+
 ## EXIFTOOL
 ```bash
 # add php web shell to image

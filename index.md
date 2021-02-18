@@ -2159,6 +2159,14 @@ nc -nvv proxy_IP_here listener_port_here
 
 
 
+## RLWRAP
+```bash
+# wrap line on listener
+rlwrap nc -lnvp port_here
+```
+
+
+
 ## RPC
 ```bash
 # connect anonymously

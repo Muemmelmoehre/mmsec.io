@@ -1459,6 +1459,17 @@ ldapsearch -x -h IP_here -s base namingcontexts
 
 
 
+## MARKDOWN
+```
+# include images
+![file_name_here](/path/to/image.png)
+
+# include footnote
+[^footnote_number_here]: [title_here](url_here)
+```
+
+
+
 ## MEDUSA
 ```bash
 # brute force login

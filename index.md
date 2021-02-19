@@ -2420,8 +2420,11 @@ smbclient //IP_here/IPC$ -N
 # mount smb share
 sudo mount -t cifs -o 'user=user_here,password=password_here' //IP_here/share_here /path/to/mountpoint
 
-# create share for file transfer
-/path/to/impacket-smbserver share_name_here `password_here`
+# create public share for file transfer Win <--> Lin
+# setup share on Lin
+/path/to/impacket-smbserver share_name_here full_path_here
+# mount share on Win
+New-PSDrive -Name "share_name_here_can_be_different_from_above" -PSProvider "FileSystem" -Root "\\Lin_IP_here\share_name_here"
 ```
 
 

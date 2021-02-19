@@ -2425,6 +2425,8 @@ sudo mount -t cifs -o 'user=user_here,password=password_here' //IP_here/share_he
 /path/to/impacket-smbserver share_name_here full_path_here
 # mount share on Win
 New-PSDrive -Name "share_name_here_can_be_different_from_above" -PSProvider "FileSystem" -Root "\\Lin_IP_here\share_name_here"
+# access drive
+cd share_name_here_can_be_different_from_above
 ```
 
 

@@ -1466,6 +1466,9 @@ ldapsearch -x -h IP_here -s base namingcontexts
 
 # include footnote
 [^footnote_number_here]: [title_here](url_here)
+
+# include url
+[description_here](url_here)
 ```
 
 

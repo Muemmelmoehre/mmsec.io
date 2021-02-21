@@ -1588,6 +1588,7 @@ systemctl stop mysql.service
 
 # launch mysql as default user on kali
 mysql -u root -p
+sudo mysql -u root -p
 
 # create new database
 create database 'db_name';

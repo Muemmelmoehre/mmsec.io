@@ -2711,6 +2711,20 @@ theHarvester -d domain_here -b data_source_here
 
 
 
+## TMUX
+```bash
+# start new session
+tmux new -s session_name_here
+
+# start logging (requires tmux-logging plugin)
+prefix + shift + p
+
+# log pane history (requires tmux-logging plugin)
+prefix + alt + shift + p
+```
+
+
+
 ## UPX
 ```bash
 # compress + pack executable

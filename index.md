@@ -1586,12 +1586,15 @@ systemctl restart mysql.service
 # stop service
 systemctl stop mysql.service
 
-# launch mysql as default user on kali
+# launch mysql as root
 mysql -u root -p
 sudo mysql -u root -p
 
+# launch mysql with local database file
+sudo mysql -u root -p db_name_here < local_file_here.sql
+
 # create new database
-create database 'db_name';
+create database db_name;
 
 # list existing databases
 show databases;

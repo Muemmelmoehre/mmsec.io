@@ -2780,7 +2780,7 @@ Ctrl+w
 # initialize virtual environment
 virtualenv venv
 
-# initialize virtual environment with specific python version as target ionterpreter
+# initialize virtual environment with specific python version as target interpreter
 virtualenv --python=pythonversion_here venv
 
 # activate virtual environment

@@ -501,6 +501,9 @@ mkpasswd -m sha-512 new_password_here
 # enumerate shares
 nmblookup -A IP_here
 
+# check for GUI
+pidof X
+
 # list running processes
 ps
 ps -ef

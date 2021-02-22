@@ -1593,6 +1593,9 @@ sudo mysql -u root -p
 # launch mysql with local database file
 sudo mysql -u root -p db_name_here < local_file_here.sql
 
+# launch mysql + execute command
+mysql -u root -p password_here -e 'command here'
+
 # create new database
 create database db_name;
 

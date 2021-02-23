@@ -1975,6 +1975,44 @@ pipreqs --force
 
 
 
+## POP3
+```bash
+# connect
+nc -nv IP_here 110
+telnet IP_here 110
+openssl s_client -connect IP_here:995 -quiet -crlf
+
+# log in as user
+USER user_name_here
+PASS password_here
+
+# show stats
+STAT
+
+# show server capabilities
+CAPA
+
+# list messages
+LIST
+
+# retrieve specific message
+RETR id_here
+
+# delete specific message
+DELE id_here
+
+# reset / undo changes
+RSET
+
+# head specific message
+TOP msg id_here
+
+# quit
+QUIT
+```
+
+
+
 ## POWERCAT
 ```powershell
 # download powercat

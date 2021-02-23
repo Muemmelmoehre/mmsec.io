@@ -2312,7 +2312,9 @@ nmap -sV --script=nfs-showmount IP_here
 
 # mount NFS share
 mkdir mounted_share
-sudo mount -o nolock IP_here:/share_name_here ~/mounted_share/
+sudo mount -o nolock IP_here:/share_name_here /path/to/mounted_share/
+sudo mount -o nolock,vers=3 IP_here:/share_name_here /path/to/mounted_share/
+
 ```
 
 

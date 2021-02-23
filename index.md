@@ -2516,6 +2516,7 @@ sudo mount -t cifs -o 'user=user_here,password=password_here' //IP_here/share_he
 ```bash
 # connect to SMTP
 nc -nv IP_here 25
+telnet IP_here 25
 
 # verify email
 VRFY user_name_here

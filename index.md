@@ -2660,7 +2660,7 @@ ssh user@IP_here
 ssh -i private_key user@IP_here
 
 # create key pair
-
+ssh-keygen
 
 # port forwarding
 ssh -N -L local_port_to_forward_from:IP_here:port_to_forward_to

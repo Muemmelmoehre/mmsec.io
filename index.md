@@ -343,6 +343,9 @@ host=target_IP_here; echo "--- scan starting ---"; for port in {1..65535}; do ti
 # add new user
 sudo adduser user_name_here
 
+# deleter user + their files
+sudo userdel -r user_name_here
+
 # create alias in .bash_profile
 alias alias_name_here="command_to_run_here"
 source ~/.bash_profile
@@ -2518,6 +2521,9 @@ sudo mount -t cifs -o 'user=user_here,password=password_here' //IP_here/share_he
 nc -nv IP_here 25
 telnet IP_here 25
 
+# list commands
+nmap --script smtp-commands IP_here -p 25
+
 # verify email
 VRFY user_name_here
 ```
@@ -2652,6 +2658,9 @@ ssh user@IP_here
 
 # connect as user with private key
 ssh -i private_key user@IP_here
+
+# create key pair
+
 
 # port forwarding
 ssh -N -L local_port_to_forward_from:IP_here:port_to_forward_to

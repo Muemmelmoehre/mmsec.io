@@ -1909,11 +1909,14 @@ onesixtyone -c community_strings_list_here -i IP_list_here
 
 ## OPENSSL
 ```bash
-# banner grabbing (2 empty lines required between headers + body!)
-openssl s_client -connect target_ip:443
+# banner grabbing http (2 empty lines required between headers + body!)
+openssl s_client -connect target_IP:443
 HEAD / HTTP/1.1
 
 
+
+# banner / cert grabbing ftp
+openssl s_client -connect target_IP:21 -starttls ftp
 
 # genereate self-signed cert
 openssl req -newkey rsa:2048 -nodes -keyout myprivkey.key -x509 -days 362 -out mycert.crt

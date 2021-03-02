@@ -2437,6 +2437,9 @@ echo "something with a specific word_here" | sed 's/word_here/new_word_here/'
 
 # change UID
 sudo sed -i -e 's/old_UID/new_UID/g' /etc/password
+
+# print lines between begin_pattern and end_pattern from file
+sed -n '/begin_pattern/,/end_pattern/p' filename_here
 ```
 
 

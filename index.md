@@ -187,8 +187,8 @@ apt remove --purge package_here
 
 ## AWK
 ```bash
-# specify field separator + output text
-awk -F "separator_here" '{print $no_element_here}'
+# specify field delimiter + output text
+awk -F "delimiter_here" '{print $no_element_here}'
 
 # extract 1st + 3rd element, fields delimited by "::"
 echo "some::stuff::here" | awk -F "::" '{print $1, $3}'
@@ -1791,6 +1791,9 @@ nikto -h host_site_here -i user_here:password_here
 nmap -sn IP_range
 nmap -sn -iL IP_list_file_here
 
+# sweep network
+nmap -p port_here target_range_here
+
 # OS fingerprinting
 nmap -Pn -O IP_here
 
@@ -1821,12 +1824,6 @@ nmap -sU target_here
 
 # UDP + TCP SYN scan
 nmap -sU -sS target_here
-
-# ping sweep network
-nmap -sn target_range_here
-
-# sweep network
-nmap -p port_here target_range_here
 
 # possible target identifiers
 nmap -some_scan DNS_here

@@ -1667,6 +1667,9 @@ nbtscan -hv IP_here
 nc target_IP port_here
 nc -v target_IP port_here
 nc -nv target_IP port_here
+# send CRLF, not only LF
+nc -nvC target_IP port_here
+
 
 # scan tcp port
 nc -nvv -z -w time_out_in_seconds_here target_IP port_here

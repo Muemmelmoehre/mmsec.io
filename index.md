@@ -1622,6 +1622,10 @@ sudo mysql -u root -p db_name_here < local_file_here.sql
 # launch mysql + execute command
 mysql -u root -ppassword_here -e 'command here'
 
+# connect to remote mysql instance
+mysql -h IP_here -u root
+mysql -h IP_here -u root@localhost
+
 # create new database
 create database db_name;
 

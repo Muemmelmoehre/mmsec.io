@@ -576,6 +576,9 @@ wc -m file_name_here
 # number of bytes in text file
 wc -c file_name_here
 
+# locate program
+whereis program_name_here
+
 # find file in $PATH directories
 which file_name_here
 ```

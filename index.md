@@ -2347,6 +2347,7 @@ rlwrap nc -lnvp port_here
 ```bash
 # connect anonymously
 rpcclient -U "" IP_here
+rpcclient -U "" -N IP_here
 
 # connect as user
 rpcclient -U username%password IP_here

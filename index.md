@@ -404,6 +404,12 @@ cat *|grep -i search_term
 # read all files in . + grep out search_term
 cat *|grep -v search_term
 
+# read all files in . + grep for lines starting with search_term
+cat *|grep ^search_term
+
+# read all files in . + grep for lines ending with search_term
+cat *|grep search_term$
+
 # show real, effective, saved, file system UID / GID
 cat /proc/$$/status | grep "[UG]id"
 

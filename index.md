@@ -2581,6 +2581,14 @@ VRFY user_name_here
 
 
 
+## SNMP-CHECK
+```
+# enumerate SNMP port 161 with community string "public"
+snmp-check IP_here
+```
+
+
+
 ## SNMPWALK
 ```bash
 # enumerate MIB tree

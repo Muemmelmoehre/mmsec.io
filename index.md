@@ -2992,7 +2992,10 @@ xfreerdp /u:user_here /p:password_here /cert:ignore /v:IP_here
         <value>some_value_here</value>
       </param>
       <param>
-        <value>another_value_here</value>
+        <value><int>another_value_here</int></value>
+      </param>
+      <param>
+        <value><string>some_url:port_here</string></value>
       </param>
     </params>
 </methodCall>

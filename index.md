@@ -2644,7 +2644,7 @@ ORDER BY increasing_no_here
 # return no_here columns
 LIMIT no_here
 
-# add second select to query (no_columns must fit!)
+# identify displayed columns
 UNION ALL SELECT 1,2,...,no_columns_here
 ```
 

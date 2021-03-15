@@ -2131,6 +2131,9 @@ Select-String -Path C:\path\here\*.extension_here -Pattern "string_here"
 # grep recursively
 Get-ChildItem C:\path\to\directory -Filter *.extension_here -Recurse | Select-String "string_here"
 
+# find connections for specific service
+netstat -anbo | Select-String service_name_here -Context 1
+
 # search for a file
 Get-Childitem –Path C:\ -Recurse –force -ErrorAction SilentlyContinue -Include *.extension_here -File
 

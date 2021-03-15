@@ -701,6 +701,9 @@ for %i in (*.*) do @echo FILE: %i
 # enumerate shares
 nbtstat -A IP_here
 
+# find connections for specific service
+netstat -anbo
+
 # find domain name (on box)
 wmic computersystem get domain
 

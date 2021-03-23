@@ -3071,6 +3071,14 @@ del venv
 
 
 
+## VNCVIEWER
+```
+# connect to VNC
+vncviewer IP_here:5900
+```
+
+
+
 ## WGET
 ```bash
 # retrieve folders + files from FTP

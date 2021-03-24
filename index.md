@@ -2733,6 +2733,15 @@ VRFY user_name_here
 ```
 # enumerate SNMP port 161 with community string "public"
 snmp-check IP_here
+snmp-check IP_here -p 161 -c public
+```
+
+
+
+## SNMPSET
+```
+# write test : change sysName to test 
+snmpset -c public -v1 IP_here MIB_here s "test"
 ```
 
 

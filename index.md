@@ -2499,33 +2499,6 @@ rlwrap nc -lnvp port_here
 
 
 
-## RPC
-```bash
-# connect anonymously
-rpcclient -U "" IP_here
-rpcclient -U "" -N IP_here
-
-# connect as user
-rpcclient -U username%password IP_here
-
-# nmap script
-nmap --script rpc-grind IP_here
-
-# rpcclient - find domain name
-querydominfo
-
-# rpcclient - domain look-up
-lookupdomain domain_here
-
-# rpcclient - enumerate domain users
-enumdomusers
-
-# rpcclient - display description fields
-querydispinfo
-```
-
-
-
 ## RPCBIND
 ```bash
 # enumerate rpcbind
@@ -2539,7 +2512,30 @@ nmap -sV --script=nfs-showmount IP_here
 mkdir mounted_share
 sudo mount -o nolock IP_here:/share_name_here /path/to/mounted_share/
 sudo mount -o nolock,vers=3 IP_here:/share_name_here /path/to/mounted_share/
+```
 
+
+
+## RPCCLIENT
+```bash
+# connect anonymously
+rpcclient -U "" IP_here
+rpcclient -U "" -N IP_here
+
+# connect as user
+rpcclient -U username%password IP_here
+
+# rpcclient - find domain name
+querydominfo
+
+# rpcclient - domain look-up
+lookupdomain domain_here
+
+# rpcclient - enumerate domain users
+enumdomusers
+
+# rpcclient - display description fields
+querydispinfo
 ```
 
 

@@ -2525,17 +2525,91 @@ rpcclient -U "" -N IP_here
 # connect as user
 rpcclient -U username%password IP_here
 
-# rpcclient - find domain name
+# find domain name
 querydominfo
 
-# rpcclient - domain look-up
+# domain look-up
 lookupdomain domain_here
 
-# rpcclient - enumerate domain users
+# enumerate domain users
 enumdomusers
 
-# rpcclient - display description fields
+# display description fields
 querydispinfo
+
+# enumerate registry keys
+winreg_enumkey
+querymultiplevalues
+querymultiplevalues2
+
+# read eventlog
+eventlog_readlog
+
+# backup eventlog file
+eventlog_backuplog
+
+# get eventlog info
+eventlog_loginfo
+
+# get WKSSVC computer names
+wkssvc_enumeratecomputernames
+
+# get WKSSVC users
+wkssvc_enumerateusers
+
+# enumerate DFS shares
+dfsenum
+dfsenumex
+
+# get DFS share info
+dfsgetinfo
+
+# get server info
+srvinfo
+
+# enumerate shares
+netshareenum
+netshareenumall
+
+# get share info
+netsharegetinfo
+
+# enumerate files on share
+netfileenum
+
+# get file security on share
+netfilegetsec
+
+# enumerate sessions
+netsessenum
+
+# enumerate disks
+netdiskenum
+
+# enumerate connections
+netconnenum
+
+# get DC
+getanydcname
+getdcname
+dsr_getdcname
+dsr_getdcnameex
+dsr_getdcnameex2
+
+# get DC info
+dsgetdcinfo
+
+# get forest trust info
+dsr_getforesttrustinfo
+
+# enumerate trusted domains
+dsr_enumtrustdom
+dsenumdomtrusts
+netrenumtrusteddomains
+netrenumtrusteddomainsex
+
+# logongetdomaininfo
+logongetdomaininfo
 ```
 
 

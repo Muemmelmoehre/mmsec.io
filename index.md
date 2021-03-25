@@ -2545,13 +2545,13 @@ querymultiplevalues key_name_here value_here som_other_value_here
 querymultiplevalues2 key_name_here value_here som_other_value_here
 
 # read eventlog
-eventlog_readlog
+eventlog_readlog offset_here no_bytes_here
 
 # backup eventlog file
-eventlog_backuplog
+eventlog_backuplog log_name_here backup_name_here
 
 # get eventlog info
-eventlog_loginfo
+eventlog_loginfo log_name_here
 
 # get WKSSVC computer names
 wkssvc_enumeratecomputernames

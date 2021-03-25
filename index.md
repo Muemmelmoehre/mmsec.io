@@ -2536,6 +2536,8 @@ enumdomusers
 
 # display description fields
 querydispinfo
+querydispinfo2
+querydispinfo3
 
 # enumerate registry keys
 winreg_enumkey
@@ -2607,9 +2609,33 @@ dsr_enumtrustdom
 dsenumdomtrusts
 netrenumtrusteddomains
 netrenumtrusteddomainsex
+enumtrust
+
+# enumerate domains
+enumdomains
 
 # logongetdomaininfo
 logongetdomaininfo
+
+# sam lookup
+samlookupnames
+samlookuprids
+
+# convert SID to name
+lookupsids
+lookupsids3
+lookupsids_level
+
+# convert name to SID
+lookupnames
+lookupnames4
+lookupnames_level
+
+# enumerate privileges
+enumprivs
+getdispname
+lsaenumprivsaccount
+lsaenumacctrights
 ```
 
 

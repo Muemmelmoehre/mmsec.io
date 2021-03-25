@@ -2561,10 +2561,10 @@ wkssvc_enumerateusers
 
 # enumerate DFS shares
 dfsenum
-dfsenumex
+dfsenumex share_name_here
 
 # get DFS share info
-dfsgetinfo
+dfsgetinfo path_here server_name_here share_name_here
 
 # get server info
 srvinfo
@@ -2592,7 +2592,7 @@ netdiskenum
 netconnenum
 
 # get DC
-getanydcname
+getanydcname domain_here
 getdcname
 dsr_getdcname
 dsr_getdcnameex
@@ -2614,11 +2614,11 @@ enumtrust
 # enumerate domains
 enumdomains
 
-# logongetdomaininfo
+# logongetdomaininfo (attempts to open /var/lib/samba/private/secrets.tdb)
 logongetdomaininfo
 
 # sam lookup
-samlookupnames
+samlookupnames domain_here|builtin name_here another_name_here
 samlookuprids
 
 # convert SID to name

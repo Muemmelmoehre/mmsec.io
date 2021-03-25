@@ -2540,9 +2540,9 @@ querydispinfo2
 querydispinfo3
 
 # enumerate registry keys
-winreg_enumkey
-querymultiplevalues
-querymultiplevalues2
+winreg_enumkey key_name_here
+querymultiplevalues key_name_here value_here som_other_value_here
+querymultiplevalues2 key_name_here value_here som_other_value_here
 
 # read eventlog
 eventlog_readlog

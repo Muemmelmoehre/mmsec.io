@@ -2140,6 +2140,13 @@ pip install package
 #PY3
 python3 -m pip install package
 pip3 install package
+
+# install specific package version
+python -m pip install package==version_here
+pip install package==version_here
+#PY3
+python3 -m pip install package==version_here
+pip3 install package==version_here
 ```
 
 
@@ -2531,8 +2538,11 @@ querydominfo
 # domain look-up
 lookupdomain domain_here
 
-# enumerate domain users
+# enumerate domain users / find RID
 enumdomusers
+
+# whoami
+getusername
 
 # display description fields
 querydispinfo
@@ -2618,7 +2628,8 @@ enumdomains
 logongetdomaininfo
 
 # sam lookup
-samlookupnames domain_here|builtin name_here another_name_here
+samlookupnames builtin name_here another_name_here
+samlookupnames domain name_here another_name_here
 samlookuprids
 
 # convert SID to name
@@ -2627,8 +2638,8 @@ lookupsids3
 lookupsids_level
 
 # convert name to SID
-lookupnames
-lookupnames4
+lookupnames user_name_here
+lookupnames4 user_name_here
 lookupnames_level
 
 # enumerate privileges
@@ -2636,6 +2647,10 @@ enumprivs
 getdispname
 lsaenumprivsaccount
 lsaenumacctrights
+
+# get user alias
+queryuseraliases builtin SID_here
+queryuseraliases domain SID_here
 ```
 
 

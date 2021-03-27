@@ -2511,6 +2511,9 @@ rlwrap nc -lnvp port_here
 # enumerate rpcbind
 rpcinfo IP_here
 
+# nmap
+nmap -sSUC -p 111 IP_here
+
 # show export list for NFS server
 showmount -e IP_here
 nmap -sV --script=nfs-showmount IP_here

@@ -2782,10 +2782,13 @@ svwar -m INVITE IP_here
 ## SMB
 ```bash
 # enumerate shares with anonymous login
-smbclient -L smb -I IP_here
+smbclient -L netbios_name_here -I IP_here
 
 # enumerate smb shares as user_here
-smbclient -L smb -I IP_here -U user_here
+smbclient -L netbios_name_here -I IP_here -U user_name_here
+
+# enumerate shares with ntlm password hash
+smbclient -L netbios_name_here  --pw-nt-hash -I IP_here -U user_name_here%password_here
 
 # enumerate smb shares
 nmap --script=smb-enum-shares IP_here

@@ -2078,7 +2078,7 @@ objdump -d /path/to/binary/here
 
 ## ODAT
 ```python
-# discover possible commands
+# run all modules
 /path/to/odap all -s IP_here
 ```
 

@@ -2078,7 +2078,7 @@ objdump -d /path/to/binary/here
 
 ## ODAT
 ```python
-# run all modules
+# run all modules, brute-force creds
 /path/to/odap all -s IP_here
 ```
 

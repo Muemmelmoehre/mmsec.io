@@ -2076,6 +2076,14 @@ objdump -d /path/to/binary/here
 
 
 
+## ODAT
+```python
+# discover possible commands
+/path/to/odap all -s IP_here
+```
+
+
+
 ## ONESIXTYONE
 ```bash
 # brute force SNMP

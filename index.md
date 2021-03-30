@@ -3149,6 +3149,23 @@ prefix + alt + shift + p
 
 
 
+## TNSCMD
+```
+# ping Oracle TNS listener
+tnscmd10g -h IP_here -p 1521
+
+# retrieve status
+tnscmd10g status -h IP_here -p 1521
+
+# enumerate version
+tnscmd10g version -h IP_here -p 1521
+
+# enumerate service
+tnscmd10g service -h IP_here -p 1521
+```
+
+
+
 ## UPX
 ```bash
 # compress + pack executable

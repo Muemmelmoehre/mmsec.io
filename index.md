@@ -3159,12 +3159,15 @@ tnscmd10g -h IP_here -p 1521
 
 # retrieve status
 tnscmd10g status -h IP_here -p 1521
+tnscmd10g -h IP_here -p 1521 --rawcmd "(CONNECT_DATA=(COMMAND=status))"
 
 # enumerate version
 tnscmd10g version -h IP_here -p 1521
+tnscmd10g -h IP_here -p 1521 --rawcmd "(CONNECT_DATA=(COMMAND=version))"
 
 # enumerate service
 tnscmd10g service -h IP_here -p 1521
+tnscmd10g -h IP_here -p 1521 --rawcmd "(CONNECT_DATA=(COMMAND=service))"
 ```
 
 

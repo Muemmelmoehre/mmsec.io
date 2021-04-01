@@ -2610,7 +2610,7 @@ netshareenum
 netshareenumall
 
 # get share info
-netsharegetinfo
+netsharegetinfo share_name_here
 
 # enumerate files on share
 netfileenum
@@ -2862,6 +2862,10 @@ telnet IP_here 25
 
 # list commands
 nmap --script smtp-commands IP_here -p 25
+
+# identify server
+HELO hostname_here
+EHLO hostname_here
 
 # verify email
 VRFY user_name_here

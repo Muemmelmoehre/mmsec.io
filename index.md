@@ -2670,9 +2670,9 @@ lookupnames_level
 
 # enumerate privileges
 enumprivs
-getdispname
-lsaenumprivsaccount
-lsaenumacctrights
+getdispname privilege_name_here
+lsaenumprivsaccount SID_here
+lsaenumacctrights SID_here
 
 # get user alias
 queryuseraliases builtin SID_here

@@ -1112,7 +1112,7 @@ http://upload_url_here/file_name_here?cmd=command_here
 ## FFUF
 ```bash
 # enumerate files
-ffuf -w /path/to/wordlist.txt -u http://IP_here/FUZZ -e txt,php,html
+ffuf -w /path/to/wordlist.txt -u http://IP_here/FUZZ -e .txt,.php,.html
 
 # filter out responses with a certain number of words
 ffuf -w /path/to/wordlist.txt -u http://IP_here/FUZZ -fw number_here

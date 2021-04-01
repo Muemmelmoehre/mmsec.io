@@ -1112,9 +1112,7 @@ http://upload_url_here/file_name_here?cmd=command_here
 ## FFUF
 ```bash
 # enumerate files
-ffuf -w /path/to/wordlist.txt -u http://IP_here/FUZZ.html
-ffuf -w /path/to/wordlist.txt -u http://IP_here/FUZZ.php 
-ffuf -w /path/to/wordlist.txt -u http://IP_here/FUZZ.txt
+ffuf -w /path/to/wordlist.txt -u http://IP_here/FUZZ -e txt,php,html
 
 # filter out responses with a certain number of words
 ffuf -w /path/to/wordlist.txt -u http://IP_here/FUZZ -fw number_here
@@ -2460,6 +2458,14 @@ dr
 
 # reload program
 ood
+```
+
+
+
+## RDESKTOP
+```bash
+# connect to rdp machine
+rdesktop IP_here
 ```
 
 

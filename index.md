@@ -1560,6 +1560,14 @@ john --fork=number_of_processes_here -w=/path/to/wordlist /path/to/hash
 
 
 
+## KERBEROAST
+```
+# crack SPN's password on TGS (service ticket)
+python /path/to/kerberoast/tgsrepcrack.py /path/to/wordlist /path/to/kirbi
+```
+
+
+
 ## LDAP
 ```bash
 # nmap script

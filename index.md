@@ -1479,6 +1479,12 @@ cd share_name_here_can_be_different_from_above
 ```powershell
 # read out local DNS cache
 ipconfig /displaydns
+
+# display full config
+ipconfig /all
+
+# purge DNS resolver cache
+ipconfig /flushdns
 ```
 
 

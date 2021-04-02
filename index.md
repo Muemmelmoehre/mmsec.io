@@ -1470,7 +1470,7 @@ New-PSDrive -Name "share_name_here_can_be_different_from_above" -PSProvider "Fil
 # cmd
 net use unused_letter_here: \\Lin_IP_here\share_name_here
 # access drive
-cd share_name_here_can_be_different_from_above
+cd \\Lin_IP_here\share_name_here_can_be_different_from_above\
 ```
 
 

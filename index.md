@@ -2215,6 +2215,9 @@ pip install package==version_here
 #PY3
 python3 -m pip install package==version_here
 pip3 install package==version_here
+
+# install requirements
+pip install -r requirements.txt
 ```
 
 

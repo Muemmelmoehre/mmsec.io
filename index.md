@@ -2301,6 +2301,9 @@ powershell -E content_of_outfile.ps1
 
 ## POWERSHELL
 ```powershell
+# print powershell version
+echo $PSVersionTable
+
 # get execution policy
 Get-ExecutionPolicy
 Get-ExecutionPolicy -Scope CurrentUser

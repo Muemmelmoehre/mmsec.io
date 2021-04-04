@@ -2373,10 +2373,6 @@ Add-Type -AssemblyName System.IO.Compression.FileSystem
 function unzip {param( [string]$ziparchive, [string]$extractpath );[System.IO.Compression.ZipFile]::ExtractToDirectory( $ziparchive, $extractpath )}
 unzip "C:\path\to\zip" "C:\path\to\out\folder"
 
-# run PowerUp.ps1
-. .\PowerUp.ps1
-Invoke-AllChecks
-
 # view file permissions
 dir | Get-ACL
 
@@ -2436,6 +2432,15 @@ $bytes = [System.Text.Encoding]::Unicode.GetBytes($content)
 
 # base64 decode file
 [Convert]::FromBase64String("base64_string_here")
+```
+
+
+
+## POWERUP
+```powershell
+# run PowerUp.ps1
+. .\PowerUp.ps1
+Invoke-AllChecks
 ```
 
 
@@ -2833,6 +2838,17 @@ searchsploit -m short_path_here
 
 # update searchsploit (package + db)
 sudo apt install exploitdb
+```
+
+
+
+## SEATBELT
+```powershell
+# run Seatbelt.exe
+.\Seatbelt.exe all
+
+# run specific checks
+.\Seatbelt.exe check_here another_check_here
 ```
 
 

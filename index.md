@@ -2363,11 +2363,15 @@ New-PSDrive -Name "drive_name_here" -PSProvider "FileSystem" -Root "\\IP_here\sh
 # list all processes
 Get-Process
 
-# compress .zip
+# compress .zip (<= powershell 5.0)
 Compress-Archive -LiteralPath C:\path\to\files -DestinationPath C:\path\to\out.zip
 
-# uncompress .zip
+# uncompress .zip (<= powershell 5.0)
 Expand-Archive -LiteralPath C:\path\to\zip -DestinationPath C:\path\to\out\folder
+# uncompress .zip (<= .NET 4.5+)
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+function unzip {param( [string]$ziparchive, [string]$extractpath );[System.IO.Compression.ZipFile]::ExtractToDirectory( $ziparchive, $extractpath )}
+unzip "C:\path\to\zip" "C:\path\to\out\folder"
 
 # run PowerUp.ps1
 . .\PowerUp.ps1

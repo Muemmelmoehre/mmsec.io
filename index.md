@@ -2360,6 +2360,12 @@ New-PSDrive -Name "drive_name_here" -PSProvider "FileSystem" -Root "\\IP_here\sh
 # list all processes
 Get-Process
 
+# compress .zip
+Compress-Archive -LiteralPath C:\path\to\files -DestinationPath C:\path\to\out.zip
+
+# uncompress .zip
+Expand-Archive -LiteralPath C:\path\to\zip -DestinationPath C:\path\to\out\folder
+
 # run PowerUp.ps1
 . .\PowerUp.ps1
 Invoke-AllChecks

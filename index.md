@@ -817,6 +817,9 @@ whoami /all
 
 # display user privileges
 whoami /priv
+
+# find applied patches
+type C:\Windows\WindowsUpdate.log | findstr KB
 ```
 
 

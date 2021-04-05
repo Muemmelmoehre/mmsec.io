@@ -844,6 +844,9 @@ net start
 tasklist /svc
 wmic service list brief
 wmic service list
+
+# display processus running as SYSTEM
+tasklist /v /fi "username eq SYSTEM"
 ```
 
 

@@ -2304,6 +2304,12 @@ powershell -E content_of_outfile.ps1
 # print powershell version
 echo $PSVersionTable
 
+# print .NET version
+cd C:\Windows\Microsoft.net\Franework64
+dir
+cd latest_v_folder_here
+Get-Item clr.dll | fl
+
 # get execution policy
 Get-ExecutionPolicy
 Get-ExecutionPolicy -Scope CurrentUser

@@ -820,6 +820,12 @@ whoami /priv
 
 # find applied patches
 type C:\Windows\WindowsUpdate.log | findstr KB
+
+# display routing tables
+route print
+
+# display arp entries
+arp -a
 ```
 
 

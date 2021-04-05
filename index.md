@@ -1651,6 +1651,18 @@ medusa -d
 
 
 
+## METERPRETER
+```
+# get cmd shell
+shell
+
+# get powershell shell
+load powershell
+powershell_shell
+```
+
+
+
 ## MIMIKATZ
 ```powershell
 # setup : start logging + enable SeDebugPrivilege (tamper with other processes)

@@ -847,6 +847,12 @@ wmic service list
 
 # display processus running as SYSTEM
 tasklist /v /fi "username eq SYSTEM"
+
+# list stored credentials
+cmdkey /list
+
+# run as other user
+C:\Windows\System32\runas.exe /env /noprofile /user:user_name_here password_here "command_or_program_here"
 ```
 
 
@@ -2487,6 +2493,12 @@ $bytes = [System.Text.Encoding]::Unicode.GetBytes($content)
 
 # base64 decode file
 [Convert]::FromBase64String("base64_string_here")
+
+# run as other user
+$secpasswd = ConvertTo-SecureString "password_here" -AsPlainText -Force
+$mycreds = New-Object System.Management.Automation.PSCredential ("user_name_here", $secpasswd)
+$computer = "hostname_here"
+[System.Diagnostics.Process]::Start("program_here","arguments_here more_args", $mycreds.Username, $mycreds.Password, $computer)
 ```
 
 

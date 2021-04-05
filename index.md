@@ -2495,10 +2495,7 @@ $bytes = [System.Text.Encoding]::Unicode.GetBytes($content)
 [Convert]::FromBase64String("base64_string_here")
 
 # run as other user
-$secpasswd = ConvertTo-SecureString "password_here" -AsPlainText -Force
-$mycreds = New-Object System.Management.Automation.PSCredential ("user_name_here", $secpasswd)
-$computer = "hostname_here"
-[System.Diagnostics.Process]::Start("program_here","arguments_here more_args", $mycreds.Username, $mycreds.Password, $computer)
+powershell -c "$username = 'user_name_here'; $passwd = 'password_here';$secpasswd = ConvertTo-SecureString $passwd -AsPlainText -Force; $mycreds = New-Object System.Management.Automation.PSCredential $username,$secpasswd; Start-Process C:\path\to\shell.exe -Credential $mycreds"
 ```
 
 

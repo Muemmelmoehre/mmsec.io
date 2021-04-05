@@ -826,6 +826,15 @@ route print
 
 # display arp entries
 arp -a
+
+# show firewall status
+netsh firewall show state
+
+# show firewall config
+netsh firewall show config
+
+# list scheduled tasks
+schtasks /query /fo LIST /v
 ```
 
 

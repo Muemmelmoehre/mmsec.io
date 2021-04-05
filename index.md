@@ -2858,6 +2858,12 @@ samdump2 /path/to/copy/of/system /path/to/copy/of/sam
 ```
 # show service config
 sc.exe qc service_name_here
+
+# start service
+sc.exe start service_name_here
+
+# stop service
+sc.exe stop service_name_here
 ```
 
 

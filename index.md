@@ -2415,6 +2415,9 @@ Get-Content file_name_here -Stream ads_name_here
 # connect to share
 New-PSDrive -Name "drive_name_here" -PSProvider "FileSystem" -Root "\\IP_here\share_name_here"
 
+# enable SMBv1
+Enable-WindowsOptionalFeature -Online -FeatureName "SMB1Protocol-Client" -All
+
 # check process architecture
 [Environment]::Is64BitProcess
 

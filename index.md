@@ -2854,6 +2854,14 @@ samdump2 /path/to/copy/of/system /path/to/copy/of/sam
 
 
 
+## SC
+```
+# show service config
+sc.exe qc service_name_here
+```
+
+
+
 ## SCP
 ```bash
 # copy remote file to local machine

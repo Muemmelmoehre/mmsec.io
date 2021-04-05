@@ -797,6 +797,9 @@ nbtstat -A IP_here
 # find connections for specific service
 netstat -anbo
 
+# show open connections
+netstat -ano
+
 # find domain name (on box)
 wmic computersystem get domain
 
@@ -835,6 +838,12 @@ netsh firewall show config
 
 # list scheduled tasks
 schtasks /query /fo LIST /v
+
+# show services
+net start
+tasklist /svc
+wmic service list brief
+wmic service list
 ```
 
 
@@ -2023,6 +2032,12 @@ net group "Domain Controllers" /domain
 
 # test for null session on share
 net use \\IP_here\IPC$ '' /u:''
+
+# stop service
+net stop service_name_here
+
+# (re)start service
+net start service_name_here
 ```
 
 

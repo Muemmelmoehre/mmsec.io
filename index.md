@@ -2309,6 +2309,7 @@ cd C:\Windows\Microsoft.net\Franework64
 dir
 cd latest_v_folder_here
 Get-Item clr.dll | fl
+<google ProductVersion value>
 
 # get execution policy
 Get-ExecutionPolicy

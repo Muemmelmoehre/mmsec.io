@@ -1585,6 +1585,9 @@ john --show /path/to/hash
 # convert kdbx to john
 keepass2john db_here.kdbx
 
+# convert password protected rar to john
+rar2john rar_here
+
 # edit rules
 sudo nano /etc/john/john.conf
 # add rule description here

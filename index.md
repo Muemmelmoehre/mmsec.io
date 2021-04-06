@@ -1232,6 +1232,11 @@ put /path/to/local/file [/path/remote]
 # file download
 get /path/to/remote/file
 
+# bulk download files
+binary
+prompt OFF
+mget *
+
 # change to binary mode
 binary
 

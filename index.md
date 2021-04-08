@@ -2925,8 +2925,9 @@ searchsploit -x short_path_here
 # copy exploit to current working directory
 searchsploit -m short_path_here
 
-# update searchsploit (package + db)
-sudo apt install exploitdb
+# update searchsploit
+sudo apt install exploitdb # package + db
+searchsploit -update # db
 ```
 
 

@@ -3189,6 +3189,15 @@ python /path/to/sqlmap -r req.txt -p param_to_attack --os-shell
 
 # increase timeout (default: 30)
 python /path/to/sqlmap -r req.txt -p param_to_attack --timeout=300
+
+# techniques
+# B = boolean-based blind
+# E = error-based
+# U = union query-based
+# S = stacked queries
+# T = time-based blind
+# Q = inline queries
+--technique BEUSTQ
 ```
 
 

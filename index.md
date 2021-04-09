@@ -463,6 +463,9 @@ alias
 # delete alias
 unalias alias_here
 
+# display arp entries
+arp -a
+
 # background process / job
 Ctrl+Z + bg
 some_command_here &
@@ -563,6 +566,9 @@ find . -name file_name_here
 
 # show bash history
 history
+
+# show routing table
+ip r
 
 # list running jobs
 jobs

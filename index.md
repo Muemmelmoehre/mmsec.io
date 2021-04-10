@@ -3261,6 +3261,20 @@ sudo ss -plant | grep ssh
 
 
 
+## SSHUTTLE
+```bash
+# forward all traffic
+sshuttle -r user_name_here@IP_SSH_server_here 0.0.0.0/0
+
+# forward all traffic + proxy DNS requests to remote SSH server
+sshuttle --dns -r user_name_here@IP_SSH_server_here 0.0.0.0/0
+
+# forward all traffic + exclude pivoting IP from forwarding
+sshuttle -r user_name_here@IP_SSH_server_here -x SSH_IP_here 0.0.0.0/0
+```
+
+
+
 ## SVN
 ```bash
 # download repository

@@ -1232,6 +1232,9 @@ fsutil file createnew file_name_here file_size_here
 # connect
 ftp IP_here
 
+# connect in passive mode
+ftp -p IP_here
+
 # file upload
 put /path/to/local/file [/path/remote]
 

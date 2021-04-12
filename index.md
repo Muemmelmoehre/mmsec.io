@@ -1458,6 +1458,9 @@ hdiutil detach /path/to/volume
 # find IP
 host url_here
 
+# find hostname
+host IP_here domain_server_here
+
 # request mail server for domain
 host -t mx domain_here
 

@@ -1236,6 +1236,9 @@ ftp IP_here
 ftp -p IP_here
 pftp IP_here
 
+# change into passive mode
+quote PASV
+
 # file upload
 put /path/to/local/file [/path/remote]
 

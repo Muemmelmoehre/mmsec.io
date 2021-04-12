@@ -3246,6 +3246,9 @@ ssh -N -L local_port_to_forward_from:IP_here:port_to_forward_to
 # port forwarding / tunnel through proxy
 ssh -N -L 0.0.0.0:local_port_to_forward_from:target_IP_here:target_port_to_forward_to user@proxy_IP_here
 
+# key exchange error
+ssh -oKexAlgorithms=proposed_algorithm_here user@IP_here
+
 # start service
 sudo systemctl start ssh
 
@@ -3493,6 +3496,15 @@ del venv
 ```
 # connect to VNC
 vncviewer IP_here:5900
+```
+
+
+
+## WFUZZ
+```
+# fuzz url
+wfuzz -c -z file,/path/to/wordlist/here URL_here/FUZZ
+wfuzz -c -w /path/to/wordlist/here URL_here/FUZZ
 ```
 
 

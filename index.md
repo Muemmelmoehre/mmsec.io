@@ -678,6 +678,8 @@ cat /usr/lib/os-release
 cat /etc/system-release
 cat /etc/redhat-release
 cat /etc/centos-release
+lsb_release -d
+cat /proc/version
 
 # show number of occurrences
 uniq -c

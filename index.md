@@ -673,6 +673,11 @@ tar -C /path/to/destination -xvzf tarball_here
 
 # display kernel version
 uname -a
+cat /etc/os-release
+cat /usr/lib/os-release
+cat /etc/system-release
+cat /etc/redhat-release
+cat /etc/centos-release
 
 # show number of occurrences
 uniq -c
@@ -1276,6 +1281,17 @@ echo bye >> ftp_commands.txt
 # start session on Win
 ftp -v -n -s:ftp_commands.txt
 
+```
+
+
+
+## GCC
+```
+# get gcc version info
+gcc -v
+
+# cross-compile for 32-bit
+gcc -m32 source.c -o outfile
 ```
 
 

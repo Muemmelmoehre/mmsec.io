@@ -680,6 +680,7 @@ cat /etc/redhat-release
 cat /etc/centos-release
 lsb_release -d
 cat /proc/version
+rpm -q centos-release
 
 # show number of occurrences
 uniq -c

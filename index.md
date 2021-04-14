@@ -3544,6 +3544,8 @@ wfuzz -c -w /path/to/wordlist/here URL_here/FUZZ
 wget --mirror 'ftp://user_here:password_here@hostname.domain'
 wget --mirror 'ftp://user_here:password_here@IP_here'
 
+# recursively retrieve folders + files from FTP
+wget -r 'ftp://user_here:password_here@IP_here'
 
 # download file from FTP / HTTP / HTTPS
 wget -O /path/to/outfile url_here

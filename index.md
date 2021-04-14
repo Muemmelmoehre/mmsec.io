@@ -1295,6 +1295,9 @@ gcc -v
 
 # cross-compile for 32-bit
 gcc -m32 source.c -o outfile
+
+# get gcc specs
+gcc --dumpspecs
 ```
 
 

@@ -3068,6 +3068,7 @@ put /path/to/local/file [/path/remote]
 get /path/to/remote/file
 
 # smbclient - bulk download every file on share
+mask ""
 recurse ON
 prompt OFF
 mget *

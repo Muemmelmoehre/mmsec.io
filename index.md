@@ -814,6 +814,9 @@ netstat -anbo
 # show open connections
 netstat -ano
 
+# find listening ports
+netstat -an | findstr "LISTENING"
+
 # find domain name (on box)
 wmic computersystem get domain
 

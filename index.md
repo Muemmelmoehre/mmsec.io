@@ -441,6 +441,14 @@ stty rows no_rows_here columns no_columns_here
 
 # scan
 host=target_IP_here; echo "--- scan starting ---"; for port in {1..65535}; do timeout .1 bash -c "echo >/dev/tcp/$host/$port" && echo "port $port is open"; done; echo "--- scan finished ---"
+
+# import client certificate
+# extract .pem
+openssl pkc12 -in certificate_name_here.pfx -nocerts -out certificate_name_here.pem -nodes
+# extract .crt
+openssl pkcs12 -in certificate_name_here.pfx -nokeys -out cedrtificate_name_here.crt -nodes
+# update
+sudo update-ca-certificates
 ```
 
 

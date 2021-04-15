@@ -1655,6 +1655,19 @@ john --fork=number_of_processes_here -w=/path/to/wordlist /path/to/hash
 
 
 
+## JQ
+```bash
+# pretty print json file
+cat /path/to/json | jq .
+jq . /path/to/json
+
+# extract attribute
+cat /path/to/json | jq '.[].attribute_here'
+jq '.[].attribute_here'
+```
+
+
+
 ## KERBEROAST
 ```
 # get users with Service Principal Names (SPNs)

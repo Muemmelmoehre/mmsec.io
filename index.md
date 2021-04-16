@@ -1664,6 +1664,9 @@ jq . /path/to/json
 # extract attribute
 cat /path/to/json | jq '.[].attribute_here'
 jq '.[].attribute_here'
+
+# convert content_attribute from json to pdf
+jq -r '.[].content_attribute_here' /path/to/json | base64 -d >/path/to/pdf
 ```
 
 
@@ -3289,6 +3292,9 @@ go
 ```bash
 # connect as user with password
 ssh user@IP_here
+
+# connect as user with password on port
+ssh user@IP_here -p port_here
 
 # connect as user with private key
 ssh -i private_key user@IP_here

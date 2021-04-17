@@ -1934,6 +1934,12 @@ create table 'table_name' (column_name1 VARCHAR(20), username VARCHAR(8), email 
 # list existing tables of current database
 show tables;
 
+# print out columns
+describe table_name_here;
+
+# spawn shell
+\! bash
+
 # list all data from table
 select * from 'table_name';
 
@@ -1972,6 +1978,7 @@ drop user 'username'@'IP_here';
 
 # current db user
 user()
+select user();
 
 # information_schema : get tables
 UNION all select 1,...,table_name from information_schema.tables

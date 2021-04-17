@@ -1939,6 +1939,7 @@ describe table_name_here;
 
 # spawn shell
 \! bash
+\! sh
 
 # list all data from table
 select * from 'table_name';

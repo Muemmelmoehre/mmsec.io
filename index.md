@@ -683,14 +683,21 @@ tar -C /path/to/destination -xvzf tarball_here
 
 # display kernel version
 uname -a
+uname -mrs
+cat /proc/version
+
+# display OS / distro version
+cat /etc/issue
+cat /etc/*-release
 cat /etc/os-release
 cat /usr/lib/os-release
 cat /etc/system-release
 cat /etc/redhat-release
 cat /etc/centos-release
 lsb_release -d
-cat /proc/version
 rpm -q centos-release
+dmesg | grep Linux
+ls /boot | grep vmlinuz-
 
 # show number of occurrences
 uniq -c
@@ -1940,6 +1947,9 @@ describe table_name_here;
 # spawn shell
 \! bash
 \! sh
+
+# read file
+select load_file('/path/to/file/here');
 
 # list all data from table
 select * from 'table_name';

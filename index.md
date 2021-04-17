@@ -526,6 +526,16 @@ comm file1_here file2_here
 # compare and only show lines unique to 2nd file
 comm -13 file1_here file2_here
 
+# show cron jobs
+crontab -l
+ls -la /etc/ | grep cron
+ls -lah /var/spool/cron
+ls -la /etc/cron*
+cat /etc/cron*
+cat /etc/crontab
+cat /etc/anacrontab
+cat /var/spool/cron/crontabs/root
+
 # compare files : --unique to 1st file, +-unique to 2nd file
 diff -c file1_here file2_here
 diff -u file1_here file2_here

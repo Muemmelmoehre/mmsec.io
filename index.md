@@ -585,6 +585,9 @@ find . -type f
 # print path to file
 find . -name file_name_here
 
+# find config files
+find . | grep config
+
 # show bash history
 history
 

@@ -1958,6 +1958,9 @@ describe table_name_here;
 \! bash
 \! sh
 
+# display user-defined functions
+select * from mysql.func;
+
 # read file
 select load_file('/path/to/file/here');
 

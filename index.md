@@ -480,8 +480,9 @@ arp -a
 Ctrl+Z + bg
 some_command_here &
 
-# disable line wrapping
+# base64 encode + disable line wrapping / print everything on the same line
 base64 -w 0 file_here
+some_command_here | base64 -w 0
 
 # base64 encode string
 echo -n string_here | base64
@@ -684,6 +685,10 @@ tail -f /path/to/file
 
 # output last X lines from file
 tail -nX /path/to/file
+
+# print last line, second to last, etc. line
+tail -1
+tail -2
 
 # untar .tar.gz
 tar -xvzf tarball_here

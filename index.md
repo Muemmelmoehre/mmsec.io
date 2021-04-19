@@ -3602,6 +3602,14 @@ vncviewer IP_here:5900
 
 
 
+## WES-NG (Windows Exploit Suggester - Next Generation)
+```
+# update WES-NG
+/path/to/wes.py --update
+```
+
+
+
 ## WFUZZ
 ```
 # fuzz url

@@ -2191,6 +2191,9 @@ net start service_name_here
 # scan host / site
 nikto -h host_site_here
 
+# scan host / site on port
+nikto -h host_site_here -p port_here
+
 # scan host / site with authentication
 nikto -h host_site_here -i user_here:password_here
 ```

@@ -441,16 +441,6 @@ stty rows no_rows_here columns no_columns_here
 
 # scan
 host=target_IP_here; echo "--- scan starting ---"; for port in {1..65535}; do timeout .1 bash -c "echo >/dev/tcp/$host/$port" && echo "port $port is open"; done; echo "--- scan finished ---"
-
-# import client certificate
-# extract .pem
-openssl pkc12 -in certificate_name_here.pfx -nocerts -out certificate_name_here.pem -nodes
-# extract .crt
-openssl pkcs12 -in certificate_name_here.pfx -nokeys -out certificate_name_here.crt -nodes
-# copy to /usr/local/share/ca-certificates/
-sudo cp certificate_name_here.crt /usr/local/share/ca-certificates/certificate_name_here.crt
-# update
-sudo update-ca-certificates
 ```
 
 
@@ -649,6 +639,16 @@ mkpasswd -m sha-512 new_password_here
 
 # enumerate shares
 nmblookup -A IP_here
+
+# import client certificate
+# extract .pem
+openssl pkc12 -in certificate_name_here.pfx -nocerts -out certificate_name_here.pem -nodes
+# extract .crt
+openssl pkcs12 -in certificate_name_here.pfx -nokeys -out certificate_name_here.crt -nodes
+# copy to /usr/local/share/ca-certificates/
+sudo cp certificate_name_here.crt /usr/local/share/ca-certificates/certificate_name_here.crt
+# update
+sudo update-ca-certificates
 
 # check for GUI
 pidof X

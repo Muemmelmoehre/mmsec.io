@@ -2058,6 +2058,7 @@ nbtscan -r target_range_here
 
 # enumerate host
 nbtscan -hv IP_here
+nbtscan -r IP_here/32
 ```
 
 
@@ -3122,36 +3123,27 @@ svwar -m INVITE IP_here
 ## SMB
 ```bash
 # enumerate shares / services with anonymous login
+smbclient //IP_here/IPC$ -N
+smbmap -H IP_here
+crackmapexec smb IP_here --shares
 smbclient -L netbios_name_here -N
 smbclient -L netbios_name_here -I IP_here -N
+nmap --script=smb-enum-shares IP_here
 
 # enumerate smb shares / services as user_here
 smbclient -L netbios_name_here -U user_name_here
 smbclient -L netbios_name_here -I IP_here -U user_name_here
+smbmap -u user -p password -d domain_here -H IP_here
+crackmapexec smb IP_here -u user -p password --shares
 
 # enumerate shares with ntlm password hash
 smbclient -L netbios_name_here  --pw-nt-hash -I IP_here -U user_name_here%password_hash_here
-
-# enumerate smb shares
-nmap --script=smb-enum-shares IP_here
-
-# enumerate smb shares
-smbmap -H IP_here
-
-# enumerate smb shares as user
-smbmap -u user -p password -d domain_here -H IP_here
 
 # recursively list share content + permissions for null session
 smbmap -R share_here -H IP_here
 
 # recursively list share content + permissions for user_here
 smbmap -R share_here -H IP_here -d domain_here -u user_here -p password_here
-
-# enumerate smb shares
-crackmapexec smb IP_here --shares
-
-# enumerate smb shares as user
-crackmapexec smb IP_here -u user -p password --shares
 
 # connect to a directory on a share as username
 smbclient \\\\IP_here\\some_share -D some_folder -U username%password
@@ -3176,9 +3168,6 @@ mask ""
 recurse ON
 prompt OFF
 mget *
-
-# test for null session
-smbclient //IP_here/IPC$ -N
 
 # mount smb share
 sudo mount -t cifs -o 'user=user_here,password=password_here' //IP_here/share_here /path/to/mountpoint

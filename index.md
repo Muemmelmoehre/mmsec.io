@@ -507,6 +507,9 @@ cat *|grep search_term$
 # show real, effective, saved, file system UID / GID
 cat /proc/$$/status | grep "[UG]id"
 
+# change permissions for folder + subfolders
+chmod value_here -R /path/to/folder
+
 # change default shell (effective after login)
 chsh -s /path/to/shell
 chsh -s /path/to/shell username_here

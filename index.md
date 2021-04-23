@@ -806,6 +806,9 @@ dir -ah
 dir /ah
 attrib
 
+# show alternate data streams
+dir /a /r
+
 # show path variable
 path
 echo %PATH%

@@ -3175,6 +3175,9 @@ recurse ON
 prompt OFF
 mget *
 
+# read file
+more filename_here
+
 # mount smb share
 sudo mount -t cifs -o 'user=user_here,password=password_here' //IP_here/share_here /path/to/mountpoint
 

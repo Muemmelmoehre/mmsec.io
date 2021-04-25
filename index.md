@@ -979,7 +979,10 @@ crackmapexec smb IP_here -u user -p password -M spider_plus
 ## CROWBAR
 ```bash
 # brute force RDP login (ideally 1 thread for RDP)
-crowbar -b rdp -s target_I_or_subnet -u user_name_here -C /path/to/wordlist -n number_of_threads_here
+crowbar -b rdp -s target_IP_or_subnet_here -u user_name_here -C /path/to/wordlist -n number_of_threads_here
+
+# brute force ssh keys for user
+crowbar -b sshkey -s target_IP_here -u user_name_here -k /path/to/key/folder/
 ```
 
 

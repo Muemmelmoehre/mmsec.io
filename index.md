@@ -702,6 +702,9 @@ tar -xvzf tarball_here
 # untar .tar.gz to specific location
 tar -C /path/to/destination -xvzf tarball_here
 
+# unzip .tar.bz2
+tar -xf tarball_here
+
 # display kernel version
 uname -a
 uname -mrs

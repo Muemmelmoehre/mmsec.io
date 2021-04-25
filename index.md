@@ -2247,7 +2247,7 @@ nmap -sV target_here
 # run default scripts
 nmap -sC target_here
 
-# enumerate services + OS
+# aggressive scan
 nmap -A target_here
 
 # UDP scan

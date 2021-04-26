@@ -3393,8 +3393,14 @@ ssh -N -L local_port_to_forward_from:IP_here:port_to_forward_to
 # port forwarding / tunnel through proxy
 ssh -N -L 0.0.0.0:local_port_to_forward_from:target_IP_here:target_port_to_forward_to user@proxy_IP_here
 
+# port forwarding - forward to victim via ssh to get access to services listening on localhost
+ssh -R local_attacker_port_here:127.0.0.1:target_port_here username_here@local_attacker_machine_here
+
 # key exchange error
 ssh -oKexAlgorithms=proposed_algorithm_here user@IP_here
+
+# force use of legacy crypto, e.g. DSA
+ssh -o PubKeyAcceptedTypes=ssh-dss
 
 # start service
 sudo systemctl start ssh

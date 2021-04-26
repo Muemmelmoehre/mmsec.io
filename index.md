@@ -556,6 +556,7 @@ fg %%
 # list every file with SUID bit set
 find / -user root -perm -4000 -exec ls -ldb {} \;
 find / -perm -4000 -type f 2>/dev/null
+find / -perm -u=s -type f 2>/dev/null
 
 # find files with SUID / SGID bit set
 find / -type f -a \( -perm -u+s -o -perm -g+s \) -exec ls -l {} \; 2> /dev/null

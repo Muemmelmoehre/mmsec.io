@@ -3678,6 +3678,9 @@ del venv
 ```
 # connect to VNC
 vncviewer IP_here:5900
+
+# connect to VNC as user
+vncviewer --user user_name_here IP_here:5900
 ```
 
 

@@ -1573,6 +1573,14 @@ hydra -L SID_wordlist_here -s 1521 IP_here oracle-sid
 
 
 
+## IFCONFIG
+```
+# full path 
+/usr/sbin/ifconfig -a
+```
+
+
+
 ## IMPACKET
 ```bash
 # get TGT for users with UF_DONT_REQUIRE_PREAUTH

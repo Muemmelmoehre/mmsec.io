@@ -903,6 +903,9 @@ netsh firewall show config
 # list scheduled tasks
 schtasks /query /fo LIST /v
 
+# get details for app_name_here
+schtasks /query /TN "\path\to\app_name_here" /v /fo LIST
+
 # show services
 net start
 tasklist /svc

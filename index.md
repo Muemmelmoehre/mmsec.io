@@ -804,8 +804,14 @@ checksec file_name_here
 
 ## CMD
 ```powershell
+# display arp entries
+arp -a
+
 # clear screen
 cls
+
+# list stored credentials
+cmdkey /list
 
 # enumerate hidden files
 dir -ah
@@ -864,35 +870,14 @@ netstat -ano
 # find listening ports
 netstat -an | findstr "LISTENING"
 
-# find domain name (on box)
-wmic computersystem get domain
-
 # find a domain controller (on box)
 nltest /dsgetdc:domain_name_here
-
-# list processes
-tasklist
-
-# kill process
-taskkill /im:process_name_here
-
-# force kill process
-taskkill /im:process_name_here /f
-
-# display user information
-whoami /all
-
-# display user privileges
-whoami /priv
 
 # find applied patches
 type C:\Windows\WindowsUpdate.log | findstr KB
 
 # display routing tables
 route print
-
-# display arp entries
-arp -a
 
 # show firewall status
 netsh firewall show state
@@ -906,17 +891,32 @@ schtasks /query /fo LIST /v
 # get details for app_name_here
 schtasks /query /TN "\path\to\app_name_here" /v /fo LIST
 
+# kill process
+taskkill /im:process_name_here
+
+# force kill process
+taskkill /im:process_name_here /f
+
+# list processes
+tasklist
+
 # show services
-net start
 tasklist /svc
+net start
 wmic service list brief
 wmic service list
 
 # display processus running as SYSTEM
 tasklist /v /fi "username eq SYSTEM"
 
-# list stored credentials
-cmdkey /list
+# display user information
+whoami /all
+
+# display user privileges
+whoami /priv
+
+# find domain name (on box)
+wmic computersystem get domain
 
 # run as other user
 C:\Windows\System32\runas.exe /env /noprofile /user:user_name_here password_here "command_or_program_here"

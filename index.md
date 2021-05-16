@@ -2427,6 +2427,16 @@ openssl s_client -connect target_IP:21 -starttls ftp
 
 # genereate self-signed cert
 openssl req -newkey rsa:2048 -nodes -keyout myprivkey.key -x509 -days 362 -out mycert.crt
+
+# import client certificate
+# extract .pem
+openssl pkc12 -in certificate_name_here.pfx -nocerts -out certificate_name_here.pem -nodes
+# extract .crt
+openssl pkcs12 -in certificate_name_here.pfx -nokeys -out certificate_name_here.crt -nodes
+# copy to /usr/local/share/ca-certificates/
+sudo cp certificate_name_here.crt /usr/local/share/ca-certificates/certificate_name_here.crt
+# update
+sudo update-ca-certificates
 ```
 
 

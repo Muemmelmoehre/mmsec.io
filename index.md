@@ -3673,6 +3673,21 @@ tnscmd10g -h IP_here -p 1521 --rawcmd "(CONNECT_DATA=(COMMAND=version))"
 
 
 
+## TR
+```bash
+# replace newline with space
+tr '\n' ' '
+tr '\n' ' ' < /path/to/in/file
+tr '\n' ' ' < /path/to/in/file > /path/to/out/file
+
+# delete newline
+tr -d '\n'
+tr -d '\n' < /path/to/in/file
+tr -d '\n' < /path/to/in/file > /path/to/out/file
+```
+
+
+
 ## UPX
 ```bash
 # compress + pack executable
@@ -3688,6 +3703,14 @@ Sub Macro_name_here()
 ' some comment here
     CreateObject("WScript.Shell").Run "cmd"
 End Sub
+```
+
+
+
+## VIEWGEN
+```bash
+# guess signature + encryption
+viewgen --guess "viewstate_here"
 ```
 
 

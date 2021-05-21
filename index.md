@@ -673,6 +673,10 @@ exit
 # sort text file in alphabetical order + remove duplicates
 sort -u file_name_here
 
+# reload .bashrc / .bash_profile
+source ~/.bashrc
+source ~/.bash_profile
+
 # run shell (user's shell in /etc/passwd) as login shell
 sudo -i
 sudo --login

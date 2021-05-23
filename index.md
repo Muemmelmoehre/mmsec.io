@@ -2297,6 +2297,9 @@ nmap -sn IP_range
 nmap -sP IP_range
 nmap -sn -iL IP_list_file_here
 
+# scan IPv6
+nmap -6 domain_here
+
 # sweep network
 nmap -p port_here target_range_here
 

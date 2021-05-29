@@ -3385,6 +3385,9 @@ LIMIT no_here
 
 # identify displayed columns
 UNION ALL SELECT 1,2,...,no_columns_here
+
+# wildcard
+%
 ```
 
 

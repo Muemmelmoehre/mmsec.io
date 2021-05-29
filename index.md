@@ -3388,6 +3388,10 @@ UNION ALL SELECT 1,2,...,no_columns_here
 
 # wildcard
 %
+
+# ASCII math = 2
+67-ASCII('A')
+51-ASCII(1)
 ```
 
 

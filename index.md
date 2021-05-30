@@ -3710,6 +3710,39 @@ upx -9 binary-here
 
 
 
+## URL-ENCODING
+```
+# &
+%26
+
+# ?
+%3f
+
+# =
+%3d
+
+# <space>
++
+%20
+
+# <CR>
+%0d
+
+# <LF>
+%0a
+
+# +
+%2b
+
+# ;
+%3b
+
+# /
+%2f
+```
+
+
+
 ## VBA
 ```vba
 # shell spawning macro snippet

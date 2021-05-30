@@ -3702,10 +3702,10 @@ tr -d '\n' < /path/to/in/file > /path/to/out/file
 # delete CR (e.g. Win file to Unix)
 tr -d '\r' < /path/to/win_file/here > /path/to/unix_file/here
 
-# translate LF into CR (e.g. Unix to Mac)
+# replace LF with CR (e.g. Unix to Mac)
 tr '\n' '\r' < /path/to/unix_file/here > /path/to/mac_file/here
 
-# translate CR into LF (e.g. Mac to Unix)
+# replace CR with LF (e.g. Mac to Unix)
 tr '\r' '\n' < /path/to/mac_file/here > /path/to/unix_file/here
 ```
 

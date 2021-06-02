@@ -2006,7 +2006,10 @@ convert(int,@@version)
 
 ## possible replacements for @@version
 ### database name
-db_name()
+db_name() # current db
+db_name(0) # current db
+db_name(X) # X = 0,1,2,... list db names
+
 ### current user
 user_name()
 ### table names

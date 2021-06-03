@@ -2497,6 +2497,18 @@ pandoc -s -o out_file_here.pdf mardown_file_here.md
 
 
 
+## PEAS
+```bash
+# WinPEAS
+## add registry key
+reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
+## reopen cmd
+## run all checks
+.\winPEASany.exe quiet cmd fast
+```
+
+
+
 ## PERL
 ```perl
 # generate string of 20 A + concatenate with ABCD
@@ -3695,6 +3707,13 @@ prefix + shift + p
 
 # log pane history (requires tmux-logging plugin)
 prefix + alt + shift + p
+
+# detach session
+prefix + d
+
+# reattach session
+tmux attach -d -t session_name_here
+tmux attach -d -t session_id_here
 ```
 
 

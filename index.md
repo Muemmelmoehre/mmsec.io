@@ -29,6 +29,14 @@ Welcome to [@muemmelmoehre](https://github.com/muemmelmoehre){:target="blank"}'s
 
 
 
+## ACCESSCHK
+```
+# check user privs
+accesschk.exe /accepteula -uwcqv "Authenticated Users" *
+```
+
+
+
 ## ADB
 ```bash
 # list devices

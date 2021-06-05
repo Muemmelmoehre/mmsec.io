@@ -2479,6 +2479,9 @@ nmap --script-help script_name_here
 # update script DB
 sudo nmap --script-updatedb
 
+# run script with args
+nmap --script some_script -p port_here IP_here --script-args "script_name_here.arg_name_here='arg_value_here', script_name_here.another_arg_name_here='arg_value_here'"
+
 # check all available scripts for protocol
 ls -1 /usr/share/nmap/scripts/protocol_here-*
 

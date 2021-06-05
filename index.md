@@ -2004,6 +2004,12 @@ mongo IP_here/db_name_here
 mongo IP_here:port_here
 mongo IP_here:port_here/db_name_here
 mongo -u user_here -p password_here IP_here:port_here/db_name_here
+
+# list databases
+show dbs
+
+# use database
+use db_name_here
 ```
 
 

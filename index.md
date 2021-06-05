@@ -1998,7 +1998,12 @@ x86_64-w64-mingw32-g++ /path/to/source.c -o /path/to/out.exe
 ## MONGO
 ```sql
 # connect to mongoDB database
-mongo -u user_here -p password_here IP_here:port_here
+mongo # connect to localhost
+mongo IP_here
+mongo IP_here/db_name_here
+mongo IP_here:port_here
+mongo IP_here:port_here/db_name_here
+mongo -u user_here -p password_here IP_here:port_here/db_name_here
 ```
 
 

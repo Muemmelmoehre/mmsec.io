@@ -787,6 +787,15 @@ busybox httpd -f -p port_here
 
 
 
+## CADAVER
+```bash
+# open connection to webdaf endpoint
+cadaver
+open url_here/path/to/webdav
+```
+
+
+
 ## CERTUTIL
 ```powershell
 # download file

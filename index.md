@@ -2040,7 +2040,7 @@ db.dropDatabase()
 db
 
 # run system commands
-run("command_here","arg_here") # mongo-client
+run("command_here","arg_here")
 ```
 
 

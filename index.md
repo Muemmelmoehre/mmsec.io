@@ -2019,6 +2019,25 @@ show dbs
 
 # use database
 use db_name_here
+
+# insert statement
+db.collection_name_here.insert({"key":"value"})
+
+# retrieve data
+db.collection_name_here.find()
+db.collection_name_here.find({"key":"value"})
+
+# delete entry
+db.collection_name_here.remove({"key":"value"})
+
+# drop collection
+db.collection_name_here.drop()
+
+# drop database
+db.dropDatabase()
+
+# current database
+db
 ```
 
 

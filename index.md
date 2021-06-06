@@ -2038,6 +2038,9 @@ db.dropDatabase()
 
 # current database
 db
+
+# run system commands
+run("command_here","arg_here") # mongo-client
 ```
 
 

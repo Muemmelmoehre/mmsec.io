@@ -1653,6 +1653,14 @@ host -l domain_here name_server_here
 
 
 
+## HTPASSWD
+```bash
+# generate apr1 hash (e.g. webdav)
+htpasswd -nmb username_here password_here
+```
+
+
+
 ## HYDRA
 ```bash
 # dictionary attack

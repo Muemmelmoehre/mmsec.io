@@ -628,6 +628,9 @@ ls -a1
 # display files in chronological order
 ls -lt
 
+# display loaded modules
+lsmod
+
 # man keyword search
 man -k keyword_here
 man -k 'regex_here'

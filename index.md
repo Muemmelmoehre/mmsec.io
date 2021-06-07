@@ -3739,7 +3739,10 @@ ssh -R local_attacker_port_here:127.0.0.1:target_port_here username_here@local_a
 ssh -oKexAlgorithms=proposed_algorithm_here user@IP_here
 
 # force use of legacy crypto, e.g. DSA
-ssh -o PubKeyAcceptedKeyTypes=ssh-dss
+ssh -o PubKeyAcceptedKeyTypes=ssh-dss user@IP_here
+
+# force use of cipher
+ssh -c cipher_suite_here user@IP_here
 
 # start service
 sudo systemctl start ssh

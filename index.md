@@ -1348,7 +1348,7 @@ ffuf -w /path/to/wordlist.txt -u http://IP_here/FUZZ -fc code_here
 ffuf -w /path/to/wordlist.txt -request file_here
 
 # fuzz with cookies (e.g. authentication)
-ffuf -w /path/to/wordlist.txt -u http://URL_here/FUZZ -b "cookie_here=value_here; another_cookie_here=value_here"
+ffuf -w /path/to/wordlist.txt -u http://URL_here/FUZZ -b "cookie_here: value_here; another_cookie_here: value_here"
 ```
 
 

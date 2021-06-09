@@ -3449,10 +3449,15 @@ svwar -m INVITE IP_here
 # enumerate shares / services with anonymous login
 smbclient //IP_here/IPC$ -N
 smbmap -H IP_here
+smbmap -H IP_here -P port_here # samba : 139
 crackmapexec smb IP_here --shares
 smbclient -L netbios_name_here -N
 smbclient -L netbios_name_here -I IP_here -N
 nmap --script=smb-enum-shares IP_here
+
+rpcclient -U "" -N IP_here
+netshareenumall
+netshareenum
 
 # enumerate smb shares / services as user_here
 smbclient -L netbios_name_here -U user_name_here

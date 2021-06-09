@@ -3506,6 +3506,17 @@ sudo mount -t cifs -o 'user=user_here,password=password_here' //IP_here/share_he
 
 # execute command
 smbmap -u user_name_here -p 'password_here' -d domain_here -H IP_here -x 'command_here'
+
+# force use of LANMAN1
+nano /etc/samba/smb.conf # kali
+client min protocol = LANMAN1 # global section
+service smbd restart
+
+# find samba version
+## start wireshark
+## initiate smb connection
+smbclient -L \\IP_here
+## "Session Setup AndX Request" packet (server response)
 ```
 
 

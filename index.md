@@ -2320,6 +2320,9 @@ select do_system('id > /tmp/out; chown raptor.raptor /tmp/out');
 ## spawn root shell
 \! sh
 \! bash
+
+# get mysql version
+mysqld --version
 ```
 
 

@@ -374,6 +374,9 @@ some_command_here 2> error.log
 # run bash with debug output
 #!/bin/bash -x
 
+# run SUID bash without dropping privs (run with euid)
+/bin/bash -p
+
 # capture user input + display
 read variable_name_here
 echo $variable_name_here

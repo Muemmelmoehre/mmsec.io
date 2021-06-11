@@ -3005,7 +3005,7 @@ sudo ssh -N -D 127.0.0.1:port_here username_here@proxy_IP_here
 ## configure proxychains to direct any local application traffic through ssh tunnel
 nano /etc/proxychains.conf
 [ProxyList]
-socks4 127.0.0.1:port_here
+socks4 127.0.0.1 port_here
 # prepend each command on kali
 sudo proxychains command_here
 ```

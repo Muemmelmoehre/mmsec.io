@@ -3008,6 +3008,12 @@ nano /etc/proxychains.conf # proxychains-ng : /etc/proxychains4.conf
 socks4 127.0.0.1 port_here
 # prepend each command on kali
 sudo proxychains command_here
+sudo proxychains4 command_here
+
+# nmap over proxychains (TCP-based scans only)
+nano /etc/proxychains.conf # proxychains-ng : /etc/proxychains4.conf
+## comment out proxy_dns
+\# proxy_dns
 ```
 
 

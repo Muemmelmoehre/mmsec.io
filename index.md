@@ -3000,10 +3000,10 @@ Invoke-AllChecks
 ## PROXYCHAINS
 ```bash
 # dynamic port forwarding : set local listening port + tunnel traffic through proxy to any destination reachable by proxy
-## set up ssh tunnel : dynamix SOCKS4 proxy
+## set up ssh tunnel : dynamic SOCKS4 proxy
 sudo ssh -N -D 127.0.0.1:port_here username_here@proxy_IP_here
 ## configure proxychains to direct any local application traffic through ssh tunnel
-nano /etc/proxichains.conf
+nano /etc/proxychains.conf
 [ProxyList]
 socks4 127.0.0.1:port_here
 # prepend each command on kali

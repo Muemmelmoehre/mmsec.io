@@ -798,7 +798,7 @@ busybox httpd -f -p port_here
 
 ## CADAVER
 ```bash
-# open connection to webdaf endpoint
+# open connection to webdav endpoint
 cadaver
 open url_here/path/to/webdav
 ```
@@ -2347,6 +2347,9 @@ nbtscan -r target_range_here
 # enumerate host
 nbtscan -hv IP_here
 nbtscan -r IP_here/32
+
+# NBT name scan
+nbtscan target_range_here
 ```
 
 

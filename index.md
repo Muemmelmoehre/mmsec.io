@@ -1973,6 +1973,9 @@ shell
 # get powershell shell
 load powershell
 powershell_shell
+
+# local port forwarding : forward traffic directed to local_port to target_port on target_IP
+portfwd add -l local_port_here -r target_IP_here -p target_port_here
 ```
 
 

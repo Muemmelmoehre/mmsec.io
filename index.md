@@ -3016,7 +3016,9 @@ sudo proxychains4 command_here
 # nmap over proxychains (TCP-based scans only)
 nano /etc/proxychains.conf # proxychains-ng : /etc/proxychains4.conf
 ## comment out proxy_dns
-\# proxy_dns
+# proxy_dns
+## comment ou any other socks4 proxy (e.g. tor)
+# socks4 127.0.0.1 9050
 ```
 
 

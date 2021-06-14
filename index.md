@@ -3019,6 +3019,9 @@ nano /etc/proxychains.conf # proxychains-ng : /etc/proxychains4.conf
 # proxy_dns
 ## comment out any other socks4 proxy (e.g. tor)
 # socks4 127.0.0.1 9050
+## start scan (SYN scan not working, any non-TCP protocol not working over proxychains)
+sudo proxychains nmap -sT -Pn target_IP
+sudo proxychains4 nmap -sT -Pn target_IP
 ```
 
 

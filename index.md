@@ -2675,6 +2675,9 @@ openssl pkcs12 -in certificate_name_here.pfx -nokeys -out certificate_name_here.
 sudo cp certificate_name_here.crt /usr/local/share/ca-certificates/certificate_name_here.crt
 ## update
 sudo update-ca-certificates
+
+# import burp certificate (e.g. for use in scripts)
+openssl x509 -inform der -in cacert.der -out burp.pem
 ```
 
 

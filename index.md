@@ -8,7 +8,7 @@ classes: wide
 # Security Grimoire
 
 Welcome to [@muemmelmoehre](https://github.com/muemmelmoehre){:target="blank"}'s online grimoire / cheat-sheet for useful commands. Enjoy!
-
+If you're looking for my write-ups, please head over to my [GitHub page](https://github.com/muemmelmoehre){:target="blank"}!
 
 *(Awesome ASCII art like the one below can be found [here](https://asciiart.website/index.php){:target="blank"}.)*
 

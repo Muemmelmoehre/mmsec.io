@@ -599,6 +599,9 @@ find . -name file_name_here
 # find config files
 find . | grep config
 
+# find files older than x days
+find /path/to/search/folder/ -mtime +x
+
 # show bash history
 history
 

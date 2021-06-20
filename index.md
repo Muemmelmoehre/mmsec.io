@@ -547,6 +547,12 @@ cat /etc/crontab
 cat /etc/anacrontab
 cat /var/spool/cron/crontabs/root
 
+# edit crontab
+crontab -e
+
+# edit crontab for different user
+crontab -u user_name_here -e
+
 # compare files : --unique to 1st file, +-unique to 2nd file
 diff -c file1_here file2_here
 diff -u file1_here file2_here
@@ -3038,6 +3044,17 @@ nano /etc/proxychains.conf # proxychains-ng : /etc/proxychains4.conf
 ## start scan (SYN scan not working, any non-TCP protocol not working over proxychains)
 sudo proxychains nmap -sT -Pn target_IP
 sudo proxychains4 nmap -sT -Pn target_IP
+
+# proxied shell
+## set up ssh tunnel : dynamic SOCKS5 proxy
+sudo ssh -N -D 127.0.0.1:port_here username_here@proxy_IP_here
+## configure proxychains to direct any local application traffic through ssh tunnel
+nano /etc/proxychains.conf # proxychains-ng : /etc/proxychains4.conf
+[ProxyList]
+socks5 127.0.0.1 port_here
+# spawn proxied shell
+PROXYCHAINS_SOCKS5=port_here proxychains bash
+PROXYCHAINS_SOCKS5=port_here proxychains4 bash
 ```
 
 

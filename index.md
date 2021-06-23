@@ -1911,6 +1911,24 @@ john -w=/path/to/wordlist /path/to/john/file
 
 
 
+## LAZAGNE
+```powershell
+# launch all modules
+lazagne.exe all
+
+# launch module_here
+lazagne.exe module_here
+
+# write results to file 
+lazagne.exe all -oN /path/to/outfile
+
+# help
+lazagne.exe -h
+lazagne.exe module_here -h
+```
+
+
+
 ## LDAP
 ```bash
 # nmap script

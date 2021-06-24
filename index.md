@@ -3298,6 +3298,7 @@ nmap -sV --script=nfs-showmount IP_here
 mkdir mounted_share
 sudo mount -o nolock IP_here:/share_name_here /path/to/mounted_share/
 sudo mount -o nolock,vers=3 IP_here:/share_name_here /path/to/mounted_share/
+sudo mount -o port=port_here IP_here:/share_name_here /path/to/mounted_share/
 ```
 
 

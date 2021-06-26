@@ -3182,6 +3182,10 @@ try:
     # establish connection
     s.connect((target_ip, target_port))
 
+    # *optional* if service has banner : receive + print data
+    data = s.recv(4096)
+    print data
+
     # send payload
     s.send(payload)
 

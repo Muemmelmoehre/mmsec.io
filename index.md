@@ -464,7 +464,7 @@ host=target_IP_here; echo "--- scan starting ---"; for port in {1..65535}; do ti
 # add new user
 sudo adduser user_name_here
 
-# deleter user + their files
+# delete user + their files
 sudo userdel -r user_name_here
 
 # create alias in .bash_profile

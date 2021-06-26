@@ -3165,6 +3165,35 @@ with open("file_name_here","mode_here",encoding="encoding_here") as file:
 
 # upgrade shell
 python -c 'import pty;pty.spawn("/bin/bash")'
+
+# simple connection script
+## PY2
+#!/usr/bin/env python2
+
+import socket
+
+# set up socket
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+target_ip = "IP_here"
+target_port = port_here
+payload = "payload_here"
+
+try:
+    # establish connection
+    s.connect((target_ip, target_port))
+
+    # send payload
+    s.send(payload)
+
+    # receive server response + print to screen
+    data = s.recv(4096)
+    print data
+
+    # close connection
+    s.close()
+
+except: 
+    print "Connection failed!"
 ```
 
 

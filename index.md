@@ -2250,6 +2250,9 @@ msf-pattern_offset -l length_here -q EIP_bytes_here
 # connect to a db server as user
 mssql -s IP_db_server -o port -u username -p password
 
+# check for nse scripts for mssql
+nmap --script-help "*ms* and *sql*"
+
 # error-based SQLi with cast / convert
 ## numeric data
 cast((SELECT @@version) as int)

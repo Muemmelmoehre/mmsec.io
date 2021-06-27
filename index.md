@@ -3108,6 +3108,11 @@ PROXYCHAINS_SOCKS5=port_here proxychains4 bash
 
 # burp over proxychains
 Burp > User options > SOCKS proxy
+
+# firefox over proxychains
+## fire up ssh tunnel
+sudo ssh -N -D 127.0.0.1:proxychains_port_here user@pivot_IP
+## configure foxyproxy for 127.0.0.1:proxychains_port_here + activate
 ```
 
 

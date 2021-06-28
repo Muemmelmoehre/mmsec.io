@@ -996,6 +996,9 @@ wmic computersystem get domain
 
 # run as other user
 C:\Windows\System32\runas.exe /env /noprofile /user:user_name_here password_here "command_or_program_here"
+
+# find services with unquoted service paths
+wmic service get name,pathname,displayname,startmode | findstr /i auto | findstr /i /v "C:\Windows\\" | findstr /i /v """
 ```
 
 
@@ -3067,6 +3070,21 @@ $bytes = [System.Text.Encoding]::Unicode.GetBytes($content)
 
 # run as other user
 powershell -c "$username = 'user_name_here'; $passwd = 'password_here';$secpasswd = ConvertTo-SecureString $passwd -AsPlainText -Force; $mycreds = New-Object System.Management.Automation.PSCredential $username,$secpasswd; Start-Process C:\path\to\shell.exe -Credential $mycreds"
+
+# start service + display status
+Start-Service "service_name_here" -PassThru
+
+# stop service + display status
+Stop-Service "service_name_here" -PassThru
+
+# restart service + display status
+Restart-Service "service_name_here" -PassThru
+
+# display service status
+Get-Service service_name_here
+
+# show all services
+Get-Service
 ```
 
 
@@ -3517,7 +3535,7 @@ samdump2 /path/to/copy/of/system /path/to/copy/of/sam
 
 
 
-## SC
+## SC (SERVICE CONTROLLER)
 ```
 # show service config
 sc.exe qc service_name_here

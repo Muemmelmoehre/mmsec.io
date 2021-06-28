@@ -999,6 +999,9 @@ C:\Windows\System32\runas.exe /env /noprofile /user:user_name_here password_here
 
 # find services with unquoted service paths
 wmic service get name,pathname,displayname,startmode | findstr /i auto | findstr /i /v "C:\Windows\\" | findstr /i /v """
+
+# check for write permissions --> (W)
+icacls C:\path\to\folder\here
 ```
 
 

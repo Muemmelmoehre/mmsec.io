@@ -3911,7 +3911,9 @@ xp_cmdshell 'command_here'
 go
 
 # sqsh - turn on componant for xp_cmdshell (needs admin privs)
-EXEC SP_CONFIGURED 'show advanced options',1
+EXEC SP_CONFIGURE 'show advanced options',1
+reconfigure
+go
 EXEC SP_CONFIGURE 'xp_cmdshell',1
 reconfigure
 go

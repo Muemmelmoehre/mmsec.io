@@ -4294,6 +4294,9 @@ vncviewer IP_here::5900
 ```
 # update WES-NG
 /path/to/wes.py --update
+
+# run WES-NG
+/path/to/wes.py /path/to/systeminfo.txt
 ```
 
 

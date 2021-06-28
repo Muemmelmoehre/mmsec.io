@@ -3705,6 +3705,9 @@ service smbd restart
 ## initiate smb connection
 smbclient -L \\IP_here
 ## "Session Setup AndX Request" packet (server response)
+
+# enumerate SMB protocols
+nmap --script smb-protocols -p 139,445 IP_here
 ```
 
 

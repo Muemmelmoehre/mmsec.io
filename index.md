@@ -2674,6 +2674,12 @@ nmap -p 443 --script http-methods --script-args http-methods.url-path='/my/path/
 
 # quick vulnerability scan
 nmap --script vuln IP_here
+
+# light http enumeration
+nmap --script http-enum IP_here
+
+# spoof IP
+nmap -S spoof_IP_here target_IP_here
 ```
 
 

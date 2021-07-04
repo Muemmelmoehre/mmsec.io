@@ -4021,6 +4021,9 @@ ssh -o PubKeyAcceptedKeyTypes=ssh-dss user@IP_here
 # force use of cipher
 ssh -c cipher_suite_here user@IP_here
 
+# escape from rbash restricted shell
+ssh username_here@IP_here -t "bash --noprofile"
+
 # start service
 sudo systemctl start ssh
 

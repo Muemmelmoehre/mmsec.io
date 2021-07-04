@@ -648,6 +648,9 @@ ls -a1
 # display files in chronological order
 ls -lt
 
+# display folder content recursively
+ls -lasR
+
 # display loaded modules
 lsmod
 

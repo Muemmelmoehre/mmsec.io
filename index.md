@@ -553,6 +553,9 @@ crontab -e
 # edit crontab for different user
 crontab -u user_name_here -e
 
+# time stamp year-month-date_hh:min
+date +%F_%R
+
 # compare files : --unique to 1st file, +-unique to 2nd file
 diff -c file1_here file2_here
 diff -u file1_here file2_here

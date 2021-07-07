@@ -3606,6 +3606,15 @@ samdump2 /path/to/copy/of/system /path/to/copy/of/sam
 
 ## SC (SERVICE CONTROLLER)
 ```
+# list all services
+sc.exe queryex type=service state=all
+
+# list all services - names only
+sc.exe queryex type=service state=all | find /i "SERVICE_NAME:"
+
+# list all running services
+sc.exe queryex type=service state=active
+
 # show service config
 sc.exe qc service_name_here
 

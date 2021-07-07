@@ -3121,6 +3121,9 @@ Get-Service service_name_here
 # show all services
 Get-Service
 
+# show all running services
+Get-Service | Where-Object {$_.Status -eq "Running"}
+
 # rename file
 Rename-Item C:\path\to\file\old\name C:\path\to\file\new\name
 

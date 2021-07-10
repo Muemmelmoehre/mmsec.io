@@ -1650,9 +1650,6 @@ grep -i search_term_here
 
 # select non-matching lines
 grep -v search_term_here
-
-# check whether login as root is permitted
-grep PermitRootLogin /etc/ssh/sshd_config
 ```
 
 
@@ -4040,6 +4037,9 @@ ssh user@IP_here -p port_here
 
 # connect as user with private key
 ssh -i private_key user@IP_here
+
+# check whether login as root is permitted
+grep PermitRootLogin /etc/ssh/sshd_config
 
 # create key pair
 ssh-keygen

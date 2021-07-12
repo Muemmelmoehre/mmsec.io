@@ -2688,8 +2688,12 @@ ls -1 /usr/share/nmap/scripts/protocol_here-*
 # run all protocol scripts
 nmap -p port_here --script protocol_here-* target_IP
 
-# run all category (vuln, exploit) scripts
+# run all category (safe, vuln, exploit) scripts
 nmap --script category_here target_IP
+
+# pair protocol + categorie scripts
+nmap --script "*protocol_here or category_here" target_IP
+nmap --script "*protocol_here and category_here" target_IP
 
 # check supported HTTP methods
 nmap -p 443 --script http-methods --script-args http-methods.url-path='/my/path/here' url_here

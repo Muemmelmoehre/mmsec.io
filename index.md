@@ -1530,6 +1530,8 @@ echo bye >> ftp_commands.txt
 ## start session on Win
 ftp -v -n -s:ftp_commands.txt
 
+# read file on ftp server
+get /path/to/file -
 ```
 
 

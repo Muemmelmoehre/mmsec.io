@@ -1018,6 +1018,9 @@ wmic service get name,pathname,displayname,startmode | findstr /i auto | findstr
 
 # check for write permissions --> (W)
 icacls C:\path\to\folder\here
+
+# rename file
+rename old_file_name new_file_name
 ```
 
 

@@ -813,7 +813,7 @@ START binary_name_here.exe
 ## BURP
 ```bash
 # import .pfx to access certificate-protected website
-User options > TLS > Client TLS Certificates > Add > PKCS#12
+Project options > TLS > Client TLS Certificates > Add > PKCS#12
 ```
 
 

@@ -4117,6 +4117,22 @@ sshuttle -r user_name_here@IP_SSH_server_here -x SSH_IP_here 0.0.0.0/0
 
 
 
+## SUBLIST3R
+```bash
+# enum subdomains
+python3 /path/to/sublist3r.py -d domain_name_here
+
+# enum subdomains + show results as they're found
+python3 /path/to/sublist3r.py -d domain_name_here -v
+
+# enum subdomains with specific tcp ports open
+python3 /path/to/sublist3r.py -d domain_name_here -p port_here
+
+# enum subdomains using specific search engine
+python3 /path/to/sublist3r.py -d domain_name_here -e search_engine_name_here
+```
+
+
 ## SVN
 ```bash
 # download repository

@@ -2787,7 +2787,7 @@ openssl req -newkey rsa:2048 -nodes -keyout myprivkey.key -x509 -days 362 -out m
 
 # import client certificate
 ## extract .pem
-openssl pkc12 -in certificate_name_here.pfx -nocerts -out certificate_name_here.pem -nodes
+openssl pkcs12 -in certificate_name_here.pfx -nocerts -out certificate_name_here.pem -nodes
 ## extract .crt
 openssl pkcs12 -in certificate_name_here.pfx -nokeys -out certificate_name_here.crt -nodes
 ## copy to /usr/local/share/ca-certificates/

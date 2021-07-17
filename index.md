@@ -604,7 +604,10 @@ find /folder_here -maxdepth 1 -writable -type f
 find / -executable -writable -type d 2> /dev/null
 
 # list files recursively
-find . -type f
+find /path/to/search/folder -type f
+
+# find files with specific extension
+find /path/to/search/folder -name "*.extension_here"
 
 # print path to file
 find . -name file_name_here

@@ -1149,6 +1149,9 @@ curl "protocol_here://url_here"
 curl -X GET "https://url_here" -H "header_here: value_here" -H "another_header_here: value_here" -H "header_without_value;"
 
 # send POST request
+## POST params
+curl -X POST "https://url_here" -d "param1=value_here&param2=value_here"
+## json data
 curl -X POST "https://url_here" -H "header_here: value_here" -d "{\"some_data\":\"value_here\",\"some_more_data\":\"value_here\"}"
 
 # PUT file

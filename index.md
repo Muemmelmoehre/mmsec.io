@@ -709,6 +709,10 @@ ps -ef
 # list specific process
 ps -fC process_name_here
 
+# list processes running as root
+ps aux | grep "^root”
+ps aux | grep "root$”
+
 # terminal logging
 script /path/to/log
 exit

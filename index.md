@@ -3679,6 +3679,10 @@ scp -i private_key_here user@IP_here:/path/to/remote/file /path/to/local/file
 
 # authenticate with ssh key + copy local file to remote machine
 scp -i private_key_here /path/to/local/file user@IP_here:/path/to/remote/file 
+
+# connect to specific port - copy remote file to local machine
+scp -P port_here user@IP_here:/path/to/remote/file /path/to/local/file
+scp user@IP_here:port_here//path/to/remote/file /path/to/local/file
 ```
 
 

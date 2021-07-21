@@ -162,6 +162,17 @@ sudo ss -plant | grep apache2
 
 # read out first line of file via error message
 sudo apache2 -f /path/to/file/here
+
+# spin up testing server (ubuntu)
+## install apache
+sudo apt install apache2
+## install php
+sudo apt install php_version_here-cli
+## enable php execution
+sudo apt-get install php libapache2-mod-php
+sudo a2enmod mpm_prefork && sudo a2enmod php_version_here
+## restart apache2
+sudo service apache2 restart
 ```
 
 

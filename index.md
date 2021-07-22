@@ -2906,6 +2906,10 @@ $str = mysql_fetch_array($res);
 $val = $str['password']; # read out value from results array
 print $val;
 ?>
+
+# send HTTP header
+header('header_name_here: value_here');
+header('header_name_here: ' . $variable_with_value_here);
 ```
 
 

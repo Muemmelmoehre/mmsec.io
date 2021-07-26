@@ -945,6 +945,9 @@ set
 # set other variables
 set variable_name=value_here
 
+# find string in config files
+findstr /SI /M "string_here" *.xml *.ini *.txt *.config
+
 # chain commands - execute both
 first_command & second_command 
 

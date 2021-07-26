@@ -4542,10 +4542,13 @@ vncviewer IP_here::5900
 ## WES-NG (Windows Exploit Suggester - Next Generation)
 ```
 # update WES-NG
-/path/to/wes.py --update
+python /path/to/wes.py --update
 
 # run WES-NG
-/path/to/wes.py /path/to/systeminfo.txt
+python /path/to/wes.py /path/to/systeminfo.txt
+
+# find priv esc exploits
+python /path/to/wes.py /path/to/systeminfo.txt -i 'Elevation of Privilege' --exploits-only
 ```
 
 

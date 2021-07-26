@@ -1029,6 +1029,9 @@ wmic service list
 # display processus running as SYSTEM
 tasklist /v /fi "username eq SYSTEM"
 
+# display processus running as ADMINISTRATOR
+tasklist /v /fi "username eq ADMINISTRATOR"
+
 # display user information
 whoami /all
 

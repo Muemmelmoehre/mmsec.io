@@ -2162,10 +2162,10 @@ i686-w64-mingw32-gcc /path/to/source.c -o /path/to/out.exe
 x86_64-w64-mingw32-gcc /path/to/source.c -o /path/to/out.exe
 
 # cross-compile C++ for Windows on Linux - 32-bit
-i686-w64-mingw32-g++ /path/to/source.c -o /path/to/out.exe
+i686-w64-mingw32-g++ /path/to/source.cpp -o /path/to/out.exe
 
 # cross-compile C++ for Windows on Linux - 64-bit
-x86_64-w64-mingw32-g++ /path/to/source.c -o /path/to/out.exe
+x86_64-w64-mingw32-g++ /path/to/source.cpp -o /path/to/out.exe
 ```
 
 

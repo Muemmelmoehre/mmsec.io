@@ -2858,6 +2858,9 @@ reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
 ## reopen cmd
 ## run all checks
 .\winPEASany.exe quiet cmd fast
+
+## run service checks
+.\winPEASany.exe quiet servicesinfo
 ```
 
 

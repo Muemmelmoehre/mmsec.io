@@ -4296,6 +4296,23 @@ telnet -l user_name_here IP_here
 
 
 
+## TFTP
+```bash
+# connect
+tftp IP_here
+
+# download file
+get /path/to/file/on/tftp
+
+# upload file
+put /apth/to/local/file/here /path/to/file/on/tftp
+
+# print help
+?
+```
+
+
+
 ## THE HARVESTER
 ```bash
 # harvest data about domain from data_source

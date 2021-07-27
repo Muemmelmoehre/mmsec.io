@@ -3207,6 +3207,9 @@ Get-Service | Where-Object {$_.Status -eq "Running"}
 # rename file
 Rename-Item C:\path\to\file\old\name C:\path\to\file\new\name
 
+# remove file
+Remove-Item C:\path\to\file
+
 # reboot localhost
 Restart-Computer .
 

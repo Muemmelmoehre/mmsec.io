@@ -929,6 +929,9 @@ attrib
 # show alternate data streams
 dir /a /r
 
+# show short paths
+dir /x
+
 # show path variable
 path
 echo %PATH%

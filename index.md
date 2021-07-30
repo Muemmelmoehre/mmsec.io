@@ -2042,8 +2042,12 @@ lazagne.exe module_here -h
 # nmap script
 nmap --script ldap-search IP_here 
 
+# return all user attributes
 ldapsearch -LLL -x -H ldap://IP_here -b '' -s base'(objectclass=*)'
+ldapsearch -x -h IP_here -b 'dc=domain_here,dc=dc2_here' -s base'(objectclass=*)'
+ldapsearch -x -h IP_here -b 'dc=domain_here,dc=dc2_here' -s base'(objectclass=*)' -p port_here
 
+# scope : subtree
 ldapsearch -x -h IP_here -s sub -b 'dc=domain_here,dc=dc2_here'
 
 # get domain name

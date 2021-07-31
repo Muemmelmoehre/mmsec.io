@@ -3441,6 +3441,9 @@ ood
 ```bash
 # connect to rdp machine
 rdesktop IP_here
+
+# connect to rdp machine + set up share
+rdesktop IP_here -r disk:name_here=/path/to/share/here
 ```
 
 

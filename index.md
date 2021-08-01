@@ -3226,6 +3226,19 @@ Restart-Computer .
 # ping host
 Test-Connection -ComputerName computer_name_here -ErrorAction Stop -Count 1
 Test-Connection -ComputerName IP_here -ErrorAction Stop -Count 1
+
+# bypass UAC 
+## !! won't work if ConsentPromptBehaviorAdmin == 2 && PromptOnSecureDesktop == 1 !!
+## check whether UAC is enabled
+Get-ItemProperty HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
+## 0 = UAC disabled, 1 = UAC enabled
+EnableLUA : 1
+## 0 = Elevate without prompting
+## 2 = Prompt for consent on Secure Desktop
+## 5 = Prompt for consent for non_Windows binaries (default)
+ConsentPromptBehaviorAdmin : 5
+## 0 = don't prompt, 1 = prompt
+PromptOnSecureDesktop : 1
 ```
 
 

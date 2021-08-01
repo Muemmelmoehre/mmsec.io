@@ -3485,6 +3485,19 @@ reg save HKLM\SAM C:\path\to\copy\location\SAM.save
 
 # create copy of SECURITY
 reg save HKLM\SECURITY C:\path\to\copy\location\SECURITY.save
+
+# bypass UAC 
+## !! won't work if ConsentPromptBehaviorAdmin == 2 && PromptOnSecureDesktop == 1 !!
+## check whether UAC is enabled
+reg query HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\System
+## 0 = UAC disabled, 1 = UAC enabled
+EnableLUA REG_DWORD 0x1
+## 0 = Elevate without prompting
+## 2 = Prompt for consent on Secure Desktop
+## 5 = Prompt for consent for non_Windows binaries (default)
+ConsentPromptBehaviorAdmin REG_DWORD 0x5
+## 0 = don't prompt, 1 = prompt
+PromptOnSecureDesktop REG_DWORD 0x1
 ```
 
 

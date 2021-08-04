@@ -1035,6 +1035,9 @@ tasklist /v /fi "username eq SYSTEM"
 # display processus running as ADMINISTRATOR
 tasklist /v /fi "username eq ADMINISTRATOR"
 
+# locate file
+where /r C:\path\to\search\folder *.extension_here *.another_extension_here
+
 # display user information
 whoami /all
 

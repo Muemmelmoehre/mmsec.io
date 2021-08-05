@@ -620,6 +620,9 @@ find /path/to/search/folder -type f
 # find files with specific extension
 find /path/to/search/folder -name "*.extension_here"
 
+# find file (systemwide search)
+find / -name "file_name_here"
+
 # print path to file
 find . -name file_name_here
 

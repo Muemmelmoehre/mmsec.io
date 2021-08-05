@@ -1699,6 +1699,9 @@ grep -i search_term_here
 
 # select non-matching lines
 grep -v search_term_here
+
+# print line numbers
+grep -n search_term_here
 ```
 
 

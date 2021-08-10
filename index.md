@@ -514,6 +514,15 @@ echo 'command && -stuff here' | base64
 echo 'base64_here' > /tmp/my_script.sh
 echo '2nd_base64_here' >> /tmp/my_script.sh
 
+# find all files with capabilities
+getcap -r / 2>/dev/null
+
+# set setuid capability
+setcap cap_setuid+ep /path/to/file
+
+# remove all capabilities from file
+setcap -r /path/to/file
+
 # read all files in . + grep for search_term
 cat *|grep search_term
 

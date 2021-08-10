@@ -754,6 +754,9 @@ sudo --shell
 sudo -u other_user_here program_here
 sudo --user other_user_here program_here
 
+# reload .profile
+source ~/.profile
+
 # continously show last lines from text file
 tail -f /path/to/file
 

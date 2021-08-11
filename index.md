@@ -2260,6 +2260,9 @@ cp ruby_exploit /usr/share/metasploit-framework/modules/exploits/path/to/fitting
 wget url_to_raw_ruby_exploit
 cp ruby_exploit /opt/metasploit-framework/embedded/framework/modules/exploits/path/to/fitting/category/exploit.rb
 # exit msfconsole + restart
+
+# verbose mode
+set VERBOSE true
 ```
 
 

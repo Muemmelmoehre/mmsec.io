@@ -944,6 +944,9 @@ attrib
 # show alternate data streams
 dir /a /r
 
+# find writable folders
+dir /a-r-d /s /b
+
 # show short paths
 dir /x
 
@@ -4671,6 +4674,7 @@ wfuzz -c -w /path/to/wordlist/here URL_here/FUZZ
 
 # fuzz subdomains
 wfuzz -c -Z -w /path/to/wordlist --sc 200,202,204,301,302,307,403 http://FUZZ.domain.here
+wfuzz --hw no_words_here -H "Host: FUZZ.domain.here" -w /path/to/wordlist IP_here
 ```
 
 

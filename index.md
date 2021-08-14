@@ -38,6 +38,14 @@ accesschk.exe /accepteula -uwcqv "Authenticated Users" *
 
 
 
+## ACTIVE DIRECTORY
+```
+# enumerate users
+nmap --script krb5-enum-users --script-args krb5-enum-users.realm='domain.here' IP_here -p 88
+```
+
+
+
 ## ADB
 ```bash
 # list devices

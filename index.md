@@ -2086,6 +2086,7 @@ john -w=/path/to/wordlist /path/to/john/file
 ```bash
 # enumerate AD users
 nmap --script krb5-enum-users --script-args krb5-enum-users.realm='domain.here' IP_here -p 88
+nmap --script krb5-enum-users --script-args krb5-enum-users.realm='domain.here',userdb=/path/to/list/of/usernames IP_here -p 88
 ```
 
 

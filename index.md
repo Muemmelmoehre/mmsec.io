@@ -2093,7 +2093,7 @@ nmap --script krb5-enum-users --script-args krb5-enum-users.realm='domain.here' 
 ### KERBRUTE
 ```bash
 # enumerate AD users
-kerbrute userenum /path/to/list/of/usernames -d domain.here -dc DC_IP_here
+kerbrute userenum /path/to/list/of/usernames -d domain.here --dc DC_IP_here
 ```
 
 

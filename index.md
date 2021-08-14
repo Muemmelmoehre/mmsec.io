@@ -38,14 +38,6 @@ accesschk.exe /accepteula -uwcqv "Authenticated Users" *
 
 
 
-## ACTIVE DIRECTORY
-```
-# enumerate users
-nmap --script krb5-enum-users --script-args krb5-enum-users.realm='domain.here' IP_here -p 88
-```
-
-
-
 ## ADB
 ```bash
 # list devices
@@ -2086,6 +2078,22 @@ mimkatz # kerberos::list /export
 /path/to/kirbi2john.py /path/to/kirbi > out_file_here
 # crack
 john -w=/path/to/wordlist /path/to/john/file
+```
+
+
+
+## KERBEROS (AD)
+```bash
+# enumerate AD users
+nmap --script krb5-enum-users --script-args krb5-enum-users.realm='domain.here' IP_here -p 88
+```
+
+
+
+### KERBRUTE
+```bash
+# enumerate AD users
+kerbrute userenum /path/to/list/of/usernames -d domain.here -dc DC_IP_here
 ```
 
 

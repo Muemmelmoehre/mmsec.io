@@ -1389,6 +1389,14 @@ droopescan scan drupal -u IP_here
 
 
 
+## ENJARIFY
+```bash
+# convert .apk to .jar
+/path/to/enjarify.sh -o /path/to/out.jar /path/to/in.apk
+```
+
+
+
 ## ENV
 ```bash
 # show all environment variables

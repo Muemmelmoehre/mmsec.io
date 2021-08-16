@@ -2125,6 +2125,9 @@ lazagne.exe module_here -h
 ```bash
 # dump domain info as user
 ldapdomaindump -u "domain_here\user_name_here" -p password_here domain_name_here
+
+# find users with TRUSTED_FOR_DELEGATION flag
+grep TRUSTED_FOR_DELEGATION domain_users.grep
 ```
 
 

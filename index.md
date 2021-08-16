@@ -3364,6 +3364,14 @@ Invoke-AllChecks
 
 
 
+## PROCYON
+```bash
+# decompile .jar
+procyon -jar /path/to/jar -o /path/to/out/directory
+```
+
+
+
 ## PROXYCHAINS
 ```bash
 # dynamic port forwarding : set local listening port + tunnel traffic through proxy to any destination reachable by proxy

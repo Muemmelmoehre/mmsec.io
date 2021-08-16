@@ -2121,7 +2121,15 @@ lazagne.exe module_here -h
 
 
 
-## LDAP
+## LDAPDOMAINDUMP
+```bash
+# dump domain info as user
+ldapdomaindump -u "domain_here\user_name_here" -p password_here domain_name_here
+```
+
+
+
+## LDAPSEARCH
 ```bash
 # nmap script
 nmap --script ldap-search IP_here 

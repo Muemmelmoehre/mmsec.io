@@ -638,6 +638,10 @@ find . | grep config
 # find files older than x days
 find /path/to/search/folder/ -mtime +x
 
+# cat all files in folder_here
+find folder_here -type f -exec cat {} \;
+find folder_here -type f -exec cat {} +
+
 # show bash history
 history
 

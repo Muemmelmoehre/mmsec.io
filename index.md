@@ -3166,6 +3166,12 @@ SELECT datname from pg_database;
 SELECT * from pg_catalog.pg_tables;
 ## only user-generated
 SELECT * from pg_catalog.pg_tables WHERE schemaname != 'pg_catalog' AND schemaname != 'information_schema';
+
+# directory listing (file system)
+SELECT * FROM pg_ls_dir('/path/to/folder_here');
+
+# LFI file read (file system)
+SELECT * FROM pg_read_file('/path/to/file_here', 0, 1000000);
 ```
 
 

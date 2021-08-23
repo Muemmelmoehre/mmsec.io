@@ -3153,6 +3153,19 @@ postgres:postgres
 
 # dump usernames + password hashes
 SELECT usename, passwd from pg_shadow;
+
+# show databases
+\l
+SELECT datname from pg_database;
+
+# use database
+\c database_here
+
+# list tables
+## all
+SELECT * from pg_catalog.pg_tables;
+## only user-generated
+SELECT * from pg_catalog.pg_tables WHERE schemaname != 'pg_catalog' AND schemaname != 'information_schema';
 ```
 
 

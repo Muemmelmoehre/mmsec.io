@@ -3683,6 +3683,10 @@ data = my_file.read() # whole file as string
 data = my_file.readline() # one line as string
 data = my_file.readlines() # all lines as string element in list
 my_file.close()
+
+# strip all whitespace from string
+s = "my string here "
+stripped = "".join(s.split())
 ```
 
 

@@ -3453,6 +3453,12 @@ Get-Service
 # show all running services
 Get-Service | Where-Object {$_.Status -eq "Running"}
 
+# list installed software
+Get-ItemProperty HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\* | Select-Object DisplayName
+
+# check software version
+Get-ItemProperty HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\* | Where-Object {($_.DisplayName -eq " Software Name Here")}
+
 # rename file
 Rename-Item C:\path\to\file\old\name C:\path\to\file\new\name
 

@@ -3472,6 +3472,9 @@ Restart-Computer .
 Test-Connection -ComputerName computer_name_here -ErrorAction Stop -Count 1
 Test-Connection -ComputerName IP_here -ErrorAction Stop -Count 1
 
+# test connectivity (catch with http server)
+powershell.exe IWR IP_here:port_here
+
 # bypass UAC 
 ## !! won't work if ConsentPromptBehaviorAdmin == 2 && PromptOnSecureDesktop == 1 !!
 ## check whether UAC is enabled

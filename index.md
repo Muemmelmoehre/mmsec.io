@@ -1980,9 +1980,13 @@ sudo iptables -I OUTPUT 1 -d destination_here -j ACCEPT
 
 # list all rules
 sudo iptables -L
+sudo iptables-save
 
 # delete all rules
 sudo iptables -F
+
+# delete specific rule
+sudo iptables -D complete_rule_here
 
 # view traffic (by rule)
 sudo iptables -nv -L

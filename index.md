@@ -879,6 +879,9 @@ open url_here/path/to/webdav
 ```powershell
 # download file
 certutil -urlcache -split -f url_to_web_file /path/to/out/file
+
+# calculate hashsum
+certutil -hashfile /path/to/file HASHTYPE_here # SHA1, MD5, etc.
 ```
 
 

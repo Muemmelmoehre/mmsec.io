@@ -871,6 +871,12 @@ busybox httpd -f -p port_here
 # open connection to webdav endpoint
 cadaver
 open url_here/path/to/webdav
+
+# upload file
+put /path/to/file/on/attacker/box file_name_on_webdav_here
+
+# list files
+ls
 ```
 
 

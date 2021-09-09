@@ -2186,6 +2186,9 @@ ldapsearch -x -h IP_here -s sub -b 'dc=domain_here,dc=dc2_here'
 
 # get domain name
 ldapsearch -x -h IP_here -s base namingcontexts
+
+# LAPS? search for local admin passwords
+ldapsearch -v -x -D username_here@domain.here -w password_here -b 'dc=domain_here,dc=dc2_here' -h IP_here "(ms-MCS-AdmPwd=*)"
 ```
 
 

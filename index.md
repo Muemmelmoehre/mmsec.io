@@ -645,6 +645,11 @@ find folder_here -type f -exec cat {} +
 # show bash history
 history
 
+# show IP
+ip a
+hostname -I
+ifconfig
+
 # show routing table
 ip r
 

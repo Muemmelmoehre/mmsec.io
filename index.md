@@ -2354,8 +2354,9 @@ use db_name_here
 db.collection_name_here.insert({"key":"value"})
 
 # retrieve data
-db.collection_name_here.find()
-db.collection_name_here.find({"key":"value"})
+db.collection_name_here.find() # all
+db.collection_name_here.find().pretty() # pretty print
+db.collection_name_here.find({"key":"value"}) # specific value
 
 # delete entry
 db.collection_name_here.remove({"key":"value"})
@@ -2368,6 +2369,9 @@ db.dropDatabase()
 
 # current database
 db
+
+# version
+db.version()
 
 # run system commands
 run("command_here","arg_here")

@@ -1694,6 +1694,14 @@ git clone file:///path/to/repo/
 # clone over ssh
 GIT_SSH_COMMAND='ssh -i /path/to/private/key -p port_here' git clone git@IP_here:/path/to/git/repo
 GIT_SSH_COMMAND='ssh -i /path/to/private/key' git clone git@IP_here:/path/to/git/repo
+
+# push over ssh
+## config (if required)
+git config --global user.name "muemmelmoehre"
+git config --global user.email "muemmel@moehre"
+## push
+GIT_SSH_COMMAND='ssh -i /path/to/private/key -p port_here' git push origin master
+GIT_SSH_COMMAND='ssh -i /path/to/private/key' git push origin master
 ```
 
 

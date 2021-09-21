@@ -4620,6 +4620,9 @@ sshuttle --dns -r user_name_here@IP_SSH_server_here 0.0.0.0/0
 
 # forward all traffic + exclude pivoting IP from forwarding
 sshuttle -r user_name_here@IP_SSH_server_here -x SSH_IP_here 0.0.0.0/0
+
+# authenticate with private key
+sudo sshuttle --ssh-cmd 'ssh -i /path/to/private/key' --dns -r user_name_here@IP_SSH_server_here 0.0.0.0/0
 ```
 
 

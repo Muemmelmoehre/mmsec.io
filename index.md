@@ -1687,6 +1687,9 @@ git stash pop
 
 # show commit history
 git log
+
+# clone local repo
+git clone file:///path/to/repo/
 ```
 
 

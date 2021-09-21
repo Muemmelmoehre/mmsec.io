@@ -1692,7 +1692,7 @@ git log
 git clone file:///path/to/repo/
 
 # clone over ssh
-GIT_OVER_SSH='ssh -p port_here -i /path/to/private/key' git clone git@IP_here:/path/to/git/repo
+GIT_OVER_SSH='ssh -i /path/to/private/key -p port_here' git clone git@IP_here:/path/to/git/repo
 GIT_OVER_SSH='ssh -i /path/to/private/key' git clone git@IP_here:/path/to/git/repo
 ```
 

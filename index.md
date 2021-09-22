@@ -1716,7 +1716,8 @@ gobuster dir -u http://IP_here -w /path/to/wordlist -k
 
 # fuzz subdomains
 gobuster dns -d target_domain_here -w /path/to/wordlist
-gobuster vhost -u http://IP_here -w /path/to/wordlist
+gobuster vhost -u http://domain_here -w /path/to/wordlist
+gobuster vhost -u http://domain_here -w /path/to/wordlist -r -k |grep -v "(Status: 400)"
 ```
 
 

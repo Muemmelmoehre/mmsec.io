@@ -4567,6 +4567,10 @@ grep PermitRootLogin /etc/ssh/sshd_config
 # create key pair
 ssh-keygen
 
+# local port forwarding - bind remote_port on target_IP to local_port on localhost (forward only internallly accessible port)
+ssh -L local_port:127.0.0.1:remote_port user@target_IP_here
+ssh -i /path/to/user\'s/private_key -L local_port:127.0.0.1:remote_port user@target_IP_here
+
 # local port forwarding through proxy - opens port on localhost + forwards it to remote target, run from attacker box
 ssh -N -L local_port_to_forward_from:target_IP_here:target_port_to_forward_to user@proxy_IP_here
 

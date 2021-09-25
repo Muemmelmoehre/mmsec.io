@@ -2028,6 +2028,20 @@ sudo iptables -nv -L
 
 
 
+## IRC
+```bash
+# connect to server
+nc -nvvv IP_here port_here
+echo "command_here" | nc -nvvv IP_here port_here
+
+# authenticate to server (all values can be random)
+PASS password_here
+NICK nick_name_here
+USER user_name_here host_name_here server_name_here :real_name_here
+```
+
+
+
 ## JARSIGNER
 ```bash
 # sign apk :

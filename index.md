@@ -2080,7 +2080,10 @@ john --show /path/to/hash
 keepass2john db_here.kdbx
 
 # convert password protected rar to john
-rar2john rar_here
+rar2john rar_here.rar
+
+# convert password protected pdf to john
+pdf2john pdf_here.pdf >pdf_hash
 
 # edit rules
 ## open conf file

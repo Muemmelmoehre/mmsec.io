@@ -3076,6 +3076,14 @@ pandoc markdown_file_here.md -o out_file_here.docx --highlight-style=tango --ref
 
 
 
+## PDFCRACK
+```bash
+# crack password-protected pdf
+pdfcrack -f /path/to/pdf -w /path/to/wordlist
+```
+
+
+
 ## PEAS
 ```bash
 # WinPEAS

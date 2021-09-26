@@ -4896,6 +4896,9 @@ rlwrap nc -lnvp port_here
 # restart vulnerable service or reboot
 sc stop service_name_here
 shutdown /r /t 0
+shutdown /r /t 0 && exit
+## restart with delay
+shutdown /r /t 10 && exit
 ```
 
 

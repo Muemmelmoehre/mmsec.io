@@ -985,6 +985,9 @@ cmdkey /list
 # execute commands
 cmd.exe /c command_here
 
+# run .exe
+start \path\to\exe
+
 # enumerate hidden files
 dir -ah
 dir /ah

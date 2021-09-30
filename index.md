@@ -2525,9 +2525,29 @@ msf-pattern_offset -l length_here -q EIP_bytes_here
 ```sql
 # connect to a db server as user
 mssql -s IP_db_server -o port -u username -p password
+sqsh -S IP_here -U user_here -P password_here
 
 # check for nse scripts for mssql
 nmap --script-help "*ms* and *sql*"
+
+# check version
+SELECT @@version
+GO # sometimes only "go" works
+
+# current user
+SELECT user_name()
+SELECT system_user
+SELECT user
+SELECT loginame FROM master..sysprocesses WHERE spid=@@SPID
+GO
+
+# current database
+SELECT db_name()
+GO
+
+# list users
+SELECT name FROM master..syslogins
+GO
 
 # error-based SQLi with cast / convert
 ## numeric data
@@ -4569,6 +4589,7 @@ python /path/to/sqlmap -r req.txt --file-read '/path/to/file/here'
 ```bash
 # connect to SQL database
 sqsh -S IP_here -U user_here -P password_here
+sqsh -S IP_here:port_here -U user_here -P password_here
 
 # sqsh - execute command on server
 xp_cmdshell 'command_here'

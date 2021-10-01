@@ -3102,6 +3102,15 @@ pandoc markdown_file_here.md -o out_file_here.docx --highlight-style=tango --ref
 
 
 
+## PDB
+```python
+# execute commands
+import os
+os.system("command_here")
+```
+
+
+
 ## PDFCRACK
 ```bash
 # crack password-protected pdf

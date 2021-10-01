@@ -3832,6 +3832,10 @@ my_file.close()
 # strip all whitespace from string
 s = "my string here "
 stripped = "".join(s.split())
+
+# execute os commands
+import os
+os.system("command_here")
 ```
 
 

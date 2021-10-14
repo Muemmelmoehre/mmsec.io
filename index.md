@@ -2092,6 +2092,12 @@ rar2john rar_here.rar >rar_hash
 # convert password protected pdf to john
 pdf2john pdf_here.pdf >pdf_hash
 
+# convert .jks keystore to john
+keystore2john jks_here.jks >jks_hash
+
+# crack keystore
+john --format==keystore jks_hash
+
 # edit rules
 ## open conf file
 sudo nano /etc/john/john.conf

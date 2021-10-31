@@ -129,6 +129,21 @@ content update --uri content://uri_here --bind column_name_here:type_here:value_
 
 
 
+## AFL / AFL++
+```bash
+# compile binary with afl-clang-fast
+export LLVM_CONFIG="llvm-config-11"
+CC=/path/to/AFLplusplus/afl-clang-fast CXX=/path/to/AFLplusplus/afl-clang-fast++ ./configure --prefix="/path/to/work/folder/install"
+cd /path/to/program/folder
+make # might need to run twice
+make install # might need to run twice
+
+# fuzz binary
+afl-fuzz -i /path/to/corpus/files/ -o /path/to/out/folder/ -s hardcoded_seed_here -- /path/to/afl_compiled_binary_here @@ /path/to/work/folder
+```
+
+
+
 ## AMASS
 ```bash
 # subdomain enumeration

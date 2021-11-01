@@ -2119,10 +2119,21 @@ step
 # step into (execute exactly one instruction)
 stepi
 
+# continue execution after hitting breakpoint
+c
+continue
+
 # examine memory
 x/numer_of_units_here data_type_here location_name_here
 x/2i $eip # examine 2 instructions starting from where eip points to
 x/2w $eip # examine 2 words starting from where eip points to
+
+# pattern create
+pattern create length_here pattern.txt
+run < pattern.txt
+
+# pattern offset
+pattern offset 0xmemorry_address_here
 ```
 
 

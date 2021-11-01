@@ -2092,6 +2092,9 @@ program_here &
 # attach gdb to running process
 gdb -q -p pid_here
 
+# debug core dump produced by program
+gdb program_here core_here
+
 # run program with arguments
 run arg_here another_arg_here
 r arg_here another_arg_here
@@ -2104,16 +2107,20 @@ r < input_file.here
 disas function_name_here
 
 # set breakpoint
+b *0xmemory_address_here
 break *0xmemory_address_here
+b function_name_here
 break function_name_here
 
-# display content/value of object (function / register / variable)
-print object_name_here
+# show content of register / variable / memory location
+p $register_name_here
+print $register_name_here
 
 # display content of all registers
 info registers
 
 # step over (execute program until next line in source code)
+s
 step
 
 # step into (execute exactly one instruction)
@@ -2134,6 +2141,14 @@ run < pattern.txt
 
 # pattern offset
 pattern offset 0xmemorry_address_here
+
+# kill running program
+k
+kill
+
+# exit gdb
+q
+quit
 ```
 
 

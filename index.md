@@ -2077,6 +2077,56 @@ gcc --dumpspecs
 
 
 
+## GDB / GDB-PEDA
+```
+# set syntax to intel (peda default)
+peda.execute("set disassembly-flavor intel")
+
+# run vulnerable program in debugger
+gdb ./vulnerable
+gdb -q ./vulnerable # quiet
+
+# run program + display pid
+program_here &
+
+# attach gdb to running process
+gdb -q -p pid_here
+
+# run program with arguments
+run arg_here another_arg_here
+r arg_here another_arg_here
+
+# run program while reading input from file
+run < input_file.here
+r < input_file.here
+
+# disassemble function
+disas function_name_here
+
+# set breakpoint
+break *0xmemory_address_here
+break function_name_here
+
+# display content/value of object (function / register / variable)
+print object_name_here
+
+# display content of all registers
+info registers
+
+# step over (execute program until next line in source code)
+step
+
+# step into (execute exactly one instruction)
+stepi
+
+# examine memory
+x/numer_of_units_here data_type_here location_name_here
+x/2i $eip # examine 2 instructions starting from where eip points to
+x/2w $eip # examine 2 words starting from where eip points to
+```
+
+
+
 ## GIT
 ```bash
 # list branches

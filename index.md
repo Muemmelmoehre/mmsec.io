@@ -2146,6 +2146,9 @@ pattern offset 0xmemorry_address_here
 k
 kill
 
+# show functions + their memory addresses (not stripped binary only)
+info functions
+
 # exit gdb
 q
 quit
@@ -3634,6 +3637,9 @@ perl -e 'exec "/bin/bash"'
 
 # perl with setuid capability? --> spawn root shell
 perl -e 'use POSIX (setuid); POSIX::setuid(0); exec "/bin/bash";'
+
+# calcute md5 for each string/line in file + print to out
+cat strings_here.txt |perl -MDigest::MD5=md5_hex -nlE'say"".md5_hex($_)' > out
 ```
 
 

@@ -658,6 +658,9 @@ find /path/to/search/folder/ -mtime +x
 find folder_here -type f -exec cat {} \;
 find folder_here -type f -exec cat {} +
 
+# exclude error messages from output
+find / -name "file_name_here" 2>/dev/null
+
 # show bash history
 history
 

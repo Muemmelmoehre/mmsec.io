@@ -1661,6 +1661,9 @@ curl -X PUT -H "Content-Type: application/json" -d '{"key":"value","key":"value"
 
 # retrieve file from IMAP/S, POP3/S, SCP, SFTP, SMB/S, SMTP/S, TELNET, TFTP
 curl -O /path/to/outfile url_here
+
+# get current IP
+curl ip.me
 ```
 
 

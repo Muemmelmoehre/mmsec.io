@@ -624,6 +624,10 @@ find / -perm -g=s -type f 2>/dev/null
 # find files with SUID / SGID bit set
 find / -type f -a \( -perm -u+s -o -perm -g+s \) -exec ls -l {} \; 2> /dev/null
 
+# find ssh keys
+find ~/ /root /home -maxdepth 2 -name '\.ssh'
+find ~/ /root /home -maxdepth 2 -name '\.ssh' | uniq | xargs find
+
 # find files not owned by root
 find \! -uid 0
 

@@ -4405,6 +4405,15 @@ rdesktop IP_here -r disk:name_here=/path/to/share/here
 
 
 
+## READELF
+```bash
+# identify function offset from library base
+## x86
+readelf -s /lib/i386-linux-gnu/libc.so.6 | grep "function_name_here" # libc
+```
+
+
+
 ## RECON-NG
 ```bash
 # search modules

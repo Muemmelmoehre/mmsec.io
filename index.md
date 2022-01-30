@@ -2128,6 +2128,10 @@ break function_name_here
 # show content of register / variable / memory location
 p $register_name_here
 print $register_name_here
+## get function address
+p function_name_here 
+p system # system function from libc
+p exit # exit function from libc
 
 # display content of all registers
 info registers
@@ -2156,7 +2160,7 @@ pattern create length_here pattern.txt
 run < pattern.txt
 
 # pattern offset
-pattern offset 0xmemorry_address_here
+pattern offset 0xmemory_address_here
 
 # kill running program
 k

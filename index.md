@@ -2169,6 +2169,9 @@ kill
 # show functions + their memory addresses (not stripped binary only)
 info functions
 
+# find string in program memory
+find string_here
+
 # exit gdb
 q
 quit

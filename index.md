@@ -2171,6 +2171,8 @@ info functions
 
 # find string in program memory
 find string_here
+## no convenient function in memory? set ENV variable --> will be on stack (local exploitation only!)
+export SHELL='/bin/bash'
 
 # exit gdb
 q

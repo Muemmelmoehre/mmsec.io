@@ -4252,6 +4252,30 @@ pth-winexe -U domain_here/user_name_here%LM+NTLM_hash_here //SMB_share_here comm
 ```
 
 
+## PWNTOOLS
+```python
+# start local process
+p = process('/path/to/binary')
+
+# start remote process
+p = remote('IP_here', port_here)
+
+# receive data
+p.recv(number_of_bytes_to_receive_here)
+## receive up until delimiter + include delimiter in data
+p.recvuntil(delimiter_here,drop=False)
+## receive up until delimiter + exclude delimiter from data
+p.recvuntil(delimiter_here,drop=True)
+p.recvline(keepends=True) # same as p. recvuntil('\n',drop=keepends)
+## receive all data until timeout
+p.clean(timeout=0.03) # seconds
+
+# send data
+data = "my data here" # string or bytes
+p.send(data)
+p.sendline(data) # same as p.send(data + '\n')
+```
+
 
 ## PYTHON & PYTHON3
 ```python

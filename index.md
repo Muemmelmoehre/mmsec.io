@@ -1756,6 +1756,18 @@ su firefart
 ```
 
 
+## DISKPART
+```cmd
+# list disks
+list disk
+
+# list volumes
+list volume
+
+# refresh device list
+rescan
+```
+
 
 ## DNSENUM
 ```bash

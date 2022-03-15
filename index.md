@@ -2293,6 +2293,15 @@ gpp-decrypt ciphertext_here
 ```
 
 
+## GRAPHQL
+```graphql
+# set HTTP header in playground
+{
+  "Authorization": "Bearer jwt_here"
+}
+```
+
+
 
 ## GREP
 ```bash

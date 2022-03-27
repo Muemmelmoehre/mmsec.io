@@ -4286,7 +4286,6 @@ p.sendline(data) # same as p.send(data + '\n')
 
 # print to screen
 log.info('some string here')
-
 ## hex address
 hex_address = u32(p.recvline()[:4])
 log.info('some string here:{}'.format(hex(hex_adress)))

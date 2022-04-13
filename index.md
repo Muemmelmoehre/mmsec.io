@@ -1276,6 +1276,22 @@ busybox httpd -f -p port_here
 ```
 
 
+## C
+```c
+# shellcode tester
+#include<stdio.h>
+#include<string.h>
+
+unsigned char code[] = "shellcode_here";
+
+main(){
+  printf("Shellcode length: %d\n", strlen(code));
+  int (*ret)() = (int(*)())code;
+  ret();
+} 
+```
+
+
 
 ## CADAVER
 ```bash

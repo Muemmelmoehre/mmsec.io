@@ -226,12 +226,11 @@ apt remove --purge package_here
 ## 1 = enabled
 ## 2 = enabled (full randomization, default)
 cat /proc/sys/kernel/randomize_va_space
-
 sysctl -a --pattern randomize
 
-
-# disable ASLR (non persistent)
-sysctl -w kernel.randomize_va_space=0
+# disable ASLR 
+sysctl -w kernel.randomize_va_space=0 # non persistent
+echo 0 > /proc/sys/kernel/randomize_va_space # persistant
 ```
 
 

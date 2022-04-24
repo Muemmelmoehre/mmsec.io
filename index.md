@@ -4915,6 +4915,9 @@ searchsploit -update # db
 # delete spaces from string
 echo "my string with spaces here" | sed -r 's/( )+//g'
 
+# delete new lines from string
+echo "my string with spaces here" | sed -z 's/\n//g;s/$/\n/'
+
 # replace word_here in output stream
 echo "something with a specific word_here" | sed 's/word_here/new_word_here/'
 

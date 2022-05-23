@@ -5483,6 +5483,9 @@ prefix + d
 # reattach session
 tmux attach -d -t session_name_here
 tmux attach -d -t session_id_here
+
+# list sessions
+tmux ls
 ```
 
 

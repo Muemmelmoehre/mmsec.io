@@ -680,6 +680,9 @@ find folder_here -type f -exec cat {} +
 # exclude error messages from output
 find / -name "file_name_here" 2>/dev/null
 
+# enable hot corners on ubuntu
+gsettings set org.gnome.desktop.interface enable-hot-corners true
+
 # show bash history
 history
 

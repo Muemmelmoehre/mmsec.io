@@ -5340,6 +5340,13 @@ sudo sshuttle --ssh-cmd 'ssh -i /path/to/private/key' --dns -r user_name_here@IP
 
 
 
+## SSLZYE
+```bash
+python3 -m sslzye domain_name_here
+```
+
+
+
 ## SUBLIST3R
 ```bash
 # enum subdomains

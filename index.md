@@ -4006,8 +4006,12 @@ powershell -E content_of_outfile.ps1
 cmd.exe /c command_here
 C:\Windows\System32\cmd.exe /c command_here
 
+# run on linux
+pwsh
+
 # print powershell version
 echo $PSVersionTable
+$PSVersionTable.PSVersion
 
 # print .NET version
 cd C:\Windows\Microsoft.net\Franework64
@@ -4029,6 +4033,10 @@ powershell -ExecutionPolicy Bypass -File script_here.ps1
 
 # import module
 Import-Module module_name_here
+
+# install module
+Install-Module -Name module_name_here
+Install-Module -Name module_name_here -Scope CurrentUser -Force
 
 # grep
 Select-String -Path C:\path\here\*.extension_here -Pattern "string_here"

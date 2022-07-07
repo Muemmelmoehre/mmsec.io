@@ -753,6 +753,9 @@ mkdir -p parent_here/{folder1,folder2,folder3}
 # generate Linux user password
 mkpasswd -m sha-512 new_password_here
 
+# recursively check file permissiona
+namei -l /path/to/check/
+
 # enumerate shares
 nmblookup -A IP_here
 

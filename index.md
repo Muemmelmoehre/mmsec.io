@@ -5719,7 +5719,7 @@ virtualenv --python=pythonversion_here venv
 
 # activate virtual environment
 ## Linux
-source venv/bin/activate
+source venv/local/bin/activate # old: venv/bin/activate
 ## Win
 . venv/Scripts/activate
 

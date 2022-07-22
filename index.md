@@ -5411,6 +5411,22 @@ sudo systemctl list-unit-files
 
 
 
+## TASKWARRIOR
+```bash
+# list tasks
+task list
+
+# add task
+task add description_here
+task add description_here priority=H # H/M/L
+task add description_here due=YYYY-MM-DD # tomorrow,friday etc. also works
+
+# finish task
+task id_here done
+```
+
+
+
 ## TCPDUMP
 ```bash
 # list all interfaces

@@ -1329,6 +1329,22 @@ ls
 
 
 
+## CAN-UTILS
+```bash
+# setup virtual CAN network
+## load vcan module
+modprobe vcan
+## check output
+dmesg
+## set up interface
+ip link add dev vcan0 type vcan
+ip link set up vcan0
+## verify setup
+ifconfig vcan0
+```
+
+
+
 ## CERTUTIL
 ```powershell
 # download file

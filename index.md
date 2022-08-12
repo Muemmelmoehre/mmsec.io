@@ -1345,6 +1345,18 @@ ifconfig vcan0
 
 
 
+## CARINGCARIBOU
+```bash
+# dump can traffic
+python3 /path/to/cc.py dump
+
+# send code for "tester present" to every arbitration ID
+python3 /path/to/cc.py dcm discovery
+python3 /path/to/cc.py dcm discovery -min 0x123 # start from 0x123
+```
+
+
+
 ## CERTUTIL
 ```powershell
 # download file

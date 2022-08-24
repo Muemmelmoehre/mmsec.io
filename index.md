@@ -5714,6 +5714,14 @@ End Sub
 
 
 
+## VBSCRIPT
+```vbs
+# hello world in a message box
+MsgBox "hello world"
+```
+
+
+
 ## VIEWGEN
 ```bash
 # guess signature + encryption

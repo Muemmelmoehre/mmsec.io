@@ -1329,6 +1329,29 @@ ls
 
 
 
+## CANSEND
+```
+# send single CAN packet
+cansend interface_here arbitration_id_here#data_here # interface e.g. can0, vcan0, slcan0; arbitration ID e.g. 300
+```
+
+
+## CANSNIFFER
+```
+# sniff CAN traffic
+cansniffer -c interface_here # e.g. can0, vcan0, slcan0
+
+# filter packets
+## clear all
+-00000
+## show only packets with arbitration ID 204
++204
+## bitmask for packets 300-3FF
++300700 # arbitration ID only 3 bits --> 7 enough, no need for F
+```
+
+
+
 ## CAN-UTILS
 ```bash
 # setup virtual CAN network

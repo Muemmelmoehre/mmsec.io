@@ -5718,6 +5718,9 @@ End Sub
 ```vbs
 # hello world in a message box
 MsgBox "hello world"
+
+# run binary
+CreateObject("WScript.Shell").Run "binary_here.exe", 0, True
 ```
 
 

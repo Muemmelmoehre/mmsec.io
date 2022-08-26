@@ -686,6 +686,9 @@ gsettings set org.gnome.desktop.interface enable-hot-corners true
 # show bash history
 history
 
+# clear bash history
+history -c
+
 # show IP
 ip a
 hostname -I

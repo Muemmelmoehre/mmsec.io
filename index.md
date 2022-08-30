@@ -2549,10 +2549,26 @@ hydra -L users.txt -P passwords.txt rdp://IP_here -t 1
 
 
 
+## ICSIM
+```
+# start
+/path/to/icsim vcan0
+/path/to/controls vcan0
+
+# start with randomized values
+/path/to/icsim -r vcan0
+/path/to/controls -s seed_here vcan0
+```
+
+
+
 ## IFCONFIG
 ```
 # full path 
 /usr/sbin/ifconfig -a
+
+# show specific interface
+ifconfig interface_here
 ```
 
 

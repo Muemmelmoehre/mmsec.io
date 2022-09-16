@@ -5500,6 +5500,10 @@ task add description_here
 task add description_here priority=H # H/M/L
 task add description_here due=YYYY-MM-DD # tomorrow,friday etc. also works
 
+# add recurring task
+task add description_here due=1st # monday etc. also works
+task add description_here due=1st until=YYYY-MM-DD # monday etc. also works
+
 # finish task
 task id_here done
 ```

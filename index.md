@@ -5892,6 +5892,9 @@ wget -r 'ftp://user_here:password_here@IP_here'
 
 # download file from FTP / HTTP / HTTPS
 wget -O /path/to/outfile url_here
+
+# set retries
+wget --tries=no_here url_here # setting the value to 0 or inf makes wget retry forever
 ```
 
 

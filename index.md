@@ -5314,6 +5314,9 @@ python /path/to/sqlmap -r req.txt --passwords
 
 # file read
 python /path/to/sqlmap -r req.txt --file-read '/path/to/file/here'
+
+# use sqlmap with proxy (can also bypass ssl error)
+python /path/to/sqlmap -r req.txt --proxy=http://127.0.0.1:8080
 ```
 
 

@@ -1804,6 +1804,9 @@ d2j-dex2jar /path/to/apk -o outfile.jar
 ```bash
 # print public IP
 dig +short myip.opendns.com @resolver1.opendns.com
+
+# zone transfer
+dig @nameserver_here axfr domain_here
 ```
 
 

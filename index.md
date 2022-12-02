@@ -5909,6 +5909,9 @@ whatweb url_here
 
 # run aggressive scan
 whatweb -a=3 url_here
+
+# pretty print output
+whatweb -v url_here
 ```
 
 

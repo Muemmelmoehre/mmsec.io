@@ -1884,6 +1884,9 @@ dnsrecon -d domain_here -t axfr
 
 # brute force subdomains
 dnsrecord -d domain_here -D /path/to/wordlist -t brt
+
+# enumerate subdomains with google enumeration
+dnsrecon -d domain_here -g
 ```
 
 

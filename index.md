@@ -5726,6 +5726,15 @@ shutdown /r /t 10 && exit
 
 
 
+## UPDOG
+```
+# set up share with password over SSL
+python -m updog --password password_here --ssl
+updog --password password_here --ssl
+```
+
+
+
 ## UPX
 ```bash
 # compress + pack executable

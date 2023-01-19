@@ -3074,6 +3074,25 @@ db.createCollection("collection_name_here")
 
 # get stats
 db.hostInfo()
+db.serverStatus()
+
+# kill current openation
+db.killOp(opid)
+
+# list all commands
+db.listCommands()
+
+# load all scripts in db.system.js
+db.loadServerScripts()
+
+# logout
+db.logout()
+
+# repair db
+db.repairDatabase()
+
+# shutdown server
+db.shutdownServer()
 ```
 
 

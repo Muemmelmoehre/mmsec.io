@@ -3041,6 +3041,7 @@ use db_name_here
 
 # insert statement
 db.collection_name_here.insert({"key":"value"})
+db.collection_name_here.insert({"key":"value","key":"value"})
 
 # retrieve data
 db.collection_name_here.find() # all
@@ -3064,6 +3065,15 @@ db.version()
 
 # run system commands
 run("command_here","arg_here")
+
+# create db
+use db_name
+
+# create collection
+db.createCollection("collection_name_here")
+
+# get stats
+db.hostInfo()
 ```
 
 

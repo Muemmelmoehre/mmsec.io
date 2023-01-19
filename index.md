@@ -1682,6 +1682,23 @@ compgen -v
 ```
 
 
+## COUCH DB
+```bash
+# list all documents
+_all_docs
+
+# list chanegs 
+_changes
+
+# add new admin
+curl -s -X PUT http://server_IP_here:5984/_config/admins/new_admin_name_here -d '"password_here"' # CouchDB 1.0
+curl -s -X PUT $HOST/_node/$NODENAME/_config/admins/new_admin_name_here -d '"password_here"' # CouchDB 2.0
+
+# list all available nodes
+curl -X GET $HOST/_membership
+```
+
+
 
 ## CRACKMAPEXEC
 ```bash
@@ -3064,7 +3081,7 @@ db
 db.version()
 
 # run system commands
-run("command_here","arg_here")
+run("command_here","arg_here") #  can act as a shell 
 
 # create db
 use db_name
@@ -3093,6 +3110,14 @@ db.repairDatabase()
 
 # shutdown server
 db.shutdownServer()
+
+# operators
+$eq
+$ne
+$gt
+$where # matches documents satisfying javascript expression
+$exists # matches documents with specific field
+$regex # matches documents satisfyting regex
 ```
 
 

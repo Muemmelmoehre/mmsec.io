@@ -2428,6 +2428,9 @@ gpp-decrypt ciphertext_here
 # grep recursively for search_term_here
 grep -r search_term_here /path/to/search/directory
 
+# grep and keep colored output
+grep search_term_here --color=always | less -R
+
 # grep for lines starting with search term
 grep '^search_term_here'
 

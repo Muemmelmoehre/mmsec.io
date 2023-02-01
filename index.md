@@ -2468,6 +2468,9 @@ hashcat -m hash_format_code_here /path/to/hash /path/to/wordlist
 
 # crack NTLM hash captured with responder
 hashcat -m 5600 /path/to/hash /path/to/wordlist
+
+# show cracked NTLM hashes
+hashcat -m 1000 /path/to/hash --show
 ```
 
 

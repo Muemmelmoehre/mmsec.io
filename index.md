@@ -5566,11 +5566,16 @@ sudo systemctl list-unit-files
 ```bash
 # list tasks
 task list
+task project=project_name_here # list tasks in project
+
+# list projects
+task projects
 
 # add task
 task add description_here
 task add description_here priority=H # H/M/L
 task add description_here due=YYYY-MM-DD # tomorrow,friday etc. also works
+task add description_here project=project_name_here # assign to project
 
 # add recurring task
 task add description_here due=1st # monday etc. also works

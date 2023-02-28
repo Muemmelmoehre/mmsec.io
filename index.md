@@ -5578,8 +5578,8 @@ task add description_here due=YYYY-MM-DD # tomorrow,friday etc. also works
 task add description_here project=project_name_here # assign to project
 
 # add recurring task
-task add description_here due=1st # monday etc. also works
-task add description_here due=1st until=YYYY-MM-DD # monday etc. also works
+task add description_here due=1st recur=weekly # monthly etc. also works
+task add description_here due=1st recur=weekly until=YYYY-MM-DD # monday etc. also works
 
 # finish task
 task id_here done

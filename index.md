@@ -1753,6 +1753,9 @@ crackmapexec protocol_here IP_here -u userlist.txt -p passwordlist.txt
 
 # crawl smb shares
 crackmapexec smb IP_here -u user -p password -M spider_plus
+
+# access db (see results)
+cmedb
 ```
 
 

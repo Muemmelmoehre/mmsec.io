@@ -1846,6 +1846,12 @@ cut -f no_here -d "delimiter_here" /path/to/file
 ```
 
 
+## CYPHER
+```
+# find outdated Windows OS
+MATCH (H:Computer) WHERE H.operatingsystem =~ '(?i).*(2000|2003|2008|xp|vista|me|7).*' RETURN H.name,H.operatingsystem
+```
+
 
 ## DAVTEST
 ```bash

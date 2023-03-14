@@ -933,6 +933,12 @@ which file_name_here
 ```batch
 # launch binary
 START binary_name_here.exe
+
+# keep prompt open
+PAUSE
+
+# don't show executed commands
+@ECHO OFF
 ```
 
 
@@ -1621,6 +1627,9 @@ schtasks /query /TN "\path\to\app_name_here" /v /fo LIST
 
 # print info
 set
+
+# start file explorer in current folder
+start .
 
 # print systeminfo
 systeminfo

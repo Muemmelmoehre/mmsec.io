@@ -576,6 +576,10 @@ echo 'command && -stuff here' | base64
 echo 'base64_here' > /tmp/my_script.sh
 echo '2nd_base64_here' >> /tmp/my_script.sh
 
+# echo new line
+echo -e "\n"
+printf "\n"
+
 # find all files with capabilities
 getcap -r / 2>/dev/null
 

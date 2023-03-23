@@ -4008,6 +4008,14 @@ print $val;
 # send HTTP header
 header('header_name_here: value_here');
 header('header_name_here: ' . $variable_with_value_here);
+
+# file read
+<?php
+echo '<pre>';
+$result = readfile("filename_here");
+echo $result;
+echo '</pre>';
+?>
 ```
 
 

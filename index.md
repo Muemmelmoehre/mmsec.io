@@ -3405,6 +3405,7 @@ mysql -u root -ppassword_here -e 'command here'
 # connect to remote mysql instance
 mysql -h IP_here -u root
 mysql -h IP_here -u root@localhost
+mysql -h IP_here -P port_here -u root
 
 # create new database
 create database db_name;

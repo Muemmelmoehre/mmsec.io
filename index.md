@@ -2530,6 +2530,11 @@ grep -n search_term_here
 
 # search for exploits
 grep -r -i -l search_term_here /usr/share/exploitdb/exploits/
+
+# grep man page for switch
+grep -- -switch_here
+grep -w -- -switch_here
+grep -we -- -switch_here
 ```
 
 

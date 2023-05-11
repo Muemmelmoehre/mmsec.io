@@ -346,6 +346,12 @@ badchars = b"\x01\x02\x03\x04\x05\x06\x08\x09\x0a\x0b\x0c\x0d\x0e\x0f\x10\x11\x1
 
 ## BASH / SH
 ```bash
+# concatenate strings
+a="hello"
+b="world"
+c="${a} ${b}!"
+echo $c
+
 # add ! at the end of each line in wordlist
 for i in $(cat wordlist.txt); do echo $i; echo ${i}\!; done > tmp
 mv tmp wordlist.txt
@@ -1333,6 +1339,9 @@ print "[+] Exploit completed!"
 ```bash
 # import .pfx to access certificate-protected website
 Project options > TLS > Client TLS Certificates > Add > PKCS#12
+
+# set scope to *.domain.here
+.*\.domain\.here$
 ```
 
 
@@ -2173,6 +2182,10 @@ ffuf -w /path/to/wordlist.txt -u http://IP_here/FUZZ -x socks5://127.0.0.1:8080
 
 # fuzz subdomains
 ffuf -c -w /path/to/wordlist.txt -u http://IP_here/FUZZ -H "Host: FUZZ.domain.here" -mc 200
+
+# bulk fuzz list of subdomains
+host="sub1,sub2,sub3,sub4,sub5,sub6,sub7"
+for i in $(seq 1 1 7); do a=$(echo $host | cut -d , -f $i) && b="https://${a}.domain.here/FUZZ" && echo $b && ffuf -w /path/to/wordlist.txt -u $b -v -t 1; done
 ```
 
 
@@ -2741,8 +2754,25 @@ impacket-psexec domain_here/user_name_here@IP_here -hashes LM_hash_here:NTLM_has
 
 
 
+## IP/IW
+```bash
+# put interface in monitoring mode ("wifi promiscuous mode")
+iwconfig # get interface name
+ip link set interface_here down
+iw interface_here set type monitor
+iw interface_here set txpower fixed 3000 # optional
+ip link set interface_here up
+
+# put interface in managed mode (deactivate monitoring mode)
+ip link set interface_here down
+iw interface_here set type managed
+ip link set interface_here up
+```
+
+
+
 ## IPCONFIG
-```powershell
+```bash
 # read out local DNS cache
 ipconfig /displaydns
 

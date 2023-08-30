@@ -63,6 +63,11 @@ pm path package_name_here
 adb shell am start -a action_name_here -n package_name_here/activity_name_here
 am start -a action_name_here -n package_name_here/activity_name_here
 
+# start activity/launch app via adb
+## get activity name from AndroidManifest.xml
+## launch app
+adb shell am start -n com.package.name/com.package.name.activity_name_here
+
 # start activity and perform action with data
 adb shell am start -a action_name_here -n package_name_here/activity_name_here -d URI_to_data_here
 am start -a action_name_here -n package_name_here/activity_name_here -d URI_to_data_here

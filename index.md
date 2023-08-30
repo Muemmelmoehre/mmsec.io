@@ -5786,6 +5786,14 @@ telnet -l user_name_here IP_here
 
 
 
+## TERMUX
+```bash
+# prompt for storage permissions
+termux-setup-storage
+```
+
+
+
 ## TFTP
 ```bash
 # connect

@@ -1761,7 +1761,7 @@ curl -X GET $HOST/_membership
 
 
 
-## CRACKMAPEXEC
+## CRACKMAPEXEC / CME
 ```bash
 # check for password policy on Windows domain
 crackmapexec protocol_here IP_here --pass-pol -u '' -p ''
@@ -1772,8 +1772,21 @@ crackmapexec protocol_here IP_here -u userlist.txt -p passwordlist.txt
 # crawl smb shares
 crackmapexec smb IP_here -u user -p password -M spider_plus
 
+# check credentials
+cme smb IP_here -u user_here -p 'password_here'
+
 # access db (see results)
 cmedb
+
+# CMEDB create workspace
+workspace create workspace_name_here
+
+# CMEDB choose protocol
+proto smb # ldap etc.
+
+# CMEDB export results
+export shares detailed shares.csv #detailed or simple
+export hosts detailed hosts.csv
 ```
 
 

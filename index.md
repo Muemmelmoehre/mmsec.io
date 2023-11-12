@@ -3892,10 +3892,13 @@ IP_here
 
 
 
-## NTPDATE
+## NTP
 ```bash
 # synchronize time of local machine with remote server
 ntpdate remote_server_IP_here
+
+# enumerate NTP
+nmap -sU -sV --script "ntp* and (discovery or vuln) and not (dos or brute)" -p 123 IP_here
 ```
 
 
@@ -3918,14 +3921,6 @@ objdump -d /path/to/binary/here
 
 # run all modules, known creds
 /path/to/odat all -s IP_here -p 1521 -d SID_here -U user_here -P password_here
-```
-
-
-
-## ONESIXTYONE
-```bash
-# brute force SNMP
-onesixtyone -c community_strings_list_here -i IP_list_here
 ```
 
 
@@ -5382,30 +5377,26 @@ VRFY user_name_here
 
 
 
-## SNMP-CHECK
+## SNMP
 ```
 # enumerate SNMP port 161 with community string "public"
 snmp-check IP_here
 snmp-check IP_here -p 161 -c public
-```
 
-
-
-## SNMPSET
-```
-# write test : change sysName to test 
-snmpset -c public -v1 IP_here MIB_here s "test"
-```
-
-
-
-## SNMPWALK
-```bash
 # enumerate MIB tree
 snmpwalk -c community_string_here -v snmp_version_here -t time_out_in_seconds_here IP_here
 
 # enumerate specific MIB value
 snmpwalk -c community_string_here -v snmp_version_here -t time_out_in_seconds_here IP_here MIB_here
+
+# brute force SNMP
+onesixtyone -c community_strings_list_here -i IP_list_here
+
+# write test : change sysName to test 
+snmpset -c public -v1 IP_here MIB_here s "test"
+
+# SNMP v3
+snmpwalk -l NoAuthNoPriv -u 'root' -v 3 IP_here # no authentication, no privacy (i.e. no encryption)
 ```
 
 

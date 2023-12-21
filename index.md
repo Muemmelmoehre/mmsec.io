@@ -4799,6 +4799,39 @@ except:
     print "Connection failed!"
 
 
+## PY3
+#!/usr/bin/env python3
+
+import socket
+
+# set up socket
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+target_ip = "IP_here"
+target_port = port_here
+payload = b"payload_here"
+
+try:
+    # establish connection
+    s.connect((target_ip, target_port))
+
+    # *optional* if service has banner: receive + print data
+    data = s.recv(4096)
+    print(data.decode())  # decode received bytes to string
+
+    # send payload
+    s.sendall(payload)
+
+    # receive server response + print to screen
+    data = s.recv(4096)
+    print(data.decode())  # decode received bytes to string
+
+    # close connection
+    s.close()
+
+except Exception as e:
+    print("Connection failed!", e)
+
+
 # simple script skeleton with functions
 ## PY3
 #!/usr/bin/env python3

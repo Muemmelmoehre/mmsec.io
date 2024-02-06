@@ -2604,6 +2604,9 @@ grep -r -i -l search_term_here /usr/share/exploitdb/exploits/
 grep -- -switch_here
 grep -w -- -switch_here
 grep -we -- -switch_here
+
+# grep for IPv4
+grep -E -o "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)" file_to_grep_here # with gateway IPs
 ```
 
 

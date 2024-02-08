@@ -6311,19 +6311,8 @@ def generate_xssstring(id):
 
   # generate ssti input
 def generate_sstistring(id):
-  string = "{{" #string="}}"
-  string += f"{id}"
-  string += "}*11}} ${"
-  string += f"{id}"
-  string += "*11} <%= "
-  string += f"{id}"
-  string += "*11 %> ${{"
-  string += f"{id}"
-  string += "*11}} #{"
-  string += f"{id}"
-  string += "*11} *{"
-  string += f"{id}"
-  string += "*11}"
+  string = "{{"
+  # string = "}}"
 
   return string
 

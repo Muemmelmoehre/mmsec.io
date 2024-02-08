@@ -6297,14 +6297,14 @@ def parse_arguments():
 
 # generate special char input
 def generate_specialchars():
-  string = 
+  string = "'\"%<>@{}()\\/&*"
 
   return string
 
 
 # generate xss input
 def generate_xssstring(id):
-  string = 
+  string = ""
 
   return string
 

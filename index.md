@@ -6311,8 +6311,7 @@ def generate_xssstring(id):
 
   # generate ssti input
 def generate_sstistring(id):
-  string = "{{"
-  # string = "}}"
+  string = "{{" # string = "}}"
 
   return string
 

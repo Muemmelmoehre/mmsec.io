@@ -6313,6 +6313,7 @@ def generate_xssstring(id):
 def generate_sstistring(id):
   string = "{{" # string = "}}"
   string += f"{id}"
+  string += "}*11}} ${"
 
   return string
 

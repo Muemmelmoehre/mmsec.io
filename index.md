@@ -6302,11 +6302,7 @@ def generate_specialchars():
   return string
 
 
-# generate xss input
-def generate_xssstring(id):
-  string = ""
 
-  return string
 
 
 # generate ssti input

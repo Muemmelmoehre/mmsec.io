@@ -6297,7 +6297,7 @@ def parse_arguments():
 
 # generate special char input
 def generate_specialchars():
-  string = "'\"%<>@{}()\\/&*"
+  string = 
 
   return string
 

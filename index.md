@@ -6316,6 +6316,14 @@ def generate_sstistring(id):
   string += "}*11}} ${"
   string += f"{id}"
   string += "*11} <%= "
+  string += f"{id}"
+  string += "*11 %> ${{"
+  string += f"{id}"
+  string += "*11}} #{"
+  string += f"{id}"
+  string += "*11} *{"
+  string += f"{id}"
+  string += "*11}"
 
   return string
 

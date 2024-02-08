@@ -6304,7 +6304,7 @@ def generate_specialchars():
 
 # generate xss input
 def generate_xssstring(id):
-  string = f"jAvAsCrIpT:/*-/*`/*\`/*'/*\"/**/(/* */oNcLiCk=prompt({id}) )//%0D%0A%0d%0a//</StYlE/</tItLe/</teXtarEa/</scRipt/--!>\x3csVg/<sVg/oNloAd=confirm({id})//>\x3e"
+  string = f"jAvAsCrIpT:/*-/*`/*\`/*'/*\ "/**/(/* */oNcLiCk=prompt({id}) )//%0D%0A%0d%0a//</StYlE/</tItLe/</teXtarEa/</scRipt/--!>\x3csVg/<sVg/oNloAd=confirm({id})//>\x3e"
 
   return string
 

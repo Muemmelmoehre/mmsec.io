@@ -6304,7 +6304,7 @@ def generate_specialchars():
 
 # generate xss input
 def generate_xssstring(id):
-  string = f"jAvAsCrIpT:/*-/*`/*\`/*'/*\"/**/(/* */oNcLiCk=prompt({id}))//%0D%0A%0d%0a//</StYlE/</tItLe/</teXtarEa/</scRipt/--!>\x3csVg/<sVg/oNloAd=confirm({id})//>\x3e" /\}\}/
+  string = 
 
   return string
 
@@ -6312,7 +6312,7 @@ def generate_xssstring(id):
 # generate ssti input
 def generate_sstistring(id):
   string = "{{"
-  string += f"{id}" /\}\}/
+  string += f"{id}"
   string += "}*11}} ${"
   string += f"{id}"
   string += "*11} <%= "

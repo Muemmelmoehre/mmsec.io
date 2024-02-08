@@ -6311,7 +6311,7 @@ def generate_xssstring(id):
 
   # generate ssti input
 def generate_sstistring(id):
-  string = "{{"
+  string = "{{" #"}}"
   string += f"{id}"
   string += "}*11}} ${"
   string += f"{id}"
@@ -6326,7 +6326,6 @@ def generate_sstistring(id):
   string += "*11}"
 
   return string
-  #string += "}}"
 
 
 # construct filename with timestamp

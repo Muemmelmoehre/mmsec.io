@@ -2591,6 +2591,9 @@ grep -C x search_term_here
 # ignore case
 grep -i search_term_here
 
+# do not search binary files
+grep -I search_term_here
+
 # select non-matching lines
 grep -v search_term_here
 

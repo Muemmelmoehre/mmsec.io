@@ -130,6 +130,25 @@ content insert --uri content://uri_here --bind column_name_here:type_here:value_
 # update database entry
 adb shell content update --uri content://uri_here --bind column_name_here:type_here:value_here --where "some_column_name='some_value_here'"
 content update --uri content://uri_here --bind column_name_here:type_here:value_here --where "some_column_name='some_value_here'"
+
+# check for custom permissions
+cat AndroidManifest.xml | grep "<permission" |  wc -l # if <0, no custom permissions are defined
+
+# find strings
+ find disassembled_app_here -name strings.xml | grep '/values/'
+
+ # pull apk from device
+ ## find path
+ adb shell pm path app.name
+ ## pull apk
+ adb pull /data/data/app/path/here.apk
+
+ # get app backup
+ (use app and generate data)
+ ## create backup
+ adb backup my.app.com
+ ## add magic bytes to convert backup file into regular zip
+ (print "\x1f\x8b\x08\x00\x00\x00\x00\x00",tail -c +25 backup_here.ab) | tar xfvz
 ```
 
 
@@ -199,11 +218,13 @@ sudo service apache2 restart
 
 ## APKTOOL
 ```bash
-# decode apk
+# decode/disassemble apk
 apktool d /path/to/apk
+apktool d /path/to/apk -o path/to/outfolder
 
 # build app from smali
 apktool b /path/to/appfolder
+apktool b /path/to/appfolder -o app_here.apk
 ```
 
 
@@ -2893,8 +2914,10 @@ USER user_name_here host_name_here server_name_here :real_name_here
 # sign apk :
 ## generate private key
 keytool -genkey -v -keystore keystore_here -alias alias_here -keyalg RSA -keysize 2048 -validity 7400
+keytool -genkey -alias domain_here -keyalg RSA -keysize 4096 -validity 7300 -keystore keystore_here.jks -storepass password_here
+
 ## sign
-jarsigner -sigalg SHA1withRSA -digestalg SHA1 -keystore keystore_here /path/to/apk alias_here
+jarsigner -sigalg SHA1withRSA -digestalg SHA1 -keystore keystore_here path/to/apk app_lias_here
 
 # verify signature
 jarsigner -verify -verbose -certs /path/to/apk

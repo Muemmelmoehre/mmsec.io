@@ -142,7 +142,7 @@ cat AndroidManifest.xml | grep "<permission" |  wc -l # if <0, no custom permiss
  ## find path
  adb shell pm path app.name
  ## pull apk
- adb pull /data/data/app/path/here.apk
+ adb pull /data/app/path/here.apk
 
  # get app backup
  (use app and generate data)

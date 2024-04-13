@@ -2104,6 +2104,10 @@ cat /etc/resolv.conf [nameserver] on lin
 
 ## on lin, launch the drozer console: 
 drozer console --server win_ip_here:31415 connect
+
+# check for attached devices
+drozer console devices
+drozer console --server win_ip_here:31415 devices
 ```
 
 

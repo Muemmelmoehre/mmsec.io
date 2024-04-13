@@ -83,10 +83,11 @@ am broadcast -a action_name_here -e "extra_key_here" "extra_value_here"
 # send keystroke to device
 input text_here / key_event_here
 
-# copy file from local machine to device
+# transfer files
+## copy file from local machine to device
 adb pull /path/to/file/on/device /path/to/file/on/pc
 
-# copy file from device to local machine
+## copy file from device to local machine
 adb push /path/to/file/on/pc /path/to/file/on/device
 
 # install apk on device

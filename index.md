@@ -2091,6 +2091,23 @@ dpkg -i /path/to/.deb
 
 
 
+## DROZER
+```
+# connect from WSL to emulated android device
+(start emulated android device)
+## on win, set up port forwarding to the emulated device
+adb forward tcp:31415 tcp:31415
+
+## find win ip 
+ipconfig [--> wsl interface] on win
+cat /etc/resolv.conf [nameserver] on lin
+
+## on lin, launch the drozer console: 
+drozer console --server win_ip_here:31415 connect
+```
+
+
+
 ## DRUPAL
 ```bash
 # droopescan

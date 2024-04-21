@@ -9,7 +9,7 @@ classes: wide
 
 Welcome to [@muemmelmoehre](https://github.com/muemmelmoehre){:target="blank"}'s online grimoire / cheat-sheet for useful commands and code snippets. Enjoy!
 
->>> [TEST](https://mmsec.io/index.md#test) <<<
+[TEST](https://mmsec.io/index.html#test)
 
 
 If you're looking for my write-ups, please head over to my [GitHub page](https://github.com/muemmelmoehre){:target="blank"}!

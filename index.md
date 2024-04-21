@@ -9,6 +9,21 @@ classes: wide
 
 Welcome to [@muemmelmoehre](https://github.com/muemmelmoehre){:target="blank"}'s online grimoire / cheat-sheet for useful commands and code snippets. Enjoy!
 
+*(Awesome ASCII art like the one below can be found [here](https://asciiart.website/index.php){:target="blank"}.)*
+
+```
+                        .-~~~~~~~~~-._       _.-~~~~~~~~~-.
+                    __.'              ~.   .~              `.__
+                  .'//                  \./                  \\`.
+                .'//                     |                     \\`.
+              .'// .-~"""""""~~~~-._     |     _,-~~~~"""""""~-. \\`.     
+            .'//.-"                 `-.  |  .-'                 "-.\\`.
+          .'//______.============-..   \ | /   ..-============.______\\`.
+        .'______________________________\|/______________________________`.
+
+```
+
+
 Click on the category to jump to the corresponding anchor:
 
 [GRIMOIRE](https://mmsec.io/index.html#grimoire)
@@ -46,6 +61,14 @@ TODO
 2. (configure and) start the ssh server on the phone, e.g. `sshd` (openssh)
 3. connect: `ssh user@phone_ip`
 
+#### CONNECT FROM WSL TO EMULATED PHONE
+1. (start emulated android device)
+2. on win, set up port forwarding to the emulated device: `adb forward tcp:31415 tcp:31415`
+3. find win ip (e.g. `ipconfig` [--> wsl interface] on win or `cat /etc/resolv.conf` [--> nameserver])
+4. on lin, launch the drozer console: `drozer console --server win_ip_here:31415 connect`
+
+#### INTENTS
+
 
 ### IOS
 TODO
@@ -69,22 +92,6 @@ TODO
 
 
 ## GRIMOIRE
-
-*(Awesome ASCII art like the one below can be found [here](https://asciiart.website/index.php){:target="blank"}.)*
-
-```
-                        .-~~~~~~~~~-._       _.-~~~~~~~~~-.
-                    __.'              ~.   .~              `.__
-                  .'//                  \./                  \\`.
-                .'//                     |                     \\`.
-              .'// .-~"""""""~~~~-._     |     _,-~~~~"""""""~-. \\`.     
-            .'//.-"                 `-.  |  .-'                 "-.\\`.
-          .'//______.============-..   \ | /   ..-============.______\\`.
-        .'______________________________\|/______________________________`.
-
-```
-
-
 
 ### ACCESSCHK
 ```

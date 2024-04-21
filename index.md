@@ -33,7 +33,19 @@ TODO
 
 ## MOBILE
 ### ANDROID
-TODO
+#### USE TERMUX AS AN SSH SERVER
+1. configure server settings in `/data/data/com.termux/files/usr/etc/ssh/sshd_config`
+2. ssh service is set up for current user (i.e. termux user); find username with `whoami` and set new password with `passwd`
+3. setup port forwarding for port 8022(!): `adb forward tcp:8022 tcp:8022` if on emulator
+4. start ssh server: `sshd`
+5. check whether it is running: `pgrep ssh`
+6. test connection: `ssh termux_user@phone_ip -p 8022`
+
+#### SSH INTO PHONE
+1. set up an ssh server on the phone (e.g. with sshdroid or termux)
+2. (configure and) start the ssh server on the phone, e.g. `sshd` (openssh)
+3. connect: `ssh user@phone_ip`
+
 
 ### IOS
 TODO
@@ -42,6 +54,8 @@ TODO
 ### 22 SECURE SHELL (SSH)
 TODO
 
+### 1521 TRANSPARENT NETWORK SUBSTRATE (TNS)
+Proprietary protocole by Oracle, used for communications with an Oracle database. Can be interesting to intercept while testing a client application that communicates through Java Remote Method Invocation (RMI). Traffic can be intercepted with `tcpdump`. Often unencrypted.
 
 ## ACTIVE DIRECTORY
 TODO

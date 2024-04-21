@@ -10,12 +10,19 @@ classes: wide
 Welcome to [@muemmelmoehre](https://github.com/muemmelmoehre){:target="blank"}'s online grimoire / cheat-sheet for useful commands and code snippets. Enjoy!
 
 Click on the category to jump to the corresponding anchor:
+
 [GRIMOIRE](https://mmsec.io/index.html#grimoire)
+
 [WEB](https://mmsec.io/index.html#web)
+
 [MOBILE](https://mmsec.io/index.html#mobile)
+
 [NETWORK](https://mmsec.io/index.html#network)
+
 [ACTIVE DIRECTORY](https://mmsec.io/index.html#active-directory)
+
 [HARDWARE](https://mmsec.io/index.html#hardware)
+
 [WIFI](https://mmsec.io/index.html#wifi)
 
 
@@ -25,10 +32,16 @@ If you're looking for my write-ups, please head over to my [GitHub page](https:/
 TODO
 
 ## MOBILE
+### ANDROID
+TODO
+
+### IOS
 TODO
 
 ## NETWORK
+### 22 SECURE SHELL (SSH)
 TODO
+
 
 ## ACTIVE DIRECTORY
 TODO

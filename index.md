@@ -23,75 +23,8 @@ Welcome to [@muemmelmoehre](https://github.com/muemmelmoehre){:target="blank"}'s
 
 ```
 
-
-Click on the category to jump to the corresponding anchor:
-
-[GRIMOIRE](https://mmsec.io/index.html#grimoire)
-
-[WEB](https://mmsec.io/index.html#web)
-
-[MOBILE](https://mmsec.io/index.html#mobile)
-
-[NETWORK](https://mmsec.io/index.html#network)
-
-[ACTIVE DIRECTORY](https://mmsec.io/index.html#active-directory)
-
-[HARDWARE](https://mmsec.io/index.html#hardware)
-
-[WIFI](https://mmsec.io/index.html#wifi)
-
-
 If you're looking for my write-ups, please head over to my [GitHub page](https://github.com/muemmelmoehre){:target="blank"}!
 
-## WEB
-TODO
-
-## MOBILE
-### ANDROID
-#### USE TERMUX AS AN SSH SERVER
-1. configure server settings in `/data/data/com.termux/files/usr/etc/ssh/sshd_config`
-2. ssh service is set up for current user (i.e. termux user); find username with `whoami` and set new password with `passwd`
-3. setup port forwarding for port 8022(!): `adb forward tcp:8022 tcp:8022` if on emulator
-4. start ssh server: `sshd`
-5. check whether it is running: `pgrep ssh`
-6. test connection: `ssh termux_user@phone_ip -p 8022`
-
-#### SSH INTO PHONE
-1. set up an ssh server on the phone (e.g. with sshdroid or termux)
-2. (configure and) start the ssh server on the phone, e.g. `sshd` (openssh)
-3. connect: `ssh user@phone_ip`
-
-#### CONNECT FROM WSL TO EMULATED PHONE
-1. (start emulated android device)
-2. on win, set up port forwarding to the emulated device: `adb forward tcp:31415 tcp:31415`
-3. find win ip (e.g. `ipconfig` [--> wsl interface] on win or `cat /etc/resolv.conf` [--> nameserver])
-4. on lin, launch the drozer console: `drozer console --server win_ip_here:31415 connect`
-
-#### INTENTS
-
-
-### IOS
-TODO
-
-## NETWORK
-### 22 SECURE SHELL (SSH)
-TODO
-
-### 1521 TRANSPARENT NETWORK SUBSTRATE (TNS)
-Proprietary protocole by Oracle, used for communications with an Oracle database. Can be interesting to intercept while testing a client application that communicates through Java Remote Method Invocation (RMI). Traffic can be intercepted with `tcpdump`. Often unencrypted.
-
-## ACTIVE DIRECTORY
-TODO
-
-## HARDWARE
-TODO
-
-## WIFI
-TODO
-
-
-
-## GRIMOIRE
 
 ### ACCESSCHK
 ```

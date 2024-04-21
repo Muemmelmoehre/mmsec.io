@@ -9,14 +9,14 @@ classes: wide
 
 Welcome to [@muemmelmoehre](https://github.com/muemmelmoehre){:target="blank"}'s online grimoire / cheat-sheet for useful commands and code snippets. Enjoy!
 
-[TEST](https://mmsec.io/index.html#test)
+[GRIMOIRE](https://mmsec.io/index.html#grimoire)
 
 
 If you're looking for my write-ups, please head over to my [GitHub page](https://github.com/muemmelmoehre){:target="blank"}!
 
 *(Awesome ASCII art like the one below can be found [here](https://asciiart.website/index.php){:target="blank"}.)*
 
-## TEST
+## GRIMOIRE
 
 
 ```
@@ -33,7 +33,7 @@ If you're looking for my write-ups, please head over to my [GitHub page](https:/
 
 
 
-## ACCESSCHK
+### ACCESSCHK
 ```
 # check for vulnerable services
 accesschk.exe /accepteula -uwcqv "Authenticated Users" *
@@ -41,7 +41,7 @@ accesschk.exe /accepteula -uwcqv "Authenticated Users" *
 
 
 
-## ADB
+### ADB
 ```bash
 # list devices
 adb devices

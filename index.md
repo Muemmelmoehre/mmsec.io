@@ -4430,6 +4430,8 @@ Get-ExecutionPolicy -Scope CurrentUser
 # set execution policy
 Set-ExecutionPolicy Unrestricted
 Set-ExecutionPolicy Unrestricted -Scope CurrentUser
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned -Force
 
 # bypass execution policy (allow unsigned scripts)
 powershell -ExecutionPolicy Bypass -File script_here.ps1

@@ -3261,6 +3261,39 @@ x86_64-w64-mingw32-g++ /path/to/source.cpp -o /path/to/out.exe
 
 
 
+### MITMPROXY
+```bash
+# set up proxy server
+mitmproxy -p listener_port_here
+
+# intercept request
+i # prompts prefilled command
+~u keyword_or_regex_here
+ENTER
+
+# send request
+a
+
+# drop request
+X
+
+# modify request
+e
+<choose element to modify>
+ENTER
+<modify>
+ESC
+
+# see details
+ENTER
+
+# replay request
+r # nb: updates line
+
+```
+
+
+
 ### MONA.PY
 ```python
 # display modules + their memory protections

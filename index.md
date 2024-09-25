@@ -1469,6 +1469,15 @@ python3 /path/to/cc.py dcm discovery -min 0x123 # start from 0x123
 
 
 
+### CERTBOT
+```bash
+# renew certificate
+certbot renew -v --dry-run
+certbot renew -v
+```
+
+
+
 ### CERTUTIL
 ```powershell
 # download file
@@ -6114,6 +6123,21 @@ tr '\n' '\r' < /path/to/unix_file/here > /path/to/mac_file/here
 
 # replace CR with LF (e.g. Mac to Unix)
 tr '\r' '\n' < /path/to/mac_file/here > /path/to/unix_file/here
+```
+
+
+
+### UFW
+```bash
+# list rules
+ufw status
+
+# add rule
+ufw add allow port_here
+ufw add deny port_here
+
+# delete rule
+ufw delete rule_number_here
 ```
 
 

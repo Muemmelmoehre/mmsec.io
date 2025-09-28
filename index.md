@@ -4017,6 +4017,16 @@ nmap -sT -sV --open --top-ports 3333 -reason -Pn --min-hostgroup 32 -iL scope.tx
 ```
 
 
+### NODE + REACT NATIVE + EXPO
+```bash
+# create new project
+npx create-expo-app@latest MyAppNameHere
+
+# start dev server + serve app
+npx expo start
+```
+
+
 
 ### NSLOOKUP
 ```bash

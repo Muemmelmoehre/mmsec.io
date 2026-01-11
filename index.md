@@ -25,6 +25,8 @@ Welcome to [@muemmelmoehre](https://github.com/muemmelmoehre){:target="blank"}'s
 
 If you're looking for my write-ups, please head over to my [GitHub page](https://github.com/muemmelmoehre){:target="blank"}!
 
+Here's the link to my <a rel="me" href="https://mastodon.mmsec.io/@muemmelmoehre">Mastodon</a> profile.
+
 
 ### ACCESSCHK
 ```
@@ -796,6 +798,9 @@ ls -lt
 
 # display folder content recursively
 ls -lasR
+
+# print OS version
+lsb_release -a
 
 # display loaded modules
 lsmod
@@ -4000,7 +4005,7 @@ nmap -sT -sV --open --top-ports 3333 -reason -Pn --min-hostgroup 32 -iL scope.tx
 
 
 ### NODE.JS
-```node
+```javascript
 # reverse shell
 (function(){
   var net = require("net"),
@@ -4014,6 +4019,12 @@ nmap -sT -sV --open --top-ports 3333 -reason -Pn --min-hostgroup 32 -iL scope.tx
   });
   return /check your listener/;
 })();
+
+# initialize new project
+npm init -y
+
+# initialize typescript config
+npx tsc --init
 ```
 
 
@@ -4024,6 +4035,9 @@ npx create-expo-app@latest MyAppNameHere
 
 # start dev server + serve app
 npx expo start
+
+# reset app template
+npm run reset-project
 ```
 
 
@@ -6143,8 +6157,8 @@ tr '\r' '\n' < /path/to/mac_file/here > /path/to/unix_file/here
 ufw status
 
 # add rule
-ufw add allow port_here
-ufw add deny port_here
+ufw allow port_here
+ufw deny port_here
 
 # delete rule
 ufw delete rule_number_here

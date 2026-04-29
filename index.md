@@ -2098,6 +2098,9 @@ unix2dos filename -n new_file
 ```bash
 # install local package
 dpkg -i /path/to/.deb
+
+# extract .deb file
+dpkg-deb --extract /path/to/.deb /path/to/outfolder
 ```
 
 
@@ -2937,6 +2940,14 @@ echo "command_here" | nc -nvvv IP_here port_here
 PASS password_here
 NICK nick_name_here
 USER user_name_here host_name_here server_name_here :real_name_here
+```
+
+
+
+### JADX
+```bash
+# load an .apk in jadx-gui
+File > Open File > app.apk
 ```
 
 
